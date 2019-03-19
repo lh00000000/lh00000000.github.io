@@ -1,0 +1,22 @@
+#main {
+  width: 720px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+.captionedImage {
+  margin-bottom: 64px;
+}
+
+.captionedImage p {
+  text-align: center;
+  font-family: Helvetica;
+  letter-spacing: 4px;
+}
+
+body {
+  background-color: rgb(209,204,198);
+}

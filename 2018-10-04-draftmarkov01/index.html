@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>draftmarkov01</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="./script.js"></script>
+    <script src="../util.js"></script>
+    <style type="text/css">
+        p {
+          font-family: futura;
+        }
+
+        li {
+          font-family: futura;
+        }
+        @media only screen and (max-width: 720px) {
+          #content {
+            width: 100%;
+            margin: 0 auto;
+          }
+        }
+
+        @media only screen and (min-width: 720px) {
+          #content {
+            width: 720px;
+            margin: 0 auto;
+          }
+        }
+
+        #content {
+            background-color: white;
+            padding: 4px 16px 40px 16px;
+        }
+
+        #player {
+            width: 100%;
+        }
+
+        #markovBG {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          color: rgba(0,0,0, 0.3);
+          width: 100%;
+          height: 100%;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          z-index: -1;
+          font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <p>
+        for the midterm project of <a href="https://handav.github.io/itp_fall_2018/">hannah davis' generative music class</a>, i tried to make a three part piece mainly featuring markov chains trained on midi data.
+        </p>
+        <p>the three themes i attempted were</p>
+        <ul>
+            <li>onboarding - a section of a sequence of semi-improvisational periods in which upper octaves of the piano trigger short bursts of a markov chain trained on a previous recording of the section</li>
+            <li>sync - a 3/4 section where every four measure, a new markov chain is trained on arpeggiated bass material, then is rendered an octave higher in the next four measures, while new material is introduced as a new four measures of bass</li>
+            <li>offset - spectral-focused material combined with markov chains rendered with different parameters (e.g. adjusting rate of generated lines, adjusting window of material the model is trained on, adjusting order/complexity of markov chain in response to non-markov material)</li>
+        </ul>
+        <p>however, i only could get a draft version of the first section done in time... :'(</p>
+        <audio id="player" controls>
+            <source src="https://lh00000000-public.s3.amazonaws.com/2018/10-04-draftmarkov01/2018-10-04-andthenandthenandthen-01-draft.mp3" type="audio/mp3">
+        </audio>
+
+    </div>
+    <div id="markovBG"></div>
+</body>
+</html>

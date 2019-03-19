@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>2018-09-21-ufosonfication</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="./script.js"></script>
+
+<style type="text/css">
+  #starfield {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #0a0a0a;
+    color: rgba(255,255,255, 0.5);
+    width: 100%;
+    overflow-x: hidden;
+    z-index: -1;
+  }
+  #content {
+    color: #EFEFEF;
+    width: 600px;
+    margin: 0 auto;
+    font-family: courier;
+  }
+  #player {
+    width: 100%;
+  }
+
+</style>
+</head>
+
+<body>
+  <div id="starfield"></div>
+  <div id="content">
+    <h1>2018-09-21-ufosonfication</h1>
+    <p><a href="https://github.com/handav/itp_fall_2018/tree/master/classes/Class_3">in the third week</a> of hannah davis' generative music class, we went over data sonification</p>
+
+    <a href="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-09-21-ufosonfication/ufo_small.csv">we used a dataset of ufo sightings as an example</a>
+
+    <p>for the first portion of class, we generated midi files as static assets, mapping values from the dataset to midi parameters. the workshop portion of the class was focused on experimenting with and modifying davis' code.</p>
+
+    <p>my modification was mainly to focus on a two-handed piano instrumentation instead of a two instrument one, where the right hand would play whenever there was a sighting that had a description that included mention of a voice (in the original example, a choir sound is used to feature mentions of voice). each right hand event is in the form of an upwards arpeggiated set of octaves. the number of octaves is dependent on the length of the sighting. i also added a sfp < velocity dumping effect in the left hand line whenever the right hand plays. the rest of my modifications were just different tempo, gaussian noise for velocity and timing, a sustain-pedal effect, and changing the pitch distributed to an (attempted) dorian.
+    </p>
+
+    <audio id="player" controls>
+        <source src="https://lh00000000-public.s3.amazonaws.com/2018/09-21-ufosonfication/2018-09-21-ufopiano.mp3" type="audio/mp3">
+    </audio>
+    <a href="./ufo_by_sighting.py">code here</a>
+
+    <p> the second part of the workshop was focused on a javascript app that iterated through the dataset in realtime, choosing sounds from a bank of samples based on the "shape" of the ufo sighting. my only major modification was gating (each sample stops the previous one), changing of tempo, hand selected samples i happened to have, and a different visual interface.</p>
+
+    <a class="shake-slow shake-constant" href="./ufo.html"><h1>WATCH "UFO.HTML" HERE</h1></a>
+
+    <br />
+    <br />
+    <br />
+
+  </div>
+
+
+</body>
+</html>

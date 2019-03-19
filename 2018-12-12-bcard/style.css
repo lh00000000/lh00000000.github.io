@@ -1,0 +1,26 @@
+#hud {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1080px;
+  z-index: 0;
+}
+
+
+#main {
+ position: absolute;
+ bottom: 235px;
+ right: 400px;
+ width: 255px;
+ height: 250px;
+
+ border: 8px solid black;
+ overflow-y: scroll;
+ overflow-x: hidden;
+ z-index: 1;
+ transform: rotate(8deg);
+}
+
+#main img {
+  width: 100%;
+}

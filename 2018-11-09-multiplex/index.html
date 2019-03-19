@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2018-11-09-multiplex</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <p> 2018-11-09 i finally figured out how to use a multiplexer lol </p>
+        <p> multiplexer: CD4052B <a href="http://www.ti.com/lit/ds/symlink/cd4051b.pdf">datasheet</a></p>
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-09-multiplex/pins.png" height="200px" />
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-09-multiplex/pintable.png"  height="200px" />
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-09-multiplex/multiplex_bb.png"  height="480px" />
+        <br />
+        <b>sketch</b>
+        <p> cycles through four input pins. quantizes to OFF, LOw, and HIGH. turns on two LEDs (0 if OFF, 1 if LOw, 2 if HIGH) as output.</p>
+        <iframe src="https://player.vimeo.com/video/299957979" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <pre>
+#define CNTL_A 4
+#define CNTL_B 3
+#define MULTI_IN A0
+#define LED_OUT 5
+#define LED_OUT_2 6
+#define BTWN_PIN_DELAY 400
+
+
+uint8_t decToBin[4][2] = {
+  {LOW, LOW},
+  {LOW, HIGH},
+  {HIGH, LOW},
+  {HIGH, HIGH}
+};
+
+void setup() {
+  pinMode(CNTL_A, OUTPUT);
+  pinMode(CNTL_B, OUTPUT);
+  pinMode(LED_OUT, OUTPUT);
+  pinMode(LED_OUT_2, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  for (int i = 0; i < 4; i++) {
+    digitalWrite(CNTL_A, decToBin[i][0]);
+    digitalWrite(CNTL_B, decToBin[i][1]);
+    int multiIn = analogRead(MULTI_IN);
+    int mag = map(multiIn, 0, 1024, 0, 3);
+
+    Serial.print(decToBin[i][0]);
+    Serial.print(" ");
+    Serial.print(decToBin[i][1]);
+    Serial.print(" ");
+    Serial.print(i);
+    Serial.print(": ");
+    Serial.print(multiIn);
+    Serial.print(" -> ");
+    Serial.println(mag);
+
+    digitalWrite(LED_OUT, mag > 0);
+    digitalWrite(LED_OUT_2, mag > 1);
+
+    delay(BTWN_PIN_DELAY);
+  }
+  Serial.println();
+
+}
+        </pre>
+
+
+    </div>
+</body>
+</html>

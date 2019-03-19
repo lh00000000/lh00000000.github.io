@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2019-02-07-time</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <p>i keep meaning to start make a blog post documenting my "to do list system" but there are too many things to do, which means i never end up finishing more tickets (see below...) than i feel comfortable with starting the post, so i'm going to start it now, tell myself i'll update it later, then hopefully feel a little better for 10 minutes. </p>
+
+        <p>here is an old sketch</p>
+
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-02-07-time/2019-01-07-sketch.png" />
+        <p>all of the automated parts of the system are <a href="https://github.com/lh00000000/time">in this repo that i might take down bc i'm afraid i commited some API or something</a> </p>
+
+        <p>when i am out an about, i save short notes to myself using a "workflow" (i guess now called "siri shortcuts") that hits an api i have deployed as a AWS Lambda function + AWS api gateway. the endpoint is in javascript and the basic idea is to be able to add regex match patterns to file things away as i identify repetitive patterns in the way i type.</p>
+
+        <p>here are some examples of the patterns </p>
+        <pre>
+            {pattern: /^(http|dat:|linkqueue)/, ingest: handlers.handleLink }, // if it's a link, esp some link that i can't look at immediately (bc i don't have internet connectivity) i put it into a mongo db thing that i know is just mysterious links
+            {pattern: /^(listen|bandcampqueue|listenqueue)/, ingest: handlers.handleListenQueue }, // if i say "listen to Li Daiguo", this goes in a mongo collection just for listening to music
+            {pattern: /^(researchqueue|research|lookup|rq)/, ingest: handlers.handleResearchQueue }, // same as above but for just looking up things i don't really need to know, but want to know
+            {pattern: /^(what is|what are)/, ingest: handlers.handleResearchQueue }, // same as above but slightly different syntax
+            {pattern: /^(send|sche|schedule|contact|email|plan|book|respond|reply|Fwd:|answer|followup)/, ingest: handlers.handleContact }, // goes into my "task list" which is currently an airtable where i attach tags and other metadata about it so it goes into a simple formula so i can rank all of the tasks based on some additive logic formula. this happens to tag the task as something i should do next time i'm at my laptop, tagged with "respond" so i know it's a relatively unambigious and quick task, but is probably time sensitive
+            {pattern: /^\+/, ingest: handlers.handleProjectNote }, // when i deploy my api, a hardcoded file of ids of notes in bear notes get put into the source. this is so if i have an idea for a project, my inbox (currently mongo but used to be todoist until a couple of days ago) will have a quick link to append the text in bear (which i use as my project-specific memory dump because i like how it can handle audio and photos without adding a bunch of junk to the copable plaintext markdown) (this is also because bear doesn't have a web api yet... :/ )
+            {pattern: /^batch/, ingest: handlers.handleBatch }, // i used to keep extremely location specific tasks in a grab bag sub list in dynalist, like one for things to do next time i'm in my apartment or at school, but i've switched to the airtable thing mentioned above because there were too many tasks and i was spending too much time doing the same mental calculus deciding what 2 things of the 15 things that well result in financial/social/educational/creative reprecussions to actually start doing
+            {pattern: /^(buy|order)/, ingest: handlers.handleShoppingCart }, // goes into a dynalist sublist because i like dynalist for moving items around so they can be grouped. i'm hoping by batching things i need to buy i can save trips to different stores and plan out orders/trips to sites/brick and mortar stores that aren't just amazon prime, although i firmly believe in the complete futility and problematic nature of caring to do this
+            {pattern: /^log/, ingest: handlers.handleLog }, // goes into a mongo collection that i am hoping will be part of a future etl job to do batched dumps to my day one diary
+            {pattern: /^time/, ingest: handlers.handleTimeTicket }, // ...goes to an airtable that i use....to keep track of "tickets" to fixing things about this system....lol
+            {pattern: /^airtable/, ingest: handlers.handleAirtableTicket }, // another airtable i use to keep track of things to do re: cleaning up the various airtables i have to collect data about various things, a lot of which i don't have an automated process for adding / modifying
+            {pattern: /^trainspotting/, ingest: handlers.handleTrainspotting }, // an endnpoint that expects a json string so i can add data to an airtable to keep track of all of the MTA subway train car numbers i ride. i have another ios workflow thing where i can build this json using drop down menus and numpads / barcode scanning etc
+            // etc etc like a pattern for adding a new deadline, saving receipts, coupons etc
+        </pre>
+
+        <p>the problem with using ios workflow is that it just times out if i'm in the subway or something. so i have another workflow that opens up my text convo with a twilio number that i sms text to that hits the same api mentioned above, since ios automatically saves texts that failed delivery so you can manually choose to retry later. the problem is that i add to this thing a lot lol, so i run out of my $20 autopay per month often. i'm trying to make another (swift) app so i can access CoreData to recrete this thing later, but i haven't had time to get up and running with ios + swift yet</p>
+
+        <p>i mentioned before that i use bear to be a separate braindump for particular projects / classes. i have a lot of airtables now, like one for tracking my sleep, one for doign triage of all of the magazines i've accumulated so far but haven't finished reading yet, one for saving metadata stuff for articles i want to read (so i can score articles with authors/publishers i like higher than the junk), one that's basically foursquare/yelp for saving food-things to try because i'm mad that it's so difficult to save notes on places. i have some airtables for bigger projects, like this album that's embarassing because i pretty much wrote it in 2011, but i frequently wake up in the middle of the night in a panicked sweat about not having finished it yet. another for learning electronics (like keeping track of different books + chapters + articles so i can group things by topic). i have a bunch of things i haven't really integrated yet too, like an airtable for keeping track of the crowdedness of places i can work on my laptop (to see what part of the week is least crowded etc), an airtable for keeping track of every block i've walked in my neighborhood (i don't want to talk about it lol...) whenever i want to take a destressing walk but wnat to do it in aims of seeing every block (too cold right now though !!!). as of today (feb 7) i have 43 airtable bases.</p>
+
+        <p> you might be thinking, doesn't this take you a long time to sort everything out ? how do you get anything done ?? the answer i is i don't ! and i cheat i use simplenote for small task lists during the day ! kind of like a scratch pad. this is relatively recent. i was using todoist before, especially because their api was very satisfyingly responsive, but for some reason they have extremely time item limits (only like, 150 items per project?) which meant i lost a week of small notes once and spent two weeks going through imessage data dumps and aws cloudwatch logs to recover, then constantly worried about my limits for a while</p>
+
+        <p>a lot of people ask me to try "throwing the whole system away" and tbh, i think i am doing this because i've tried that more than once. and many variants of it (i did pen+paper multiple times, index cards, todo.txt plaintext) but either ended up in the same place of feeling like i was suffering trying to make specific situations fit something designed for one limiting level of abstraction, or "going with the flow" i.e. going with the loudest voice in the room at the time (bosses / someone asking for a favor / the usual nyc barrage of interesting events to check out) and then panicking later about missed deadlines, late fees, and mountains of regret about not having worked on completely unwanted personal project ideas for extended periods of time. i don't think i've fixed those problems but at the moment this seems like the main thing i can do that isn't permanently problematic (i.e. i can, in theory "improve" it...although that remains to be seen)</p>
+
+        <p>i think i'm also really finding this an interesting exploration of automaton, calculation, standardization, discretization, and quantization. all things that i think are very popular to dismiss for its associations with control society and modern vectorial capitalism, but i think can only become more powerful in the hands of the exploitive class the more it is allowed to develop and become more sophisticated in secrecy. the more i explore these methods of centralizatized processing and tabular piles of prismatic data, the more i feel i understand these tools as methods of defense rather than active provocations. many of these techniques and technologies were developed to track and surveil risks to capital, and to exploit weaknesses in solidarity in order to weaponize chaos towards the micro-transactional attentional capitialism of today. i want be defensive of my resources: ontological labor and time-based attention. i want to be able to collect the small pieces of evidence to see the micro-structural patterns of my life. i do not want to ignore the guilty histories of these tools, but i can't see a future built on proudly proclaiming that i think "spreadsheets are uncool".</p>
+
+        <p>i mentioned dynalist. i am a fan of it's keyboard-centric operations for the nesting and unnesting interaction and collating and exploding concepts, but on a similar note, i am also a fan of gingko (sic) app, which i think is better for creating trees of information where the end product is some sort of bulky linear sequence (yes like an article or essay). </p>
+
+        <p>at the moment, i don't have as many varying datastores as i used to, just bear, mongo, airtable, dynalist, and simplenote/nvalt, but just recently, i also had todoist, email folders, trello, and plaintext files in dropbox in the mix. still i have the problem of working out some specific in-progress-system for one area of my life, then the attentional monopoly of another when i switch to that. for this, i am attempting to create summarized views of all of these major components. right now, this in the form of a react native app unfortunately, because i thought the speed of developing in javascript + the amount of time i am not near my laptop vs i am with my phone. although i have a swift/native ios app planned (for the inbox adding stuff) i am still foreseeing keeping this react native component because of the frequency i'd like to be able to try out new paradigms for different ambitions (time tracking vs frequency-based initiatives, like seeing a body of water every month). </p>
+
+        <p>currently, my focus is building the skeleton of the daemon-like processes in this. things like hourly batch scripts that look for orphaned scanned isbn numbers in my airtable of books in my actual or extended proximity and fills in the metadata (title, author, length, etc). the framework has to work for both items that can be done regularly and remotely, withou my action, and in reaction to my time with my laptop open (for things such as batch loading scans of sampled sounds uploaded to my dropbox so that they can be archived in s3 and linked to a searchable airtable for the collections of weird sounds). </p>
+
+        <p>i would also like to talk about my deployment methods and the mode of thinking i've been using in the coding aspects of this effort, since i think this developing-for-yourself anti-scale anti-portability development has been very interesting to someone that has had the mythos that achieving scale with AB testable modular components in competition for engagement is the holy grail for what technology can be used for for so long. but not tonight. </p>
+
+    </div>
+</body>
+</html>

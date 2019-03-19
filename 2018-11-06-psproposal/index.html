@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>😔</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.7/showdown.min.js"></script>
+
+    <style type="text/css">
+      body {
+        font-family: helvetica;
+        text-transform: uppercase;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(() => {
+        if (Math.random() > 0.5) {
+          document.querySelector("body").innerHTML = (new showdown.Converter()).makeHtml(document.querySelector("pre").innerText)
+        }
+      })
+    </script>
+</head>
+
+<body>
+    <pre># PCOMP FINAL PROJECT PROPOSAL:
+*a device for high-frequency percussive activation of arbitrary surfaces*
+
+### system diagram
+```
+midi device :>  // any kind of midi device, such as piano-interface
+midi out :>  // standard connection to midi port
+midi-in of arduino :> // i bought a port and read a tutorial and that's about all i know how to do
+arduino (tuneKnob, midiKey, nSpokes) => freq :> // arduino in charge of reading in midi and some kind of tuning knob (for gliss and fine pitch tuning) to determine rotation speed
+dc controller :> // some kind of interface to interpolate or rate limit changes in speed
+dc motor :> // spin
+activation head // hopefully different materials and gears of varying spokes can be switched out...someday
+```
+
+### needed materials
+- larger (more torque) dc motor
+- op amp?
+- midi output device (can be acquired later)
+- dc controller. is h bridge ok?
+- activation head -> some kind of gear
+
+### needed research
+- keeping dc motor constant under varying loads
+- what kind of materials
+- what kind of gears
+
+### timeline
+1. do personal research
+2. get consultation - friday
+3. acquire dc motor
+4. acquire activation head - saturday
+5. experiment with dc powering and control
+6. experiment with frequency and rotation algorithms - sunday
+7. experiment with midi receiving - monday
+8. experiment with commerical midi output device
+9. experiment with rhythmic to pitch control designs - tuesday</pre>
+</body>
+</html>

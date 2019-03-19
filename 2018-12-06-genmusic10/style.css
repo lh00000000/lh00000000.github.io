@@ -1,0 +1,16 @@
+body {
+  text-align: justify;
+  font-family: helvetica;
+  font-size: 8vw;
+}
+
+a:link:hover {
+    animation: blink-animation .1s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    /*visibility: hidden;*/
+    color: white;
+    background-color: black;
+  }
+}

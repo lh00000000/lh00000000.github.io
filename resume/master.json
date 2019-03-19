@@ -1,0 +1,58 @@
+{
+  "contact": [
+    "luming000hao@gmail.com ",
+    "luminghao.com",
+  ],
+  "inbox": [
+    "appinter",
+    "antonio"
+  ],
+  "work":  [
+    "- 2017. data science engineer @ foursquare.com - for pilgrim sdk",
+    "- 2015. data science engineer @ about.com - natural language processing applications ",
+    "* 2014. developer @ saucon technologies - embedded computer vision",
+    "- 2013. usher @ dorney park - snoopy on ice",
+  ],
+  "education": [
+    "* 2018. school for poetic computation : “code societies”",
+    "* 2014. lehigh university. BA computer science + BA music composition ",
+    "* 2013. avtech institute of technology. android mobile development course",
+    "* 2010. freedom high school. bethlehem, pa.",
+  ],
+  "other": [
+    "* 2018. genspace. workshop : “mycoremediation workshop”",
+    "* 2018. genspace. workshop : “cell programming with dna”",
+    "* 2017. itp camp",
+    "* 2017. genspace. workshops : “diy neuroscience”, “fungi fabrication”, “slime mold workshop”, “biotech crash course”",
+    "* 2017. school of poetic computation. workshop : “the ins and outs of programming electronics” data rescue hackthon. for environmental data & governance initiative. prototyped text extraction service.",
+    "* 2017. ragtag. prototype work on event collection service.",
+    "* 2015. isam (international summer academy of music) attendee",
+    "* 2014. lafayette college contemporary music ensemble composition prize awardee",
+    "* 2014. coursera: machine learning (andrew ng/johns hopkins)",
+    "* 2014. coursera: data science specialization sequence (johns hopkins)",
+    "• 2013 student research grant university forum ",
+    "• 2013 henderson braddick composition prize",
+    "• 2012. nominated square enix music online best score - retro/remixed",
+  ],
+  "projects": [
+  "* treevis - Designed and implemented frontend and backend of web application for visual / interactive debugging ensemble decision tree machine learning models.",
+  "- recirc - Replaced the algorithm/infrastructure used to calculate article recommendations with a real-time system that reactive to end-user activity. Previous version required two full days of processing time only ran once a month. Current version has sub-second responses to editor activity can adapt (give different recommendations) in response to patterns in user traffic.",
+  "• mimir - Designed and implemented internal tool that streamlined editorial workflow, resulting in articles that were more popular and read for longer periods of time (in comparison to articles simultaneously being created using the previous workflow).",
+  "• entity explorer - Designed and implemented a web app to aggregate content by the entities mentioned and visualize their traffic patterns for sales and editorial teams to find “bundles” of related content, replacing previous system that relied on hand-tagging and manually creating content taxonomies",
+  "• a web app to search content using free text and any variety of CMS or traffic based criteria",
+  "• backend service for named-entity recognition",
+  "• a real-time dashboard that aggregates news by common topics",
+  "• a web app to qa the algorithm powering the article recommender project, where hypothetical recommendations and",
+  "details of the vectorization were computed as-you-typed.",
+  "projects as a developer at saucon technologies (2014 - 2015)",
+  "• embedded computer vision - designed algorithm to do passenger counting and implemented as modification of video encoder chipset firmware.",
+  "• H.264 artifact visualization and simulation tools - created several tools to help build an intuitive understanding of the H.264 compression to help feature engineering efforts ",
+  ],
+  "assets": [
+  "![](resume/entity_explorer_redacted%202.png)",
+  "![](resume/Screen%20Shot%202017-09-23%20at%204.01.19%20PM%202.png)",
+  "![](resume/Screen%20Shot%202017-09-23%20at%204.01.44%20PM%202.png)",
+  ],
+  "skills": "aws, aws lambda, bootstrap, c, c++, computer vision, d3.js, docker, dynamodb, elasticsearch, elb, elm, emr, es6, express, flask, gensim, get, hadoop, hive, impala, java, javascript, kafka, kinesis, less, lsdj, mongodb, mysql, neo4j, nlp, nltk, node, openCV, openframeworks, p5.js, pandas, postgres, presto, processing, python, r, rds, react, redis, redux, s3, scala, scalding, scikit-learn, semantic ui, sibelius, solr, spaCy, spark, tornado, vue.js, matplotlib"
+}
+

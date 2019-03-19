@@ -1,0 +1,41 @@
+.captionedImage img {
+  width: 400px;
+}
+
+/*double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+*/
+.captionedImage {
+  width: 400px;
+  border: 8px ridge black;
+  border-radius: 16px;
+  padding: 10px;
+  font-family: "Comic Sans MS";
+  display: inline-block;
+  margin: 16px;
+  /*background-color: gray;*/
+}
+
+
+#insertHere {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#bgGifs {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#brief {
+  font-family: "Helvetica";
+  text-align: center;
+  background-color: yellow;
+}

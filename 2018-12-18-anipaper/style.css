@@ -1,0 +1,131 @@
+body {
+  background-color: #EFEFEF;
+}
+
+p, small {
+  font-family: "Baskerville";
+}
+
+small {
+  font-size: 10px;
+}
+
+.scrap {
+  position: absolute;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-top: 2px solid #EAEAEA;
+  border-left: 2px solid #EAEAEA;
+  border-right: 2px solid #d0d0d0;
+  border-bottom: 2px solid #d0d0d0;
+  padding: 10px;
+  background-color: #E0E0E0;
+}
+
+#meta {
+  top: 5%;
+  left: 40%;
+  font-size: 12px;
+  z-index: 1;
+}
+
+#processCopy {
+  font-size: 11px;
+  height: 300px;
+  left: 65%;
+  top: 10%;
+  z-index: 1;
+}
+
+#finalCut {
+  font-size: 11px;
+  left: 20%;
+  top: 60%;
+}
+
+#myAnglePic {
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  left: 10%;
+  z-index: -1;
+}
+
+#myTearPic {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 40%;
+  z-index: -1;
+}
+
+#theVideo {
+  width: 400px;
+  height: 230px;
+  z-index: 1;
+}
+
+#rashida0 {
+  width: 400px;
+  height: 300px;
+  top: 115%;
+  left: 8%;
+}
+#rashida1 {
+  width: 400px;
+  height: 600px;
+  top: 5%;
+  left: 80%;
+}
+#rashida2 {
+  width: 200px;
+  height: 266.666666667px;
+  top: 45%;
+  left: 54%;
+  z-index: -1;
+}
+#rashida3 {
+  width: 400px;
+  height: 300px;
+  top: 90%;
+  left: 40%;
+}
+#sukanya0 {
+  width: 400px;
+  height: 300px;
+  top: 130%;
+  left: 80%;
+}
+#sukanya1 {
+  width: 200px;
+  height: 150px;
+  top: 150%;
+  left: 50%;
+}
+#sukanya2 {
+  width: 200px;
+  height: 150px;
+  top: 180%;
+  left: 20%;
+}
+#sukanya3 {
+  width: 600px;
+  height: 450px;
+  top: 190%;
+  left: 55%;
+}
+#sukanya4 {
+  width: 400px;
+  height: 300px;
+  top: 220%;
+  left: 5%;
+}
+
+#scrollPoint {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 130%;
+  top: 300%;
+}

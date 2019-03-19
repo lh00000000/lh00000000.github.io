@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+}
+
+#hidesheets {
+  height: 111px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+#unwoundalign {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 3;
+
+}
+#unwound {
+  height: 220px;
+  width: 450px;
+  margin: 0 auto;
+}
+#rodcontainer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+
+}
+#rod {
+  background-color: #808080;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
+  width: 500px;
+  height: 64px;
+  border-top: 4px solid #909090;
+  border-left: 2px solid #c0c0c0;
+  border-bottom: 2px solid #606060;
+  border-right: 2px solid #505050;
+  border-radius: 8px;
+
+
+
+}
+#screen {
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100%;
+}
+
+.sheet {
+  min-height: 100px;
+  width: 350px;
+  border-bottom: 4px dotted #c0c0c0;
+  border-left: 2px solid #c0c0c0;
+  border-right: 2px solid #c0c0c0;
+  margin: 0 auto;
+}
+
+.spacing-sheet {
+  height: 400px;
+}
+.sheet img {
+  width: 100%;
+}
+
+.sheet p {
+  text-align: center;
+  font-family: Verdana;
+}

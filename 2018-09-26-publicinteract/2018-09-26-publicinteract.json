@@ -1,0 +1,31 @@
+{
+  "WARNING": "unedited draft!!!",
+  "tags": "#pcomp",
+  "class": "itp pcomp 2018",
+  "week": "post 3 pre 4",
+  "exercise": "**Observation**",
+  "prompt":
+    "Pick a piece of interactive technology in public, used by multiple people. Write down your assumptions as to how it’s used, and describe the context in which it’s being used. Watch people use it, preferably without them knowing they’re being observed. Take notes on how they use it, what they do differently, what appear to be the difficulties, what appear to be the easiest parts. Record what takes the longest, what takes the least amount of time, and how long the whole transaction takes. Consider how the readings from Norman and Crawford reflect on what you see.",
+  "text": [
+    "there are 7500 planned installations of the linknyc kiosks in nyc. each kiosk features three cameras, 30 various types of sensors, two large ad-displays, a touchscreen tablet computer with custom functionality and restrictions, and the signature of de blasio era new-infrastructure: usb charging ports^1. the main feature for the average nyc citizen is it's free wifi. the main feature for the city administration is visible evidence of a public-private partnership in something tech-sector adjacent didn't get postponed into obvilion. the main feature for advertisers is a spilling of time-square billboards into many more streets, in the form factor of data-fetisthic real-time programmatic ad exchanges of the current-day internet.",
+    "one prototypical interaction goes like this:",
+    "- a citizen walks by ",
+    "- linknyc adds a variety of measurements to be linked with their google ad profile, if possible, and given a sequence of logic that varies in scale of time from seconds to months-long partnerships with \"brands\", displays an ad",
+    "- citizen usually ignores the ad, connecting to the wifi (frequently usually automatically because only one previous connection is needed to enable this as a default behavior)",
+    "- linknyc records time and kiosk of connection",
+    "- citizen browses internet. ",
+    "- linknyc records internet history as additional data resource for google ad targeting application for advertisers ^2",
+    "- citizen hears slow-core rendition of mister softee theme song ^3",
+    "- linknyc representatives insist that the kiosks cannot be hacked ^4",
+    "although ive heard anecdotal evidence of usage of the other \"features\" of the kiosks, from the tablet computers, charging ports, or \"informational\" displays of some of their brand/data partnerships, i have not been able to witness any of these interactions. despite this, i believe the public usage of the linknyc is an archtypical example of a class of interaction that is only growing more important to study every day. that of ",
+    "- passive / connective behaviors of individuals happening AROUND devices or practices of pro-profit organizations ",
+    "- of which aims are beyond simply selling advertisement aggregations and analyses and towards gaining political trust and eventually tighter integration between goverment and the american technology industry. whether it be lyft and uber attempting to rebrand their apps as hubs for bikeshares and public transit, or sidewalk labs / google co-opting a design/architecture revitalization initiative in toronto, \"users\" are being \"delighted\", then recorded, then used as the case for silicon valley to further take control of the wheel of cities, policies, and social organization. "
+  ],
+  "endnotes": {
+    "^1": "https://theintercept.com/2018/09/08/linknyc-free-wifi-kiosks/",
+    "^2":
+      "https://www.villagevoice.com/2016/07/06/google-is-transforming-nycs-payphones-into-a-personalized-propaganda-engine/",
+    "^3": "http://gothamist.com/2018/05/30/mister_softee_linknyc_prank.php",
+    "^4": "https://twitter.com/katehinds/status/1000082445058953216"
+  }
+}

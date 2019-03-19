@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2018-12-04-itpposter</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="./script.js"></script>
+    <style type="text/css">
+        #posterHolder {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #posterImg {
+            height: 100vh;
+        }
+
+        #description {
+            width: 300px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            font-family: "Baskerville";
+            font-size: 11pt;
+            margin: 16px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="posterHolder">
+        <img id="posterImg" src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-04-itpposter/poster.png">
+    </div>
+    <div id="description">
+        <p>class: visual language itp 2018.</p>
+        <p>assignment: design a poster for the 2018 itp winter show.</p>
+        <p>objective: nest the eyesight-scale (near) within the machine-scale (far).</p>
+    </div>
+</body>
+</html>

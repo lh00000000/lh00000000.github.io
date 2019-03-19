@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2018-09-13-genmusic</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- <script src="./script.js"></script> -->
+</head>
+
+<body>
+<small>this is a blog post for the first week of <a href="www.hannahishere.com">Hannah Davis</a>' ITP 2018 class <a href="https://github.com/handav/itp_fall_2018">generative music</a></small>
+
+<br />
+<br />
+<i>Please find a generative music project and write a few sentences about the underlying system or process. This does not have to be an electronic/computer-based project.</i>
+<br />
+<img style="height:400px; margin-left: auto; margin-right: auto;" src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-09-13-genmusic/brokenlightscore.png" />
+<br />
+<a href="http://www.nicolascollins.com/texts/brokenlightscore.pdf">see the full score</a>
+<p>one of my favorite pieces of music is
+    <a href="https://en.wikipedia.org/wiki/Nicolas_Collins">Nicholas Collins</a>
+    ' string quartet, Broken Light (from the <a href="http://www.nicolascollins.com/darkandstormytracks.htm">downloadable album, It Was A Dark And Stormy Night</a>)
+</p>
+
+<p>in addition to the traditional string quartet (two violins, viola, and cello), it features a cd-player, modified to have three additional functions</p>
+<ul>
+    <li><b>skitter</b> - make playhead blaze through the cd randomly</li>
+    <li><b>preset select (three presets)</b> - instantly jump to a specific position on the cd (pre-selected by Collins)</li>
+    <li><b>nudge</b> - progress the playhead of the cd player a random amount, where the playhead will repeat a extremely short loop until further action is taken</li>
+</ul>
+
+<p>
+    in class, we went over <a href="https://twitter.com/teropa">@teropa</a>'s presentation at <a href="https://teropa.info/loop/">ableton loop 2017</a>. it outlined a loose taxonomy of systems-based music into two branches.
+    <ol>
+        <li>a collection of <b>interacting</b> parts that creates some audible output</li>
+        <li>a collection of <b>procedures</b> that yields some audible result</li>
+    </ol>
+</p>
+
+<p>in my opinion, Broken Light is an example of both of these approaches (although i kind of think all music could be described as falling under both descriptions). i think this is easier to see after reading the score notes</p>
+<img style="height:500px; margin-left: auto; margin-right: auto;" src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-09-13-genmusic/scorenotes.png" />
+<p>one could say the piece is procedural just by being presented as a linear score (i.e. read left-to-right, top-to-bottom, where progressing further into the score correlates with the duration/time of the performance-to-be). but if the argument that all music embodied in the non-exhaustive form of western-inspired-notation is procedural sounds too much like cheating, instead of the traditional stave+notehead symbols, Collins uses a collection of bespoke symbols, each of which is mapped to some process described in english (on the first page of the piece and somewhat in the notes). </p>
+<p>the piece is also an example of a collection of interacting agents. the first section (Corelli) involves instructions for the instrumentalists to interact with the modified cd player. the players then have instructions to either mimic or harmonize with the new state of the device, which also includes instructors with interacting with the cd play again. the call-and-response theme is explicitly used in the second section (Locatelli), where the score denotes the construction of a melody, one player and two notes at a time, each passing off a pitch to another instrumentalist in the following "bar". the third section (Torelli) features another semi-stochastic feedback system, but it is a form most are much more familiar with: the vamping + solo turn-taking process common in jazz and funk. </p>
+<p>another reason i'm drawn to this piece is the use of random processes on two levels. the piece revolves around the idea of the quartet using this device to produce random outputs that the quartet adapts to. randomness for the performer. but the piece also features collections of suggested "variations" for the performers to choose from, mix, and improvise arrounding "live", which means the piece is unpredictable to Collins, the composer, for every performance.
+</p>
+<p>beyond the practice of creating systems as a form of music making, there is the mixing, matching, and layering of those systems as form of music making. there is systems-creation as another element of music. i think this layered and entangled approach is frequently more sucessful than more transparent or "cleaner" procedural or systems music. it may be because it keeps a safer distance from the examples of generative/algorithmic music the public is more accustomed to (e.g. viral videos of sonification of the digits of pi, or probabalistic regurgatations of corpuses of musical examples). although these more egregious examples are <strong>SOMETIMES</strong> dismissed as too campy, corny, or "soul-less", i think their real crime is the desensitation to the role systems-building plays in all forms of music making. from yell-at-cloud accusations of top 40 as formulaic, to remix culture, the practice "standards" in jazz, to the explicit approach of serialism, to the extension of "common era" harmonic in romanticism, to the quota of love/regret/redemption arias one had to fill in order to put on an opera, to the lack of ambigiuty bach's style had to have to avoid confusing bach's musical assembly line of offspring, to the intervals to stick to if you didn't want your fellow monks to accidentaly offend jesus, the world of music making has never existed without the parallel world of standards, frameworks, and systems making.</p>
+<br />
+<i>Listen to any version of Terry Riley's 'In C'.</i>
+<p>i couldn't pick one so i: </p>
+<ol>
+    <li>searched youtube for "in c" "terry" "riley"</li>
+    <li>filtered out videos shorter than 20 minutes</li>
+    <li>sorted by recency</li>
+    <li>downloaded the audio for 53 performances of In C (for the 53 phrases in the score)</li>
+    <li>mixed them all together</li>
+
+i hope to clean up the code for this process so i can post it as a script, but until then
+<audio style="width: 640px" controls>
+    <source src="https://lh00000000-public.s3.amazonaws.com/2018/misc/53-in-c.mp3" type="audio/mp3">
+</audio>
+</ol>
+
+
+<p> performance sources </p>
+<pre>
+
+1. [Terry Riley In C   at CASO - YouTube](https://www.youtube.com/watch?v=p_7qz8RsjJM)
+2. [Terry Riley In C - YouTube](https://www.youtube.com/watch?v=1VcgQ1LH2B8&t=419s)
+3. [Terry Riley - In C, live Barcelona 14-06-2018, L'Auditori sala Pau Casals Sónar - YouTube](https://www.youtube.com/watch?v=guxnDHdnuAw)
+4. [TMO Topolovska Minimalna Orkestra live in Arnoldstein (A) - Terry Riley In C - YouTube](https://www.youtube.com/watch?v=Ipu1KOoR9oY)
+5. [In C (Version for Chamber Ensemble) - YouTube](https://www.youtube.com/watch?v=qIh0G-_8c-M)
+6. [Fontan 17/06/2018 - In C by Terry Riley - InEnsemble & Symphocat & Oksana Ferenchuk - YouTube](https://www.youtube.com/watch?v=pZ76CJPO-Yw)
+7. [In C - Terry Riley (electronic cover version) - YouTube](https://www.youtube.com/watch?v=R3kWygaVCeE)
+8. [In C - Terry Riley (cover version) - YouTube](https://www.youtube.com/watch?v=PFm9PnOTAqE)
+9. [Terry Riley "In C" performed by Khyam Allami (Maqam Rast remodel) - Irtijal'2018 - YouTube](https://www.youtube.com/watch?v=cjmmD5oS2mg)
+10. [In C - YouTube](https://www.youtube.com/watch?v=5cfj46FaWbo)
+11. [MT5 goes Terry Riley In C - YouTube](https://www.youtube.com/watch?v=Z8lksl2Pxj0)
+12. [Terry Riley - In C (academic writing, Ионотека, 7/2/18) - YouTube](https://www.youtube.com/watch?v=5fubslyhjJc)
+13. [Terry Riley - In C (1968) FULL ALBUM - YouTube](https://www.youtube.com/watch?v=tbTn79x-mrI&t=308s)
+14. [Switched-On Coch Presents Terry Riley's In C - YouTube](https://www.youtube.com/watch?v=Aq8--610gJg)
+15. [In C        Zanzibar, Louisville, Ky. 11 - 22 - 2017 - YouTube](https://www.youtube.com/watch?v=oMfEV5WH6LQ)
+16. [Olson III - The Great Learning Orchestra plays Terry Riley - YouTube](https://www.youtube.com/watch?v=VBAsEgcFojQ)
+17. [Terry Riley In C: CWU 20th Century Music Class - YouTube](https://www.youtube.com/watch?v=Z1sx_fezA-o)
+18. ["In C" by Terry Riley for 12 Hours (Time-lapse) - YouTube](https://www.youtube.com/watch?v=thKMZsGov_U)
+19. [La Nòvia / In C de Terry Riley - YouTube](https://www.youtube.com/watch?v=DQUQA3s7wRQ)
+20. [Chương 11: 13. “In C” (Terry Riley) - YouTube](https://www.youtube.com/watch?v=fEmxviWcFkI)
+21. [Late Music Ensemble: Terry Riley 'In C' - YouTube](https://www.youtube.com/watch?v=6o3kLwcWj48)
+22. [In C - Terry Riley - 1964 - YouTube](https://www.youtube.com/watch?v=YBTeU5KzCp0)
+23. [Terry Riley - In C - YouTube](https://www.youtube.com/watch?v=hz2kA2YD8ns)
+24. [In C Terry Riley - YouTube](https://www.youtube.com/watch?v=aEWWHOizb28)
+25. [InEnsemble plays Terry Riley's In C (Rostov-on-Don, open air performance, 17/06/2017, live footage) - YouTube](https://www.youtube.com/watch?v=yggepwHuXK0)
+26. [Terry Riley's "In C" -- 05/14/2017 - YouTube](https://www.youtube.com/watch?v=rm2NxZLTHUs)
+27. [【4K】『Terry Riley  “in C”』「Senzoku Hands On'Semble」［ラ・フォル・ジュルネ・オ・ジャポン2017］2017.5.6 @東京国際フォーラム ホールE - YouTube](https://www.youtube.com/watch?v=Xu_ah4gcF2s)
+28. [six-four plays Terry Riley - In C - YouTube](https://www.youtube.com/watch?v=HrrTRknP8OY)
+29. [Riley: In C - YouTube](https://www.youtube.com/watch?v=nrblNY79254)
+30. [Terry Riley - In C - 25th Anniversary Concert (Cut) - YouTube](https://www.youtube.com/watch?v=Je9R9omUf20)
+31. [Terry Riley - In C - Live at Millennium Park, Chicago - YouTube](https://www.youtube.com/watch?v=qzmi7Wm10Y0)
+32. [Terry Riley - In C (for Chamber Ensemble) - YouTube](https://www.youtube.com/watch?v=zpwCGHYYkfk)
+33. [In C by Terry Riley at Fulcrum Point's Concert for Peace - YouTube](https://www.youtube.com/watch?v=GK03kBhyohc)
+34. [Samrau Ensemble: Terry Riley "In C" @ Triumph, Perm / Самрау: Терри Райли In C, Триумф, Пермь - YouTube](https://www.youtube.com/watch?v=EniUtELMDW0)
+35. [Terry Riley: In C (Live @ Le Poisson Rouge) (feat. Dennis DeSantis) - YouTube](https://www.youtube.com/watch?v=GEDutyBL0Ao)
+36. [Riley: In C - YouTube](https://www.youtube.com/watch?v=ube2PgYrVbI)
+37. [Terry Riley's In C: 53 Rooms for Ririe-Woodbury. Recorded by Salt Lake Electric Ensemble - YouTube](https://www.youtube.com/watch?v=TtGCljW_64M)
+38. [Soundwaves December 21, 2016 Terry Riley's "In C" - YouTube](https://www.youtube.com/watch?v=bgxPkFAHat8)
+39. [Riley - In C - YouTube](https://www.youtube.com/watch?v=9AgzhDLRa4k)
+40. [SEBASTIAN CARRINGTON PERFORMING WITH THE FUTURE TALENT ORCHESTRA 'IN C' BY TERRY RILEY - YouTube](https://www.youtube.com/watch?v=qnsPcLHPptc)
+41. [Terry Riley. "In C" Руководитель проекта - Андрей Дикоев (30.09.16) - YouTube](https://www.youtube.com/watch?v=YzVUojPdLIw)
+42. [In C - YouTube](https://www.youtube.com/watch?v=7xAFsodr5K0)
+43. [Terry Riley "In C" / 26.05.2016/ Циферблат - YouTube](https://www.youtube.com/watch?v=FUDsIfESuNc)
+44. [VENI Academy - "In C" Terry Riley - Košice / Slovakia - 6.7.16 - Euro-PA - YouTube](https://www.youtube.com/watch?v=_h1EMvC6xCY&t=371s)
+45. [In C - YouTube](https://www.youtube.com/watch?v=clLQANuT5Mc)
+46. [Terry Riley - In C - School of Hypnosis - YouTube](https://www.youtube.com/watch?v=EQyYE3b8940)
+47. [Terry Riley In C - iNEnsemble, Rostov-on-Don, 19/VI/2016, Rostov State Public Library - YouTube](https://www.youtube.com/watch?v=JmLs0zI8gpg)
+48. [In C   Terry Riley - YouTube](https://www.youtube.com/watch?v=Zxejkd6EGPc)
+49. [Brooklyn Raga Massive performs 'In C' at Rubin Museum, NYC - YouTube](https://www.youtube.com/watch?v=QVCPniRTIFQ)
+50. [iNEnsemble — In C by Terry Riley - YouTube](https://www.youtube.com/watch?v=GfwBdmjE8IA)
+51. [Adrian Utley's Guitar Orchestra plays Terry Riley's 'In C' Live at AB - Ancienne Belgique - YouTube](https://www.youtube.com/watch?v=LmttdbOW3Ys)
+52. [Terry Riley - In C (Chaves Ensemble) - YouTube](https://www.youtube.com/watch?v=GJrzsFO3vic)
+53. [南藝中提之聲 Terry Riley(b.1935):In C - YouTube](https://www.youtube.com/watch?v=rYklX79eTuE)
+
+
+</pre>
+
+<br />
+<br />
+<br />
+</body>
+</html>

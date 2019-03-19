@@ -1,0 +1,56 @@
+#everything {
+  display: flex;
+}
+
+#main{
+  width: 600px;
+  overflow: visible;
+}
+#main p {
+  width: 500px;
+}
+#main h1 {
+  width: 100vw;
+  word-break: keep-all;
+}
+
+#failuretunnel {
+  flex-grow: 1;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  justify-content: right;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#failuretext {
+  text-align: right;
+  word-break: break-all;
+}
+
+
+#main img {
+  width: 800px;
+  margin-left: 64px;
+  display: inline-block;
+  border-left: 8px solid black;
+  border-right: 8px solid black;
+  border-bottom: 8px solid black;
+  border-top: 64px solid black;
+}
+
+#main img::before {
+  content: "";
+  background-color: black;
+  height: 100px;
+}
+
+* {
+  font-family: Helvetica;
+}
+
+h1 {
+  font-size: 20vw;
+}

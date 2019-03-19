@@ -1,0 +1,29 @@
+.imgthumb {
+	width: 160px;
+}
+
+.bigimage {
+	width: 800px;
+}
+
+#main {
+	width: 900px;
+	margin-left: 16px;
+	border-left: 8px solid #aeaeae;
+	font-family: Inconsolata, monospace;
+	color: #efefef;
+}
+
+#main > div {
+	border-left: 8px solid #8e8e8e;
+	margin-top: 16px;
+
+}
+
+body {
+	background-color: #0a0a0a;
+}
+
+.outimg {
+	width: 400px;
+}

@@ -1,0 +1,9 @@
+#main {
+  width: 540px;
+  margin: 0 auto;
+  font-family: helvetica;
+}
+
+img {
+  max-width: 540px;
+}

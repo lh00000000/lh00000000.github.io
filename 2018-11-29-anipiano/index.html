@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>🎹</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- <script src="./script.js"></script> -->
+</head>
+
+<body>
+    <div id="main">
+        <h2 id="specialUpdate">UPDATE!!! i cheated and used an extra week to cut up the rest of the piano !!!</h2>
+        <iframe src="https://player.vimeo.com/video/304522297" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p class="rightHalf">assignment : create an animation in after effects</p>
+        <p class="rightHalf">i wanted to create an animation that was primarily driven using the after effects expressions javascript engine to follow the audio of a piece i would write using raw audio data (1 for speaker cone fully out, -1 for fully in). i wanted this animation to be the workings of a piano whose motion i would recreate by creating puppetry from stills. i thought this could possibily be a cheaper way to make myself lose interest in pursuing piano tuning training.</p>
+        <p class="rightHalf">i couldn't figure out a way to fiddle around with having the expression code know what part of the piano hammer it was coordinated with and i spent too much time figuring out how to implement frequency sweeps and being indecisive with how to organize unit conversions between seconds, samples, beats, pitches, and hz. so i just ended up with an octave of piano hammers that turn black.</p>
+        <p class="rightHalf">i really hoped for an oscilloscope / wagon-wheel effect with the rhythm-to-pitch transitions. i think that kind of happened ? but also some parts of my hammers turn black forever and i couldn't figure out why and it's 4:30am and i keep falling asleep because i stayed up til 7am yesterday.</p>
+        <p class="rightHalf"><a href="https://www.flickr.com/photos/28727587@N07/14772284099/in/photolist-ovnPpr-9PRZ1-osgKP7-9wA5sh-7HK2ro-9wA525-9wx4VF-oy7htK-9wA3M7-ov54rM-kqzVHx-dUUi34-od95NF-osNRSh-odkqBs-oMQMjN-aSWQMK-oeUmeg-227V6Ei-raLAwS-4uEf29-odeuP8-7BVsnV-oeR35B-a23XCh-8BP9Us-owmEHs-owp1WE-ouBf6f-6WVSnf-arR1L7-LN3k4Q-owpSXb-ovanrd-4yE9zM-rEzRXU-owohhV-bqN5zf-rEAmA4-rEzPLE-bqN5Bm-rEzJQs-e2Qcca-owntnQ-xCjbXR-8p5T8y-rEFC16-66Be5y-7EgSMq-E6pXfu">THE PHOTO IS BY FLICKR USER drunk_pencil</a></p>
+        <p class="rightHalf">anyways, here's the vid ! </p>
+<iframe src="https://player.vimeo.com/video/303461977" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p class="rightHalf">here's the after effects expression (just for opacity...)</p>
+        <pre><code class="javascript">
+var midiCode = parseInt(name);
+var keyCode = midiCode - 60;
+var totalKeys = 12;
+var amp = parseInt(thisComp.layer("Audio Amplitude").effect("Both Channels")("Slider"));
+var frameNo = timeToFrames(t = time + thisComp.displayStartTime, fps = 1.0 / thisComp.frameDuration, isDuration = false);
+((amp > 0) && (frameNo % totalKeys == keyCode)) ? 0 : 100;
+        </code></pre>
+        <p>here's how i set up my layers in photoshop. each layer group is the midi code the that key (or at least my best guess). this was to make the layer-metadata parsing easier in after effects</p>
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-29-anipiano/photoshop.png">
+        <p>this is how i was attemping to time the key trigging</p>
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-29-anipiano/sheets.png">
+        <p>these are some audio glitches that happened when i didn't set sampling rates correctly</p>
+        <audio controls>
+          <source src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-29-anipiano/glitch1.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-29-anipiano/glitch2.mp3" type="audio/mp3">
+        </audio>
+        <p>first sketch for the music (sadly this is how i "write" most of my "music" these days, if at all)</p>
+        <pre><code class="markdown">
+rand intro
+noise randomize random length duty cycle
+sweep
+hold a6
+hold a2
+hold a-2
+noise for a quarter
+pulse at 160 eighths
+rest for 2n
+pulse
+rest for 1.5
+pule for dot quarter
+rest for 4
+arpeggio pattern. 1 3 8 10 -
+FAE for 3n
+FDE for 3n
+FBE  for 4n
+FAB for 4n
+EAB
+EGBCE SLOWING ARP
+hold B
+NOISE
+pulse
+        </code></pre>
+
+        <p>here's the python code for the raw audio generation</p>
+        <pre><code class="python">
+import librosa
+import numpy as np
+import bitarray
+from tqdm import tqdm
+import itertools as it
+import random
+import functools as ft
+SR = 44100
+
+def look(x):
+  return x
+
+
+from collections import deque
+from itertools import islice
+
+
+def ngrams(tokens, n):
+    tokens = iter(tokens)
+    gram = deque(islice(tokens, n - 1), maxlen=n)
+    for token in tokens:
+        gram.append(token)
+        yield tuple(gram)
+
+class Duration:
+    def __init__(self, unit, a, b = None):
+        if unit == "seconds":
+            self._samples = a * SR
+        elif unit == "periods" or unit == "beats":
+            self._samples = a * b.period().samples()
+        elif unit == "samples":
+            self._samples = a
+
+    def seconds(self):
+        return self._samples / SR
+
+    def samples(self):
+        return self._samples
+
+    def periods(self, rate):
+        return self._samples / rate.period().samples()
+
+    def __mul__(self, scalar):
+        return Duration("samples", self._samples * scalar)
+
+    def __add__(self, other_duration):
+        return Duration("samples", self._samples + other_duration.samples())
+
+    def __sub__(self, other_duration):
+        return Duration("samples", self._samples - other_duration.samples())
+
+
+class Rate:
+    def __init__(self, unit, a):
+        if unit == "hz":
+            self._per_sample = a / SR
+        elif unit == "bpm":
+            self._per_sample = a / SR / 60
+        elif unit == "per_sample":
+            self._per_sample = a
+        elif unit == "note":
+            self._per_sample = librosa.note_to_hz(a) / SR
+
+    def hz(self):
+        return self._per_sample * SR
+
+    def per_sample(self):
+        return self._per_sample
+
+    def bpm(self):
+        return self._per_sample * SR * 60
+
+    def period(self):
+        return Duration("samples", 1 / self._per_sample)
+
+    def __mul__(self, scalar):
+        return Rate("per_sample", self._per_sample * scalar)
+
+    def __add__(self, other_rate):
+        return Rate("per_sample", self._per_sample + other_rate.per_sample())
+
+    def __sub__(self, other_rate):
+        return Rate("per_sample", self._per_sample - other_rate.per_sample())
+
+def click():
+    return np.asarray([1, -1], dtype="int8")
+
+
+def silence(duration):
+    return np.zeros(int(duration.samples()), dtype="int8")
+
+
+def click_pause(duration):
+    if duration.samples() > 3:
+        return np.concatenate((click(), silence(Duration("samples", duration.samples() - 2))))
+    return click()
+
+def rand_rep(pool, n):
+    return np.concatenate(tuple(random.choice(pool) for _ in range(n)))
+
+
+def rep(what, n):
+    return np.concatenate(tuple(what for _ in range(n)))
+
+
+
+def click_for_duration(rate, duration):
+    periods = int(np.ceil(duration.periods(rate)))
+    return rep(click_pause(rate.period()), periods)
+
+
+def sweep(from_rate, to_rate, duration):
+    resolution = Rate("hz", 100)
+    frequencies = np.logspace(
+        np.log(from_rate.hz()),
+        np.log(to_rate.hz()),
+        duration.periods(resolution),
+        base=np.e
+    )
+    windows = (click_for_duration(Rate("hz", f), resolution.period()) for f in frequencies)
+    return np.concatenate(tuple(windows))
+
+
+def song():
+    def a_oct(dur):
+        return np.concatenate(tuple([
+                    click_for_duration(Rate("note", "A{}".format(octno)), dur) for
+                    octno in [1,2,3,4,5,6,7,6,5,4,3,2]
+                ]))
+    def rand_sweep(max_freq, event_duration):
+      min_window_nsamples = max_freq.period().samples()
+      def rand_click(chance):
+        if random.random() < chance:
+          return click_pause(max_freq.period())
+        else:
+          return silence(max_freq.period())
+      n_rounds = int(event_duration.samples() / min_window_nsamples)
+      return np.concatenate(tuple([
+                    rand_click(((i / n_rounds) ** 2))
+                    for i in
+                    range(n_rounds)
+                  ]))
+
+    def one_up(notes, dur):
+      pairs = list(ngrams(notes, 2))
+      def one_pair(pair):
+        prime_root = Rate("note", pair[0] + "5")
+        prime_third = Rate("note", pair[1] + "5")
+        oct_root = Rate("note", pair[0] + "6")
+        oct_third = Rate("note", pair[1] + "6")
+
+        return np.concatenate(tuple([
+                click_for_duration(pitch, dur)
+                for pitch in [prime_root, prime_third, oct_root, oct_third]
+                                ]))
+
+
+      return np.concatenate(tuple([one_pair(pair) for pair in pairs]))
+
+    def ritardando():
+      return np.concatenate(tuple([
+        one_up("EAB", Duration("seconds", timelen))
+        for timelen
+        in np.linspace(0.1, 1.5, 3) # 4 sames
+      ]))
+
+
+    return np.concatenate(
+        (
+          rand_sweep(Rate("hz", 8), Duration("seconds", 6)),
+          rand_sweep(Rate("hz", 128), Duration("seconds", 1)),
+          rand_sweep(Rate("hz", 16), Duration("seconds", 3)),
+          rand_sweep(Rate("hz", 555), Duration("seconds", 1/2)),
+          rand_sweep(Rate("hz", 20), Duration("seconds", 8)),
+          sweep(Rate("hz", 20), Rate("note", "A5"), Duration("seconds", 8)),
+
+          click_for_duration(Rate("note", "A4"), Duration("seconds", 3)),
+          click_for_duration(Rate("note", "A2"), Duration("seconds", 2)),
+          click_for_duration(Rate("note", "A2") * (1/8), Duration("seconds", 1)),
+
+          rand_sweep(Rate("hz", 1024), Duration("seconds", 1/2)),
+          rand_sweep(Rate("note", "A2") * (1/16), Duration("seconds", 1/2)),
+
+          click_for_duration(Rate("bpm", 160) * 2, Duration("periods", 24, Rate("bpm", 160))),
+          silence(Duration("seconds", 2)),
+
+          click_for_duration(Rate("hz", 160) * 2, Duration("seconds", 0.2)),
+
+          click_for_duration(Rate("bpm", 106) * 2, Duration("periods", 5, Rate("bpm", 160))),
+          silence(Duration("seconds", 1)),
+          click_for_duration(Rate("bpm", 80), Duration("seconds", 2)),
+
+
+          np.concatenate(tuple([a_oct(Duration("seconds", 0.02)) for _ in range(7)])),
+          silence(Duration("seconds", 1)),
+          np.concatenate(tuple([a_oct(Duration("seconds", 0.03)) for _ in range(3)])),
+          silence(Duration("seconds", 1)),
+
+
+          rep(one_up("FAE", Duration("seconds", 0.08)), 8),
+          rand_sweep(Rate("hz", 2046), Duration("seconds", 1)),
+          rep(one_up("FDE", Duration("seconds", 0.08)), 4),
+          rep(one_up("FBE", Duration("seconds", 0.08)), 5),
+          rep(one_up("FAB", Duration("seconds", 0.06)), 2),
+          rep(one_up("EAB", Duration("seconds", 0.1)), 2),
+          ritardando(),
+
+          rand_sweep(Rate("hz", 2048), Duration("seconds", 8)),
+          sweep(Rate("hz", 440), Rate("note", "A5"), Duration("seconds", 1)),
+          )
+        )
+
+
+librosa.output.write_wav("out.wav",
+                         np.concatenate((
+                             silence(Duration("seconds", 1)),
+                             song(),
+                             silence(Duration("seconds", 1)),
+                         )).astype("float32"),
+                         SR)
+
+        </code></pre>
+
+
+    </div>
+</body>
+</html>

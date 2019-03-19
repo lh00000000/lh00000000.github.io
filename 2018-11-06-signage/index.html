@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2018-11-06-signage
+</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="./script.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        #main {
+            width: 11500px;
+            height: 100%;
+        }
+        .floaty {
+            float: left;
+        }
+
+        .textNode {
+            margin-top: 50vh;
+            width: 480px;
+            margin-right: 240px;
+        }
+
+        .preNode {
+            margin-top: 30vh;
+            width: 480px;
+            margin-right: 240px;
+        }
+
+
+        * {
+            font-family: courier;
+        }
+
+        img {
+            height: 100vh;
+            image-orientation: from-image;
+        }
+
+        #x {
+            font-size: 80vh;
+            font-family: helvetica;
+            margin-top: 10px;
+            margin-right: 20px;
+            margin-bottom: 0px;
+            border: 1px solid black;
+
+        }
+
+        #noentry {
+            width: 700px;
+            font-size: 32vh;
+            font-family: helvetica;
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-right: 100px;
+            margin-bottom: 0px;
+            border: 1px solid black;
+            line-height: 0.8;
+        }
+
+        .or {
+            padding-top: 50vh;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="floaty textNode" id="zero"><div><p>week 2 of itp:visuallanguage. 2 good signs. 2 bad signs. 1 redesign. </p></div></div>
+        <div class="floaty"><img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-06-signage/BUMBLE.JPG" /></div>
+        <div class="floaty textNode"><p>
+            BUMBLE: i liked this sign for this dating app because it shares the same interaction as the sign for paint under it, but the advertisement for painting looks wildly successful whereas no one seemed interested in the array of "real" new yorkers to date.
+        </p></div>
+        <div class="floaty"><img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-06-signage/WEWORK.JPG" /></div>
+        <div class="floaty textNode"><p>
+            WEWORK: i liked this use of calligraphic hand lettering to broadcast a command to pursue, and presumably monetize, one's passions on the expensive but trendy premises  of wework's neoliberal silos. i thought the combination of machine-reproduced manual-labor and messaging was successful in conveying that the building is a safe place to excuse the relentless pursuit of profit as long as it can be used can be used as b-roll for the up-by-the-bootstraps american narrative.
+        </p></div>
+        <div class="floaty"><img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-06-signage/BROADWAY.JPG" /></div>
+        <div class="floaty textNode"><p>
+            BROADWAY: i thought this sign was successful in that it immediately presents QUICK access to a media-rich experience to learn about leasing the commercial space. the usability is difficult and overwhelming, which should filter out all individual who wouldn't actually be serious about leasing such a large and centrally located commercial space.
+        </p></div>
+        <div class="floaty"><img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-11-06-signage/NOCHEESECAKE.JPG" /></div>
+        <div class="floaty textNode"><p>
+            CHEESECAKE: this was found at the back of a mall in westbury, long island. the mall only has three stores, a store for outdoor furniture, a pf chang's, and a cheesecake factory.
+i found this sign kind of confusing because it placed at the ground-floor entrance to one of the two wings of the mall. the only entrance to any of the indoor wings of the mall is to the wing farthest away from the cheesecake factory on the second floor. it kind of looked like this :
+        </p></div>
+        <div class="floaty preNode">
+            <pre>1st floor
+|-------------
+|__X_____   m|
+-------- |  a|
+|garage| @  l|   @ is where the sign was
+|______| |__l|
+
+2nd floor
+|-------------
+|__O_____   m|
+-------- |  a|
+|garage| X  l|
+|______| |__l]--> cheesecake factory
+            </pre>
+        </div>
+        <div class="floaty textNode">
+            <p>
+            i found the directions kind of confusing because they attempt to reroute the visitor through the parking garage, which is directly behind the visitor if they are looking at the sign. the problem is that the entrance to the closest entrance parking garage is also chained shut. the only entrance is to walk to another side of the parking garage
+            </p>
+        </div>
+        <div class="floaty preNode">
+            <pre>
+  entrance to garage
+  |
+ \|/
+-==-----
+|garage| @ --- where the sign was
+|______|
+            </pre>
+        </div>
+
+        <div class="floaty textNode">
+            <p>
+            if i were to redesign the sign, i would make it look like this:
+            </p>
+        </div>
+        <div class="floaty">
+            <h1 id="x">X</h1>
+        </div>
+        <div class="floaty or"><p>
+            or
+        </p></div>
+        <div class="floaty">
+            <h1 id="noentry">NO MALL ENTRY</h1>
+        </div>
+        <div class="floaty textNode"><p>
+            to simply signify that there is no ground-floor entrance to the mall there. the cheesecake factory maintains a heavy presence and separate entrance from the parking lot. i would argue that attempts to reroute the visitor through the parking lot and mall are a waste of time that could be spent eating Buffalo Blasts®. the 2-story facade (although the first floor is closed) of the cheesecake factory faces the only drivable entrance to the mall parking lot, so most visitors would see and know about the easiest entrance to the cheesecake factory before they find this sign.
+
+        </p></div>
+    </div>
+</body>
+</html>

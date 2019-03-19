@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2018-12-13-worldfiltersyn</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <p> for the final performance of geneitrative music, i wanted to try to make progress on an idea i've had for a while about a site/app where anyone can record audio to be streamed to a set of servers that mux all of the audio into a single track that then can be "tapped into" with a midi api. so if you hit a C4, you get filter of the world-trashhose of all the C4-ish stuff. </p>
+    <p>i searched youtube for the word "world" and sorted by recency of upload, then took maybe 40-60 files. i didn't use all of the files because some where two hours which made it hard to iterate.</p>
+    <p>i then normalized the sampling rates and ran everything through aubio pitch detection, which gave me annotations of the onset times of differen tpitches for each file. the idea was to do a demo where i just filtered for an octave of pitches amongst this corpus. but as time went down the toilet, i tried to just do C4. as of now, i'm running into corrupted-file errors and i don't really know why.</p>
+    <h3>i'm sorry</h3>
+    <a href="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13-worldfiltersyn/out.aac">download to the messed up file here</a>
+
+</body>
+</html>

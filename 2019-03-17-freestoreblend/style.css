@@ -1,0 +1,172 @@
+#finalblender {
+	width: 50%;
+}
+
+p {
+	font-family: monospace;
+	font-size: 18pt;
+}
+#introtxt {
+	width: 50%;
+	float: right;
+	height: 50vw;
+	position: relative;
+	top: 100px;
+
+}
+#goal {
+	width: 500px;
+	margin: 0 auto;
+
+}
+
+#goal img {
+	width: 100%;
+}
+
+body {
+	background-color: #ba9b7c;
+	margin: 0;
+}
+
+#knolled {
+	width: 100%;
+}
+
+#started p {
+	position: relative;
+	bottom: -150px;
+	width: 70%;
+}
+
+#decided {
+
+	border: 8px dashed gray;
+	width: 450px;
+	margin: 160px auto;
+	padding: 16px;
+}
+
+#scrape p {
+	position: relative;
+	bottom: -100px;
+	left: 200px;
+	width: 300px;
+}
+#scrape img {
+	width: 400px;
+}
+
+#scrape .imageStack {
+	width: 850px;
+	margin: 0 auto;
+}
+
+img {
+	width: 500px
+}
+
+#cap {
+	position: absolute;
+	width: 600px;
+	right: 0px;
+}
+#cap p {
+	display: inline;
+
+}
+
+#controls {
+	width: 300px;
+	display: relative;
+	top: 800px;
+	left: 0px;
+	padding: 0px;
+
+}
+#controls img {
+	width: 300px;
+	margin: 0px;
+}
+
+#board img {
+	width: 300px;
+}
+
+#inappropriate img{
+	width: 300px;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+#inappropriate p {
+	width: 300px;
+	display: inline-block;
+	border: 8px solid #554231;
+}
+
+#despite img {
+	display: inline-block;
+}
+
+#despite p {
+	display: inline-block;
+}
+
+#rubber {
+	width: 400px;
+	margin-left: 150px;
+}
+
+#rubber p {
+	position: relative;
+	bottom: -150px;
+	left: 110px;
+	width: 600px;
+}
+
+
+#hardware {
+	width: 700px;
+	float:right;
+}
+
+#stray {
+	clear: right;
+	width: 900px;
+	margin: 0 auto;
+ 	align-items: top;
+ 	display: flex;
+}
+
+#stray p {
+	display: inline-block;
+	width: 100px;
+	margin: 10px;
+}
+
+#stray .lhs {
+	text-align: right;
+
+}
+#stray video {
+	height: 500px;
+	display: inline-block;
+
+}
+
+
+#stray span {
+	display: inline-block;
+	margin-bottom: 16px;
+}
+
+#retro {
+	width: 300px;
+	border: 24px dotted black;
+	padding: 50px;
+	margin: 200px auto 400px;
+
+
+}

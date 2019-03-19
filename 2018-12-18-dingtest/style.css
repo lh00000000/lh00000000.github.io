@@ -1,0 +1,77 @@
+.commentArea {
+    font: 14px Helvetica;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+.tsSection {
+    margin: 32px auto;
+    width: 500px;
+    text-align: center;
+}
+.tsSection p {
+    font-size: 10px;
+    font-family: Helvetica;
+    margin: 0px;
+    color: gray;
+}
+
+
+#vidEmbed {
+    /*max-width: 50%;*/
+    width: 100%;
+}
+
+.bubbledLeft,.bubbledRight {
+    margin-top: 20px;
+    padding: 5px 9px 5px;
+    max-width: 50%;
+    clear: both;
+    position: relative;
+}
+
+.bubbledLeft{
+    float: left;
+    margin-right: auto;
+    padding-top: 10px;
+    -webkit-border-radius: 8px 8px 8px 0px;
+    -moz-border-radius: 8px 8px 8px 0px;
+    -o-border-radius: 8px 8px 8px 0px;
+    -ms-border-radius: 8px 8px 8px 0px;
+    border-radius: 8px 8px 8px 0px;
+    background-color: #AEAEAE;
+    color: #ffffff;
+}
+
+.bubbledLeft:before {
+    border-bottom: 10px solid #AEAEAE;
+    border-left: 9px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    content: "";
+}
+
+.bubbledRight{
+    float: right;
+    margin-left: auto;
+    text-align: right;
+    padding-top: 8px;
+    -webkit-border-radius: 8px 8px 0px 8px;
+    -moz-border-radius: 8px 8px 0px 8px;
+    -o-border-radius: 8px 8px 0px 8px;
+    -ms-border-radius: 8px 8px 0px 8px;
+    border-radius: 8px 8px 0px 8px;
+    background-color: #07D;
+    color: white;
+}
+
+.bubbledRight:before {
+    border-bottom: 9px solid #07D;
+    border-right: 9px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    content: "";
+}
+

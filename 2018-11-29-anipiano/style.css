@@ -1,0 +1,22 @@
+body {
+  background-color: #808080;
+  font-family: helvetica;
+}
+.rightHalf {
+  padding-left: 50%;
+}
+
+img {
+  max-width: 80%;
+}
+
+#specialUpdate{
+  padding-left: 10px;
+  animation: blink-animation .2s steps(3, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

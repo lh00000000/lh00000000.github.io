@@ -1,0 +1,19 @@
+{
+  "name": "luminghao.com",
+  "version": "1.0.0",
+  "description": "the idea was to make a website that consisted of a single long string  that was always rewriting more nested information into itself.",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lh00000000/luminghao.com.git"
+  },
+  "author": "lh00000000",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lh00000000/luminghao.com/issues"
+  },
+  "homepage": "https://github.com/lh00000000/luminghao.com#readme"
+}

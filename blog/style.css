@@ -1,0 +1,13 @@
+:focus {
+  background-color: black;
+}
+
+a:hover {
+  background-color: black;
+}
+
+body {
+  /*font-family: "helvetica neue";*/
+  font-family: monospace;
+  font-size: 3em;
+}

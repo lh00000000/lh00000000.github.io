@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2018-12-13-percsyn</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/script.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <h1>oh well</h1>
+        <p>this is a blog post documenting what i ended up presenting as my final project for physical computing. i am mainly doing this blog post to fulfill the requirements of the class, because, in it's current state, there really isn't anything worth showing to the world.</p>
+
+
+        <h2>references</h2>
+        <p>the goal was to realize a tool similar to the one presented <a href="https://luminghao.com/2018-11-06-psproposal/">here</a> i.e. some kind of midi-controlled way to mechanically percuss any object/surface in the world at high enough frequencies to produce pitch, but also maintain the ability to create (slower) rhythmic patterns.</p>
+        <p>i will begin by saying that during the 2nd user-testing session, Tom Igoe informed me that these musical/mechanistic ideas are brillantly explored in the work of <a href="http://nysoundworks.org/">Nick Yulman</a> particularly in the <a href="https://vimeo.com/41399528">"Thing Synth" of the Bricolo music making system</a>. </p>
+
+        <iframe src="https://player.vimeo.com/video/41399528?color=ffffff&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p>
+        after feeling very unoriginal for two days, i took Igoe's advice and sent an email to Yulman to beg for advice and tips. i'm extremely grateful that he obliged by doing a phone call with me soon after. although i half turned it into an existential grad-school-counseling session, he gave me some very useful tips on things like overdriving solenoids and considerations about durablity of enclosures.</p>
+        <p>another reference i have been mentioning since the start of this project is an all-cardboard (or paper) acoustic synthesizer where the keys pushed card material to a cone of gears with different amount of teeth along one axis. i have not been able to find this on the internet anymore. if you are reading this and know what i'm talking about, i would be incredibly appreciative if you sent a link my way.</p>
+
+        <h2>the presented version</h2>
+        <p>so tldr this is all i could come up with by the time i could present. </p>
+
+        <p>it's two motors that alternate smacking duty</p>
+        <iframe src="https://player.vimeo.com/video/306334336" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p>where the speed can change from slow rhythms to (low...) pitches</p>
+        <iframe src="https://player.vimeo.com/video/306334308" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p>that can also be triggered by midi (recorded and sent from ableton using osc)</p>
+        <iframe src="https://player.vimeo.com/video/306334067" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <h2>process</h2>
+        <p>there were many mistakes on this road to failure</p>
+        <p>like i said before, i first began by exploring dc motoros/a rotational idea. </p>
+        <p>after foolishly trying to get by with an dc motor, i splurged for two motoros from servocity. with more torque </p>
+        <iframe src="https://player.vimeo.com/video/306334631" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p>i could get a sound if i used a gear to pluck some kind of thing card, but it seemed to be too slow for any kind of audible pitch</p>
+        <iframe src="https://player.vimeo.com/video/306334657" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p>i started thinking about how i could get something very quick, but still high-pressure. i thought there'd be some promise in some kind of rebounding mechanism. i began imagining some kind of environment where high pressure air is used to push some kind of bouncy but hard rubber ball to the end of a shaft (but not so much that the ball flies out). the ball would then bounce back a bit, until the air make it percuss again.</p>
+        <p>i then found out this is kind of how a jackhammer works, whicih scared me but then led me to try to epxlore solenoids more. if anything, the pervasiveness of using solenoids in an electro-acoustic musical practice seemed like a good reason to get more hands-on experience when them.</p>
+
+        <p>sadly i did not get a video of this, but because i could not get a transistor working for one of the user-testing sessions (because i mistakenly thought transistors were an electronic but still digital version of a realy, only outputing high voltage or no voltage and nothing in between) i used a relay. i presented it with a bunch of materials to play with, such as concrete, cardboard, acryllic, and paper (really just a pile of garbage in the corner in the room. loud garbage).</p>
+        <p>as the semester approached its end, i decided to focus my efforts on figuring out the transistors, because the speed of the pulse wave percussion was vital to coordinate mulitple motors at a time.</p>
+        <p>i eventually learned of the analog nature of transistors by hooking up a knob</p>
+        <iframe src="https://player.vimeo.com/video/306333638" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p>i then tried to test the digital logic by putting in buttons to trigger the application of 12 volts to the solenoid. i'll skip ahead below by showing it with two solenoids instead of just one.</p>
+        <iframe src="https://player.vimeo.com/video/306334020" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <p>once i got that, i worked on getting code that just aims to fulfill pulsing at a target frequency</p>
+        <iframe src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/percsyn.html"></iframe>
+
+        <p>i made the code listen to serial, which i wrote to using node.js server with <pre>serialport</pre> to send to the arduino and <pre>node-osc</pre> to listen to ableton </p>
+        <iframe src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/receiveAbletonSendSerial.js.html"></iframe>
+
+        <p>in ableton i used the ableton connection kit to send simple osc messages to my node server</p>
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/oscsend.png" width="300px"/>
+
+
+
+
+        <h2>future plans</h2>
+        <ul>
+            <li><p>i'd like to explore vollying with more than two solenoids. i don't think i will want to do more than four though, because the pick-up-the-motor-directly nature is important to me. maybe i will be able to learn how to do clock signals so one could do 16 if they wanted, by using 4 of my 4-solenoid ones at once.</p></li>
+            <li><p>having become it a self-contained midi device (no node/websocket/osc server or ableton max4live plugin for osc-out needed) is essential to me</p></li>
+            <li><p>with slightly more experience (i.e. more experience than zero) with motors now, i'd like to continue exploring the possibility of the gear/rotational based idea. </p></li>
+        </ul>
+
+        <h2>other</h2>
+        <p>the amount of money i spent on this is truly painful. majority of the cost that's on my mind is the stuff i didn't even get a chance to try out to use, which were things like a raspberry pi setup (because someone told me the higher clock speed would be very keptful for this. they are probably right but the arduino has fit my non-overdrive purposes so far). another big chunk of the cost were buying things that itp definitely has but i thought would good idea to make a rudimentary shop at home as soon as i could. a big part of that cost has been an oscilloscope and bench power supply, which i can now say was probably worth it for the amount ambiguity it's killed during the process. so hopefully another mistake i won't make (exactly)  then wav. </p>
+
+        <p>here's some sketches</p>
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/skecth2.png" />
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/sketch1.png" />
+
+        <p>after moving this semester, i decided i didn't have enough room for a desk anywmore and woud just use the kitchen table. but it's too cold out there! so i began using my under bed storage crates and scrap wood. i am now trying to find a way to improve this system. </p>
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/deskfar.jpg">
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/deskdetail.jpg">
+
+        <p>i also think the roll of velcro tape is one of the best purchases i've made in my entire life. it used it to loosely keep the muji container i used to protect my non-enclosed loose-conductive-junk from being smashed into a pulp in my backpack.</p>
+        <img src="https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2018-12-13/box.jpg">
+
+
+        <p>oh well i guess that's all i can think of posting up for now.</p>
+
+    </div>
+</body>
+</html>
