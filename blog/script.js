@@ -40,6 +40,7 @@ const allPosts = [
   {href:"/2019-03-14-dovetailfailure", tags: ["#itp", "#subtract"]},
   {href:"/2019-03-14-subtractfailure", tags: ["#itp", "#subtract"]},
   {href:"/2019-03-17-freestoreblend", tags: ["#itp", "#freestore"]},
+  {href:"/2019-04-02-attinyapp", tags: ["#itp", "#homehard"]},
 ]
 
 const allTags = _(allPosts).chain().flatMap("tags").uniq().value()
