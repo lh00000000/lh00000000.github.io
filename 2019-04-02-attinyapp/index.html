@@ -52,6 +52,28 @@
         <H2>BIG MISTAKE</H2>
 
         <p>BROKEN. SPIKING PHENOMENON LOST.</p>
+        <pre>
+            <code>
+                #define IN A3
+                #define OUT A2
+
+                int lastIn = LOW;
+                int dice = LOW;
+                void setup() {
+                  pinMode(IN, INPUT);
+                  pinMode(OUT, OUTPUT);
+                }
+
+                void loop() {
+                  dice = random(LOW, HIGH + 1);
+                  while(analogRead(IN) > 512) {
+                    digitalWrite(OUT, dice);
+                  }
+                  digitalWrite(OUT, LOW);
+
+                }
+            </code>
+        </pre>
 
 
     </div>
