@@ -44,6 +44,7 @@ const allPosts = [
   {href:"/2019-04-08-eagleboard", tags: ["#itp", "#homehard"]},
   {href:"/2019-04-11-sunadd", tags: ["#itp", "#energy"]},
   {href:"/2019-04-19-freestoremac", tags: ["#itp", "#freestore"]},
+  {href:"/2019-04-19-sockpatch", tags: ["#mend", "#process", "apt"]},
 ]
 
 const allTags = _(allPosts).chain().flatMap("tags").uniq().value()
