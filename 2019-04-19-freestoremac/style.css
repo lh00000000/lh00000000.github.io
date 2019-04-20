@@ -1,0 +1,249 @@
+
+p {
+	font-family: helvetica;
+}
+
+li {
+	font-family: helvetica;
+}
+
+body {
+	background-image: url("https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-03-18-freestoremac/dust.png");
+	padding: 0;
+	margin: 0;
+}
+
+
+#tables {
+	max-height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#tables img {
+	/*display: inline-block;
+	width: 40%;*/
+	margin: 0;
+  padding: 0;
+}
+
+
+#intro {
+	width: 400px;
+	color: white;
+	background-color: black;
+	padding: 20px;
+	transform:scale(2,1); /* W3C */
+	position: relative;
+	left: 40%;
+}
+#carted {
+	width: 300px;
+	transform: scale(1,2); /* W3C */
+	position: absolute;
+	left: 30px;
+ 	color: white;
+	background-color: gray;
+	opacity: 0.8;
+}
+
+#catlist {
+	border: 2px solid gray;
+	background-color: black;
+	padding: 16px;
+
+	border-radius: 12px;
+}
+#catlist li {
+	width: 200px;
+	display: inline-block;
+	text-align: center;
+	letter-spacing: 2px;
+	padding: 8px;
+	background-color: white;
+	border-radius: 40px;
+	margin: 8px;
+
+}
+
+
+#gilad {
+  margin-top: 80px;
+  margin-left: 90px;
+}
+#gilad img {
+  width: 500px;
+}
+
+#gilad p {
+
+  width: 70px;
+  margin-top: -200px;
+  margin-left: 460px;
+
+  color: white;
+  background-color: black;
+  opacity: 0.7;
+
+}
+
+
+#dust {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+}
+#dust p {
+  position: absolute;
+  width: 300px;
+  text-align: center;
+  top: 100px;
+  left: 100px;
+  color: white;
+  letter-spacing: 2px;
+
+}
+#dustimgs {
+  position: absolute;
+  top: 0;
+}
+
+#dustimgs img {
+  margin: 0px;
+  padding: 0px;
+
+}
+
+#dust img {
+  width: 200px;
+
+}
+
+#trash {
+  width: 300px;
+  margin: 0 auto;
+  background-color: gray;
+  opacity: 0.9;
+}
+
+#trash p {
+  width: 100%;
+}
+#trash img {
+  width: 100%;
+}
+
+img {
+  width: 300px;
+}
+
+#guest {
+  margin: 0 auto;
+  width: 800px;
+}
+
+#guest p {
+  transform: rotate(-30deg);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: blue;
+  font-size: 32px;
+  margin-bottom: -80px;
+}
+
+#guest img {
+  width: 100%;
+}
+
+#labeledparts {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.labeledpart {
+  background-color: black;
+  margin: 8px;
+  width: 400px;
+
+}
+
+.labeledpart img {
+  width: 100%;
+}
+
+.labeledpart p {
+  text-transform: uppercase;
+  transform: scale(0.8, 3);
+  color: white;
+}
+
+#finds {
+  width: 100%;
+  text-align: right;
+}
+
+#finds p {
+  text-align: right;
+  background-color: yellow;
+}
+
+#finalshelf {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#finalshelf img {
+  width: 100%;
+}
+
+#replaced {
+  background-color: tan;
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: -3px;
+  text-align: center;
+}
+
+#decision {
+  background-color: white;
+  font-family: "Times New Roman";
+  margin: 0;
+}
+
+.seclab {
+  background-color: black;
+  margin-top: 30;
+  margin-bottom: 0;
+  color: white;
+  text-transform: uppercase;
+  transform: scale(0.7, 2);
+}
+
+#aa {
+  letter-spacing: -1px;
+  font-weight: bold;
+  background-color: white;
+  width: 100%;
+
+}
+
+#aa p {
+  width: 400px;
+  font-size: 20px;
+  padding: 4px;
+  margin-bottom: 0;
+
+}
+
+#monitor {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+
+}
+
+#monitor img {
+  width: 600px;
+}
