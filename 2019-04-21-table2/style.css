@@ -1,0 +1,85 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+#main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.block {
+  width: 600px;
+  height: 300px;
+  border-top: 8px solid black;
+  border-left: 8px solid black;
+  margin: 20px;
+
+}
+
+.block img {
+  height: 300px;
+}
+
+
+video {
+  height: 100%;
+}
+
+.caption {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  vertical-align: top;
+
+  padding: 0px;
+  word-break: all;
+  margin: 0px;
+}
+
+.caption p {
+  margin: 0px;
+  padding-left: 6px;
+  font-family: monospace;
+  font-size: 32px;
+}
+
+.blank {
+    animation: blink-animation 0.8s steps(2, start) infinite;
+    background-color: black;
+    height: 100%;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+.info {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin: 0px;
+  vertical-align: top;
+  background-color: rgba(255,255,255,1);
+  animation: bg-blink 0.1s steps(2, start) infinite;
+}
+
+@keyframes bg-blink {
+  to {
+    background-color: rgba(255,255,255,0);
+  }
+}
+
+
+.info p {
+  font-size: 32px;
+  font-family: monospace;
+  margin: 0px;
+}
