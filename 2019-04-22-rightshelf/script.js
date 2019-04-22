@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   app("#main", ele.img(imgPrefix + "IMG_6616.jpg"))
 
   app("#main", textBlock("ar r     \nan               \n ge        me \nn  t"))
-  app("#main", ele.img("57638275490__72BB6D3A-C30D-4778-9B93-9F3CCA9C5CA3.jpg"))
+  app("#main", ele.img(imgPrefix + "57638275490__72BB6D3A-C30D-4778-9B93-9F3CCA9C5CA3.jpg"))
   app("#main", ele.img(imgPrefix + "IMG_6620.jpg"))
   app("#main", ele.img(imgPrefix + "IMG_6629.jpg"))
   app("#main", ele.img(imgPrefix + "IMG_6619.jpg"))
