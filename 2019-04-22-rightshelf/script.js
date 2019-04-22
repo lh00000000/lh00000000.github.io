@@ -71,29 +71,29 @@ document.addEventListener("DOMContentLoaded", () => {
     return dp
   }
 
-  app("#main", ele.img("IMG_6609.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6609.jpg"))
   app("#main", textBlock("2019-04-07 the right shelf has accumulated many circuit boards, broken components, debris, and dust."))
-  app("#main", ele.img("IMG_6612.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6612.jpg"))
 
   app("#main", textBlock("the items are taken to a workspace to be sorted into loosely associated categorie s. "))
-  app("#main", ele.img("IMG_6618.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6618.jpg"))
 
 
   app("#main", textBlock("the extraction reveals a concentration of quintessentially freestore dust"))
-  app("#main", ele.img("IMG_6615.jpg"))
-  app("#main", ele.img("IMG_6616.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6615.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6616.jpg"))
 
   app("#main", textBlock("ar r     \nan               \n ge        me \nn  t"))
   app("#main", ele.img("57638275490__72BB6D3A-C30D-4778-9B93-9F3CCA9C5CA3.jpg"))
-  app("#main", ele.img("IMG_6620.jpg"))
-  app("#main", ele.img("IMG_6629.jpg"))
-  app("#main", ele.img("IMG_6619.jpg"))
-  // app("#main", ele.img("IMG_6631.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6620.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6629.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6619.jpg"))
+  // app("#main", ele.img(imgPrefix + "IMG_6631.jpg"))
 
   let lines = ele.div(ele.p("||||||||"))
   lines.classList.add("lines")
   app("#main", lines)
-  app("#main", ele.img("IMG_6632.jpg"))
+  app("#main", ele.img(imgPrefix + "IMG_6632.jpg"))
 
 
   app("#main", spacer())
