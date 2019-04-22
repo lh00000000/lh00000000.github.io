@@ -146,5 +146,22 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
+  setInterval(() => {
+    let newP = document.createElement("p")
+    newP.innerText = "FREE"
+    let styleStr = `font-family: Helvetica;`
+    styleStr += `font-weight: bold;`
+    styleStr += `transform: scale(${_.random(0.2, 3)}, ${_.random(0.2, 4)});`
+    styleStr += `position: absolute; `
+    styleStr += `top: ${_.random(0, document.body.scrollHeight)}px; `
+    styleStr += `left: ${_.random(0, document.body.clientWidth)}px;`
+    styleStr += `font-size: ${_.random(11, 48)}px;`
+    styleStr += `z-index: -1111`
+
+    newP.style = styleStr
+    document.querySelector("#main").appendChild(newP);
+
+  }, 200)
+
 })
 
