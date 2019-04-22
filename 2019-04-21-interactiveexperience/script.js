@@ -1,12 +1,8 @@
-// const doc = document
-
 const imgPrefix = "https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-21-interactiveexperience/"
 
 const TOSAY = {
     prelim: "documentation of freestore session 2019-03-31"
 }
-
-
 
 const imgs = {
     begin: [{ filename: "IMG_6526.jpg", caption: "documentation of freestore session 2019-03-31. wood graffiti was rejected by community. one of today's goals was getting rid of those plastic bags at the bottom" }],
@@ -127,13 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   let headlineimg = document.createElement("img")
-  headlineimg.src = "IMG_6539.jpg"
+  headlineimg.src = imgPrefix + "IMG_6539.jpg"
   headlineimg.classList.add("headlineimg")
 
   let headlineimgDiv= document.createElement("div")
   headlineimgDiv.classList.add("headlineimgContainer")
   headlineimgDiv.appendChild(headlineimg)
-
 
 
   document.querySelector("#main").appendChild(headlineimgDiv)
