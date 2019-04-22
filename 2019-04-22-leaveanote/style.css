@@ -1,0 +1,56 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+p {
+  font-style: italic;
+  transform: scale(1, 1.6);
+  font-family: Helvetica;
+}
+
+#bracket {
+  display: flex;
+  /*justify-content: center;*/
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+#viewport {
+  height: 400px;
+  width: 100%;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+
+#main {
+  width: 4045px;
+  height: 400px;
+}
+
+.captionedImg {
+  display: inline-block;
+  height: 400px;
+  padding-right: 50px;
+  overflow: hidden;
+}
+
+.captionedImg img {
+  padding-top: 50px;
+  padding-bottom: 0px;
+  margin: 0px;
+  width: 300px;
+  height: 300px;
+}
+.captionDiv {
+  padding: 0px;
+  margin: 0px;
+}
+
+.captionDiv p {
+  height: 50px;
+  margin: 0px;
+}
