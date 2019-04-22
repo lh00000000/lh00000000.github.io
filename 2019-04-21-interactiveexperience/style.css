@@ -1,0 +1,92 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+.headlineimgContainer {
+  text-align: center;
+  height: 800px;
+}
+
+.headlineimg {
+  width: 800px;
+}
+
+
+
+.beginDiv {
+  width: 800px;
+  height: 400px;
+
+}
+
+.captioned {
+  padding: 0px;
+  /*border: 1px solid black;*/
+}
+.sideCaptioned {
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.sideCaptioned img {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.leftCaptioned img {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.sideCaptioned .caption {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  height: 50%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.captioned .caption p {
+  padding: 8px;
+  margin: 0px;
+}
+
+p {
+  font-family: Helvetica;
+}
+
+
+.beginDiv {
+  margin: 0 auto;
+}
+
+
+.bottomCaptioned {
+  width: 266.666666667px;
+}
+
+.bottomCaptioned img {
+  width: 100%;
+}
+
+.bottomCaptioned p {
+  transform: scale(1, 1.2);
+  text-align: center;
+}
+
+.threeRowDiv {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
