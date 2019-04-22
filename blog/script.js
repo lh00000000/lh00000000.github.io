@@ -50,6 +50,7 @@ const allPosts = [
   {href:"/2019-04-21-table2", tags: ["#apt", "#process"]},
   {href:"/2019-04-21-interactiveexperience", tags: ["#itp", "#freestore"]},
   {href:"/2019-04-22-leaveanote", tags: ["#itp", "#freestore"]},
+  {href:"/2019-04-22-rightshelf", tags: ["#itp", "#freestore"]},
 ]
 
 const allTags = _(allPosts).chain().flatMap("tags").uniq().value()

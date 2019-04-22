@@ -1,0 +1,50 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+
+#main {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#main img {
+  width: 100%;
+}
+
+
+div.textBlock {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.textBlock p {
+  width: 100px;
+  height: 120px;
+  font-family: "Baskerville", "Georgia", serif;
+  color: white;
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+div.lines {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+
+.lines p {
+  width: 100px;
+  font-family: "Baskerville", "Georgia", serif;
+  color: white;
+  text-align: center;
+}
