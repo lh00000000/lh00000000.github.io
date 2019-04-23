@@ -1,0 +1,50 @@
+h1 {
+  font-family: Helvetica;
+  color: white;
+  font-size: 64px;
+  margin-top: 0px;
+  margin-bottom: -16px;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #0f0f0f;
+}
+
+.record {
+  background-color: white;
+  font-family: Helvetica;
+  text-transform: uppercase;
+}
+
+.keypair {
+
+}
+
+#main {
+  overflow-x: hidden;
+}
+
+.bombanner {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 0.2em;
+}
+
+.bombanner > span {
+  z-index: -1;
+  color: white;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  font-size: 64px;
+  margin: 0px 0px 0px -10px;
+  padding: 0px;
+  line-height: 0.2em;
+  /*transform: scale(3, 3);*/
+  /*overflow-y: hidden;*/
+}
+
+.hide {
+  visibility: hidden;
+}
