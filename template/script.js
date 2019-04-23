@@ -1,34 +1,30 @@
 const el = {
-  img(imgSrc) {
-    let ele = document.createElement("img")
-    ele.src = imgSrc
+  src(tag, toSrc) {
+    let ele = document.createElement(tag)
+    ele.src = toSrc
     return ele
   },
-  p(text) {
-    let ele = document.createElement("p")
+  html(tag, innerML) {
+    let ele = document.createElement(tag)
+    ele.innerHTML = innerML
+    return ele
+  },
+  txt(tag, text) {
+    let ele = document.createElement(tag)
     ele.innerText = text
     return ele
   },
-  span(text) {
-    let ele = document.createElement("span")
-    ele.innerText = text
-    return ele
-  },
-  div(child) {
-    let ele = document.createElement("div")
-    ele.appendChild(child)
+  cls(tag, classStr) {
+    let ele = document.createElement(tag)
+    classStr.split(" ").forEach(c => ele.classList.add(c.substring(1)))
     return ele
   }
 }
 
-const ap = (selector, child) => {
-  document.querySelector(selector).appendChild(child)
-  return document.querySelector(selector)
-}
-
-const cl = (ele, classes) => {
-  classes.forEach(ele.classList.add)
-  return ele
+const ap = (up, child) => {
+  let parent = (typeof up == "string") ? document.querySelector(up) : up
+  parent.appendChild(child)
+  return parent
 }
 
 document.addEventListener("DOMContentLoaded", () => {
