@@ -30,6 +30,7 @@ body {
   padding: 0;
   margin: 0;
   height: 0.2em;
+  word-break: keep-all;
 }
 
 .bombanner > span {
