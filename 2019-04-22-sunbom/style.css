@@ -48,3 +48,7 @@ body {
 .hide {
   visibility: hidden;
 }
+
+img {
+  width: 100%;
+}

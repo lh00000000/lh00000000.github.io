@@ -106,6 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ap("#main", bomBanner)
   })
 
+  ap("#main", el.src("img", "https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-22-sunbom/sunbomsch.png"))
+
   setInterval(() => {
     _.range(64).forEach(i => {
       let unlucky = _.sample(...[document.querySelectorAll(".bombanner > span")])
