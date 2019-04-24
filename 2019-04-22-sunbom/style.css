@@ -52,4 +52,16 @@ body {
 
 img {
   width: 100%;
+  border-top: 5px solid white;
 }
+
+.explain {
+  color: white;
+  font-family: Helvetica;
+  text-transform: uppercase;
+}
+
+.explain p {
+  border-top: 5px solid white;
+}
+
