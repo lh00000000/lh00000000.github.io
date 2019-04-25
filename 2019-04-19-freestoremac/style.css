@@ -189,14 +189,6 @@ img {
   background-color: yellow;
 }
 
-#finalshelf {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-#finalshelf img {
-  width: 100%;
-}
 
 #replaced {
   background-color: tan;
@@ -239,11 +231,34 @@ img {
 
 #monitor {
   display: flex;
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
-
 }
 
 #monitor img {
-  width: 600px;
+  display: block;
+  width: 50vw;
+  max-width: 400px;
+
+  height: 50vw;
+  max-height: 400px;
+
+}
+
+
+#finalshelf {
+  display: flex;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+#finalshelf img {
+    display: block;
+  width: 50vw;
+  max-width: 400px;
+
+  height: 50vw;
+  max-height: 400px;
+
 }
