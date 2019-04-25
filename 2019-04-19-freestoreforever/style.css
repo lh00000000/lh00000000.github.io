@@ -1,5 +1,6 @@
 img {
   width: 400px;
+  height: 400px;
 }
 
 body {
@@ -12,11 +13,21 @@ body {
   text-align: center;
   padding: 0;
   margin: 0;
-  height: 800px;
+  /*height: 800px;*/
 }
 
 #forever img {
   width: 800px;
+  height: 800px;
+}
+
+#forever p {
+  background-color: black;
+  color: white;
+  font-family: Helvetica;
+  width: 800px;
+  margin: 0 auto 8px;
+  padding: 16px;
 }
 
 #otherimg {
