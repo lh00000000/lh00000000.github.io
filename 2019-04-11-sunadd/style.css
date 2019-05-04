@@ -1,7 +1,19 @@
 img {
-	width: 360px;
+	width: 256px;
 }
 
 * {
 	font-family: helvetica;
+}
+
+
+img.sketch  {
+  width: auto;
+  height: 200px;
+}
+
+
+img.sms {
+  height: 200px;
+  width: auto;
 }
