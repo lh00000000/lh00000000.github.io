@@ -100,11 +100,11 @@ let blogText = _.concat(
     [img("https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-11-sunadd/IMG_6151.jpg"),
         img("https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-11-sunadd/IMG_6207.jpg")
     ],
-    text("BUSH FABRICATION METHODS : SPINE = "),
+    text(". BUSH FABRICATION METHODS : SPINE = "),
     [img("https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-11-sunadd/IMG_6474.jpg"), ],
-    text("BUSH FABRICATION METHODS : ATLAS MERGE METHOD = "),
+    text(". BUSH FABRICATION METHODS : ATLAS MERGE METHOD = "),
     [img("https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-11-sunadd/IMG_6476.jpg")],
-    text("SSOOLLDDEERR"), [
+    text(". SSOOLLDDEERR"), [
         img("https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-11-sunadd/IMG_6493.jpg"),
         img("https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-11-sunadd/IMG_6477.jpg"),
         img("https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-04-11-sunadd/IMG_6486.jpg"),
