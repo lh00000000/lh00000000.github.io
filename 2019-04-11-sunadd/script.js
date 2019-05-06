@@ -9,6 +9,17 @@ const spillContents = (tick = 1) => {
     }
 }
 document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelector("#helpButton").addEventListener("click", e => {
+      e.preventDefault()
+
+      window.open(`https://player.vimeo.com/video/334349101`, "_blank")
+      // let previewDiv = document.createElement("div")
+      // previewDiv.innerHTML = `<iframe src="https://player.vimeo.com/video/334349101" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+      // previewDiv.style["position"] = "fixed"
+      // previewDiv.classList.add("towardsRight")
+      // document.body.appendChild(previewDiv)
+    })
     document.querySelector("#calc").addEventListener("submit", e => {
         e.preventDefault()
         let A0 = document.querySelector("#A0").checked
@@ -30,6 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
             let bigStr = "COMPUTING DISABLED".split("").map(c => _.range(Math.ceil(Math.random() * 2)).map(i => c).join("")).join("")
             document.querySelector("#computeButton").value = bigStr
           }, 200)
+
+          document.querySelector("#helpButton").disabled = true
+          document.querySelector("#helpButton").value = "NOHELP"
 
           document.querySelector("#computeButton").disabled = true
 
