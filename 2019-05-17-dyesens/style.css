@@ -1,0 +1,52 @@
+body {
+  padding: 0;
+  margin: 0;
+  /*background-color: black;*/
+
+}
+
+.studentlist img {
+  width: 500px;
+}
+
+.process img {
+  width: 300px;
+}
+
+
+.nexts img {
+  width: 300px;
+}
+
+.dssc img {
+  width: 800px;
+}
+
+
+#drip {
+  display: flex;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#main {
+  /*color: white;*/
+  width: 500px;
+  margin-left: 20px;
+  font-family: "Helvetica";
+}
+
+.dripcolumn {
+  height: 100vh;
+  width: 10px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.dripcolumn .top {
+  background-image: linear-gradient(to bottom, #393499, #09046b);
+  border-radius: 5px;
+}

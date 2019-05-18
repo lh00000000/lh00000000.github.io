@@ -53,6 +53,7 @@ const allPosts = [
   {href:"/2019-04-22-rightshelf", tags: ["#itp", "#freestore"]},
   {href:"/2019-04-22-sunbom", tags: ["#itp", "#homehard"]},
   {href:"/2019-05-02-stretchexp", tags: ["#exp", "#js"]},
+  {href:"/2019-05-17-dyesens", tags: ["#itp", "#energy"]},
 ]
 
 const allTags = _(allPosts).chain().flatMap("tags").uniq().value()
