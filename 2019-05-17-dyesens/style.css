@@ -40,7 +40,6 @@ body {
 }
 
 .dripcolumn {
-  height: 100vh;
   width: 10px;
   flex-grow: 0;
   flex-shrink: 0;
