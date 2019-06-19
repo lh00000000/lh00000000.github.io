@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2019-06-19-squeezehit</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylez -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css" />
+
+    <!-- libz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redom/3.20.0/redom.min.js"></script>
+
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <audio controls><source src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/sitesound/2019-06-19-wwcd-introsnapshot.mp3" type="audio/mp3"></audio>
+        <p>rough. first "proud moment" in 2-year long subproject of 7 year project. moving on.</p>
+        <pre>
+            <code>
+                import librosa
+                import numpy as np
+                import bisect
+                import collections
+
+
+                class FuzzyDict(collections.OrderedDict):
+                  def __init__(self, *args, **kwargs):
+                    super().__init__(*args, **kwargs)
+
+                  def interpolate(self, left, right, pct):
+                    return left + (right - left) * pct
+
+                  def max_key(self):
+                    return max(self.keys())
+
+                  def __getitem__(self, key):
+                    get = super().__getitem__
+                    if key in self:
+                      return get(key)
+
+                    keys = list(self.keys())
+                    right = bisect.bisect(keys, key)
+                    left = right-1
+
+                    farleft = left == -1
+                    farright = right >= len(self)
+
+                    if farleft:
+                      return get(keys[right])
+                    elif farright:
+                      return get(keys[left])
+                    else:
+                      pct = (key - keys[left]) / (keys[right] - keys[left])
+                      return self.interpolate(
+                        get(keys[left]), get(keys[right]),
+                        pct
+                      )
+
+
+                y, sr = librosa.load("firstnote.wav", mono=False, dtype="float32")
+
+                len_insamples = len(y[1])
+                len_inseconds = float(len_insamples) / sr
+                len_inhz = 1 / len_inseconds
+                fd = FuzzyDict([
+                    (10, 880),
+                    (sr * 24, len_inhz * 2),
+                    (sr * 28, len_inhz),
+                    (sr * 30, len_inhz),
+                  ])
+
+                master_np = np.zeros((2, 10))
+                current_time = len(master_np[1])
+                last_freqtime = fd.max_key()
+                while current_time <= last_freqtime:
+                  current_freq = fd[current_time]
+                  period_len_inseconds = 1 / current_freq
+                  period_len_insamples = int(sr * period_len_inseconds)
+                  print("current_time: {}".format(str(current_time)))
+                  print("current_freq: {}".format(str(current_freq)))
+                  print("period_len_inseconds: {}".format(str(period_len_inseconds)))
+                  print("period_len_insamples: {}".format(str(period_len_insamples)))
+
+                  one_period = np.array([y[0][:period_len_insamples], y[1][:period_len_insamples]])
+                  master_np = np.hstack((master_np, one_period))
+                  current_time = len(master_np[1])
+
+                librosa.output.write_wav("out.wav", master_np, sr, True)
+            </code>
+        </pre>
+
+    </div>
+</body>
+</html>
