@@ -47,13 +47,23 @@
 
             #INSTRUCTIONS p {
                 text-align: justify;
-                font-size: 3vh;
                 font-weight: bold;
-                width: 33vh;
-                height: 33vh;
                 max-width: 80%;
                 max-height: 80%;
+                width: 33vh;
+                height: 33vh;
+                font-size: 3vw;
             }
+
+            @media only screen and (max-device-width: 480px) {
+                #INSTRUCTIONS p {
+                    width: 20vh;
+                    height: 20vh;
+                    font-size: 3vw;
+                }
+            }
+
+
 
             #INSTRUCTIONS a {
                 animation: pulse-animation 0.1s steps(2) infinite;
@@ -93,9 +103,7 @@
         <div id="INSTRUCTIONS" class="CENTEREDBOX">
             <p>
                 <a href="WEBCAL://luminghao.com/2019-08-13-annualoffsite/ANNUAL_OFFSITE.ics">
-                    PLEASE PREPARE TO PRESENT THE PROGRESS OF YOUR DEPARTMENT IN
-                    ROOM 1A AT 04:30PM EASTERN STANDARD TIME IN ROOM 1A OF THE
-                    109 SOUTH 5TH STREET OFFICE
+                    PLEASE PREPARE TO PRESENT THE PROGRESS OF YOUR DEPARTMENT AT 04:30PM EASTERN STANDARD TIME IN ROOM 1A OF SOUTH WILLIAMSBURG WEWORK OFFICE AT 109 SOUTH 5TH STREET.
                 </a>
             </p>
         </div>
