@@ -51,14 +51,12 @@
                 max-width: 80%;
                 max-height: 80%;
                 width: 33vh;
-                height: 33vh;
-                font-size: 3vw;
+                font-size: 3vh;
             }
 
             @media only screen and (max-device-width: 480px) {
                 #INSTRUCTIONS p {
                     width: 20vh;
-                    height: 20vh;
                     font-size: 3vw;
                 }
             }
@@ -93,6 +91,28 @@
                     color: white;
                 }
             }
+
+            #HYPERLINKS {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            #HYPERLINKS > div {
+                margin: 8px;
+            }
+
+            #HYPERLINKS a {
+                font-family: helvetica;
+                color: black;
+                text-decoration: none;
+            }
+
+            #HYPERLINKS a:hover {
+                text-decoration: underline;
+            }
         </style>
     </head>
 
@@ -106,6 +126,23 @@
                     PLEASE PREPARE TO PRESENT THE PROGRESS OF YOUR DEPARTMENT AT 04:30PM EASTERN STANDARD TIME IN ROOM 1A OF SOUTH WILLIAMSBURG WEWORK OFFICE AT 109 SOUTH 5TH STREET.
                 </a>
             </p>
+        </div>
+        <div id="HYPERLINKS">
+                <div>
+                    <a href="https://docs.google.com/spreadsheets/d/1ukz58ozMcs2UVLlGOBdGWFEFsl6KSI-Pf10XRaxG00Y/edit?usp=sharing"><span>RSVP</span></a>
+                </div>
+                <div>
+                    <a href="https://docs.google.com/presentation/d/1w1IzAY6yHglKuTeIpCJ2pgDh2myNKlVjZS3bZbOLLug/edit?usp=sharing"><span>DECK</span></a>
+                </div>
+                <div>
+                    <a href="https://hangouts.google.com/call/kWEtfTDolhhjD-bFFbhvAEEE"><span>REMOTE</span></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/events/652849591882372/"><span>ENDORSE</span></a>
+                </div>
+                <div>
+                    <a href="./help"><span>HELP</span></a>
+                </div>
         </div>
     </body>
 </html>
