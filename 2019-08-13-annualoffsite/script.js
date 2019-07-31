@@ -27,6 +27,9 @@ const ap = (up, child) => {
   return parent
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-
+document.addEventListener("DOMContentLoaded", async () => {
+  let res = await fetch("https://luminghao.com/2019-08-13-annualoffsite/ANNUAL_OFFSITE.ics")
+  let resText = await res.text()
+  let daturi = `data:text/calendar,${encodeURIComponent(resText)}`
+  document.getElementById("CALTEXTLINK").href = daturi
 })
