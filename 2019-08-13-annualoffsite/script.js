@@ -13,7 +13,7 @@ const pitch = ({audioContext, masterGainNode}, freq, length) => {
   let now = audioContext.currentTime
   let oscillator = audioContext.createOscillator()
   let episilon = 0.001
-  oscillator.type = "sine"
+  oscillator.type = "triangle"
   oscillator.frequency.value = freq
   oscillator.connect(masterGainNode)
   masterGainNode.gain.setValueAtTime(0.8, now)
@@ -21,7 +21,6 @@ const pitch = ({audioContext, masterGainNode}, freq, length) => {
   oscillator.start(now)
   oscillator.stop(now + length + episilon)
 }
-
 
 document.addEventListener("DOMContentLoaded", async () => {
   let res = await fetch("https://luminghao.com/2019-08-13-annualoffsite/ANNUAL_OFFSITE.ics")
@@ -51,11 +50,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const minPeriod = 9.090909
 
   setInterval(() => {
-    let sinceStart = (new Date()) - startdt
-    let deci = (Math.sin(sinceStart / lfo) + 1) / 2
-    period = (deci * maxPeriod) + minPeriod
-  }, 8)
+      let sinceStart = (new Date()) - startdt
+      let deci = (Math.sin(sinceStart / lfo) + 1) / 2
+      period = (deci * maxPeriod) + minPeriod
+      window.requestAnimationFrame(adjustPeriod)
+  }, 16)
 
+  // start sound on ios
+  document.querySelector("body").addEventListener("touchend", () => pitch({audioContext, masterGainNode}, 110, 1))
 })
 
 
