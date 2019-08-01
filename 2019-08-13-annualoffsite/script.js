@@ -22,6 +22,28 @@ const pitch = ({audioContext, masterGainNode}, freq, length) => {
   oscillator.stop(now + length + episilon)
 }
 
+
+
+const freqs = {
+  CS6: 1108.731,
+  GS5: 830.6094,
+  E4: 659.2551,
+  A4: 440,
+  D4: 293.6648
+}
+let baseFreq = _.sample([
+  freqs.CS6,
+  freqs.CS6,
+  freqs.GS5,
+  freqs.GS5,
+  freqs.GS5,
+  freqs.E4,
+  freqs.E4,
+  freqs.A4,
+  freqs.D4,
+  freqs.D4,
+  freqs.D4,
+])
 document.addEventListener("DOMContentLoaded", async () => {
   let res = await fetch("https://luminghao.com/2019-08-13-annualoffsite/ANNUAL_OFFSITE.ics")
   let resText = await res.text()
@@ -32,12 +54,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   let masterGainNode = audioContext.createGain()
   masterGainNode.connect(audioContext.destination)
 
-  let period = 500
+  let period = 512
   let toggleTimeout = () => {
     let newColor = toggleColor()
     pitch(
       {audioContext, masterGainNode},
-      newColor == "black" ? 440 : 220,
+      newColor == "black" ? baseFreq : (baseFreq / 2),
       Math.min(1, (period / 1000) - 0.01)
     )
     setTimeout(toggleTimeout, period)
