@@ -85,7 +85,8 @@ state.samples = [...Array(NUM_SAMPLES).keys()].map(i => {
   return sound
 })
 
-d3.csv("./ufo_small.csv", (err, data) => {
+d3.csv("https://lh00000000-public.s3.amazonaws.com/2018/09-21-ufosonfication/ufo_small.csv", (err, data) => {
+  console.log(data)
   state.csvData = data.map(sighting => ({
     ...sighting,
     ...{
