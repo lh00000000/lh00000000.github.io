@@ -3,6 +3,7 @@ const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 
 const allPosts = [
+  {href:"/2019-09-15-liao-snapshot8", tags: ["#liao", "#process", "#snapshot"]},
   {href:"/2019-09-02-liao-snapshot", tags: ["#liao", "#process", "#snapshot"]},
   {href:"/2019-06-19-squeezehit", tags: ["#liao", "#audio", "#freq"]},
   {href:"/2019-05-17-dyesens", tags: ["#itp", "#energy"]},
