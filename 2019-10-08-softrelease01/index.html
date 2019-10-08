@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>2019-10-08-liao-softrelease01</title>
+    <meta content="width=device-width, initial-scale=0.6" name="viewport">
+    <style>
+
+    body {
+        font-family: "Helvetica";
+        line-height: 1.4;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #606060;
+    }
+
+    #wrapper {
+        width: 460px;
+    }
+    #metadata {
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+        margin: 0px;
+    }
+
+
+    a {
+        text-decoration: none;
+        color: #606060;
+    }
+
+    ol {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        width: 460px;
+        font-size: 0.9em;
+    }
+
+    ol li {
+        position: relative;
+        margin: 0px;
+        border-bottom: 1px solid #EFEFEF;
+        cursor: pointer;
+    }
+
+    ol li a {
+        display: block;
+    }
+
+    li.playing {
+        background-color: #CECECE;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    #download {
+        margin-top: 8px;
+        text-align: right;
+    }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./audiojs/audio.min.js" crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+            trackEnded: function() {
+                var next = $('ol li.playing').next();
+                if (!next.length) next = $('ol li').first();
+                next.addClass('playing').siblings().removeClass('playing');
+                audio.load($('a', next).attr('data-src'));
+                audio.play();
+            }
+        });
+
+        // Load in the first track
+        var audio = a[0];
+        first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+            e.preventDefault();
+            $(this).addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', this).attr('data-src'));
+            audio.play();
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="metadata">
+        <p>2019-10-08</p>
+        <p>liao-softrelease01</p>
+        </div>
+        <ol>
+            <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/01-in.mp3">01-in</a></li>
+            <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/02-rust.mp3">02-rust</a></li>
+            <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/03-baptistlake.mp3">03-baptistlake</a></li>
+            <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/04-sfh.mp3">04-sfh</a></li>
+            <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/05-out.mp3">05-out</a></li>
+            <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/06-hh.mp3">06-hh</a></li>
+            <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/07-goingnowhere.mp3">07-goingnowhere</a></li>
+            <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/08-wwcd.mp3">08-wwcd</a></li>
+        </ol>
+        <audio preload></audio>
+        <div id="download"><a href="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/liao-softrelease00-320mp3-2019-10-08.zip">download</a>
+        </div>
+    </div>
+</body>
+
+</html>
