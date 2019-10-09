@@ -17,10 +17,12 @@ const imgCap = (imgSrc, caption, width = 600) => (
 const imgRCap = (imgSrc, caption, width = 600) => (
     <div style={{ display: "flex", flexDirection: "row", width }}>
         <div>
-            <img style={{ width: width/2 }} src={imgs[imgSrc]} />
+            <img style={{ width: width / 2 }} src={imgs[imgSrc]} />
         </div>
         <div>
-            <p  style={{ width: width/2 }}  style={{ margin: 0 }}>{caption}</p>
+            <p style={{ width: width / 2 }} style={{ margin: 0 }}>
+                {caption}
+            </p>
         </div>
     </div>
 )
@@ -40,10 +42,15 @@ const list = (title, items) => (
 )
 
 const nbt = txts => txts.join("")
-ReactDOM.render(
-    <div>
-        {imgCap("a", "bottom caption")}
-        {imgRCap("a", "right caption")}
-    </div>,
-    document.getElementById("main")
-)
+
+$(document).ready(() => {
+    hljs.initHighlightingOnLoad()
+
+    ReactDOM.render(
+        <div>
+            {imgCap("a", "bottom caption")}
+            {imgRCap("a", "right caption")}
+        </div>,
+        document.getElementById("main")
+    )
+})
