@@ -1,0 +1,27 @@
+for my final project, i'd like to make a device for percussing surfaces at regular intervals ranging from rhythmic to frequency domains.
+
+requirements of the device
+* capable of smoothly increasing and decreasing percussive taps from rhythmic (< 10hz) to frequency (>20hz) range
+* be able to vibrate at a max frequency of at least 200hz
+* be handheld so surface can be changed as a live element of performance
+* use an array of solenoids for percussive hit
+
+current technical constraints
+* accept pulse wave frequency, where each edge from 0-> 1
+    * send HIGH to solenoid transistor
+    * queues next solenoid
+    * sets up release of currently ejected solenoid
+* solenoid queuing logic implemented as shift register, avoiding computation on device
+
+implementation plan v00-u2019-10-29
+1. design circuit for clock signal triggered shift register transistor array
+2. design solenoid carriage
+3. order components and test with
+
+extracurricular goals
+* create method of sending music-based format, such as midi or osc
+* create piece using more than 3 surfaces and at least one rhythmic to slide
+* create duet piece between player using pitched percussion instrument and player using unhitched percussion instrument
+
+artistic goals
+i believe the epicenter of the present discourse on the tensions between modernist embrace of digital modes of thought and revival of analogistic humanism lies at the moment of compromise between the analog observation and its digital encoding into the realm of abstraction. i believe that this is the heart of how a society delineates between the relativist organic and conceptual inorganic and thus collectively defines what technology is to them. the technocapitalistic experiment repeatedly shows the effectiveness of technology, rationality, and abstraction when applied towards the goal of extraction, oppression, and control. one possibility is the call for decentralization, assemblages, and naturalist purity, however i view the extrapolation of these projects as reactionary calls for nostalgia, that border on a neoliberal primitivism. i believe an interrogation of  the technology at the meeting point between the analog and digital is essential step towards a new theory of the technical necessary for the continuation of the modernist mission of building the material collectivist basis for a more equitable society. and i have realized that the analog medium of sound, especially in its current state of embeddedness with the global digital computational apparatus, is a poignant medium for these kinds of interrogations. with this project, i'd hope to offer as a tool for experiments demonstrating the overlaps and distinctions between the natural, symbolized by acoustics of materiality, and the perceptive/conceptual, symbolized by the psychoacoustic phenomenon of pitch perception.

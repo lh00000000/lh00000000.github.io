@@ -1,0 +1,15 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+  width: 400px;
+}
+
+p {
+    margin: 0;
+}
+
+pre {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
