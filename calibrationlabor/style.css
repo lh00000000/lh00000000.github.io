@@ -1,0 +1,11 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+  color: rgb(239, 239, 239);
+  background-color: rgb(67,67,67);
+}
+
+a {
+    color: lightblue;
+}
