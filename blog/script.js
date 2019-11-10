@@ -3,6 +3,7 @@ const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 
 const allPosts = [
+  {href:"/2019-11-09-mouseconftalk", tags: ["#mouseconf", "#writing", "#maintenance", "#talk"]},
   {href:"/2019-10-29-percsyn2-proposal", tags: ["#compmus", "#proposal"]},
   {href:"/2019-10-29-gorne-inter", tags: ["#compmus", "#response"]},
   {href:"/2019-10-08-tryfm", tags: ["#maxmsp", "#audsyn"]},
