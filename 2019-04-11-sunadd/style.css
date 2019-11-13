@@ -1,10 +1,14 @@
 img {
 	width: 256px;
+    vertical-align: middle;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 * {
 	font-family: helvetica;
 }
+
 
 
 img.sketch  {
@@ -16,4 +20,19 @@ img.sketch  {
 img.sms {
   height: 200px;
   width: auto;
+}
+
+img.showPic {
+  max-width: 800px;
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+#spillzone {
+
+    /*display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;*/
 }
