@@ -76,6 +76,17 @@ const assets = {
       'https://raw.githubusercontent.com/lh00000000/omegle-eliza/master/assets/favor.jpg',
       'https://raw.githubusercontent.com/lh00000000/omegle-eliza/master/assets/megan.jpg'
     ]
+  },
+  sunadd: {
+    imgs: [
+      'https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/sunaddshow/IMG_7151.jpg'
+    ]
+  },
+  concreteswitch: {
+    imgs: [
+      "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/concreteswitch/switchedit.png",
+      "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/concreteswitch/switcheditsmall.png",
+    ]
   }
 }
 
@@ -175,11 +186,11 @@ const projectIndex = {
     id: "badly",
     head: group(
       tag("<b>", "bad bots done badly", "</b>"),
-      tag("<span>", " is a twitter bot. ", "</span>")
+      tag("<span>", " is a twitter bot for twitter bots. ", "</span>")
     ),
     guts: group(
       ["<br />"], ["<div class='centered'>" + _.sample(assets.badly.tweets) + "</div>"],
-      tag("<span>", ' it tweets tracery code which can be used to generate other twitter bots. ', "</span>"),
+      tag("<span>", ' it tweets valid tracery code which can be used to generate other twitter bots. ', "</span>"),
       tag("<span>", ' the code can be deployed via ', "</span>"),
       tag('<a href="https://cheapbotsdonequick.com/" target="_blank">', "quick bots, done cheap", "</a>"),
       tag("<span>", '. it was created during ', "</span>"),
@@ -197,15 +208,13 @@ const projectIndex = {
       tag("<span>",
         " is " +
         _.sample([
-          "an internet user",
           "a defender of qr codes",
-          "a fan of chamomile tea",
           "in search of malt soda"
         ]) + ". ",
         "</span>")
     ),
     guts: group(
-      tag("<span>", "they enjoy many websites, such as: ", "</span>"),
+      tag("<span>", "they have used many websites, such as: ", "</span>"),
       ...oxford(
         [{
           text: "twitter",
@@ -377,6 +386,40 @@ const projectIndex = {
       tag("<span>", ". ", "</span>"),
       ["<br />"]
     )
+  },
+  sunadd: {
+    id: "sunadd",
+    head: group(
+      tag("<b>", "sunadd", "</b>"),
+      tag("<span>", " is a personal computer for the sun. ", "</span>")
+      ),
+    guts: group(
+      [`<a href="https://luminghao.com/2019-04-11-sunadd" target="_blank"><img src="${assets.sunadd.imgs[0]}" width="100%" /></a>`],
+      tag("<span>", "it was created to explore the ambiguity between energy, information, density, and difference. ", "</span>"),
+      tag("<span>", 'it features an interface of two handmade solar strings and is capable of computing "0 + 0", "1 + 0", and "0 + 1".', "</span>"),
+      tag("<a target='_blank' href='https://luminghao.com/2019-04-11-sunadd'>", ' for information on computing "1 + 1", see here.', "</a>"),
+      tag("<span>", ". ", "</span>"),
+      ["<br />"]
+      )
+  },
+  concreteswitch: {
+    id: "concreteswitch",
+    head: group(
+      tag("<b>", "concreteswitch","</b>"),
+      tag("<span>", " is a 20lb timer. ", "</span>")
+      ),
+    guts: group(
+      [`<a href="${assets.concreteswitch.imgs[0]}" target="_blank"><img src="${assets.concreteswitch.imgs[1]}" width="100%" /></a>`],
+      tag("<span>", " it is intended as timing component for hobbyist electronics projects.", "</span>"),
+      tag("<span>", " to use, simply place into a river and wait for the effects of erosion to allow the internal components to electronically connect.", "</span>"),
+      tag(`<a href="http://luminghao.com/2018-09-19-concreteswitch/" target="_blank">`, " information on the fabrication of an earlier prototype can be found here", "</a>"),
+      tag("<span>", ". ", "</span>"),
+      ["<br />"]
+
+
+      )
+
+
   }
 }
 
@@ -386,19 +429,20 @@ const orderedProjectDatums = [
   // projectIndex.pyexec
   // projectIndex.trie
   // projectIndex.collective
-
-  projectIndex.nonono,
-  projectIndex.chatter,
-  projectIndex.kidding,
+  // projectIndex.omegle,
+  // projectIndex.m,
+  // projectIndex.sandals,
+  // projectIndex.ALLCAPS,
+  // projectIndex.nonono,
   projectIndex.badly,
+  projectIndex.sunadd,
+  projectIndex.concreteswitch,
+  // projectIndex.chatter,
+  projectIndex.kidding,
   projectIndex.kms,
-  projectIndex.invisibleCat,
+  // projectIndex.invisibleCat,
   projectIndex.acceptable,
-  projectIndex.omegle,
   projectIndex.kale,
-  projectIndex.m,
-  projectIndex.sandals,
-  projectIndex.ALLCAPS,
   projectIndex.bio,
   {
     id: "bloglink",
