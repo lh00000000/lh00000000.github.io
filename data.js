@@ -395,9 +395,12 @@ const projectIndex = {
       ),
     guts: group(
       [`<a href="https://luminghao.com/2019-04-11-sunadd" target="_blank"><img src="${assets.sunadd.imgs[0]}" width="100%" /></a>`],
-      tag("<span>", "it was created to explore the ambiguity between energy, information, density, and difference. ", "</span>"),
-      tag("<span>", 'it features an interface of two handmade solar strings and is capable of computing "0 + 0", "1 + 0", and "0 + 1".', "</span>"),
-      tag("<a target='_blank' href='https://luminghao.com/2019-04-11-sunadd'>", ' for information on computing "1 + 1", see here.', "</a>"),
+      tag("<span>", "it was created in collaboration with ", "</span>"),
+      tag('<a href="https://aileenstanziola.com/">', "Aileen Stanziola", '</a>'),
+      tag("<span>", " to explore the ambiguity between energy, information, density, and difference.", "</span>"),
+      tag("<span>", ' it features an interface of two handmade solar strings and is capable of computing "0 + 0", "1 + 0", and "0 + 1".', "</span>"),
+      tag("<span>", ' for information on computing "1 + 1", ', "</span>"),
+      tag("<a target='_blank' href='https://luminghao.com/2019-04-11-sunadd'>", 'see here', "</a>"),
       tag("<span>", ". ", "</span>"),
       ["<br />"]
       )
@@ -411,8 +414,8 @@ const projectIndex = {
     guts: group(
       [`<a href="${assets.concreteswitch.imgs[0]}" target="_blank"><img src="${assets.concreteswitch.imgs[1]}" width="100%" /></a>`],
       tag("<span>", " it is intended as timing component for hobbyist electronics projects.", "</span>"),
-      tag("<span>", " to use, simply place into a river and wait for the effects of erosion to allow the internal components to electronically connect.", "</span>"),
-      tag(`<a href="http://luminghao.com/2018-09-19-concreteswitch/" target="_blank">`, " information on the fabrication of an earlier prototype can be found here", "</a>"),
+      tag("<span>", " to use, simply place into a river and wait for the effects of erosion to allow the internal components to electronically connect. information on the fabrication of ", "</span>"),
+      tag(`<a href="http://luminghao.com/2018-09-19-concreteswitch/" target="_blank">`, " an earlier prototype can be found here", "</a>"),
       tag("<span>", ". ", "</span>"),
       ["<br />"]
 
@@ -434,13 +437,13 @@ const orderedProjectDatums = [
   // projectIndex.sandals,
   // projectIndex.ALLCAPS,
   // projectIndex.nonono,
+  // projectIndex.chatter,
+  // projectIndex.invisibleCat,
   projectIndex.badly,
   projectIndex.sunadd,
   projectIndex.concreteswitch,
-  // projectIndex.chatter,
   projectIndex.kidding,
   projectIndex.kms,
-  // projectIndex.invisibleCat,
   projectIndex.acceptable,
   projectIndex.kale,
   projectIndex.bio,
