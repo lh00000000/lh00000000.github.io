@@ -48,8 +48,8 @@ $(document).ready(() => {
 
     ReactDOM.render(
         <div>
-            {imgCap("a", "bottom caption")}
-            {imgRCap("a", "right caption")}
+            {imgCap(imgs.a, "bottom caption")}
+            {imgRCap(imgs.a, "right caption")}
         </div>,
         document.getElementById("main")
     )
