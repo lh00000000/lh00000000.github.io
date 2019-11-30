@@ -3,7 +3,8 @@ const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 
 const allPosts = [
-  {href:"/2019-11-25-maxjstest", tags: ["#maxmsp", "#compmus", "exp"]},
+  {href:"/2019-11-29-homehard-letter", tags: ["#homehard", "#itp"]},
+  {href:"/2019-11-25-maxjstest", tags: ["#maxmsp", "#compmus", "#exp"]},
   {href:"/2019-11-23-tableenergy", tags: ["#exp", "#event"]},
   {href:"/2019-11-19-percsyn2-update", tags: ["#update", "#compmus"]},
   {href:"/2019-11-09-mouseconftalk", tags: ["#mouseconf", "#writing", "#maintenance", "#talk"]},
