@@ -123,6 +123,7 @@ $(document).ready(() => {
                 </ul>
             </div>
             <img src={assets.bantam} width={500} />
+            <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-11-30-solarboard/Screen%20Shot%202019-04-30%20at%203.06.03%20AM.png" width={500} />
             <div>
                 <p>checklist i made for milling</p>
                 <ul>
