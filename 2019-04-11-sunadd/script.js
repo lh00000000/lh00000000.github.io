@@ -189,7 +189,20 @@ const urls = {
   show2:
     "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/sunaddshow/IMG_7152.jpg",
   show3:
-    "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/sunaddshow/IMG_7166.jpg"
+    "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/sunaddshow/IMG_7166.jpg",
+
+  "wiresontable":
+    "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-11-30-sunaddmore/58000100835__0D42B334-19C0-48A4-B8B3-865B39DE5EBC.jpg",
+  "basementfar":
+    "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-11-30-sunaddmore/IMG_6968.jpg",
+  "face":
+    "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-11-30-sunaddmore/IMG_7120.jpg",
+  "basement":
+    "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-11-30-sunaddmore/IMG_6969.jpg",
+  "coiled":
+    "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-11-30-sunaddmore/IMG_7127.jpg",
+  "oneshard":
+    "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-11-30-sunaddmore/IMG_7111.jpg"
 }
 
 const period = () => text(". ")
@@ -222,9 +235,24 @@ const sketches = [
   period()
 ]
 
+const v1  = [
+  text("V1 WPANELS ="),
+  [
+
+    img(urls.basementfar),
+    img(urls.basement),
+  ],
+  period()
+]
+
 const bush = [
   text("BUSH FABRICATION ="),
   [
+
+    img(urls.wiresontable),
+    img(urls.coiled),
+    img(urls.face),
+    img(urls.oneshard),
     img(urls.eagleSche),
     img(urls.imgB8),
     img(urls.imgB9),
@@ -287,8 +315,9 @@ let blogText = _.concat(
   ...showPics,
   ...explanation,
   processDivider,
+  ...v1,
   ...bush,
   ...board,
   ...research,
-  ...sketches,
+  ...sketches
 )
