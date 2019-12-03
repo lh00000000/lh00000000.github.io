@@ -3,6 +3,7 @@ const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 
 const allPosts = [
+  {href:"/2019-12-03-headpiece", tags: ["#compmus"]},
   {href:"/2019-12-02-plantbottles", tags: ["#plant", "#process"]},
   {href:"/2019-12-02-solarcells", tags: ["#solar", "#process"]},
   {href:"/2019-11-30-solarboard", tags: ["#homehard", "#itp", "#smt"]},
