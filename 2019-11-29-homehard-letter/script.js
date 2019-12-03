@@ -75,11 +75,38 @@ const assets = {
         "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-11-29-homehard-letter/Screen-Shot-2019-04-20-at-3.43.21-AM.png"
 }
 
+let moreassets = {
+    "0":
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-12-02-more-homehardletter/IMG_6840.jpg",
+    "1":
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-12-02-more-homehardletter/IMG_6853.jpg",
+    "2":
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-12-02-more-homehardletter/IMG_6829.jpg",
+    "3":
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-12-02-more-homehardletter/IMG_6857.MOV",
+    "4":
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-12-02-more-homehardletter/IMG_6838.jpg",
+    "5":
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-12-02-more-homehardletter/IMG_6858.jpg"
+}
+
+let mov = (src, width = 320, height = 240, fileextension = "mp4") => (
+    <video width={width} height={height} controls>
+        <source src={src} type={`video/${fileextension}`} />
+    </video>
+)
 $(document).ready(() => {
     hljs.initHighlightingOnLoad()
 
     ReactDOM.render(
         <div>
+            <div>
+                {imgCap(
+                    moreassets["5"],
+                    "all of the failures + one working board",
+                    600
+                )}
+            </div>
             <p>
                 late post but i wanted to get these pics out of my notes on an
                 assignment i did for my "homemade hardware" class, which was to
@@ -144,6 +171,10 @@ $(document).ready(() => {
                     othermill.{" "}
                 </li>
             </ul>
+            <div>
+                {imgCap(moreassets["2"], "finally working version", 600)}
+                {mov(moreassets["3"], 400, 640)}
+            </div>
             <p>bom</p>
             <ul>
                 <li>in headers</li>
@@ -173,7 +204,12 @@ $(document).ready(() => {
                 <li>3k (right before + of lm386)</li>
                 <li>10k (for attiny reset)</li>
             </ul>
+
             <div>
+                <div>
+                    {imgCap(moreassets["0"], "testing leds")}
+                    {imgRCap(moreassets["1"], "earlier gross version")}
+                </div>
                 <div>
                     <p>basic sketch</p>
                     <img src={assets["5"]} width={200} />
@@ -182,15 +218,20 @@ $(document).ready(() => {
 
                 <div>
                     <p>board design</p>
-                    <img src={assets["8"]} width={600} />
+
                     <img src={assets["6"]} width={600} />
                 </div>
                 <div>
                     <p>milling</p>
                     <img src={assets["10"]} width={600} />
+                    {imgRCap(moreassets["4"], "milling two at a time")}
                 </div>
                 <div>
-                    <p>good practice adding lm386 to eagle library</p>
+                    <p>
+                        good practice adding lm386 to eagle library. sorta. put
+                        the 8pin dip version by stealing footprint from attiny85
+                        8pin dip item from library provided by andy siegler.
+                    </p>
                     <img src={assets["0"]} width={200} />
                     <img src={assets["2"]} width={200} />
                     <img src={assets["3"]} width={200} />
