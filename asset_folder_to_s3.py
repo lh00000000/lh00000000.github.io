@@ -3,12 +3,17 @@ import glob
 import sys
 import json
 import os
+from subprocess import call
 
 s3_client = boto3.client("s3")
 folder_prefix = "2019/siteassets"
 url_prefix = "https://lh00000000-public.s3.us-east-1.amazonaws.com/"
 keys_done = []
 local_asset_folder_name = sys.argv[1]
+
+
+os.system(f"jhead -autorot {os.getcwd()}/{local_asset_folder_name}/*.jpg")
+
 for filepath in glob.glob(f"./{local_asset_folder_name}/*"):
     nice_filename = os.path.basename(filepath).replace(" ", "-")
     key_str = f"{folder_prefix}/{local_asset_folder_name}/{nice_filename}"
