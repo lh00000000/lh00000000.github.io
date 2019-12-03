@@ -3,3 +3,12 @@ body {
   margin: 0;
   font-family: Helvetica;
 }
+
+section {
+    min-width: 400px;
+    max-width: 600px;
+    border: 1px solid gray;
+    margin: 2px;
+    flex-grow: 0;
+    padding: 16px;
+}
