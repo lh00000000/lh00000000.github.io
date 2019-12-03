@@ -1,4 +1,4 @@
-const imgs = {
+const assets = {
     a:
         "https://www.delphfishing.com/wp-content/gallery/wahoo/wahoo-jan-2015.jpg"
 }
@@ -47,16 +47,44 @@ let mov = (src, width = 320, height = 240) => (
     </video>
 )
 
-const nbt = txts => txts.join("")
+class PageCentered extends React.Component {
+    render() {
+        let style = {
+            display: "flex",
+            justifyContent: "center"
+        }
+        return <div style={style}>{this.props.children}</div>
+    }
+}
 
+class HugSides extends React.Component {
+    render() {
+        let style = {
+            display: "flex",
+            justifyContent: "space-between"
+        }
+        return <div style={style}>{this.props.children}</div>
+    }
+}
+
+class TotalCenter extends React.Component {
+    render() {
+        let style = {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh"
+        }
+        return <div style={style}>{this.props.children}</div>
+    }
+}
+
+const nbt = txts => txts.join("")
 $(document).ready(() => {
     hljs.initHighlightingOnLoad()
 
     ReactDOM.render(
-        <div>
-            {imgCap(imgs.a, "bottom caption")}
-            {imgRCap(imgs.a, "right caption")}
-        </div>,
+        <TotalCenter>{imgCap(assets["a"], "bottom caption")}</TotalCenter>,
         document.getElementById("main")
     )
 })
