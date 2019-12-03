@@ -163,8 +163,8 @@ const bgSection = (
         <img src={assets.wholeboard} width={500} />
         <div>
             <p>
-                "post documenting the excess power saving + power muxing for "
-                <a href="https://luminghao.com/2019-04-11-sunadd/">sunadd</a>
+                "post documenting the excess power saving + power muxing board made for "
+                <a href="https://luminghao.com/2019-04-11-sunadd/">sunadd</a> back in april-may 2019
             </p>
             <p>
                 the board was intended as a replacement/mashup of two adafruit

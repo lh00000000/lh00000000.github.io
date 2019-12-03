@@ -135,13 +135,13 @@ const backgroundSection = (
         </div>
         <p>
             late post but i wanted to get these pics out of my notes on an
-            assignment i did for my "homemade hardware" class, which was to make
-            one letter of a sign that involved some kind of interaction. my
-            interaction was basically a clap light, where the microphone was a
-            headphone speaker. i spent a ton of time on it. i stayed up two
-            nights doing it. i made twenty boards before i got one that was
-            working. wanted to make this post to make sure i remember my
-            mistakes
+            assignment i did for my "homemade hardware" class back in april
+            2019, which was to make one letter of a sign that involved some kind
+            of interaction. my interaction was basically a clap light, where the
+            microphone was a headphone speaker. i spent a ton of time on it. i
+            stayed up two nights doing it. i made twenty boards before i got one
+            that was working. wanted to make this post to make sure i remember
+            my mistakes
         </p>
         <ul>
             <li>
