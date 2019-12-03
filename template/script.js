@@ -41,6 +41,12 @@ const list = (title, items) => (
     </div>
 )
 
+let mov = (src, width = 320, height = 240) => (
+    <video width={width} height={height} controls>
+        <source src={src} type={`video/${_.last(src.split("."))}`} />
+    </video>
+)
+
 const nbt = txts => txts.join("")
 
 $(document).ready(() => {
