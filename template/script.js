@@ -44,28 +44,28 @@ class CaptionedImage extends React.Component {
 
 class List extends React.Component {
     constructor(props) {
-        props.width = props.width || DEFAULT_COL_WIDTH
+        props.width = props.width || "100%"
         props.ordered = props.ordered || false
         super(props)
     }
 
     render() {
-        let innerItems = this.props.items.map(item => (
-                    <li>{item}</li>
-                ))
-        let list = this.props.width ? <ol>{innerItems}</ol> : <ul>{innerItems}</ul>
-        return <div style={{ width: 480 }}>
-        <div>
-            <p>{this.props.text}</p>
-        </div>
-        <div>
-            {list}
-        </div>
-    </div>
-
+        let innerItems = this.props.items.map(item => <li><p>{item}</p></li>)
+        let list = this.props.ordered ? (
+            <ol>{innerItems}</ol>
+        ) : (
+            <ul>{innerItems}</ul>
+        )
+        return (
+            <div style={{ width: this.props.width }}>
+                <div>
+                    <p>{this.props.text}</p>
+                </div>
+                <div>{list}</div>
+            </div>
+        )
     }
 }
-
 
 
 class Movie extends React.Component {
