@@ -182,6 +182,11 @@ $(document).ready(() => {
         <PageCentered>
             <div>
                 <section>
+                    <p>got the amazing opportunity to interview Christine Datz-Romero, co-founder of the Lower East Side Ecology Center via the similarily amazing class on oral history taught by Robin Nagle (maybe grad school isn't all that bad). </p>
+                    <p>i'd like to jot down major highlights of here, but i'm still transcribing the interview. </p>
+                    <p>i made this page to show some pics i took while presenting to the class about the process. </p>
+                </section>
+                <section>
                     <h1>LOWER EAST SIDE ECOLOGY CENTER GOWANUS E-WASTE WAREHOUSE AND PROP LIBRARY</h1>
                     {oneImg(warehouse["IMG_1281"])}
                     {oneImg(warehouse["IMG_1283"])}
