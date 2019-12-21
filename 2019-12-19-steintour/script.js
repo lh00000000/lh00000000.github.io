@@ -246,8 +246,8 @@ $(document).ready(() => {
                     <p>
 
                         i don't remember what was said here but i think it was
-                        something along the lines of the "99%" (i sometimes seem
-                        98% thought) "of concert pianos choose steinway". i kind
+                        something along the lines of the "99%" (i sometimes see
+                        98% though) "of concert pianos choose steinway". i kind
                         of wish i had time to do a project on who this 1% is
                         that refuses the steinway hegemony. it really does seem
                         like a pain in the butt to be to try to have a career
