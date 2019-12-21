@@ -3,6 +3,7 @@ const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 
 const allPosts = [
+  {href:"/2019-12-19-steintour", tags: ["#piano", "#event"]},
   {href:"/2019-12-11-interviewing-datzromero", tags: ["#writing", "#waste"]},
   {href:"/2019-12-05-npsin", tags: ["#digisig", "#audsyn"]},
   {href:"/2019-12-05-finding-free-stuff", tags: ["#update"]},
