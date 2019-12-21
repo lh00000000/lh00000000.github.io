@@ -165,7 +165,7 @@ $(document).ready(() => {
     ReactDOM.render(
         <div>
         <div style={{paddingLeft: 600}}>
-            <img style={{ width: "200vw", maxWidth: 1600}} src={mappics.steinwaymap} />
+            <img style={{ width: "200vw", maxWidth: 1600}} src={mappics["steinwaymap-01"]} />
         </div>
 
         <div
@@ -184,7 +184,7 @@ $(document).ready(() => {
         >
             <div>
                 <h1>2019-12-19-steintour</h1>
-                <i>note: on a desktop, the layout of this post has the text in the left column and on the right is a scrollable map i tried to make of what i remembered of the five floors we went to on the tour. if you're on mobile you probably wont't see it but you can just <a href={mappics.steinwaymap} target="_blank">click here to see the giant picture</a> directly if you want. i can't guarantee it will be useful or fun in any way. </i>
+                <i>note: on a desktop, the layout of this post has the text in the left column and on the right is a scrollable map i tried to make of what i remembered of the five floors we went to on the tour. if you're on mobile you probably wont't see it but you can just <a href={mappics["steinwaymap-01"]} target="_blank">click here to see the giant picture</a> directly if you want. i can't guarantee it will be useful or fun in any way. </i>
                 <p>
                     a couple of weeks ago (2019-12-05), i was extremely lucky to
                     have gotten a spot on one of steinway's factory tours.
