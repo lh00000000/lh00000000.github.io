@@ -1,4 +1,7 @@
 const assets = {
+  liao: {
+    iframe: '<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1157080646/size=small/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/liao">liao by (*...)</a></iframe>'
+  },
   acceptable: {
     iframe: '<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1254360733/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/acceptable">Acceptable by (*...)</a></iframe>'
   },
@@ -91,6 +94,18 @@ const assets = {
 }
 
 const projectIndex = {
+  liao: {
+    id: "liao",
+    head: group(
+      tag("<b>", "liao", "</b>"),
+      tag("<span>", " is a set of audio files. ", "</span>")
+    ),
+    guts: group([`<div class="centered">${assets.liao.iframe}</div>`],
+          tag("<span>", "it was written in 2012 and scheduled to be produced in 2013. it was released in 2020. download and additional information can be found ", "</span>"),
+          tag("<a href='https://luminghao.com/liao'>", "here", "</a>"),
+          tag("<span>", ".", "</span>"),
+          ["<br />"])
+  },
   acceptable: {
     id: "acceptable",
     head: group(
@@ -102,6 +117,7 @@ const projectIndex = {
       tag("<span>", "it was self-recorded in 2011 in my parents' house. ", "</span>"), ["<br />"]
     )
   },
+
   nonono: {
     id: "nonono",
     head: group(
@@ -439,7 +455,8 @@ const orderedProjectDatums = [
   // projectIndex.nonono,
   // projectIndex.chatter,
   // projectIndex.invisibleCat,
-  projectIndex.badly,
+  // projectIndex.badly,
+  projectIndex.liao,
   projectIndex.sunadd,
   projectIndex.concreteswitch,
   projectIndex.kidding,
