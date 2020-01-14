@@ -598,7 +598,7 @@ $(document).ready(() => {
                         companies as independent companies making parts of
                         pianos, this is the part that Father Steinway would
                         insist on doing himself. or when the process was
-                        factorized, this is the step that steinway continued to
+                        factory-ized, this is the step that steinway continued to
                         do single handedly for the longest. either way, it makes
                         sense that if this step is botched, the piano is
                         essentially a bunch of pistons whacking a loose or
