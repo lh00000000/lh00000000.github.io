@@ -5,42 +5,50 @@ const assets = {
 
 const DEFAULT_COL_WIDTH = 600
 
-
-class CaptionedImage extends React.Component {
+class CaptionedImage extends React.Component {{
     constructor(props) {
         props.width = props.width || DEFAULT_COL_WIDTH
         super(props)
     }
     rightStyle() {
-        return <div style={{ display: "flex", flexDirection: "row", width: this.props.width }}>
-        <div>
-            <img style={{ width: this.props.width / 2 }} src={src} />
-        </div>
-        <div>
-            <p style={{ width: this.props.width / 2 }} style={{ margin: 0 }}>
-                {this.props.caption}
-            </p>
-        </div>
-    </div>
+        return (
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    width: this.props.width
+                }}
+            >
+                <div>
+                    <img style={{ width: this.props.width / 2 }} src={src} />
+                </div>
+                <div>
+                    <p
+                        style={{ width: this.props.width / 2 }}
+                        style={{ margin: 0 }}
+                    >
+                        {this.props.caption}
+                    </p>
+                </div>
+            </div>
+        )
     }
 
     verticalStyle() {
-        return
-            <div style={{ width: this.props.width }}>
-                <div>
-                    <img style={{ width: "100%" }} src={this.props.src} />
-                </div>
-                <div>
-                    <p style={{ margin: 0 }}>{this.props.caption}</p>
-                </div>
-            </div>
+        return (
+            <figure style={{ width: this.props.width, margin: 0 }}>
+                <img style={{ width: "100%" }} src={this.props.src} />
+                <figcaption>
+                    <small>{this.props.caption}</small>
+                </figcaption>
+            </figure>
+        )
     }
 
     render() {
         return this.props.right ? this.rightStyle() : this.verticalStyle()
     }
-}
-
+}}
 
 class List extends React.Component {
     constructor(props) {
@@ -50,7 +58,11 @@ class List extends React.Component {
     }
 
     render() {
-        let innerItems = this.props.items.map(item => <li><p>{item}</p></li>)
+        let innerItems = this.props.items.map(item => (
+            <li>
+                <p>{item}</p>
+            </li>
+        ))
         let list = this.props.ordered ? (
             <ol>{innerItems}</ol>
         ) : (
@@ -67,7 +79,6 @@ class List extends React.Component {
     }
 }
 
-
 class Movie extends React.Component {
     constructor(props) {
         props.width = props.width || 320
@@ -75,9 +86,14 @@ class Movie extends React.Component {
         super(props)
     }
     render() {
-        return <video width={this.props.width} height={this.props.height} controls>
-            <source src={this.props.src} type={`video/${_.last(src.split("."))}`} />
-        </video>
+        return (
+            <video width={this.props.width} height={this.props.height} controls>
+                <source
+                    src={this.props.src}
+                    type={`video/${_.last(src.split("."))}`}
+                />
+            </video>
+        )
     }
 }
 
@@ -128,7 +144,7 @@ $(document).ready(() => {
     hljs.initHighlightingOnLoad()
 
     ReactDOM.render(
-        <PageCentered>{imgCap(assets["a"], "bottom caption")}</PageCentered>,
+        <PageCentered><CaptionedImage src={assets["a"]} caption="great pic"/></PageCentered>,
         document.getElementById("main")
     )
 })

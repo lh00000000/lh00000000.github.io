@@ -6,7 +6,7 @@ import os
 from subprocess import call
 
 s3_client = boto3.client("s3")
-folder_prefix = "2019/siteassets"
+folder_prefix = "2020/siteassets"
 url_prefix = "https://lh00000000-public.s3.us-east-1.amazonaws.com/"
 key_lookup = {}
 local_asset_folder_name = sys.argv[1]
