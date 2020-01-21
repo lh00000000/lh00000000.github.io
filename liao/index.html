@@ -19,13 +19,67 @@
 
           gtag('config', 'UA-39613408-3');
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="./audiojs/audio.min.js" crossorigin="anonymous"></script>
+        <script>
+        $(function() {
+            // Setup the player to autoplay the next track
+            var a = audiojs.createAll({
+                trackEnded: function() {
+                    var next = $('ol li.playing').next();
+                    if (!next.length) next = $('ol li').first();
+                    next.addClass('playing').siblings().removeClass('playing');
+                    audio.load($('a', next).attr('data-src'));
+                    audio.play();
+                }
+            });
+
+            // Load in the first track
+            var audio = a[0];
+            first = $('ol a').attr('data-src');
+            $('ol li').first().addClass('playing');
+            audio.load(first);
+
+            // Load in a track on click
+            $('ol li').click(function(e) {
+                e.preventDefault();
+                $(this).addClass('playing').siblings().removeClass('playing');
+                audio.load($('a', this).attr('data-src'));
+                audio.play();
+            });
+        });
+        </script>
 
     <body>
         <img
             id="coverart"
             src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/liao/2019-12-26-coverart.png"
         />
-        <div id="iframeholder">
+        <div id="platforms" class="colwidth">
+            <p>liao is an album by (*...). it is available via monetized music distribution platforms (such as <a href="https://open.spotify.com/album/4SmNQWxesUqlfPKGbcVAG2?si=pcQ2lgx2R6GOGPqlZYhh2w">spotify</a>, <a href="https://asteriskellipsis.bandcamp.com/album/liao">bandcamp</a>, and <a href="https://music.apple.com/us/album/liao/1495274800">apple music</a>), as a free download (in <a href="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/liao/2020-01-20-liao-mp3.zip">mp3</a> (57.4mb 320kbps) or <a href="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/liao/2019-12-26-cdbaby.zip">wav</a> (438.5mb) formats), or the javascript audio player embedded below:</p>
+        </div>
+        <div id="player" class="colwidth">
+            <ol>
+                <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/01-in.mp3">01-in</a></li>
+                <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/02-rust.mp3">02-rust</a></li>
+                <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/03-baptistlake.mp3">03-baptistlake</a></li>
+                <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/04-sfh.mp3">04-sfh</a></li>
+                <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/05-out.mp3">05-out</a></li>
+                <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/06-hh.mp3">06-hh</a></li>
+                <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/07-goingnowhere.mp3">07-goingnowhere</a></li>
+                <li><a href="#" data-src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/liao/softrelease01/08-wwcd.mp3">08-wwcd</a></li>
+            </ol>
+            <audio preload></audio>
+
+        </div>
+
+
+
+        <div id="txt" class="colwidth">
+            <p>2020-01-01</p>
+            <p><a href="https://luminghao.com/2020-01-13-liaonotes">notes</a></p>
+        </div>
+        <!-- <div id="iframeholder">
             <iframe
                 style="border: 0; width: 100%; height: 406px;"
                 src="https://bandcamp.com/EmbeddedPlayer/album=1157080646/size=large/bgcol=ffffff/linkcol=333333/artwork=none/transparent=true/"
@@ -34,10 +88,7 @@
                     >liao by (*...)</a
                 ></iframe
             >
-            <div id="txt">
-                <p>2020-01-01</p>
-                <p><a href="https://luminghao.com/2020-01-13-liaonotes">notes</a></p>
-            </div>
-        </div>
+
+        </div> -->
     </body>
 </html>
