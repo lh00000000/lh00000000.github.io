@@ -1,6 +1,7 @@
 const assets = {
   liao: {
-    iframe: '<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1157080646/size=small/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/liao">liao by (*...)</a></iframe>'
+    iframe: '<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1157080646/size=small/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/liao">liao by (*...)</a></iframe>',
+    img: 'https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/liao/2019-12-26-coverart.png'
   },
   acceptable: {
     iframe: '<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1254360733/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/acceptable">Acceptable by (*...)</a></iframe>'
@@ -100,8 +101,19 @@ const projectIndex = {
       tag("<b>", "liao", "</b>"),
       tag("<span>", " is a set of audio files. ", "</span>")
     ),
-    guts: group([`<div class="centered">${assets.liao.iframe}</div>`],
-          tag("<span>", "it was written in 2012 and scheduled to be produced in 2013. it was released in 2020. download and additional information can be found ", "</span>"),
+    guts: group(
+      [`<a href='https://luminghao.com/liao'><img class="hovertrans" src="${assets.liao.img}" width="100%"/></a>`]
+      ,
+          tag("<span>", "it was written in 2012 and scheduled to be produced in 2013. it was released in 2020 under ", "</span>"),
+          tag('<a href="https://asteriskellipsis.bandcamp.com/">', "(*...)", "</a>"),
+          tag("<span>", ". ", "</span>"),
+          tag("<span>", "it is available via monetized music distribution platforms (such as ", "</span>"),
+          tag('<a href="https://open.spotify.com/album/4SmNQWxesUqlfPKGbcVAG2?si=pcQ2lgx2R6GOGPqlZYhh2w">', "spotify", "</a>"),
+          tag("<span>", ", ", "</span>" ),
+          tag('<a href="https://asteriskellipsis.bandcamp.com/album/liao">', "bandcamp", "</a>"),
+          tag("<span>", ", or ", "</span>" ),
+          tag('<a href="https://music.apple.com/us/album/liao/1495274800">', "apple music", '</a>'),
+          tag("<span>", ") or the free download and streaming functionality provided  ", "</span>" ),
           tag("<a href='https://luminghao.com/liao'>", "here", "</a>"),
           tag("<span>", ".", "</span>"),
           ["<br />"])

@@ -23,7 +23,7 @@ body {
 }
 
 body {
-  background-color: rgb(246,246,246);
+  background-color: rgb(246, 246, 246);
 }
 
 .bloglink a {
@@ -36,9 +36,8 @@ body {
   cursor: pointer;
 }
 
-
 ul {
-  list-style-position:inside;
+  list-style-position: inside;
   margin: 0;
 }
 li {
@@ -51,7 +50,8 @@ li {
 }
 
 /* embed stuff*/
-blockquote.twitter-tweet, blockquote.twitter-video {
+blockquote.twitter-tweet,
+blockquote.twitter-video {
   font-size: 0.6em;
 }
 
@@ -65,7 +65,7 @@ blockquote.twitter-tweet, blockquote.twitter-video {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0.25em 0.9em -0.1em rgba(0,0,0,.3);
+  box-shadow: 0 0.25em 0.9em -0.1em rgba(0, 0, 0, 0.3);
 }
 
 .fakeBrowser .fakeNavBar {
@@ -90,19 +90,37 @@ blockquote.twitter-tweet, blockquote.twitter-video {
 }
 
 /* red button*/
-.fakeBrowser i:nth-child(1) {background-color: rgb(255, 86, 79)}
-.fakeBrowser i:nth-child(1):hover {background-color: rgb(255, 20, 25)}
-.fakeBrowser i:nth-child(1):active {background-color: rgb(100, 20, 25)}
+.fakeBrowser i:nth-child(1) {
+  background-color: rgb(255, 86, 79);
+}
+.fakeBrowser i:nth-child(1):hover {
+  background-color: rgb(255, 20, 25);
+}
+.fakeBrowser i:nth-child(1):active {
+  background-color: rgb(100, 20, 25);
+}
 
 /* yellow button*/
-.fakeBrowser i:nth-child(2) {background-color: rgb(255, 183, 42)}
-.fakeBrowser i:nth-child(2):hover {background-color: rgb(230, 175, 42)}
-.fakeBrowser i:nth-child(2):active {background-color: rgb(157, 112, 26)}
+.fakeBrowser i:nth-child(2) {
+  background-color: rgb(255, 183, 42);
+}
+.fakeBrowser i:nth-child(2):hover {
+  background-color: rgb(230, 175, 42);
+}
+.fakeBrowser i:nth-child(2):active {
+  background-color: rgb(157, 112, 26);
+}
 
 /* green button*/
-.fakeBrowser i:nth-child(3) {background-color: rgb(37, 198, 58)}
-.fakeBrowser i:nth-child(3):hover {background-color: rgb(10, 225, 10)}
-.fakeBrowser i:nth-child(3):active {background-color: rgb(16, 85, 26)}
+.fakeBrowser i:nth-child(3) {
+  background-color: rgb(37, 198, 58);
+}
+.fakeBrowser i:nth-child(3):hover {
+  background-color: rgb(10, 225, 10);
+}
+.fakeBrowser i:nth-child(3):active {
+  background-color: rgb(16, 85, 26);
+}
 
 .fakeBrowser input {
   font-size: 0.75em;
@@ -111,7 +129,7 @@ blockquote.twitter-tweet, blockquote.twitter-video {
   height: 1.6em;
   color: #aaa;
   width: calc(100% - 6em);
-  border: 0.1em solid #E1E1E1;
+  border: 0.1em solid #e1e1e1;
   border-radius: 0.25em;
   background-color: #eee;
   margin: 0.1em;
@@ -126,7 +144,7 @@ blockquote.twitter-tweet, blockquote.twitter-video {
   text-align: center;
 }
 
-#fillMeWithMarkovText  {
+#fillMeWithMarkovText {
   max-width: 95%;
 }
 
@@ -136,4 +154,9 @@ blockquote.twitter-tweet, blockquote.twitter-video {
   align-items: center;
   justify-content: center;
 }
-
+.hovertrans {
+  transition: 0.5s;
+}
+.hovertrans:hover {
+  opacity: 0.8;
+}
