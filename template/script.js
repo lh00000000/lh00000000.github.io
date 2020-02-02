@@ -5,7 +5,7 @@ const assets = {
 
 const DEFAULT_COL_WIDTH = 600
 
-class CaptionedImage extends React.Component {{
+class CaptionedImage extends React.Component {
     constructor(props) {
         props.width = props.width || DEFAULT_COL_WIDTH
         super(props)
@@ -48,7 +48,7 @@ class CaptionedImage extends React.Component {{
     render() {
         return this.props.right ? this.rightStyle() : this.verticalStyle()
     }
-}}
+}
 
 class List extends React.Component {
     constructor(props) {
