@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2020-02-02-tuneclass00</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- stylez -->
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.2/csshake.min.css"
+        />
+        <!-- libz -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script
+            src="https://unpkg.com/react@16/umd/react.production.min.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="./script.js" type="text/babel"></script>
+        <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/gruvbox-dark.min.css"
+        />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    </head>
+    <!-- ?
+{
+    clamps:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/clamps.jpg",
+    actionmodel:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/actionmodel.jpg",
+    flagpoling:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/flagpoling.png",
+    bathroom:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/bathroom.jpg",
+    dampertypes:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/dampertypes.png",
+    handshammer:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/handshammer.jpg",
+    underlevers:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/underlevers.jpg",
+    anglepiano:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/anglepiano.jpg",
+    alley:
+        "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/alley.jpg"
+}
+
+-->
+    <body>
+        <div id="main">
+            <article>
+                <h1>tuneclass00</h1>
+                <section id="intro">
+                    <p>
+                        this is a blog post about attending class one of the
+                        spring 2020 semester of the basic tuning class offered
+                        by the
+                        <a href="https://www.newyorkpianotuningschool.com/"
+                            >new york school of piano tuning, service, and
+                            repair</a
+                        >. this post will mention:
+                    </p>
+                    <ul>
+                        <li>tour of the restoration area</li>
+                        <li>weird facts</li>
+                        <li>pin dynamics</li>
+                        <li>practice w unison (beats)</li>
+                        <li>damper types</li>
+                    </ul>
+                    <p>for any future incoming students of the school, don't be alarmed when you go to the address and it looks like this </p>
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/alley.jpg" width="100%" alt="dark alley of trucks parked at warehouse loading docks"/>
+                </section>
+                <section>
+                    <h2>restoration area tour</h2>
+                    <p>the new york school of piano tuning, service, and repair is located in a.c. pianocraft, which is apparently the oldest piano restoration shop in nyc. ac pianocraft was founded by five steinway crafstpeople during the 60s when steinway got the reputation that their quality had dramatically dropped, creating a new market of restoration labor for pianos from the steinway "golden age" of the 20s. </p>
+                </section>
+                <section>
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/clamps.jpg" width="100%" />
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/anglepiano.jpg" width="100%" />
+                </section>
+                    <section>
+                    <h2>weird facts</h2>
+                    <ul>
+
+                        <li>
+                            rachmanioff's piano tech studied under horowitz'
+                            piano tech
+                        </li>
+                        <li>
+                            step one is to check screws and hinges. this is how
+                            buzzing happens even though it's unavoidable
+                            <ul>
+                                <li>
+                                    piano is wood, metal, and felt. wood will
+                                    never stop "breathing" esp through winter
+                                    ("so we tuners will always have jobs and
+                                    there's nothing anyone can do about it")
+                                </li>
+                            </ul>
+                        </li>
+                        <li>the top lid has one rod</li>
+                        <li>trap box is usually pine</li>
+                        <li>
+                            pedal lyre is giant screws. steinways designed for
+                            concerts i.e. quick dissembly
+                        </li>
+                        <li>
+                            old design had frame with felt to case. now it's six
+                            screws.
+                        </li>
+                        <li>
+                            under the key cover is called the name plate. this
+                            is commonly where logos are put w no relation to the
+                            origin of the piano.
+                        </li>
+                        <li>
+                            on steinways, the cheek blocks have giant easy to
+                            find and remove screws under their little bumps.
+                        </li>
+                    </ul>
+                    </section>
+                    <br />
+                </section>
+                <section>
+                    <h2>finally tuning</h2>
+                    <p>after a brief walkthrough of all the screws on the case, which is apparently a source of a lot of piano regulation labor (being a vibrating hunk of wood), we finally started working on "tuning", or the dynamics of tuning hammers and bridge pins.</p>
+
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/actionmodel.jpg" width="100%" />
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/underlevers.jpg" width="100%" />
+
+                    <p>learning about piano tuning for me so far has been learning about more and more unexpected sources of frustrations and anxieties complicating the general concept of "tighten the strings so they're the right note". two of these frustrations are flagpoling, where the weight of the hammer and direction of the twisting motion on the bridge pin results in an unavoidable temporary bending of the pin. this bent state makes the string sound slightly higher than it will instantly fall back to, making listening to its pitch inaccurate. one method of compensating for flagpoling is to keep the hammer at a sharp angle with the direction of the string, so the pin will be bent perpendicular to the direction of the string. this is because being the pin the same direction of the string would result in maximum pitch change.</p>
+                    <p>another source of anxiety is "twist" which simply refers to the pin being twisted when tightened to loosened. this means that the material of the pin will jump back into place, making listening in the moment an inaccurate representation of eventual pitch of the string. even though the pin might be of hard metal, considerations imagining if the pin were a floppy noodle must still be taken into account. the solution to compensate for this in practice this is to add a small bump of turn in the opposite direction of intender turn direction to "take the twist out"</p>
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/flagpoling.png" width="100%" />
+                    <p>i practiced w this piano that was in the bathroom</p>
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/bathroom.jpg" width="100%" alt="upright piano in a bathroom, opposite a toilet"/>
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/handshammer.jpg" width="100%" />
+                </section>
+                <section>
+                    <h2>damper types</h2>
+                    <p>Lou (the instructor and veteran tuner) listed many signs of sloppy tuning and regulation work. many of them seemed to fall under the category of not realizing or respecting where miniscule wear from string contact would accumulate, making small grooves that would unnecessarily damage some part or component if not respected in a future adjustment. although not really a result of wear and more of intended design, one site for this respect for the placement of the details of string placement is in the variety of damper heads, correlated with the allocation of strings per pitch (bass strings are usually single strings. middle range is usually three strings per pitch. upper is usually two) </p>
+                    <img src="https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass00/dampertypes.png" width="100%" />
+
+                </section>
+                <section id="toollist">
+                    <h2>list of recommended "basic" tools</h2>
+                    <p>we were given large binders of annoyingly indexed but incredibly fascinating copies of steinway service machines. the first 3 pages were recommendations for a "basic" tool set for piano tuning which i OCR'd the text of here</p>
+                    <div class="wholebearnote">
+                        <h1>
+                            NEW YORK SCHOOL OF PIANO TUNING, SERVICE & REPAIR
+                        </h1>
+                        <h2>Fall 2019</h2>
+                        <h2>BASIC TOOL LIST</h2>
+                        <br />
+                        <h4>PIANOTEK SUPPLY COMPANY</h4>
+                        <ul>
+                            <li>
+                                TH-6 Jahn Lightweight Tuning Hammer wl 5 degree
+                                head, p. D-3
+                            </li>
+                            <li>JDD-3 Double Drop Screwdriver, p. D-13</li>
+                            <li>LFT-4 Double End Let-Off Tool</li>
+                        </ul>
+                        <br />
+                        <h3>SCHAFF PIANO SUPPLY COMPANY</h3>
+                        <ul>
+                            <li>11 - Tuning Lever Tip Wrench, p. 32</li>
+                            <li>2110 - A-440 Tuning Fork, p. 33</li>
+                            <li>2) 205 - 3"L x 3/4" W, p. 34</li>
+                            <li>2) 202-1/2 - 6" L x 1/4" W, p. 34</li>
+                            <li>203 - Mute w/ Wire Handle, p. 34</li>
+                            <li>204 - Split Treble Mute, p. 34</li>
+                            <li>
+                                209 - Wool Temperament Strip, Standard, .165"
+                                thick, p.34
+                            </li>
+                            <li>26 - Combination Handle, p. 37</li>
+                            <li>472 - Back Check Regulator, p. 37</li>
+                            <li>464 Offset Key Spacer, p. 37</li>
+                            <li>75 - Hammer Shank Reducer, p. 37</li>
+                            <li>31C - Screwdriver, 8" long, p. 37*</li>
+                            <li>32C - Screwdriver, 8" long, p. 37*</li>
+                            <li>
+                                33A - #2 Phillips Screwdriver, 8" long, p. 38*
+                            </li>
+                            <li>38 - #1 Phillips Screwdriver, p. 38*</li>
+                            <li>4105 - Grand Screwdriver, p.38</li>
+                            <li>34 - Flange Screwdriver, 8" long, p. 38</li>
+                            <li>37 - Grand Screwdriver for Prop Nuts, p. 38</li>
+                            <li>67 - Regulating Screwdriver, 5" long, p.39</li>
+                            <li>36 - Handy Hammer, p. 39</li>
+                            <li>79N Nylon "T" Combination Handle, p. 39</li>
+                            <li>2) 93 - Grand Damper Hook, p. 40</li>
+                            <li>43 - Key Balance Hole Burnisher, p. 40</li>
+                            <li>65 - Upright Flange Spacer, p. 40</li>
+                            <li>895 - Hart Spring Tool, p. 41</li>
+                            <li>88 - Capstan Regulator, p. 41</li>
+                            <li>3112 - Square Capstan Regulator, p. 42</li>
+                            <li>
+                                97 - Steinway Capstan Screw Regulator, p. 42
+                            </li>
+                            <li>195 - Grand Damper Wire Easer, p. 42</li>
+                            <li>105 - Adjustable Head Voicing Tool, p. 43</li>
+                            <li>160C - Tweezers, 8" long, p. 44</li>
+                            <li>158 Punching Lifter, p. 44</li>
+                            <li>151 - Key Bushing Wedge Clamp, p. 45</li>
+                            <li>161 - Chalk Chuck, p. 46</li>
+                            <li>149 - Double End Pin Vise, p. 46</li>
+                            <li>874 Rigid Shaft Screwholder, p. 47</li>
+                            <li>190 - Oiler, p. 47</li>
+                            <li>98 Hammer Checkering File, p. 49</li>
+                            <li>
+                                139A - Grand Hammer Head Reamer for Combo
+                                Handle, p. 49
+                            </li>
+                            <li>
+                                165A - Center Pin Case Filled with Pins, p. 51
+                            </li>
+                            <li>R-16 Double Screwdriver, p. 54</li>
+                            <li>
+                                R-21 Wire Bending Pliers, Grand and Upright, p.
+                                54
+                            </li>
+                            <li>
+                                R-29 - Strike Distance Gauge, Solid Brass, p. 55
+                            </li>
+                            <li>
+                                R-32 - Key Easing Pliers, Grand and Upright, p.
+                                55
+                            </li>
+                            <li>146 String Lifter and Spacer, p. 58</li>
+                            <li>120 - Grand Hammer Extracting Pliers, p. 61</li>
+                        </ul>
+                        <p>or</p>
+                        <ul>
+                            <li>3295 - Grand Hammer Shank Extractor, p. 61</li>
+                            <li>282 - Parallel Pliers, p. 61</li>
+                            <li>5501 - Repinning Tool, p. 63</li>
+                            <li>243 Key Easing Pliers, p. 63</li>
+                        </ul>
+                        <p>or</p>
+                        <ul>
+                            <li>3121 - Key Easing Pliers, p. 63</li>
+                            <li>231 - Center Pin Nippers, p. 64</li>
+                            <li>3208 - Hammer Shank Cutters, p. 65</li>
+                            <li>
+                                235 - Parallel and Side Cutting Pliers, p. 65
+                            </li>
+                            <li>3197 - 6" Tempered Steel Rule, p. 72</li>
+                        </ul>
+                        <br />
+                        <p><b>STEINWAY</b></p>
+                        <ul>
+                            <li>.390" Dip Block</li>
+                            <li>.400" Dip Block</li>
+                            <li>.420" Dip Block</li>
+                        </ul>
+                        <br />
+                        <p><b>MISC.</b></p>
+                        <ul>
+                            <li>Tool Case</li>
+                            <li>Elmer's White Glue, 1.25 oz.</li>
+                            <li>Super Glue, singles</li>
+                            <li>Small Adjustable Wrench, 6" or less</li>
+                            <li>Needle Nose Pliers</li>
+                            <li>Scissors</li>
+                            <li>Small Vice Grips</li>
+                            <li>Small Flash Light</li>
+                            <li>Snap-Blade Utility Knife</li>
+                            <li>X-Acto Knife</li>
+                            <li>Micrometer</li>
+                            <li>Small C-Clamp</li>
+                            <li>Ronson Lighter Fluid</li>
+                        </ul>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </body>
+</html>
