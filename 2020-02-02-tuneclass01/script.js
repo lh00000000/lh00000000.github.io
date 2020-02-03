@@ -1,11 +1,7 @@
-const assets = {
-    a:
-        "https://www.delphfishing.com/wp-content/gallery/wahoo/wahoo-jan-2015.jpg"
-}
 
 const DEFAULT_COL_WIDTH = 600
 
-class CaptionedImage extends React.Component {{
+class CaptionedImage extends React.Component {
     constructor(props) {
         props.width = props.width || DEFAULT_COL_WIDTH
         super(props)
@@ -48,7 +44,7 @@ class CaptionedImage extends React.Component {{
     render() {
         return this.props.right ? this.rightStyle() : this.verticalStyle()
     }
-}}
+}
 
 class List extends React.Component {
     constructor(props) {
@@ -139,12 +135,26 @@ class Fullscreen extends React.Component {
     }
 }
 
+
+const assets = {"14": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/14.png", "00": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/00.png", "01": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/01.png", "15": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/15.png", "03": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/03.png", "17": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/17.png", "16": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/16.png", "02": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/02.png", "06": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/06.png", "12": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/12.png", "13": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/13.png", "07": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/07.png", "11": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/11.png", "05": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/05.png", "04": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/04.png", "10": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/10.png", "21": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/21.png", "09": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/09.png", "08": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/08.png", "20": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/20.png", "22": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/22.png", "23": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/23.png", "18": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/18.png", "19": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/tuneclass01/19.png"}
 const nbt = txts => txts.join("")
 $(document).ready(() => {
     hljs.initHighlightingOnLoad()
 
     ReactDOM.render(
-        <PageCentered><CaptionedImage src={assets["a"]} caption="great pic"/></PageCentered>,
+        <div>
+        <section id='intro' style={{width: "480px", margin: "auto"}}>
+            <p>this is a blog post about my second lesson at the new york school of piano tuning service and repair. it's going to be mainly snips of my drawings because writing about this stuff was very time consuming and i'm already late with my other class work.</p>
+            <p>basically today was when we went over the parts of an upright's action and basics of restringing on a grand....so it'd be a lot of description of mechanical parts for me to write out</p>
+            <p>if you'd like textual captions for any of the images pls just email me lh00000000@gmail.com but if i dont' hear from anyone i'm just going to plan to do it someday in the far future</p>
+        </section>
+        <section style={{display: "flex", flexWrap: "wrap", }}>
+            {
+                _(assets).values().sort().map(src => <CaptionedImage src={src} width="400px"/>).value()
+
+            }
+        </section>
+        </div>,
         document.getElementById("main")
     )
 })
