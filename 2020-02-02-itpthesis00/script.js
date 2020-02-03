@@ -263,6 +263,7 @@ $(document).ready(() => {
                     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTYGbobRWmQEGi4NtEH4V4AkNq3Fp6R9x3mpQkBnVF9sP7Rs2ooLHAvfUUiWc85n2BOspasyGcvYxBA/embed?start=false&loop=false&delayms=30000" frameborder="0" width="100%" height="300px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                     <p>below is a scan of the mindmap exercise mentioned above</p>
                     <CaptionedImage src={assets.mindmap} caption="a mindmap with the word encapsulation in the middle" width="100%"/>
+                    <p>i had to leave the session early to run to my piano tuning class. because the piano tuning and repair world seems to exist mostly via paper media than online, i am trying to document as much as i can via blog posts. <a href="http://luminghao.com/2020-02-02-tuneclass00/">here is a blog post about the first week (2020-01-21 a week prior to this thesis session)</a> and <a href="http://luminghao.com/2020-02-02-tuneclass01/">here is a blog post about the class i went to about this thesis section (2020-01-28)</a></p>
 
                 </section>
             </article>
