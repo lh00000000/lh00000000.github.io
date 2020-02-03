@@ -198,6 +198,7 @@ $(document).ready(() => {
                     />
                 </section>
                 <section id="shortstory">
+                    <h2>a short....................story?????</h2>
                     <p>another assignment for this week was to write a "Write a short story that forecasts future interactions or speculative fictions.". unfortunately, i had to leave early in a futile attempt to get to my piano tuning class on time so i don't know if i did this right.</p>
                     <section id="chatlog">
                     <p class="speakera"><b>hvoisin:</b> we don't have the bandwidth to be working on all of these integrations with the pianists. we can't scale this way</p>
