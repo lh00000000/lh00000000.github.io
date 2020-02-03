@@ -1,0 +1,25 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+}
+
+
+article {
+    max-width: 99%;
+    width: 480px;
+}
+
+#chatlog p {
+    margin: 0;
+    /*font-size: 0.8em;*/
+    font-family: monospace;
+}
+
+.speakera {
+    color: red;
+}
+
+.speakerb {
+    color: blue;
+}
