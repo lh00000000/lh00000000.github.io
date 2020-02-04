@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+}
+
+#root {
+    max-width: 99%;
+    width: 600px;
+    word-break: break-all;
+}
