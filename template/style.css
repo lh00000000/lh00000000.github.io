@@ -3,3 +3,19 @@ body {
   margin: 0;
   font-family: Helvetica;
 }
+#layout {
+    display: flex;
+    justify-content: center;
+}
+#mainarticle {
+    width: 480px;
+}
+
+figure {
+    width: 100%;
+    margin-left: 0;
+}
+
+figcaption {
+    font-size: 0.8em;
+}

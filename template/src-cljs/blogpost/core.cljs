@@ -8,8 +8,8 @@
 (defn up! [] (swap! app-state update-in [:count] inc))
 
 (defn layout []
-  [:div {:style: {:display: "flex" :justify-content "center"}}
-    [:article {:style {:width "480px"}}
+  [:div {:id "layout"}
+    [:article {:id "mainarticle"}
       [:h1 "{{blogId}}"]
 
       [:section
