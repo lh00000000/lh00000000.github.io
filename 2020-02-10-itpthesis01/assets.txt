@@ -1,0 +1,13 @@
+json:
+{"IMG_2659": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2659.jpg", "IMG_2658": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2658.jpg", "IMG_2655": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2655.jpg", "IMG_2654": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2654.jpg", "IMG_2656": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2656.jpg", "IMG_2657": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2657.jpg", "IMG_2653": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2653.jpg", "IMG_2650": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2650.jpg"}
+reagent.cljs:
+(def assets (hash-map "IMG_2659" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2659.jpg" "IMG_2658" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2658.jpg" "IMG_2655" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2655.jpg" "IMG_2654" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2654.jpg" "IMG_2656" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2656.jpg" "IMG_2657" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2657.jpg" "IMG_2653" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2653.jpg" "IMG_2650" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2650.jpg"))
+(defn asset-img [assetsrc caption] [:figure [:img {:alt caption :src (assets assetsrc) :width "100%"} ] [:figcaption caption] ])
+(asset-img "IMG_2659" "")
+(asset-img "IMG_2658" "")
+(asset-img "IMG_2655" "")
+(asset-img "IMG_2654" "")
+(asset-img "IMG_2656" "")
+(asset-img "IMG_2657" "")
+(asset-img "IMG_2653" "")
+(asset-img "IMG_2650" "")

@@ -1,0 +1,12 @@
+json:
+{"IMG_2666": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2666.jpg", "IMG_2667": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2667.jpg", "IMG_2665": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2665.jpg", "IMG_2669": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2669.jpg", "IMG_2668": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2668.jpg", "IMG_2850": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2850.JPG", "expensive": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/expensive.png"}
+reagent.cljs:
+(def assets (hash-map "IMG_2666" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2666.jpg" "IMG_2667" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2667.jpg" "IMG_2665" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2665.jpg" "IMG_2669" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2669.jpg" "IMG_2668" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2668.jpg" "IMG_2850" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/IMG_2850.JPG" "expensive" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-tuneclass02/expensive.png"))
+(defn asset-img [assetsrc caption] [:figure [:img {:alt caption :src (assets assetsrc) :width "100%"} ] [:figcaption caption] ])
+(asset-img "IMG_2666" "")
+(asset-img "IMG_2667" "")
+(asset-img "IMG_2665" "")
+(asset-img "IMG_2669" "")
+(asset-img "IMG_2668" "")
+(asset-img "IMG_2850" "")
+(asset-img "expensive" "")
