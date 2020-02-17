@@ -34,7 +34,7 @@
     [:li "someone involved closer to the more immediately obvious images of technological maintenance. i am thinking of a site reliability engineer at one of my old jobs, a software job that consists of a lot considerations for preventative maintence"]
     [:li "shannon mattern"]]
    [:p "we were also supposed to 'Have 1 conversation with someone who does not know about your topic of interest. Video tape this conversation and upload it to your research page.' but it felt rude to bring up my thesis + ask to video-record whenever i went out to meet someone new. so i tried chatroulette. but i was too ugly. so i tried omegle (not the video, because i was still too ugly)."]
-   [:iframe {:width "100%" :height "315" :src "https://www.youtube.com/embed/ko-HUnqYZoI" :frameborder "0" :allow "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" :allow "fullscreen"}
+   [:iframe {:width "100%" :height "315" :src "https://www.youtube.com/embed/ko-HUnqYZoI" :frameborder "0" :allow "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"}
     
     ]
    ])
@@ -102,7 +102,7 @@ Three professional piano tuners were asked to untune a black Steinway piano at t
    [:h2 "\"experiment\""]
    [:p "one thing were were asked to do this week was 'Conduct one weekly experiment in visual audio or other material in your subject of interest. This can include sketches, material or physical experiments but should have a component of engagement with another human being.'"]
    [:p "i couldn't think of anything i could complete in a week so i thought it would be a productive idea to see if reserving a piano practice room could be an option to get more piano tuning practice / if passerbys would snitch on me"]
-   [:video {:width "100%"}
+   [:video {:width "100%" :controls "controls"}
     [:source {:src "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-10-itpthesis01/IMG_2849.MOV"  :type "video/mp4"}]]
    [:p "not very exciting but i guess useful for me. i think another experiment i'd like to try is creating the api as stated before, but playing the piano music myself (or at least attempting to). i did not do this because i did not think i could whip up the promotional website in time"]])
 
