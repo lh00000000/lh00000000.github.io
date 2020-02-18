@@ -37,7 +37,7 @@ with open(f"./{local_asset_folder_name}/assets.txt", "w") as assetstxt:
     reagent_str = StringIO()
     pairs = " ".join([f'"{s}"' for s in itertools.chain.from_iterable(key_lookup.items())])
     assets_def = f"(def assets (hash-map {pairs}))"
-    assets_func = f"(defn asset-img [assetsrc caption] [:figure [:img {{:alt caption :src (assets assetsrc) :width \"100%\"}} ] [:figcaption caption] ])"
+    assets_func = f"(defn asset-img [assetsrc caption] (captioned-img (assets assetsrc) caption))"
     reagent_str.write(assets_def + "\n")
     reagent_str.write(assets_func + "\n")
     for assetid in key_lookup.keys():
