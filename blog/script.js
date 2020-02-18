@@ -3,6 +3,9 @@ const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 
 const allPosts = [
+  {href:"/2020-02-18-cljstemplate", tags: ["#js", "#clojure"]},
+  {href:"/2020-02-18-piano56202", tags: ["#piano", "#loser"]},
+  {href:"/2020-02-18-pptreasury", tags: ["#piano"]},
   {href:"/2020-02-18-biodes02", tags: ["#biodes", "#itp"]},
   {href:"/2020-02-18-specialhousehold", tags: ["#waste", "#visit", "#nyc"]},
   {href:"/2020-02-16-clothingsale", tags: ["#sell"]},
@@ -76,7 +79,7 @@ const allPosts = [
   {href:"/2018-12-12-bcard", tags: ["#itp", "#vislang"]},
   {href:"/2018-12-06-genmusic10", tags: ["#itp", "#genmusic"]},
   {href:"/2018-12-04-itpposter", tags: ["#itp", "#vislang"]},
-  {href:"/2018-11-29-anipiano", tags: ["#itp", "#ani"]},
+  {href:"/2018-11-29-anipiano", tags: ["#itp", "#ani", "#piano"]},
   {href:"/2018-11-28-sixpalette", tags: ["#itp", "#vislang"]},
   {href:"/2018-11-14-deltaredesign", tags: ["#itp", "#vislang"]},
   {href:"/2018-11-12-tsnegoldberg", tags: ["#itp", "#genmusic"]},
