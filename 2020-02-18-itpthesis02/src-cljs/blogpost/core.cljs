@@ -146,7 +146,7 @@ By May<br>
       [:span [:a {"href" "thesisstatement"} "i blurted out a 'thesis statement'"]]
       [:span ", "]
       [:span [:a {"href" "https://luminghao.com/2020-02-18-pptreasury"} "i looked at pictures"]]
-      [:span ", i took a bunch of pictures (and not really anything else yet) of a player piano solenoid driver board i found on ebay, and i reached out to a tuner, a piano restorer, and a disklavier owner to beg them to talk to me."]]
+      [:span ", i practiced tuning in another nyu piano practice room, i took a bunch of pictures (and not really anything else yet) of a player piano solenoid driver board i found on ebay, and i reached out to a tuner, a piano restorer, and a disklavier owner to beg them to talk to me."]]
      [:p "hoping to actually do more things next week."]]
     [:section#thesisstatement
      [:p "below is the thesis statement i submitted..."]
