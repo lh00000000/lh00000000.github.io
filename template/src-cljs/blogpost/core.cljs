@@ -9,8 +9,8 @@
 
 (defn captioned-img [imgsrc caption]
   [:figure
-   [:img
-    {:alt caption :src imgsrc :width "100%"}]
+   [:a {:href imgsrc}
+    [:img {:alt caption :src imgsrc :width "100%"}]]
    [:figcaption [:span [:i caption]]]])
 
 (defn layout []

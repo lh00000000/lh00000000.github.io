@@ -30,8 +30,8 @@ p {
 
 figure {
     max-width: 80vh;
-    /* width: 50vh; */
     margin: 0;
+    padding-bottom: 16px;
 }
 
 figcaption {
