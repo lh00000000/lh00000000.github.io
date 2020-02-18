@@ -33,7 +33,11 @@
       [:span " i struggled to come up with a central topic idea. i put down food manufacturing but i think this was misinterpreted as an interest in automating or optimizing industrial processes for the sake of accessibility, or efficiency (in usage of resources or cost) which not really my interest (or in the realm of things i think would be any particular progressive benefit to this taylorist world, especially after my experience at itp has left me uncontrollably conflating the idea of 'design' with visually polished yet completely unconsidered fictitious image renders). "]
       [:span "i put 'food manufacturing' as my central topic down mainly from recent inspiration with some cursory listens to the 'farm to taber' podcast and a lack of sleep. majority in Taber's emphasis on debunking the idea that industrialization did not originate from agriculture and thus industrialization is something that has corrupted the virtuous naturalism inherent in agriculture. "]
       [:span "i think this is somewhat related to my interest in figuring out why i feel like i keep seeing more of what i have tentatively been calling nostalgic/neo-primitivism. i'm not sure though."]]
-     [:p [:span "for now, i am settling on aiming for looking at the historical roots of mechanization in agricultural techniques (is this what people always say stigler is talking about, with 'cultural techniques' and whatnot? need to catch up) with an emphasis on how thought propagated by material adoption could explain the roots of modern conceptualization of 'the industrial'. i think research like this would also be helpful for my 'labors of maintenance explain the origin of technology more than the idea of inventive thought' thesis."]]]]])
+     [:p [:span "for now, i am settling on aiming for looking at the historical roots of mechanization in agricultural techniques (is this what people always say stigler is talking about, with 'cultural techniques' and whatnot? need to catch up) with an emphasis on how thought propagated by material adoption could explain the roots of modern conceptualization of 'the industrial'. i think research like this would also be helpful for my 'labors of maintenance explain the origin of technology more than the idea of inventive thought' thesis."]
+     ]
+     ]
+     [:div#disqus_thread]
+     ]])
 
 (defn start []
   (r/render-component
