@@ -1,0 +1,6 @@
+json:
+{"IMG_3103": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-18-biodes02/IMG_3103.JPG"}
+reagent.cljs:
+(def assets (hash-map "IMG_3103" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-18-biodes02/IMG_3103.JPG"))
+(defn asset-img [assetsrc caption] (captioned-img (assets assetsrc) caption))
+(asset-img "IMG_3103" "")
