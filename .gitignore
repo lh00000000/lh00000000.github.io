@@ -4,3 +4,4 @@
 *.pdf
 *.mov
 target
+/template/app.js
