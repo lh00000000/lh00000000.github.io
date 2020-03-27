@@ -44,7 +44,7 @@ const allPosts = [
   {href:"/2019-10-29-gorne-inter", tags: ["#compmus", "#response"]},
   {href:"/2019-10-08-tryfm", tags: ["#maxmsp", "#audsyn"]},
   {href:"/2019-10-08-npsquare", tags: ["#digisig", "#audsyn"]},
-  {href:"/2019-10-08-volley2", tags: ["#maxmsp", "compmus"]},
+  {href:"/2019-10-08-volley2", tags: ["#maxmsp", "#compmus"]},
   {href:"/2019-10-08-softrelease01", tags: ["#liao"]},
   {href:"/2019-10-01-maxq", tags: ["#compmus", "#maxmsp", "#update"]},
   {href:"/2019-09-22-liao-softrelease00", tags: ["#liao", "#snapshot"]},
