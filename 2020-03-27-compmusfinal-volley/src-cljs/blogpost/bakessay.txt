@@ -1,0 +1,77 @@
+[:div
+
+      [:p
+       [:span  "        For the project of conclusion for \"Computer Music Composition\", I presented a backup idea of a backup idea. The piece I demonstrated was a composition for clicking speaker array, implemented as a Max/MSP patch. The fundamental sonic idea of the patch was a system where, given a target frequency, an array of speakers would collectively achieve the frequency by emitting \"clicks\", one speaker at a time, switching off clicking duty round-robin style. For example, if the target frequency was 8hz, and the system was configured to use two speakers"]
+       [:sup
+        [:a {:href "#ftnt1", :id "ftnt_ref1"} "
+   [1]"]]
+       [:span  ", then the audible result would two speakers each clicking at a rate of 4hz, at a phase offset of exactly 180 degrees from each other. For the composition, I used two of these virtual devices, as well as a triangle oscillators as the source for a gain envelope, with control over the frequency and depth of the oscillation."]]
+      [:p
+       [:span  "        The composition was simply linear interpolation between eight different \"keyframes\", selected to showcase transformations from \"sub-audio: to \"audio\" (pitched) rates, either from clicks to pulse waves, or beat-like repeated envelopes to additive waveforms. Perhaps more important than the pitches and rhythmic rates chosen is these arcs of interpolation. "]]
+      [:p
+       [:span  "This simple idea of gradients between subaudio and pitched frequencies has been a constant theme for my explorations in this class because I see it as a promising technique for representing the point of contact between the digital and the analog. The unique artistic characteristics of digital sound production make it a fruitful site for interrogating this dichotomy. I believe that understanding this tension will be foundational to a theory of technology that maintains a non-self-destructive relationship between society and the technical. Although the experiments I attempted and presented in this class fall short of single-handedly representing this tension, I hope they will be useful steps of research towards the greater goal of depicting, denaturing, and discussing it."]]
+      [:p
+       [:span  "The basis of almost every observed destructive tendency of the technical is the requirement of reductionism. Quantization, oversimplification, myopic standardization, round-errors, abstraction and encapsulations, the creation of black boxes and all-consuming indices. If data is the collection of representations of the natural world according to methodologies constructed from lineages of anthropocentric scientific thought, what is made invisible behind the artefacts of aliasing can sometimes be links to real beings, places, and relationships between then. Theses are the conceptual tools of oppressive structures, thus a common response is the call for abolishment of structures themselves. Liberation is said to found in anarchism, which is similarly echoed by libertarianism, which is mirrored by market neoliberalism, which finds solace in conservatism, which heralds the capitalist systems responsible for the oppressive structures in the first place. This anarchism is then said corrected by emphasizing its collectivist qualities and insistence on municipalism, but this requires regulatory structures and structures are designed through methods of technicality, of which there are very few whose development and maturation has not benefited from being utilized for the amplification of violences of control and extraction. So how can we utilize methods of technicality without reproducing the the mechanizations of capitalism they have been productively utilized to create? I don&#39;t have the answer but it is my belief that the answer cannot be found without deconstructing the technicality monolith "]]
+      [:p
+       [:span  "Although my undergraduate was in music composition, for many years, I struggled to see the methodologies of music making on a continuum with my interest in making work and research on the ecology of media technologies, the most visible form of technological practice for most people of the world today. I could see the practicality of applying techniques of durational progression and attention to textural contrasts to almost everything, but the world of theory, method, and distribution for music seemed difficult for me personally to reconcile and integrate with other methods of research-based \"media art\". This was until I attended a lecture hosted by the NYU MARL presented by Jürgen Herre, one of the engineers responsible for the mp3 format. It was my first introduction to perceptual audio coding and sampling theory, and thus a \"click\" moment. Many of the questions I had about the ideological and sociopolitical complications that emanate from the genesis of digitality then seemed obviously centered on the ADC analog-to-digital and compressive encoding. I saw months of questions and thoughts suddenly aligned to point at the assemblage that is modern digital audio."]]
+      [:p
+       [:span  "In 2015 I attended a 3 week workshop focused on developing techniques on critical examinations of the relationship between code and societies, aptly titled \"code societies\". One of the first exercises we participated in was to think about a piece of technology that we felt had far reaching power on society, then present it to the rest of the cohort for discussion. I chose the modulo operator/operation. Having just finished a copy of \"Socialist Architecture: The Reappearing Act\" a collaborative project between Srdjan Jovanovic Weiss and Armin Linke comprising of a photographic essay and sociopolitical dispatches on Yugoslavian brutalist architecture, I was fixated on the concept of the \"rotational key\" system for matching architects to commissions, where projects were assigned to an architect from one of the republics in a rotational manner. Superficially, this ensured that preference and aesthetic dominance would not be repeatedly handed over to the most well-off republics over others, but in practice, historical context meant that architectural hegemony still flourished. The system attempted to enforce equality by reflecting and reproducing an equality that wasn&#39;t established. "]]
+      [:p
+       [:span  "I became interested in negotiated compromises at the contact point between the analog and the quantized. Trade offs and irreversible costs paid for the imaginative freedoms of the abstractions and encapsulation, of digitality and negotiations of schemas, all promising an eventual libertory return to the natural world. One of the workshops involved in \"Code Societies\" was a two day workshop and lecture mini-series by Shannon Mattern titled \"Sorting Things Out&#39;, inspired by and titled after the book of the same name by Geoffrey Bowker and Susan Leigh Star. \"Sorting Things Out\" was an exploration of the history of classification systems, with a focus on a making a case simultaneously for their human inevitability and their role in instituting societal-scale conformity. I became interested in standardization. seeing a continuum of existence between redlining and union contracts. After an exercise listing personal methods of sorting and categorization, from sock drawers to classes of feelings at parties, I continued to think about shelves. I thought about how the labeling of shelves at my graduate school program could or couldn&#39;t make sustainable approaches a more convenient thought when making objects/installations, instead of a consuming and precocious central theme for an entire project. I also thought about NSF chrome wire shelving a lot. Eventually, I thought about the relativity and smoothness of soundwaves, and how how the microphone momentarily establishes the idea of extremity, and the encoder cannot see between 0000000011111110 0000000011111111 because at some point it was said not to matter. I thought about the snapshots need to make a blur."]]
+      [:p
+       [:span  "The Max/MSP device/compositional study I presented was a backup system for a physical electroacoustic instrument I attempted to make"]
+       [:sup
+        [:a {:href "#ftnt2", :id "ftnt_ref2"} "
+   [2]"]]
+       [:span  ". The idea behind the instrument is very similar to the use of clicks via a speaker array, only instead of an array of clicking speakers, i wanted to experiment with an array of solenoids, each taking turns tapping or striking a common surface. My hope was to create a device that can achieve this in a handheld form-factor, so that the solenoids can be moved to different materials and objects as a live aspect of a musical performance. My initial compositional ideas still doesn&#39;t stray far from the material implemented in the Max/MSP experiment, but by having a physical stimulation, I hoped to explore utilizing visually and sonically recognizable materials, where sub-audio rates would appear to be a percussive treatment of the objects and audio-rate agitations would produce unpredictable textures at compositionally consistent frequencies. There is too much assumed in the tap, the bang, the impulse, the peek, the sample, the glance, the pop, the flash, the touch, the strike. I am hopeful that this will lead to a productive way to explore the continuum between the snapshot and the constructed-continuous. There is an assumed boolean-ness to the reading of an impulse and an insistence on balance in the hum. In digital audio, one is used to build the other"]
+       [:sup
+        [:a {:href "#ftnt3", :id "ftnt_ref3"} "
+   [3]"]]
+       [:span  ". "]]
+      [:p
+       [:span  "So much of the question of technology&#39;s place in regards to society depends on positioning where the thresholds are, where the categories are, which is an extension of choosing where the zeroes are. It is choosing defaults and marking the unmarked"]
+       [:sup
+        [:a {:href "#ftnt4", :id "ftnt_ref4"} "
+   [4]"]]
+       [:span  ". It is selecting \"reference\" in a relative system, anchoring the end of a binary spectrum. The lie of this abstraction is always apparent, but infinitely more portable.  \"The root of digital philosophy is arithmetic. Arithmetic is the science of standard units arranged in regular structure. ...The root of arithmetic is not a thing or even a relation; the root of arithmetic is a decision. Thus if you spot a digital philosopher, you have spotted someone who has made a decision.\""]
+       [:sup
+        [:a {:href "#ftnt5", :id "ftnt_ref5"} "
+   [5]"]]
+       [:span  " I am interested in examining these decisions side by side by analogic and relational ones. The digital world entanglement with capitalism, industry, institution, market, state, and sovereignty doubles every ten years, but I see promise in the methodologies of music to unravel this. "]]
+      [:hr]
+      [:div
+       [:p
+        [:a {:href "#ftnt_ref1", :id "ftnt1"} "
+   [1]"]
+        [:span  " The patch allowed for the specification of the size of the speaker array, from two to a maximum of eight speakers."]]]
+      [:div
+       [:p
+        [:a {:href "#ftnt_ref2", :id "ftnt2"} "
+   [2]"]
+        [:span  " All of my testing of the modules (input signal reading and output generation, motor driver control board, AC to DC power distribution, and vanilla pulse way signal generation) seemed to work independently, but when used simultaneously, I seemed to have reached the limit of capability for my power supply. "]]]
+      [:div
+       [:p
+        [:a {:href "#ftnt_ref3", :id "ftnt3"} "
+   [3]"]
+        [:span  " "]
+        [:span  "Another reason I wanted this device to work in an analog and physical fashion was to experiment with different sources of voltage signal as clock sources. A parallel project I have been working on this semester is recreating a LOM instruments \"electromagnetic listening device\" from their online documentation. The reason I avoided the simplicity of my device generating signals based on frequency specifications itself and instead opted for it translating signals into physical movement was to be able to use the signal of one of these EM listening devices as a clock signal source. By using an analog electronic device to create digital physical agitations based on analog observations of digital data (EM listening), I hoped to invert the traditional process of digital electronics used to create analog agitations based on digital observations of analog data. "]]]
+      [:div
+       [:p
+        [:a {:href "#ftnt_ref4", :id "ftnt4"} "
+   [4]"]
+        [:span  " Brekhus, Wayne. “A Sociology of the Unmarked: Redirecting Our Focus.” "]
+        [:span  "Sociological Theory"]
+        [:span  " 16, no. 1 (1998): 34–51."]
+        [:span
+         [:a  " "]]
+        [:span
+         [:a  "https://doi.org/10.1111/0735-2751.00041"]]
+        [:span  "."]]]
+      [:div
+       [:p
+        [:a {:href "#ftnt_ref5", :id "ftnt5"} "
+   [5]"]
+        [:span  " “How to Spot a Digital Philosopher | Alexander R. Galloway.” Accessed December 18, 2019. "]
+        [:span
+         [:a  "http://cultureandcommunication.org/galloway/how-to-spot-a-digital-philosopher"]]
+        [:span  "."]]]]
