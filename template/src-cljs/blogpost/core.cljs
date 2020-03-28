@@ -13,6 +13,25 @@
     [:img {:alt caption :src imgsrc :width "100%"}]]
    [:figcaption [:span [:i caption]]]])
 
+(defn flexcols [cols & items]
+  [:div {:style {:max-width "90vw"
+                 :display "flex"
+                 :flex-wrap "wrap"}}
+   (map (fn [d] [:div {:style {:flex (str (/ 98 cols) "% 0 1")}} d]) items)])
+
+(defn extension [s]
+  (string/lower-case (last (string/split s #"\."))))
+
+(defn audio [src]
+  [:audio {:controls "controls" :style {:width "100%"}}
+   [:source {:src src :type (str "audio/" (extension src))}]])
+
+(defn video [src]
+  (let [video-type (str "video/ " ((extension src)
+                                   (hash-map "mov" "mp4")))]
+    [:video {:width "100%" :controls "controls"}
+     [:source {:src src :type video-type}]]))
+
 (defn layout []
   [:div#layout
    [:article#mainarticle
