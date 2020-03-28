@@ -3,6 +3,7 @@ const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 
 const allPosts = [
+  {href:"/2020-03-27-compmusfinal-volley", tags: ["#compmus", "#audio", "#writing", "#maxmsp"]},
   {href:"/2020-03-13-itptno", tags: ["#itp", "#event"]},
   {href:"/2020-02-26-itpthesis03", tags: ["#itpthesis", "#itp"]},
   {href:"/2020-02-24-biodes03", tags: ["#biodes", "#itp"]},
