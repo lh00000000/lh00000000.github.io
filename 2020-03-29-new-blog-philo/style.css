@@ -40,3 +40,7 @@ figcaption {
     color: rgb(120, 120, 120);
 
 }
+
+iframe.noborder{
+    border: 0;
+}
