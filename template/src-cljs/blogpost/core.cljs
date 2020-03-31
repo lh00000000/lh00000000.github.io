@@ -32,22 +32,49 @@
     [:video {:width "100%" :controls "controls"}
      [:source {:src src :type video-type}]]))
 
-(defn layout []
+(defn toc [post-title summary & sections]
   [:div#layout
    [:article#mainarticle
-    [:h1 "{{blogId}}"]
+    [:h1 post-title]
 
     [:section
-     [:h2 "hello"]
-     [:p "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."]
-     (captioned-img "https://www.northerntool.com/images/product/2000x2000/415/41593_2000x2000.jpg" "test image")]
+     [:div summary]
+     [:div
+      (interpose [:span " / "] (map
+                                (fn [{:keys [title]}] [:span [:a {:href (str "#" title)}
+                                                              title]])
+                                sections))]]
+    (map :section sections)
+    [:div {:style {:height "300px"}}]
+    ]])
 
-    [:section
-     [:h2 "interaction"]
-     [:p (str "count: " (:count @app-state))]
-     [:button {:on-click up!} "up"]]]])
+(defn tsection [titlecode & contents]
+  {:title titlecode
+   :section
+   [:section {:id titlecode}
+    [:h3 titlecode]
+    contents]})
+
+(def lorem
+  (tsection "lorem"
+    [:p "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."]
+    (captioned-img "https://www.northerntool.com/images/product/2000x2000/415/41593_2000x2000.jpg" "test image")
+ )
+)
+
+(def interaction
+  (tsection "interaction"
+    [:p (str "count: " (:count @app-state))]
+    [:button {:on-click up!} "up"]
+  )
+)
 
 (defn start []
   (r/render-component
-   [layout]
+   (toc "{{blogId}}"
+        [:p "some summary"]
+        wavdemo
+        essay
+        interaction
+        )
    (.getElementById js/document "root")))
