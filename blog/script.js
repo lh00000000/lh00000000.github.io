@@ -3,6 +3,7 @@ const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 
 const allPosts = [
+  {href:"/2020-03-30-movepiano", tags: ["#piano"]},
   {href:"/2020-03-29-new-blog-philo", tags: ["#blog"]},
   {href:"/2020-03-27-compmusfinal-volley", tags: ["#compmus", "#audio", "#writing", "#maxmsp"]},
   {href:"/2020-03-13-itptno", tags: ["#itp", "#event"]},
@@ -22,6 +23,7 @@ const allPosts = [
   {href:"/2020-02-10-tuneclass02", tags: ["#tuneclass"]},
   {href:"/2020-02-10-karaliao", tags: ["#liao"]},
   {href:"/2020-02-04-biodes00", tags: ["#biodes", "#itp"]},
+  {href:"/2020-02-03-relevanceoftrash", tags: ["#event", "#waste"]},
   {href:"/2020-02-02-tuneclass01", tags: ["#tuneclass"]},
   {href:"/2020-02-02-tuneclass00", tags: ["#tuneclass"]},
   {href:"/2020-02-02-itpthesis00", tags: ["#itpthesis", "#itp"]},

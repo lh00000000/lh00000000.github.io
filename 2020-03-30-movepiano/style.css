@@ -1,0 +1,61 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+}
+#layout {
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+#mainarticle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    border-top: 3px solid black;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    max-width: 100vw;
+    width: 480px;
+}
+
+
+figure {
+    max-width: 80vh;
+    margin: 0;
+    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    color: rgb(120, 120, 120);
+}
+
+.clpost img {
+    height: 80vh;
+    width: auto;
+}
+
+.note-wrapper {
+    padding: 16px;
+    max-width: 100vw;
+    width: 800px;
+}
+.note-wrapper p {
+    margin: 0;
+}
+
