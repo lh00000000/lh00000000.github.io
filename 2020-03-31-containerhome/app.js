@@ -39418,9 +39418,9 @@ blogpost.core.flexcols = function() {
     return flexcols__delegate.call(this, cols, items);
   };
   flexcols.cljs$lang$maxFixedArity = 1;
-  flexcols.cljs$lang$applyTo = function(arglist__5466) {
-    var cols = cljs.core.first(arglist__5466);
-    var items = cljs.core.rest(arglist__5466);
+  flexcols.cljs$lang$applyTo = function(arglist__5566) {
+    var cols = cljs.core.first(arglist__5566);
+    var items = cljs.core.rest(arglist__5566);
     return flexcols__delegate(cols, items);
   };
   flexcols.cljs$core$IFn$_invoke$arity$variadic = flexcols__delegate;
@@ -39440,16 +39440,16 @@ blogpost.core.video = function video(src) {
 };
 blogpost.core.toc = function() {
   var toc__delegate = function(post_title, summary, sections) {
-    return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "article", "article", 4576493672), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "display", "display", 2685668404), "flex", new cljs.core.Keyword(null, "flex-direction", "flex-direction", 1709636125), "column", new cljs.core.Keyword(null, "align-items", 
-    "align-items", 1601334890), "center"], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "h1", "h1", 1013907515), post_title], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), summary], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), 
-    new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "position", "position", 1761709211), "sticky", new cljs.core.Keyword(null, "top", "top", 1014019271), "0"], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, 
-    "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "text-align", "text-align", 1760136663), "center"], null)], null), cljs.core.interpose.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1017440956), " / "], null), cljs.core.map.call(null, function(p__5469) {
-      var map__5470 = p__5469;
-      var map__5470__$1 = cljs.core.seq_QMARK_.call(null, map__5470) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5470) : map__5470;
-      var title = cljs.core.get.call(null, map__5470__$1, new cljs.core.Keyword(null, "title", "title", 1124275658));
-      return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1017440956), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a", "a", 1013904339), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "href", "href", 1017115293), [cljs.core.str("#"), cljs.core.str(title)].join("")], null), title], null)], null);
-    }, sections))], null)], null), cljs.core.map.call(null, new cljs.core.Keyword(null, "section", "section", 2984145495), sections), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "height", "height", 4087841945), "300px"], null)], null)], 
-    null)], null);
+    return new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "article", "article", 4576493672), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "display", "display", 2685668404), "flex", new cljs.core.Keyword(null, "flex-direction", "flex-direction", 1709636125), "column", new cljs.core.Keyword(null, "align-items", 
+    "align-items", 1601334890), "center"], null)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "section", "section", 2984145495), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "id", "id", 1013907597), "summary", new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "display", "display", 2685668404), "flex", new cljs.core.Keyword(null, 
+    "flex-direction", "flex-direction", 1709636125), "column", new cljs.core.Keyword(null, "align-items", "align-items", 1601334890), "center"], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "h1", "h1", 1013907515), post_title], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), summary], null)], null), new cljs.core.PersistentVector(null, 
+    3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "id", "id", 1013907597), "table-of-contents", new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "position", "position", 1761709211), "sticky", new cljs.core.Keyword(null, "top", "top", 1014019271), "0"], null)], null), function() {
+      var titlecodes = cljs.core.cons.call(null, "summary", cljs.core.map.call(null, new cljs.core.Keyword(null, "title", "title", 1124275658), sections));
+      return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "text-align", "text-align", 1760136663), "center"], null)], null), cljs.core.interpose.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
+      "span", "span", 1017440956), " / "], null), cljs.core.map.call(null, function(p1__5567_SHARP_) {
+        return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1017440956), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a", "a", 1013904339), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "href", "href", 1017115293), [cljs.core.str("#"), cljs.core.str(p1__5567_SHARP_)].join("")], null), p1__5567_SHARP_], null)], null);
+      }, titlecodes))], null);
+    }()], null), cljs.core.map.call(null, new cljs.core.Keyword(null, "section", "section", 2984145495), sections), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "height", "height", 4087841945), "300px"], null)], null)], null)], null);
   };
   var toc = function(post_title, summary, var_args) {
     var sections = null;
@@ -39459,11 +39459,11 @@ blogpost.core.toc = function() {
     return toc__delegate.call(this, post_title, summary, sections);
   };
   toc.cljs$lang$maxFixedArity = 2;
-  toc.cljs$lang$applyTo = function(arglist__5471) {
-    var post_title = cljs.core.first(arglist__5471);
-    arglist__5471 = cljs.core.next(arglist__5471);
-    var summary = cljs.core.first(arglist__5471);
-    var sections = cljs.core.rest(arglist__5471);
+  toc.cljs$lang$applyTo = function(arglist__5568) {
+    var post_title = cljs.core.first(arglist__5568);
+    arglist__5568 = cljs.core.next(arglist__5568);
+    var summary = cljs.core.first(arglist__5568);
+    var sections = cljs.core.rest(arglist__5568);
     return toc__delegate(post_title, summary, sections);
   };
   toc.cljs$core$IFn$_invoke$arity$variadic = toc__delegate;
@@ -39483,9 +39483,9 @@ blogpost.core.tsection = function() {
     return tsection__delegate.call(this, titlecode, contents);
   };
   tsection.cljs$lang$maxFixedArity = 1;
-  tsection.cljs$lang$applyTo = function(arglist__5472) {
-    var titlecode = cljs.core.first(arglist__5472);
-    var contents = cljs.core.rest(arglist__5472);
+  tsection.cljs$lang$applyTo = function(arglist__5569) {
+    var titlecode = cljs.core.first(arglist__5569);
+    var contents = cljs.core.rest(arglist__5569);
     return tsection__delegate(titlecode, contents);
   };
   tsection.cljs$core$IFn$_invoke$arity$variadic = tsection__delegate;

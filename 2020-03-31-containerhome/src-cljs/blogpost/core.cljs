@@ -38,17 +38,24 @@
    {:style {:display "flex"
             :flex-direction "column"
             :align-items "center"}}
-   [:h1 post-title]
 
-   [:div summary]
+   [:section {:id "summary" 
+              :style {
+                      :display "flex" 
+                      :flex-direction "column" 
+                      :align-items "center"}}
+    [:h1 post-title]
+    [:div  summary]]
    [:div
-    {:style {:position "sticky"
+    {:id "table-of-contents"
+     :style {:position "sticky"
              :top "0"}}
-
-    [:p {:style {:text-align "center"}} (interpose [:span " / "] (map
-                                                                  (fn [{:keys [title]}] [:span [:a {:href (str "#" title)}
-                                                                                                title]])
-                                                                  sections))]]
+    (let [titlecodes (cons "summary" (map :title sections))]
+      [:p {:style {:text-align "center"}}
+       (interpose [:span " / "]
+                  (map
+                   #(-> [:span [:a {:href (str "#" %)} %] ])
+                   titlecodes))])]
    (map :section sections)
    [:div {:style {:height "300px"}}]])
 
@@ -114,7 +121,7 @@
 (def notes
   (tsection "notes"
             [:div
-             (map (fn [s] [:p {:style {:margin 0}} s]) 
+             (map (fn [s] [:p {:style {:margin 0}} s])
                   ["hanging system for plants on roof"
                    "many solar panels. to battery. windmill to grid. "
                    "center floor is large living room office space"
