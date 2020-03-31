@@ -39431,9 +39431,9 @@ blogpost.core.minigallery = function() {
     return minigallery__delegate.call(this, cols, items);
   };
   minigallery.cljs$lang$maxFixedArity = 1;
-  minigallery.cljs$lang$applyTo = function(arglist__5027) {
-    var cols = cljs.core.first(arglist__5027);
-    var items = cljs.core.rest(arglist__5027);
+  minigallery.cljs$lang$applyTo = function(arglist__5028) {
+    var cols = cljs.core.first(arglist__5028);
+    var items = cljs.core.rest(arglist__5028);
     return minigallery__delegate(cols, items);
   };
   minigallery.cljs$core$IFn$_invoke$arity$variadic = minigallery__delegate;
