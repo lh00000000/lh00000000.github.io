@@ -43,8 +43,7 @@
    [:div summary]
    [:div
     {:style {:position "sticky"
-             :top "0"
-             }}
+             :top "0"}}
 
     [:p {:style {:text-align "center"}} (interpose [:span " / "] (map
                                                                   (fn [{:keys [title]}] [:span [:a {:href (str "#" title)}
@@ -63,7 +62,7 @@
              :flex-direction "column"
              :align-items "center"}}
     [:h3 {:style {:position "sticky"
-             :top "40"}} titlecode]
+                  :top "40"}} titlecode]
     contents]})
 
 (def lorem
@@ -115,21 +114,22 @@
 (def notes
   (tsection "notes"
             [:div
-             [:p {:style {:margin 0}} "hanging system for plants on roof"]
-             [:p {:style {:margin 0}} "many solar panels. to battery. windmill to grid. "]
-             [:p {:style {:margin 0}} "center floor is large living room office space"]
-             [:p {:style {:margin 0}} "concrete heating system repeated"]
-             [:p {:style {:margin 0}} "emphasis on thermal and insulate paint. not much treatment."]
-             [:p {:style {:margin 0}} "soft roof problem. added concrete and other containers. "]
-             [:p {:style {:margin 0}} "high insulation -> humid and hot with slow change"]
-             [:p {:style {:margin 0}} "regular basement living quarters"]
-             [:p {:style {:margin 0}} "lotek said \"other house is just a bunch of containers\""]
-             [:p {:style {:margin 0}} "gave me \"intermodal shipping container small steel buildings by paul sawyers\""]
-             [:p {:style {:margin 0}} "michele bertomen - NYIT architecture prof. \"Waste, Michele believe, is *the* problem of our times; it is also one that cannot adequately be addressed through the curtailing of consumption.\" - Vossoughian obit. died 2013. moved in 2012?"]
-             [:p {:style {:margin 0}} "2008 bought land. "]
-             [:p {:style {:margin 0}} "2010 (two years) built. "]
-             [:p {:style {:margin 0}} "2013 bertomen passes. "]
-             [:p {:style {:margin 0}} "2inch concrete left -> slate (fire containment code)"]]))
+             (map (fn [s] [:p {:style {:margin 0}} s]) 
+                  ["hanging system for plants on roof"
+                   "many solar panels. to battery. windmill to grid. "
+                   "center floor is large living room office space"
+                   "concrete heating system repeated"
+                   "emphasis on thermal and insulate paint. not much treatment."
+                   "soft roof problem. added concrete and other containers. "
+                   "high insulation -> humid and hot with slow change"
+                   "regular basement living quarters"
+                   "lotek said \"other house is just a bunch of containers\""
+                   "gave me \"intermodal shipping container small steel buildings by paul sawyers\""
+                   "michele bertomen - NYIT architecture prof. \"Waste, Michele believe, is *the* problem of our times; it is also one that cannot adequately be addressed through the curtailing of consumption.\" - Vossoughian obit. died 2013. moved in 2012?"
+                   "2008 bought land. "
+                   "2010 (two years) built. "
+                   "2013 bertomen passes. "
+                   "2inch concrete left -> slate (fire containment code)"])]))
 
 (defn start []
   (r/render-component
