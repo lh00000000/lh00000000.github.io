@@ -5,3 +5,4 @@
 *.mov
 target
 /template/app.js
+node_modules
