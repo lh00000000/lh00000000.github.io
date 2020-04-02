@@ -1,0 +1,45 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+}
+p {
+    margin: 8px;
+}
+
+@media (max-width: 640px) {
+    p {
+        max-width: 98vw;
+        width: auto;
+    }
+}
+
+@media (min-width: 640px) {
+    p {
+        max-width: 640px;
+        width: auto;
+    }
+}
+
+.flexcols {
+    width: 100%;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-evenly;
+}
+
+
+figure {
+    max-width: 80vh;
+    margin: 0;
+    padding-bottom: 16px;
+}
+
+figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    color: rgb(120, 120, 120);
+
+}
+
+
