@@ -21,7 +21,12 @@ p {
     }
 }
 
-
+.flexcols {
+    width: 100%;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-evenly;
+}
 
 figure {
     max-width: 80vh;

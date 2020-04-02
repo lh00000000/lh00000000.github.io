@@ -2,15 +2,19 @@
   (:require [clojure.string :as str]))
 (defn captioned-img [imgsrc caption]
   [:figure
-   [:a {:href imgsrc}
-    [:img {:alt caption :src imgsrc :width "100%"}]]
+   [:img {:alt caption :src imgsrc :width "100%"}]
    [:figcaption [:span [:i caption]]]])
 
 (defn flexcols [cols & items]
-  [:div {:style {:max-width "90vw"
-                 :display "flex"
-                 :flex-wrap "wrap"}}
-   (map (fn [d] [:div {:style {:flex (str (/ 98 cols) "% 0 1")}} d]) items)])
+  [:div
+   {:class "flexcols"
+    :style
+    {:display "flex"
+     :flex-wrap "wrap"}}
+   (map
+    #(-> [:div {:style {:flex (str (/ 98 cols) "% 0 1")}} %])
+    items)])
+
 
 (defn extension [s]
   (str (last (str/split s #"\."))))
@@ -39,10 +43,10 @@
               :padding-bottom 16
               :margin-bottom 8
               }}
-     
+
      [:h3 {:style {:position "sticky"
                    :top 30}} title]
-     
+
      (for [[idx item] (map-indexed vector children)]
       ^{:key (str "article-section-child" title idx)}
        item
@@ -78,7 +82,7 @@
         [:h1 title]
         [:div summary]]
 
-     ; sticky toc 
+     ; sticky toc
        [:div
         {:id "table-of-contents"
          :style {:position "sticky"
@@ -95,7 +99,7 @@
 
        (for [{:keys [title contents]} section-records]
          ^{:key (str "toc-article-section-" title)} contents)
-       
+
        [:div {:style {:height 80}}]
        ])
     ))
