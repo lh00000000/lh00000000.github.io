@@ -39418,9 +39418,9 @@ blogpost.core.flexcols = function() {
     return flexcols__delegate.call(this, cols, items);
   };
   flexcols.cljs$lang$maxFixedArity = 1;
-  flexcols.cljs$lang$applyTo = function(arglist__5566) {
-    var cols = cljs.core.first(arglist__5566);
-    var items = cljs.core.rest(arglist__5566);
+  flexcols.cljs$lang$applyTo = function(arglist__4948) {
+    var cols = cljs.core.first(arglist__4948);
+    var items = cljs.core.rest(arglist__4948);
     return flexcols__delegate(cols, items);
   };
   flexcols.cljs$core$IFn$_invoke$arity$variadic = flexcols__delegate;
@@ -39446,8 +39446,8 @@ blogpost.core.toc = function() {
     3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "id", "id", 1013907597), "table-of-contents", new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "position", "position", 1761709211), "sticky", new cljs.core.Keyword(null, "top", "top", 1014019271), "0"], null)], null), function() {
       var titlecodes = cljs.core.cons.call(null, "summary", cljs.core.map.call(null, new cljs.core.Keyword(null, "title", "title", 1124275658), sections));
       return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "text-align", "text-align", 1760136663), "center"], null)], null), cljs.core.interpose.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
-      "span", "span", 1017440956), " / "], null), cljs.core.map.call(null, function(p1__5567_SHARP_) {
-        return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1017440956), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a", "a", 1013904339), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "href", "href", 1017115293), [cljs.core.str("#"), cljs.core.str(p1__5567_SHARP_)].join("")], null), p1__5567_SHARP_], null)], null);
+      "span", "span", 1017440956), " / "], null), cljs.core.map.call(null, function(p1__4949_SHARP_) {
+        return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1017440956), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a", "a", 1013904339), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "href", "href", 1017115293), [cljs.core.str("#"), cljs.core.str(p1__4949_SHARP_)].join("")], null), p1__4949_SHARP_], null)], null);
       }, titlecodes))], null);
     }()], null), cljs.core.map.call(null, new cljs.core.Keyword(null, "section", "section", 2984145495), sections), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "height", "height", 4087841945), "300px"], null)], null)], null)], null);
   };
@@ -39459,11 +39459,11 @@ blogpost.core.toc = function() {
     return toc__delegate.call(this, post_title, summary, sections);
   };
   toc.cljs$lang$maxFixedArity = 2;
-  toc.cljs$lang$applyTo = function(arglist__5568) {
-    var post_title = cljs.core.first(arglist__5568);
-    arglist__5568 = cljs.core.next(arglist__5568);
-    var summary = cljs.core.first(arglist__5568);
-    var sections = cljs.core.rest(arglist__5568);
+  toc.cljs$lang$applyTo = function(arglist__4950) {
+    var post_title = cljs.core.first(arglist__4950);
+    arglist__4950 = cljs.core.next(arglist__4950);
+    var summary = cljs.core.first(arglist__4950);
+    var sections = cljs.core.rest(arglist__4950);
     return toc__delegate(post_title, summary, sections);
   };
   toc.cljs$core$IFn$_invoke$arity$variadic = toc__delegate;
@@ -39483,9 +39483,9 @@ blogpost.core.tsection = function() {
     return tsection__delegate.call(this, titlecode, contents);
   };
   tsection.cljs$lang$maxFixedArity = 1;
-  tsection.cljs$lang$applyTo = function(arglist__5569) {
-    var titlecode = cljs.core.first(arglist__5569);
-    var contents = cljs.core.rest(arglist__5569);
+  tsection.cljs$lang$applyTo = function(arglist__4951) {
+    var titlecode = cljs.core.first(arglist__4951);
+    var contents = cljs.core.rest(arglist__4951);
     return tsection__delegate(titlecode, contents);
   };
   tsection.cljs$core$IFn$_invoke$arity$variadic = tsection__delegate;
@@ -39495,10 +39495,10 @@ blogpost.core.lorem = blogpost.core.tsection.call(null, "lorem", new cljs.core.P
 null), blogpost.core.captioned_img.call(null, "https://www.northerntool.com/images/product/2000x2000/415/41593_2000x2000.jpg", "test image"));
 blogpost.core.interaction = blogpost.core.tsection.call(null, "interaction", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), [cljs.core.str("count: "), cljs.core.str((new cljs.core.Keyword(null, "count", "count", 1108755585)).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null, blogpost.core.app_state)))].join("")], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
 "button", "button", 3931183780), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "on-click", "on-click", 1416542092), blogpost.core.up_BANG_], null), "up"], null));
-blogpost.core.pix = blogpost.core.tsection.call(null, "pix", blogpost.core.flexcols.call(null, 4, blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2213-jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2212-jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2215-jpg", 
-""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2214-jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/B91DD900-BA91-45D6-BC85-1A5F3BC04A95-jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2217-jpg", ""), blogpost.core.captioned_img.call(null, 
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2219-jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2224-png", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2220-jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2221-jpg", 
-""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2222-jpg", "")));
+blogpost.core.pix = blogpost.core.tsection.call(null, "pix", blogpost.core.flexcols.call(null, 4, blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2213.jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2212.jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2215.jpg", 
+""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2214.jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/B91DD900-BA91-45D6-BC85-1A5F3BC04A95.jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2217.jpg", ""), blogpost.core.captioned_img.call(null, 
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2219.jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2224.png", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2220.jpg", ""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2221.jpg", 
+""), blogpost.core.captioned_img.call(null, "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2222.jpg", "")));
 blogpost.core.notes = blogpost.core.tsection.call(null, "notes", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1014003715), cljs.core.map.call(null, function(s) {
   return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "p", "p", 1013904354), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "margin", "margin", 4227561760), 0], null)], null), s], null);
 }, new cljs.core.PersistentVector(null, 15, 5, cljs.core.PersistentVector.EMPTY_NODE, ["hanging system for plants on roof", "many solar panels. to battery. windmill to grid. ", "center floor is large living room office space", "concrete heating system repeated", "emphasis on thermal and insulate paint. not much treatment.", "soft roof problem. added concrete and other containers. ", "high insulation -\x3e humid and hot with slow change", "regular basement living quarters", 'lotek said "other house is just a bunch of containers"', 
