@@ -1,0 +1,14 @@
+{:source-paths ["src"]
+
+ :dependencies [[reagent "0.10.0" :exclusions [cljsjs/react cljsjs/react-dom]]
+ [cider/cider-nrepl "0.21.0"]
+ ]
+
+ :builds {:app {:target :browser
+                :output-dir "."
+                :asset-path "."
+                :modules {:main {:entries [blogpost.core]}}
+                :devtools {:before-load blogpost.core/stop
+                           :after-load blogpost.core/start
+                           :http-root "."
+                           :http-port 8020}}}}
