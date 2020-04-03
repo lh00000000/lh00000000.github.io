@@ -69,6 +69,14 @@ const assets = {
         "https://lh00000000-public.s3.us-east-1.amazonaws.com/2019/siteassets/2019-12-05-8solarstrings/table.jpg"
 }
 
+
+const morepix = [
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2462.jpg",
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2460.jpg",
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2458.jpg",
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2465.jpg",
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2459.jpg",
+]
 const miniPosts = {
     "2019-12-02-process": (
         <section>
@@ -103,7 +111,17 @@ const miniPosts = {
                 methods.
             </p>
         </section>
-    )
+    ),
+    "2020-01-20-panel": (
+        <section>
+            <h2>2020-01-20-panel</h2>
+            <p>finally fnished a panel and put it in my window. using adafruit solar controller module with powerboost 500 (powerboost 1000 never worked bc my amperage was always too low)</p>
+            {morepix.map(src =>
+                <CaptionedImage src={src} />
+                )}
+
+        </section>
+        )
 }
 
 let currentProcess = list(
