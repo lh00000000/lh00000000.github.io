@@ -76,6 +76,9 @@ const morepix = [
 "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2458.jpg",
 "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2465.jpg",
 "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2459.jpg",
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-01-26-moresolar/IMG_2600.jpg",
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-01-26-moresolar/IMG_2563.jpg",
+"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-01-26-moresolar/IMG_2564.jpg",
 ]
 const miniPosts = {
     "2019-12-02-process": (
