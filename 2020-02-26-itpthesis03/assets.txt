@@ -1,6 +1,6 @@
 json:
-{"Screen-Shot-2020-02-25-at-2": "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-26-itpthesis03/Screen-Shot-2020-02-25-at-2.00.27-PM.png"}
+{"Screen-Shot-2020-02-25-at-2": "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-02-26-itpthesis03/Screen-Shot-2020-02-25-at-2.00.27-PM.png"}
 reagent.cljs:
-(def assets (hash-map "Screen-Shot-2020-02-25-at-2" "https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/siteassets/2020-02-26-itpthesis03/Screen-Shot-2020-02-25-at-2.00.27-PM.png"))
+(def assets (hash-map "Screen-Shot-2020-02-25-at-2" "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-02-26-itpthesis03/Screen-Shot-2020-02-25-at-2.00.27-PM.png"))
 (defn asset-img [assetsrc caption] (captioned-img (assets assetsrc) caption))
 (asset-img "Screen-Shot-2020-02-25-at-2" "")
