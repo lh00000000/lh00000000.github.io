@@ -168,7 +168,10 @@ https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-02-13-treasur
                   :font-size 10
                   :background-color "rgba(255,255,255, 0.7)"
                   :border-radius "0px 16px 0px 0px "}}
-    [:p "2020-02-13 i was luckily invited to a showing of the treasureds in the trash museum as a thank you for donating to the dsny's nonprofit 'ny's strongest'. the museum is a collection of curated thematic displays of items mongo'd by Nelson Molina over his multi-decade career as a new york sanitation worker. "]]
+    [:p [:span "2020-02-13 i was luckily invited to a showing of the treasureds in the trash museum as a thank you for donating to the dsny's nonprofit \""]
+     [:a {:href "https://www.nycstrongest.org/"} "The Foundation for New York's Strongest"]
+     [:span "\". the museum is a collection of curated thematic displays of items mongo'd by Nelson Molina over his multi-decade career as a new york sanitation worker. "]]]
+
 
    [:div {:style {:display "flex"
                   :flex-direction "row"
