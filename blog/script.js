@@ -1,8 +1,8 @@
 const NO_FILTER = "NO_FILTER"
 const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
-
 const allPosts = [
+
   {href:"/2020-04-03-bsteeltour", tags: ["#event"]},
   {href:"/2020-04-02-pianotune-withapp", tags: ["#tuneclass", "#piano"]},
   {href:"/2020-04-02-biodes-final-nsf", tags: ["#biodes", "#itp"]},
@@ -10,6 +10,7 @@ const allPosts = [
   {href:"/2020-03-30-movepiano", tags: ["#piano"]},
   {href:"/2020-03-29-new-blog-philo", tags: ["#blog"]},
   {href:"/2020-03-27-compmusfinal-volley", tags: ["#compmus", "#audio", "#writing", "#maxmsp"]},
+  {href:"/2020-03-16-itpthesis04", tags: ["#itpthesis", "#itp"]},
   {href:"/2020-03-13-itptno", tags: ["#itp", "#event"]},
   {href:"/2020-02-26-itpthesis03", tags: ["#itpthesis", "#itp"]},
   {href:"/2020-02-24-biodes03", tags: ["#biodes", "#itp"]},
