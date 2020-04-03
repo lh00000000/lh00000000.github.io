@@ -33,7 +33,6 @@ const allPosts = [
   {href:"/2020-02-02-itpthesis00", tags: ["#itpthesis", "#itp"]},
   {href:"/2020-01-13-liaonotes", tags: ["#liao"]},
   {href:"/2019-12-19-steintour", tags: ["#piano", "#event"]},
-  {href:"/2019-12-18-codesocieties-sum2018", tags: ["#class", "#event"]},
   {href:"/2019-12-11-interviewing-datzromero", tags: ["#writing", "#waste"]},
   {href:"/2019-12-05-npsin", tags: ["#digisig", "#audsyn"]},
   {href:"/2019-12-05-finding-free-stuff", tags: ["#update"]},
