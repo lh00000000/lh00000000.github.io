@@ -40,3 +40,8 @@ figcaption {
     color: rgb(120, 120, 120);
 
 }
+
+.pix figure {
+    min-width: 400px;
+    width: 25vw;
+}
