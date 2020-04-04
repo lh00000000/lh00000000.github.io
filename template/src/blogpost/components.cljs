@@ -29,7 +29,14 @@
     [:video {:width "100%" :controls "controls"}
      [:source {:src src :type video-type}]]))
 
-
+(defn code
+  ([lang wrap codestr ]
+   (let [wrap-style (if wrap {:word-break "break-word" :white-space "pre-wrap"} {})
+         code-style (merge {:display "block" :width "100%"} wrap-style)]
+     [:pre {:style {:width "100%"}}
+      [:code {:style code-style
+              :class lang} codestr]]))
+  ([lang codestr] (code lang false codestr)))
 
 (defn article-section [{:keys [title]} children]
   (fn []
