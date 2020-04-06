@@ -39418,9 +39418,9 @@ blogpost.core.flexcols = function() {
     return flexcols__delegate.call(this, cols, items);
   };
   flexcols.cljs$lang$maxFixedArity = 1;
-  flexcols.cljs$lang$applyTo = function(arglist__4962) {
-    var cols = cljs.core.first(arglist__4962);
-    var items = cljs.core.rest(arglist__4962);
+  flexcols.cljs$lang$applyTo = function(arglist__4950) {
+    var cols = cljs.core.first(arglist__4950);
+    var items = cljs.core.rest(arglist__4950);
     return flexcols__delegate(cols, items);
   };
   flexcols.cljs$core$IFn$_invoke$arity$variadic = flexcols__delegate;
@@ -39439,6 +39439,7 @@ blogpost.core.video = function video(src) {
   2, [new cljs.core.Keyword(null, "src", "src", 1014018390), src, new cljs.core.Keyword(null, "type", "type", 1017479852), video_type], null)], null)], null);
 };
 blogpost.core.tweet = '\x3cblockquote class\x3d "twitter-tweet " data-dnt\x3d "true " data-theme\x3d "dark "\x3e\x3cp lang\x3d "en " dir\x3d "ltr "\x3eembed\x3c/p\x3e\x26mdash; 00000000000000000000000000000000000000000000000000 (@lh00000000) \x3ca href\x3d"https://twitter.com/lh00000000/status/1244181471314804737?ref_src\x3dtwsrc%5Etfw"\x3eMarch 29, 2020\x3c/a\x3e\x3c/blockquote\x3e \x3cscript async src\x3d"https://platform.twitter.com/widgets.js" charset\x3d"utf-8"\x3e\x3c/script\x3e';
+blogpost.core.gist = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "script", "script", 4401185853), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "src", "src", 1014018390), "https://gist.github.com/lh00000000/2250b8e23d362e11c0b32fc561528639.js"], null)], null);
 blogpost.core.layout = function layout() {
   return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div#layout", "div#layout", 1414557390), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "article#mainarticle", "article#mainarticle", 830943362), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "h1", "h1", 1013907515), "2020-03-29-new-blog-philo"], null), 
   new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "iframe", "iframe", 4117657110), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "src", "src", 1014018390), "./iframing", new cljs.core.Keyword(null, "style", "style", 1123684643), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "max-width", "max-width", 3646439311), "90vw", new cljs.core.Keyword(null, "width", "width", 1127031096), "800px", 

@@ -33,6 +33,12 @@
     [:video {:width "100%" :controls "controls"}
      [:source {:src src :type video-type}]]))
 (def tweet "<blockquote class= \"twitter-tweet \" data-dnt= \"true \" data-theme= \"dark \"><p lang= \"en \" dir= \"ltr \">embed</p>&mdash; 00000000000000000000000000000000000000000000000000 (@lh00000000) <a href=\"https://twitter.com/lh00000000/status/1244181471314804737?ref_src=twsrc%5Etfw\">March 29, 2020</a></blockquote> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>")
+(def gist [:script {:src "https://gist.github.com/lh00000000/2250b8e23d362e11c0b32fc561528639.js"}]
+  
+  
+  
+  )
+
 (defn layout []
   [:div#layout
    [:article#mainarticle
@@ -51,6 +57,7 @@
                   [:div [:iframe  {
                                    :class "noborder"
                                    :style {:height "300px"} :src "https://www.are.na/luming-hao/infrastructure-memes/embed"}]]
+                  ; [:div gist]
                   ]
                [:div 
                 
