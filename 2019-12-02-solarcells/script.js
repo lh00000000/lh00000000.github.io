@@ -118,7 +118,8 @@ const miniPosts = {
     "2020-01-20-panel": (
         <section>
             <h2>2020-01-20-panel</h2>
-            <p>finally fnished a panel and put it in my window. using adafruit solar controller module with powerboost 500 (powerboost 1000 never worked bc my amperage was always too low)</p>
+            <p>finally fnished a panel and put it in my window. using adafruit solar controller module with powerboost 500 (powerboost 1000 never worked bc my amperage was always too low). i think it is 8 watts...at a max. it's four 6v strings w a max of 1.2 a (0.3 a each cell ideally). who knows what it really is day to day. seems to charge my usb sticks though.
+            </p>
             {morepix.map(src =>
                 <CaptionedImage src={src} />
                 )}
