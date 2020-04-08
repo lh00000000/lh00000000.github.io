@@ -2,7 +2,7 @@ const NO_FILTER = "NO_FILTER"
 const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 const allPosts = [
-
+  {href:"/2020-04-07-tuneclass-final", tags: ["#tuneclass"]},
   {href:"/2020-04-06-myc", tags: ["#exp"]},
   {href:"/2020-04-06-itpthesismidterm", tags: ["#itpthesis", "#itp"]},
   {href:"/2020-04-04-simsmuni", tags: ["#event", "#waste"]},
