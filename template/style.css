@@ -70,3 +70,8 @@ body {
 .note-wrapper img {
     width: 400px;
 }
+
+
+path {
+    transition: d .1s linear;
+}
