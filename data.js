@@ -106,7 +106,7 @@ const projectIndex = {
       ],
       tag("<span>", " it was my thesis project for my masters at NYU ITP in 2020. the video i made as my presentation is available ", "</span>"),
 
-      tag('<a target="_blank" href="https://www.youtube.com/watch?v=5kE30bZmiyw">', "here", "</a>"),
+      tag('<a target="_blank" href="http://luminghao.com/2020-05-07-itpthesis-pres/">', "here", "</a>"),
       tag("<span>", ". the website for the company is embedded above and at  ", "</span>"),
       tag('<a target="_blank" href="https://loserio.cloud/">', "https://loserio.cloud", "</a>"),
       tag("<span>", ".", "</span>"),
