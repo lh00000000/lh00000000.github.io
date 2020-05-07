@@ -102,7 +102,7 @@ const projectIndex = {
       tag("<span>", " is an API in theory. ", "</span>")
     ),
     guts: group([
-      `<div style="width:100%; height:480px; display: flex; flex-direction: row; justify-content: center;"><iframe style="width:90%; height: 100%" frameborder="0" src="https://loserio.cloud"></iframe></div>`
+      `<div style="width:100%; height:480px; display: flex; flex-direction: row; justify-content: center;"><iframe style="width:90%; height: 100%; background-color: white;" frameborder="0" src="https://loserio.cloud"></iframe></div>`
       ],
       tag("<span>", " it was my thesis project for my masters at NYU ITP in 2020. the video i made as my presentation is available ", "</span>"),
 
