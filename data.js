@@ -95,6 +95,24 @@ const assets = {
 }
 
 const projectIndex = {
+  loser: {
+    id: "loser",
+    head: group(
+      tag("<b>", "loser.io", "</b>"),
+      tag("<span>", " is an API in theory. ", "</span>")
+    ),
+    guts: group([
+      `<div style="width:100%; height:480px; display: flex; flex-direction: row; justify-content: center;"><iframe style="width:90%; height: 100%" frameborder="0" src="https://loserio.cloud"></iframe></div>`
+      ],
+      tag("<span>", " it was my thesis project for my masters at NYU ITP in 2020. the video i made as my presentation is available ", "</span>"),
+
+      tag('<a target="_blank" href="https://www.youtube.com/watch?v=5kE30bZmiyw">', "here", "</a>"),
+      tag("<span>", ". the website for the company is embedded above and at  ", "</span>"),
+      tag('<a target="_blank" href="https://loserio.cloud/">', "https://loserio.cloud", "</a>"),
+      ["<br />"]
+      )
+
+  },
   liao: {
     id: "liao",
     head: group(
@@ -236,8 +254,7 @@ const projectIndex = {
       tag("<span>",
         " is " +
         _.sample([
-          "a defender of qr codes",
-          "in search of malt soda"
+          "the subject of this website",
         ]) + ". ",
         "</span>")
     ),
@@ -247,39 +264,44 @@ const projectIndex = {
         [{
           text: "twitter",
           href: "https://twitter.com/lh00000000"
-        }, {
+        },
+        {
           text: "github",
           href: "https://github.com/lh00000000"
-        }, {
+        },
+        {
           text: "instagram",
           href: "https://www.instagram.com/lh00000000"
-        }, {
-          text: "soundcloud",
-          href: "https://soundcloud.com/stardotdotdot"
-        }, {
-          text: "mastodon",
-          href: "https://mastodon.social/@lh00000000"
-        }, {
+        },
+        // {
+        //   text: "soundcloud",
+        //   href: "https://soundcloud.com/stardotdotdot"
+        // },
+        // {
+        //   text: "mastodon",
+        //   href: "https://mastodon.social/@lh00000000"
+        // },
+        {
           text: "are.na",
           href: "https://www.are.na/luming-hao"
-        }, {
-          text: "glitch",
-          href: "https://glitch.com/@lh00000000"
-        }, {
-          text: "webring",
-          href: "http://webring.xxiivv.com/#random"
-        }, {
+        },
+        // {
+        //   text: "glitch",
+        //   href: "https://glitch.com/@lh00000000"
+        // }, {
+        //   text: "webring",
+        //   href: "http://webring.xxiivv.com/#random"
+        // },
+        {
           text: "gmail",
           href: "mailto:lh00000000@gmail.com"
         }].map(({text, href}) => [`<span><a href="${href}">`, text, "</a></span>"]),
         ["<span>", ", ", "</span>"],
         ["<span>", ", and ", "</span>"])
         .map(tagTriplet => tag(...tagTriplet)),
-      tag("<span>", ". they currently live in ", "</span>"),
-      tag("<a href='https://foursquare.com/user/20710801/list/cubes-of-new-york' target='_blank'>", "new york", "</a>"),
-      tag("<span>", ", where they are attending ", "</span>"),
-      tag("<a href='https://books.google.com/books?id=C8ouDwAAQBAJ&lpg=PP1&dq=broadband&pg=PA182#v=onepage&q=itp&f=false' target='_blank'>", "NYU ITP", "</a>"),
-      tag("<span>", ". ", "</span>"),
+      tag("<span>", ". they received a MPS degree from the ", "</span>"),
+      tag("<a href='https://books.google.com/books?id=C8ouDwAAQBAJ&lpg=PP1&dq=broadband&pg=PA182#v=onepage&q=itp&f=false' target='_blank'>", "''''interactive telecommunications program''''", "</a>"),
+      tag("<span>", " of NYU Tisch in 2020. they are currently open to opportunities of employment. ", "</span>"),
       tag("<b>", "this website", "</b>"),
       tag("<span>", " features information about their accomplishments: ", "</span>"), [`<div class="centered">${assets.meta.browser}</div>`],
       tag("<span>", " it's source can be found on ", "</span>"),
@@ -468,13 +490,14 @@ const orderedProjectDatums = [
   // projectIndex.chatter,
   // projectIndex.invisibleCat,
   // projectIndex.badly,
-  projectIndex.liao,
-  projectIndex.sunadd,
+  projectIndex.loser,
   projectIndex.concreteswitch,
-  projectIndex.kidding,
-  projectIndex.kms,
-  projectIndex.acceptable,
-  projectIndex.kale,
+  projectIndex.sunadd,
+  // projectIndex.kidding,
+  // projectIndex.kms,
+  // projectIndex.acceptable,
+  // projectIndex.kale,
+  projectIndex.liao,
   projectIndex.bio,
   {
     id: "bloglink",
