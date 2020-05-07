@@ -109,6 +109,7 @@ const projectIndex = {
       tag('<a target="_blank" href="https://www.youtube.com/watch?v=5kE30bZmiyw">', "here", "</a>"),
       tag("<span>", ". the website for the company is embedded above and at  ", "</span>"),
       tag('<a target="_blank" href="https://loserio.cloud/">', "https://loserio.cloud", "</a>"),
+      tag("<span>", ".", "</span>"),
       ["<br />"]
       )
 
