@@ -301,8 +301,15 @@ const projectIndex = {
         ["<span>", ", and ", "</span>"])
         .map(tagTriplet => tag(...tagTriplet)),
       tag("<span>", ". they received a MPS degree from the ", "</span>"),
-      tag("<a href='https://books.google.com/books?id=C8ouDwAAQBAJ&lpg=PP1&dq=broadband&pg=PA182#v=onepage&q=itp&f=false' target='_blank'>", "''''interactive telecommunications program''''", "</a>"),
-      tag("<span>", " of NYU Tisch in 2020. they are currently open to opportunities of employment. ", "</span>"),
+      tag("<a href='https://books.google.com/books?id=C8ouDwAAQBAJ&lpg=PP1&dq=broadband&pg=PA182#v=onepage&q=itp&f=false' target='_blank'>", '""""interactive telecommunications program""""', "</a>"),
+
+      tag("<span>", " of NYU Tisch in 2020. they are currently open to opportunities of employment. a version of their non-specific that is non-specific to industry can be found ", "</span>"),
+      tag("<a href='https://luminghao.com/resume-a/' target='_blank'>", "here", "</a>"),
+      tag("<span>", " (an industry specific version can be generated upon ", "</span>"),
+      tag("<a href='mailto:lh00000000@gmail.com' target='_blank'>", "emailed request", "</a>"),
+      tag("<span>", "). ", "</span>"),
+
+
       tag("<b>", "this website", "</b>"),
       tag("<span>", " features information about their accomplishments: ", "</span>"), [`<div class="centered">${assets.meta.browser}</div>`],
       tag("<span>", " it's source can be found on ", "</span>"),
