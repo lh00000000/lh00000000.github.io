@@ -1,10 +1,11 @@
 const protectMobileDataPlans = false // 2018-09-21 is this mean
+const stfu = true
 const pianoKey = (src, preload) => {
   // i can't figure out a good way to deal with the shittiness
   // of making people on data plans download 15mb of wavs
   // that all finish loading at the same instant
   // and end up being played as abrupt maj9/6 chords
-  if (isMobile() && protectMobileDataPlans) {
+  if (stfu || isMobile() && protectMobileDataPlans) {
     return {
       play: _.identity
     }
