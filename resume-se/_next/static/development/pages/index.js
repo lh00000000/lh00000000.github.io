@@ -17,24 +17,26 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var all = {
-  intent: "2020-05-26-all",
+  intent: "2020-06-08-se",
   show: {
     cmdf: true,
-    topics: true,
+    topics: false,
     headline: true,
     other: true,
     location: false
   },
   info: {
     location: "brooklyn, ny",
-    headline: "Software/Research/Art",
-    // headline: "Software Engineer",
+    // headline: "Software/Research/Art",
+    headline: "Software Engineer",
     website: "luminghao.com",
     email: "luming000hao@gmail.com",
     phone: "610-297-2578",
     summary: ""
   },
-  sections: [__webpack_require__(/*! ./sections/projects.js */ "./sections/projects.js")["default"], __webpack_require__(/*! ./sections/talks.js */ "./sections/talks.js")["default"], __webpack_require__(/*! ./sections/texts.js */ "./sections/texts.js")["default"], __webpack_require__(/*! ./sections/grants.js */ "./sections/grants.js")["default"], __webpack_require__(/*! ./sections/employment.js */ "./sections/employment.js")["default"], __webpack_require__(/*! ./sections/education.js */ "./sections/education.js")["default"]]
+  sections: [__webpack_require__(/*! ./sections/employment.js */ "./sections/employment.js")["default"], __webpack_require__(/*! ./sections/grants.js */ "./sections/grants.js")["default"], __webpack_require__(/*! ./sections/projects.js */ "./sections/projects.js")["default"], // require("./sections/talks.js").default,
+  // require("./sections/texts.js").default,
+  __webpack_require__(/*! ./sections/education.js */ "./sections/education.js")["default"]]
 };
 var se = {
   intent: "2020-05-26-se",
@@ -59,7 +61,7 @@ var se = {
   // require("./sections/grants.js").default,
   ]
 };
-/* harmony default export */ __webpack_exports__["default"] = (_objectSpread({}, se, {
+/* harmony default export */ __webpack_exports__["default"] = (_objectSpread({}, all, {
   other: {
     title: "other (volunteering/hobbies)",
     items: [["Volunteer for iFixit Medical Equipment Service Manual Archive Project", "https://www.wired.com/story/right-to-repair-medical-equipment-ifixit/"], ["Student Member of NYU Office of Sustainability Green Grant Committee", "https://www.nyu.edu/life/sustainability/get-involved/green-grants.html"], ["clojure (website and blog)", "https:/luminghao.com/blog"], ["handmade solar", "https://luminghao.com/2019-12-02-solarcells/"], ["piano tuning", "http://luminghao.com/2020-04-02-pianotune-withapp/"], ["cnc", "http://luminghao.com/blog/#subtract"], ["harp", "https://luminghao.com/liao/"]]
@@ -20282,12 +20284,13 @@ __webpack_require__.r(__webpack_exports__);
   }, {
     title: "Code Societies",
     institution: "School for Poetic Computation",
-    year: "Summer 2018"
-  }, {
-    title: "ITP Camp",
-    institution: "NYU ITP",
-    year: "2017"
-  }, {
+    year: "2018"
+  }, // {
+  //   title: "ITP Camp",
+  //   institution: "NYU ITP",
+  //   year: "2017",
+  // },
+  {
     title: "BA Music Theory/Composition / BA Computer Science",
     institution: "Lehigh University",
     year: "2010-2014"
@@ -20436,84 +20439,6 @@ __webpack_require__.r(__webpack_exports__);
     description: "Conceptual electronic discrete component",
     year: "2018",
     cmdf: ["sculpture", "electronics"]
-  }]
-});
-
-/***/ }),
-
-/***/ "./sections/talks.js":
-/*!***************************!*\
-  !*** ./sections/talks.js ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  title: "talks",
-  cards: [{
-    title: "loser.io ITP 2020 Thesis Presentation",
-    institution: "NYU ITP",
-    description: "Lecture/video on process and themes of loser.io project. http://luminghao.com/2020-05-07-itpthesis-pres/",
-    year: "2020",
-    topics: ["philosophy-of-technology", "piano-tuning", "sts", "maintenance", "sound", "digitality", "e-waste", "discard-studies", "media-theory"],
-    cmdf: []
-  }, {
-    title: "The Relevance of Trash",
-    institution: "NYU Tech for Social Good Day",
-    description: "Collaboration with Hannah Tardie. Hands-on workshop of various desoldering methods combined with lecture on e-waste orientated from the perspective that e-waste exists at the creation of electronics, not just their disposal. http://luminghao.com/2020-02-03-relevanceoftrash/",
-    year: "2020",
-    topics: ["e-waste", "discard-studies", "electronics", "media-theory", "philosophy-of-technology", "sts"]
-  }, {
-    title: "Calibration Labor",
-    institution: "The Computer Mouse Conference",
-    year: "2019",
-    description: 'Presentation of preliminary research advocating for a recognition of "calibration labor", i.e. the work of adjustment, alignment, normalization, translation, and normalization that undergirds all claims of automation. http://luminghao.com/calibrationlabor/',
-    topics: ["sts", "labor", "media-theory", "philosophy-of-technology"],
-    cmdf: []
-  }, {
-    title: "malltrip",
-    institution: "Simple Show",
-    year: "2018",
-    description: 'Presentation of trends and observations made on tour of 9 malls of the PA/MI/IL at The Simple Show, a live-comedy show featuring one non-comedic "expert" per evening.',
-    topics: ["retail", "americana"],
-    cmdf: []
-  }]
-});
-
-/***/ }),
-
-/***/ "./sections/texts.js":
-/*!***************************!*\
-  !*** ./sections/texts.js ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  title: "texts",
-  cards: [//   "ajacendt article", "interview w datz romero"
-  {
-    title: "loser.io Engineering Blog",
-    institution: "NYU ITP Thesis",
-    description: 'loser.io is a rhetorical company marketing API access to pianos as service. At the core of this project is loser.io\'s "engineering blog" where theoretical writings based on research done was presented under the guise of "specifying the stack" of loser.io. https://medium.com/loser-io-engineering-blog ',
-    year: "2020",
-    topics: ["philosophy-of-technology", "piano-tuning", "sts", "maintenance", "sound", "digitality", "e-waste", "discard-studies", "media-theory"]
-  }, {
-    title: "DSNY Oral History Archive: Christine Datz-Romero",
-    institution: "DSNY Oral History Archive",
-    year: "2019",
-    description: "Under the direction of Robin Nagle, Anthropologist in Residence at the New York City Department of Sanitation, I was fortunate enough to conduct an interview with Christine Datz-Romero, co-founder of the Lower East Side Ecology Center, focused on the origins of their Gowanus E-waste Warehouse. Publication awaiting site-redesign. http://www.dsnyoralhistoryarchive.org/",
-    topics: ["e-waste", "discard-studies", "oral-history"]
-  }, {
-    title: "Be All You Can Virtually Be",
-    institution: "Adjacent Magazine",
-    description: "The majority of bleeding-edge entertainment technologies can be traced to institutions of ideological sovereignty with the capital to develop them, however in this article, I discuss a selected number of cases where private-sector entertainment technologies matured prior to appropriation for military and religious uses. https://itp.nyu.edu/adjacent/issue-5/be-all/",
-    year: "2019",
-    topics: ["media-theory", "simulation"]
   }]
 });
 
