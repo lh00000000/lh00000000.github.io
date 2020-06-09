@@ -20278,7 +20278,7 @@ __webpack_require__.r(__webpack_exports__);
   title: "education",
   cards: [//   "code socities", "itp camp", "itp", "lehigh"
   {
-    title: "MPS Interactive Telecommunications",
+    title: "Master's Interactive Telecommunications",
     institution: "NYU ITP",
     year: "2018-2020"
   }, {
@@ -20291,7 +20291,7 @@ __webpack_require__.r(__webpack_exports__);
   //   year: "2017",
   // },
   {
-    title: "BA Music Theory/Composition / BA Computer Science",
+    title: "Bachelor's Music Theory & Composition + Computer Science",
     institution: "Lehigh University",
     year: "2010-2014"
   }]
@@ -20313,7 +20313,7 @@ __webpack_require__.r(__webpack_exports__);
   copy: "",
   cards: [{
     show: true,
-    title: "Programmer",
+    title: "Full-Stack Engineer",
     institution: "Aliza Shvarts",
     year: "2019-2020",
     description: 'Programming for 4th and 5th installment of "How does it feel to be a fiction?", "Player", and "Relational Clocks". Installed at Art In General NYC, FUTURA Prague, and 6th Athens Biennale.',
@@ -20358,7 +20358,7 @@ __webpack_require__.r(__webpack_exports__);
     cmdf: ["NLP", "frontend", "backend", "react", "elm", "flask", "python", "aws", "emr", "lambda", "kafka", "elasticsearch", "solr", "pandas", "vue"]
   }, {
     show: true,
-    title: "Developer",
+    title: "Software Developer",
     institution: "Saucon Technologies",
     description: "Designing and implementing analytical and computer vision applications for embedded devices to be used in varied public transit environments.",
     year: "2014-2015",
