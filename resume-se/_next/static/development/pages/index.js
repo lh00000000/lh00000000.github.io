@@ -20279,7 +20279,7 @@ __webpack_require__.r(__webpack_exports__);
   cards: [//   "code socities", "itp camp", "itp", "lehigh"
   {
     title: "Master's Interactive Telecommunications",
-    institution: "NYU ITP",
+    institution: "NYU",
     year: "2018-2020"
   }, {
     title: "Code Societies",
@@ -20316,7 +20316,7 @@ __webpack_require__.r(__webpack_exports__);
     title: "Full-Stack Engineer",
     institution: "Aliza Shvarts",
     year: "2019-2020",
-    description: 'Programming for 4th and 5th installment of "How does it feel to be a fiction?", "Player", and "Relational Clocks". Installed at Art In General NYC, FUTURA Prague, and 6th Athens Biennale.',
+    description: 'Frontend, API, OpenGL, and email automation for 4th and 5th installment of "How does it feel to be a fiction?", "Player", and "Relational Clocks". Installed at Art In General NYC, FUTURA Prague, and 6th Athens Biennale.',
     cmdf: ["rust", "c++", "google-analytics", "sendgrid", "digital-ocean"]
   }, {
     show: true,
@@ -20324,7 +20324,7 @@ __webpack_require__.r(__webpack_exports__);
     // moses accessiblity assistant
     institution: "NYU Office of Sustainability",
     year: "2019-2020",
-    description: 'Assisted as "Freestore Steward" for "Teardown" research/workshop series project by Regina Cantu and Jasmine Soltani. Maintained and materials analysis of free shelf fabrication resource. http://luminghao.com/blog/#freestore',
+    description: 'Assisted "Teardown" workshop/lecture/research series as "Freestore Steward" by Regina Cantu and Jasmine Soltani. Focused on sociological inquiry around design department\'s "free shelf" fabrication resource. http://luminghao.com/blog/#freestore',
     cmdf: ["accessibility", "design", "fabrication"]
   }, {
     show: true,
@@ -20339,7 +20339,7 @@ __webpack_require__.r(__webpack_exports__);
     title: "Teaching Assistant",
     institution: "NYU Courant",
     year: "2018",
-    description: 'Designed assignments and tutored for "Special Topics: Applied Internet Technology" an undergraduate senior level course on full stack web development',
+    description: 'Designed assignments and tutored for "Special Topics: Applied Internet Technology" an undergraduate senior level course on javascript-based full-stack web development',
     cmdf: ["teaching", "javascript", "mongodb", "frontend", "data-analysis"]
   }, {
     show: true,
@@ -20392,7 +20392,7 @@ __webpack_require__.r(__webpack_exports__);
   }, {
     title: "Havas: The Future of NYC Transportation",
     institution: "NYC Media Lab",
-    description: 'Part of team for Access to Places", an offline-first subway station interior navigation guide for blind riders. Semester-long product development culminating in presentation in NYC Media Lab Showcase event at Brooklyn Navy Yards.',
+    description: '\"Access to Places", an offline-first subway station interior navigation guide for blind riders. Semester-long product development culminating in presentation in NYC Media Lab Showcase event at Brooklyn Navy Yards.',
     topics: ["accessibility", "transit"],
     year: "2019",
     cmdf: ["ux", "react-native", "user-research"]
@@ -20424,19 +20424,19 @@ __webpack_require__.r(__webpack_exports__);
   {
     title: "loser.io",
     institution: "NYU ITP Thesis",
-    description: "My thesis project for my masters at NYU ITP in 2020 https://loserio.cloud. A pianos-as-a-service REST API and research project towards a theory of technology centered on maintenance.",
+    description: "Thesis project for my masters at NYU ITP in 2020 https://loserio.cloud. A pianos-as-a-service REST API and research project towards a theory of technology centered on maintenance.",
     year: "2020",
     cmdf: ["digital-ocean", "express", "node", "ngnix", "mongodb", "raspberry-pi", "python", "next.js", "react"]
   }, {
     title: "sunadd",
     institution: "NYU ITP Spring Show 2019",
-    description: 'sunadd is an agitation of the divide between signal and energy, as well as between difference and summation. Created in collaboration with Aileen Stanziola, a BJT transistor-based 1-bit adder circuit with photovoltaic control interface on a mound of soil. Custom pcb for excess power banking and solar "necklaces" designed and fabricated for this project.',
+    description: 'Agitation of the divide between signal and energy, difference and summation. Created in collaboration with Aileen Stanziola. BJT transistor-based 1-bit adder circuit with photovoltaic control interface on a mound of soil. Custom pcb for excess power banking and solar "necklaces" designed and fabricated for this project.',
     year: "2019",
     cmdf: ["installation", "media-art", "solar", "pcb"]
   }, {
     title: "concreteswitch",
     institution: "NYU ITP",
-    description: "Conceptual electronic discrete component",
+    description: "Conceptual electronic discrete component for adding long-term (erosion-based) timing signals to digital circuits.",
     year: "2018",
     cmdf: ["sculpture", "electronics"]
   }]
