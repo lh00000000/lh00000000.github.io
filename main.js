@@ -65,7 +65,7 @@ const update = (datums) => {
       .ease(EASE)
       .duration(INTRO_TRANSITION_DURATION)
       // .duration(20)
-      .delay((d, i) => i * 50)
+      .delay((d, i) => 200 + i * 50)
       .call(
         tweenHtml,
         _.iteratee("head"),

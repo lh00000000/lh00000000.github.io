@@ -19,6 +19,7 @@ const allPosts = [
   {href:"/2020-03-27-compmusfinal-volley", tags: ["#compmus", "#audio", "#writing", "#maxmsp"]},
   {href:"/2020-03-16-itpthesis04", tags: ["#itpthesis", "#itp"]},
   {href:"/2020-03-13-itptno", tags: ["#itp", "#event"]},
+  {href:"/2020-03-07-pptd", tags: ["#piano"]},
   {href:"/2020-02-26-itpthesis03", tags: ["#itpthesis", "#itp"]},
   {href:"/2020-02-24-biodes03", tags: ["#biodes", "#itp"]},
   {href:"/2020-02-21-biodes-proposal2", tags: ["#biodes", "#itp"]},
