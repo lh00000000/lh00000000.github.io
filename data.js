@@ -103,7 +103,7 @@ const projectIndex = {
     ),
     guts: group([
       `<div style="width:100%; height:480px; display: flex; flex-direction: row; justify-content: center;"><iframe style="width:90%; height: 100%; background-color: white;" frameborder="0" src="https://loserio.cloud"></iframe></div>`
-      ],
+    ],
       tag("<span>", " it was my thesis project for my masters at NYU ITP in 2020. the video i made as my presentation is available ", "</span>"),
 
       tag('<a target="_blank" href="http://luminghao.com/2020-05-07-itpthesis-pres/">', "here", "</a>"),
@@ -111,7 +111,7 @@ const projectIndex = {
       tag('<a target="_blank" href="https://loserio.cloud/">', "https://loserio.cloud", "</a>"),
       tag("<span>", ".", "</span>"),
       ["<br />"]
-      )
+    )
 
   },
   liao: {
@@ -123,19 +123,19 @@ const projectIndex = {
     guts: group(
       [`<a href='https://luminghao.com/liao'><img class="hovertrans" src="${assets.liao.img}" width="100%"/></a>`]
       ,
-          tag("<span>", "it was written in 2012 and scheduled to be produced in 2013. it was released in 2020 under ", "</span>"),
-          tag('<a href="https://asteriskellipsis.bandcamp.com/">', "(*...)", "</a>"),
-          tag("<span>", ". ", "</span>"),
-          tag("<span>", "it is available via monetized music distribution platforms (such as ", "</span>"),
-          tag('<a href="https://open.spotify.com/album/4SmNQWxesUqlfPKGbcVAG2?si=pcQ2lgx2R6GOGPqlZYhh2w">', "spotify", "</a>"),
-          tag("<span>", ", ", "</span>" ),
-          tag('<a href="https://asteriskellipsis.bandcamp.com/album/liao">', "bandcamp", "</a>"),
-          tag("<span>", ", or ", "</span>" ),
-          tag('<a href="https://music.apple.com/us/album/liao/1495274800">', "apple music", '</a>'),
-          tag("<span>", ") or the free download and streaming functionality provided  ", "</span>" ),
-          tag("<a href='https://luminghao.com/liao'>", "here", "</a>"),
-          tag("<span>", ".", "</span>"),
-          ["<br />"])
+      tag("<span>", "it was written in 2012 and scheduled to be produced in 2013. it was released in 2020 under ", "</span>"),
+      tag('<a href="https://asteriskellipsis.bandcamp.com/">', "(*...)", "</a>"),
+      tag("<span>", ". ", "</span>"),
+      tag("<span>", "it is available via monetized music distribution platforms (such as ", "</span>"),
+      tag('<a href="https://open.spotify.com/album/4SmNQWxesUqlfPKGbcVAG2?si=pcQ2lgx2R6GOGPqlZYhh2w">', "spotify", "</a>"),
+      tag("<span>", ", ", "</span>"),
+      tag('<a href="https://asteriskellipsis.bandcamp.com/album/liao">', "bandcamp", "</a>"),
+      tag("<span>", ", or ", "</span>"),
+      tag('<a href="https://music.apple.com/us/album/liao/1495274800">', "apple music", '</a>'),
+      tag("<span>", ") or the free download and streaming functionality provided  ", "</span>"),
+      tag("<a href='https://luminghao.com/liao'>", "here", "</a>"),
+      tag("<span>", ".", "</span>"),
+      ["<br />"])
   },
   acceptable: {
     id: "acceptable",
@@ -260,7 +260,7 @@ const projectIndex = {
         "</span>")
     ),
     guts: group(
-      tag("<span>", "they have used many websites, such as: ", "</span>"),
+      tag("<span>", "he has used many websites, such as: ", "</span>"),
       ...oxford(
         [{
           text: "twitter",
@@ -296,22 +296,22 @@ const projectIndex = {
         {
           text: "gmail",
           href: "mailto:lh00000000@gmail.com"
-        }].map(({text, href}) => [`<span><a href="${href}">`, text, "</a></span>"]),
+        }].map(({ text, href }) => [`<span><a href="${href}">`, text, "</a></span>"]),
         ["<span>", ", ", "</span>"],
         ["<span>", ", and ", "</span>"])
         .map(tagTriplet => tag(...tagTriplet)),
-      tag("<span>", ". they received a MPS degree from the ", "</span>"),
+      tag("<span>", ". he received a MPS degree from the ", "</span>"),
       tag("<a href='https://books.google.com/books?id=C8ouDwAAQBAJ&lpg=PP1&dq=broadband&pg=PA182#v=onepage&q=itp&f=false' target='_blank'>", '""""interactive telecommunications program""""', "</a>"),
 
       tag("<span>", " of NYU Tisch in 2020. a version of their resume that is non-specific to industry can be found ", "</span>"),
-      tag("<a href='https://luminghao.com/resume-a/' target='_blank'>", "here", "</a>"),
-      tag("<span>", " (an industry specific version can be generated upon ", "</span>"),
-      tag("<a href='mailto:lh00000000@gmail.com' target='_blank'>", "emailed request", "</a>"),
+      tag("<a href='https://luminghao.com/resume/a' target='_blank'>", "here", "</a>"),
+      tag("<span>", " (an industry specific version can be found  ", "</span>"),
+      tag("<a href='https://luminghao.com/resume/' target='_blank'>", "here", "</a>"),
       tag("<span>", "). ", "</span>"),
 
 
       tag("<b>", "this website", "</b>"),
-      tag("<span>", " features information about their accomplishments: ", "</span>"), [`<div class="centered">${assets.meta.browser}</div>`],
+      tag("<span>", " features information about his accomplishments: ", "</span>"), [`<div class="centered">${assets.meta.browser}</div>`],
       tag("<span>", " it's source can be found on ", "</span>"),
       tag('<a href="https://github.com/lh00000000/lh00000000.github.io" target="_blank">', "github", "</a>"),
       tag("<span>", " and can be ", "</span>"),
@@ -433,14 +433,14 @@ const projectIndex = {
     guts: group(
       [`<a href="https://github.com/lh00000000/omegle-eliza" target="_blank"><img id="omegleImg" src="${_.sample(assets.omegle.imgs)}" width="100%" /></a>`],
       tag("<span>", " the bot is ", "</span>"),
-      tag('<a href="https://en.wikipedia.org/wiki/ELIZA/" target="_blank">', "ELIZA",'</a>'),
+      tag('<a href="https://en.wikipedia.org/wiki/ELIZA/" target="_blank">', "ELIZA", '</a>'),
       tag("<span>", ", a famous psychotherapist. With this ", "</span>"),
-      tag('<a href="https://processing.org/" target="_blank">', "processing",'</a>'),
+      tag('<a href="https://processing.org/" target="_blank">', "processing", '</a>'),
       tag("<span>", " program, ELIZA logs on to ", "</span>"),
-      tag('<a href="https://www.omegle.com/" target="_blank">', "omegle.com",'</a>'),
+      tag('<a href="https://www.omegle.com/" target="_blank">', "omegle.com", '</a>'),
       tag("<span>", " to do pro-bono sessions for strangers. ", "</span>"),
       tag("<span>", " in 2015, the source code was uploaded to ", "</span>"),
-      tag('<a href="https://www.omegle.com/" target="_blank">', "github",'</a>'),
+      tag('<a href="https://www.omegle.com/" target="_blank">', "github", '</a>'),
       tag("<span>", ". ", "</span>"),
       ["<br />"]
     )
@@ -450,7 +450,7 @@ const projectIndex = {
     head: group(
       tag("<b>", "sunadd", "</b>"),
       tag("<span>", " is a personal computer for the sun. ", "</span>")
-      ),
+    ),
     guts: group(
       [`<a href="https://luminghao.com/2019-04-11-sunadd" target="_blank"><img src="${assets.sunadd.imgs[0]}" width="100%" /></a>`],
       tag("<span>", "it was created in collaboration with ", "</span>"),
@@ -461,14 +461,14 @@ const projectIndex = {
       tag("<a target='_blank' href='https://luminghao.com/2019-04-11-sunadd'>", 'see here', "</a>"),
       tag("<span>", ". ", "</span>"),
       ["<br />"]
-      )
+    )
   },
   concreteswitch: {
     id: "concreteswitch",
     head: group(
-      tag("<b>", "concreteswitch","</b>"),
+      tag("<b>", "concreteswitch", "</b>"),
       tag("<span>", " is a 20lb timer. ", "</span>")
-      ),
+    ),
     guts: group(
       [`<a href="${assets.concreteswitch.imgs[0]}" target="_blank"><img src="${assets.concreteswitch.imgs[1]}" width="100%" /></a>`],
       tag("<span>", " it is intended as timing component for hobbyist electronics projects.", "</span>"),
@@ -478,7 +478,7 @@ const projectIndex = {
       ["<br />"]
 
 
-      )
+    )
 
 
   }
