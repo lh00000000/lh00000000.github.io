@@ -10,6 +10,10 @@ const pianoKey = (src, preload) => {
   }
   return {
     play: vol => {
+      let tryToPlayIt = () => {
+        h.volume(vol)
+        h.play()
+      }
       switch (h.state()) {
         case "loaded":
           h.volume(vol)
@@ -17,19 +21,16 @@ const pianoKey = (src, preload) => {
           break
         case "unloaded":
           h.load()
-          h.on("load", () => {
-            h.volume(vol)
-            h.play()
-          })
-          break
-        case "loading":
-          let tryToPlayIt = () => {
-            h.volume(vol)
-            h.play()
-          }
+
           setTimeout(() => {
             tryToPlayIt = _.identity
-          }, 250)
+          }, Math.random() * 100 + 5)
+          h.on("load", () => tryToPlayIt())
+          break
+        case "loading":
+          setTimeout(() => {
+            tryToPlayIt = _.identity
+          }, Math.random() * 100 + 5)
           h.on("load", () => tryToPlayIt())
           break
       }
