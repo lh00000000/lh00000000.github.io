@@ -16,8 +16,8 @@ const tweenHtml = (
       let thisEle = d3.select(all[i])
       let getHtmlAt =
         d3
-        .scaleQuantize()
-        .range(getFrames(d))
+          .scaleQuantize()
+          .range(getFrames(d))
       return t => {
         let oldHtml = thisEle.html()
         let newHtml = getHtmlAt(t)
@@ -43,9 +43,9 @@ const update = (datums) => {
 
   projects.exit()
     .transition()
-      .duration(TRANSITION_DURATION)
-      .style("opacity", 0)
-      .remove()
+    .duration(TRANSITION_DURATION)
+    .style("opacity", 0)
+    .remove()
 
   const projectsEnter = projects.enter()
     .append("span")
@@ -62,16 +62,15 @@ const update = (datums) => {
 
   headsEnter
     .transition()
-      .ease(EASE)
-      .duration(INTRO_TRANSITION_DURATION)
-      // .duration(20)
-      .delay((d, i) => 200 + i * 50)
-      .call(
-        tweenHtml,
-        _.iteratee("head"),
-        player.RH.forwards,
-        player.LH.forwards
-      )
+    .ease(EASE)
+    .duration(INTRO_TRANSITION_DURATION)
+    .delay((d, i) => 200 + i * 50)
+    .call(
+      tweenHtml,
+      _.iteratee("head"),
+      player.RH.forwards,
+      player.LH.forwards
+    )
 
   headsEnter
     .on("mousedown", d =>
@@ -91,34 +90,34 @@ const update = (datums) => {
         .hasChildNodes()) {
         d3.select(selector)
           .transition()
-            .ease(EASE)
-            .duration(TRANSITION_DURATION)
-            .call(
-              tweenHtml,
-              _.iteratee("guts"),
-              player.RH.forwards,
-              _.once(player.LH.forwards)
-            )
-            .on("end", d => {
-              if (d.after) { d.after() }
-            })
+          .ease(EASE)
+          .duration(TRANSITION_DURATION)
+          .call(
+            tweenHtml,
+            _.iteratee("guts"),
+            player.RH.forwards,
+            _.once(player.LH.forwards)
+          )
+          .on("end", d => {
+            if (d.after) { d.after() }
+          })
 
       } else {
         d3.select(selector)
           .transition()
-            .ease(EASE)
-            .duration(TRANSITION_DURATION)
-            .call(
-              tweenHtml,
-              d => {
-                return d.guts.slice().reverse()
-              },
-              player.RH.backwards,
-              player.LH.backwards
-            )
-            .on("end", () => {
-              d3.select(`${selector} > *`).remove()
-            })
+          .ease(EASE)
+          .duration(TRANSITION_DURATION)
+          .call(
+            tweenHtml,
+            d => {
+              return d.guts.slice().reverse()
+            },
+            player.RH.backwards,
+            player.LH.backwards
+          )
+          .on("end", () => {
+            d3.select(`${selector} > *`).remove()
+          })
       }
     })
 }

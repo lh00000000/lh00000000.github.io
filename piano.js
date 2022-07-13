@@ -1,37 +1,27 @@
-const protectMobileDataPlans = false // 2018-09-21 is this mean
 const pianoKey = (src, preload) => {
-  // i can't figure out a good way to deal with the shittiness
-  // of making people on data plans download 15mb of wavs
-  // that all finish loading at the same instant
-  // and end up being played as abrupt maj9/6 chords
   let h = new Howl({ src })
   if (preload) {
     h.load()
   }
   return {
-    play: vol => {
-      let tryToPlayIt = () => {
-        h.volume(vol)
-        h.play()
+    play: (vol) => {
+      let tryToPlayIt = (overrideVol = vol, delay = 0) => {
+        setTimeout(
+          () => {
+            h.volume(vol)
+            h.play()
+          },
+          delay
+        )
       }
       switch (h.state()) {
         case "loaded":
-          h.volume(vol)
-          h.play()
+          tryToPlayIt(0)
           break
         case "unloaded":
           h.load()
-
-          setTimeout(() => {
-            tryToPlayIt = _.identity
-          }, Math.random() * 100 + 5)
-          h.on("load", () => tryToPlayIt())
           break
         case "loading":
-          setTimeout(() => {
-            tryToPlayIt = _.identity
-          }, Math.random() * 100 + 5)
-          h.on("load", () => tryToPlayIt())
           break
       }
     },
@@ -132,19 +122,19 @@ const LH = {
   },
 }
 
-const debouncedPlay = (keyLookup, minVol, maxVol) =>
-  _.debounce(
+const throttledPlay = (keyLookup, minVol, maxVol, debounceVal) =>
+  _.throttle(
     () => _.sample(_.values(keyLookup)).play(_.random(minVol, maxVol)),
-    8
+    debounceVal
   )
 
 const player = {
   RH: {
-    forwards: debouncedPlay(RH.forwards, 0.1, 0.2),
-    backwards: debouncedPlay(RH.backwards, 0.2, 0.3),
+    forwards: throttledPlay(RH.forwards, 0.1, 0.3, 40),
+    backwards: throttledPlay(RH.backwards, 0.2, 0.3, 5),
   },
   LH: {
-    forwards: debouncedPlay(LH.forwards, 0.5, 0.6),
-    backwards: debouncedPlay(LH.backwards, 0.7, 0.9),
+    forwards: throttledPlay(LH.forwards, 0.5, 0.6, 20),
+    backwards: throttledPlay(LH.backwards, 0.7, 0.9, 10),
   },
 }
