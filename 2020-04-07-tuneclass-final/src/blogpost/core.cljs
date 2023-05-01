@@ -164,7 +164,7 @@
         [:li "\t\tin perfect even temperament, all intervals except the fifth are slightly wider than just intonation"]]]]]
     [:li "partials vs overtones"]]
    [:p
-    [:img {:src "https://lh00000000.nyc3.digitaloceanspaces.com/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-25/D8630BA0-1B1C-4A75-8E0B-F6EF7B4FE28E.png"}]]
+    [:img {:src "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-25/D8630BA0-1B1C-4A75-8E0B-F6EF7B4FE28E.png"}]]
    [:ul
     [:li "piano tuners use partials "]
     [:li "lou starts are middle and goes out"
@@ -267,17 +267,17 @@
     (lhsectitle "2020-02-11")
     (lhspan "there three rails in a steinway: 1. hammer 2. letoff 2. damper.")
     (lhspan "the rails look like this:")
-    [lhimg "https://lh00000000.nyc3.digitaloceanspaces.com/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/6F5C59FE-1D72-49D4-BD52-1EEEC36CC857.png" "drawing of the notches of a steinway rail. the notches are to keep the stuff aligned, even with frequent reassembly."]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/6F5C59FE-1D72-49D4-BD52-1EEEC36CC857.png" "drawing of the notches of a steinway rail. the notches are to keep the stuff aligned, even with frequent reassembly."]
     (lhspan "here are the all the cushions of a hammer:")
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/7C6DABE2-C0D3-42EE-9B20-01BB997D125A.png" "bad illustration of the little wood barrel covered in buckskin on the back of a piano hammer shank."]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/7C6DABE2-C0D3-42EE-9B20-01BB997D125A.png" "bad illustration of the little wood barrel covered in buckskin on the back of a piano hammer shank."]
     (lhspan "parts of a jack, an L that kicks the hammer: ")
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/914D8496-F79C-4E12-8ED1-8E6F3B5DD6E0.png" "illustration of a piano jack, a little l piece of wood that directly flings the hammer towards the string."]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/914D8496-F79C-4E12-8ED1-8E6F3B5DD6E0.png" "illustration of a piano jack, a little l piece of wood that directly flings the hammer towards the string."]
     (lhspan "the sugarcube is a cushion that catches the hammer on a key up. the back check is where the hammer lands after hitting the string while the key is still down.")
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/BCF9E6FE-B053-4440-B5DC-760D378DE5A9.png" "illustration of where the sugarcube is on a grand piano action whippen"]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/BCF9E6FE-B053-4440-B5DC-760D378DE5A9.png" "illustration of where the sugarcube is on a grand piano action whippen"]
     (lhspan "interesting fact: steinway calls the whipped the repetition. everyone else calls it a whippet.")
     para
     (lhspan "dampers have a tab that is to be caught by a giant fin controlled by the sostenuto pedal")
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/Screen%20Shot%202020-04-07%20at%2010.35.24%20PM.png" "bad drawing of where where the tab is on the the damper assembly for a sostenudo flipper to catch and keep up."]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-07-tuneclass-final/tuneclass-2020-02-11/Screen%20Shot%202020-04-07%20at%2010.35.24%20PM.png" "bad drawing of where where the tab is on the the damper assembly for a sostenudo flipper to catch and keep up."]
     para
     (lhspan "lou mentioned a term called \"factory float\" which are weird processes that arise when everyone is being trained mostly by word of mouth.")
     para

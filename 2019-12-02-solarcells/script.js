@@ -71,14 +71,14 @@ const assets = {
 
 
 const morepix = [
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2462.jpg",
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2460.jpg",
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2458.jpg",
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2465.jpg",
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2019-12-05-8solarstrings-more/IMG_2459.jpg",
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-01-26-moresolar/IMG_2600.jpg",
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-01-26-moresolar/IMG_2563.jpg",
-"https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-01-26-moresolar/IMG_2564.jpg",
+    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2019-12-05-8solarstrings-more/IMG_2462.jpg",
+    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2019-12-05-8solarstrings-more/IMG_2460.jpg",
+    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2019-12-05-8solarstrings-more/IMG_2458.jpg",
+    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2019-12-05-8solarstrings-more/IMG_2465.jpg",
+    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2019-12-05-8solarstrings-more/IMG_2459.jpg",
+    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-01-26-moresolar/IMG_2600.jpg",
+    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-01-26-moresolar/IMG_2563.jpg",
+    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-01-26-moresolar/IMG_2564.jpg",
 ]
 const miniPosts = {
     "2019-12-02-process": (
@@ -95,8 +95,8 @@ const miniPosts = {
     "2019-12-05": (
         <section>
             <h2>2019-12-05-8strings</h2>
-            <CaptionedImage src={assets["wall"]} caption="wanted to make four 6volt strings (12 cells each). almost there"/>
-            <CaptionedImage src={assets["table"]} caption="easy flippability"/>
+            <CaptionedImage src={assets["wall"]} caption="wanted to make four 6volt strings (12 cells each). almost there" />
+            <CaptionedImage src={assets["table"]} caption="easy flippability" />
         </section>
     ),
     "2019-12-02-soldering": (
@@ -122,10 +122,10 @@ const miniPosts = {
             </p>
             {morepix.map(src =>
                 <CaptionedImage src={src} />
-                )}
+            )}
 
         </section>
-        )
+    )
 }
 
 let currentProcess = list(

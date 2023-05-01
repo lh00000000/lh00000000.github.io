@@ -67,7 +67,7 @@
   (tsection
    "2chandemo"
    [:p "for the performance, i did a composition of linear interpolation between 8 breakpoints. here it is configured for a 2 channel system (stereo)."]
-   [:div {:style {:width "80vw"}} (audio "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-27-compmusfinal-volley/2019-12-18-volley.wav")
+   [:div {:style {:width "80vw"}} (audio "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-27-compmusfinal-volley/2019-12-18-volley.wav")
     ]))
 
 (def essay
@@ -78,7 +78,7 @@
 
 (def download
   (tsection "download"
-            [:a {:href "https://lh00000000.nyc3.digitaloceanspaces.com/siteassets/2020-03-27-compmusfinal-volley/2020-03-28-volleypatch.zip"}
+            [:a {:href "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-27-compmusfinal-volley/2020-03-28-volleypatch.zip"}
              "download max patch as zip"])
   )
 

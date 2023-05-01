@@ -187,16 +187,16 @@
     
     (lhsectitle "smugtown")
     (lhspan "i used this sorcher thing to etch line into plastic: ")
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-06-myc/IMG_3561.jpg" "flat thing metal tool with small axe-like blade at end"]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-06-myc/IMG_3561.jpg" "flat thing metal tool with small axe-like blade at end"]
     (lhspan "i ran the scorcher a few times and then just bend the plastic to snap it cleanly. using scissors on the plastic made it crack randomly.")
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-06-myc/IMG_3562.jpg" "plastic sheet on cutting mat with metal ruler"]
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-06-myc/IMG_3563.jpg" "holding a strip of plastic"]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-06-myc/IMG_3562.jpg" "plastic sheet on cutting mat with metal ruler"]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-06-myc/IMG_3563.jpg" "holding a strip of plastic"]
     (lhspan "i cut piece of plastic to protect wood shelf above the shelf where i had the spawn kits and a humidifier.")
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-06-myc/IMG_3568.jpg" "two shelves. bottom has two bags of mycelium and a humidifier blowing mist over them"]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-06-myc/IMG_3568.jpg" "two shelves. bottom has two bags of mycelium and a humidifier blowing mist over them"]
     
     (lhsectitle "plastimyc")
     (lhspan "another thing i wanted to try was using mycelium to deal with film plastics. this is because i heard that film plastics are really difficult to recycle for similar reasons that fabric is difficult to recycle: they are energy intensive to break down and getting new material is already so cheap, so its hard to get a scaled-up operation going. i collected a bunch of film plastics, from mostly plastic bags and wrapping things, then shred a bunch of it and threw it into a bag of ecovative stuff, which i picked because i wanted something hearty and didn't want to mix or innoculate substrate in my apt at the time.")
-    [lhimg "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-06-myc/IMG_3559.jpg" "plastic tray of white mycelium with some strips of film plastic sticking out"]
+    [lhimg "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-06-myc/IMG_3559.jpg" "plastic tray of white mycelium with some strips of film plastic sticking out"]
     (lhspan "i think my proportions were too off to do anything exciting. i can't really tell if the mycelium or plastic is adding anything to the equation. i guess if one had a lot of shreded plastic, this is one kind of semi-fiberous and hard to rip material to add some stretchiness to a block of baked mycelium that otherwise could just be broken off in chunks? who knows")
     ; [:span (str/join (map (constantly "-") (range 8))) nbsp]
     [:span (str/join [nbsp  nbsp  nbsp  nbsp "§" nbsp nbsp nbsp nbsp])]

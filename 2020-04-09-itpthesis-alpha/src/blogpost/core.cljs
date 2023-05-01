@@ -46,14 +46,14 @@
 
    (lh/sectitle "#frontpage")
    (lh/span "i decided to focus on getting the initial state of the non-backend software stuff going. ")
-   [lh/img "https://lh00000000.nyc3.digitaloceanspaces.com/siteassets/2020-04-09-itpthesis-alpha/Photo-Apr-5,-2020-at-92946-PM.jpg" "sketch of page i wanted to do"]
+   [lh/img "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-09-itpthesis-alpha/Photo-Apr-5,-2020-at-92946-PM.jpg" "sketch of page i wanted to do"]
    (lh/span "which included making the website (which was my first time using next js. wish i had known about it when i was fumbling about trying to get a lightweight usage of react for my blog posts before i switched to reagent) and some state of the blog posts. the next js took me a long time, because i couldn't decided if i wanted to try leaning into my new experience with reagent, keep things simple with gatsby js, or use next js hoping to also use the same repo for the admin stuff for managing the piano jobs later. i going with next.js for now.")
 
-   [lh/img "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.22-AM.png" "front page w background of piano hammers"]
-   [lh/img "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.32-AM.png" "loser.io as true genius"]
-   [lh/img "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.29-AM.png" "three icons. computer keyboard, piano keyboard, analytics dashboard."]
-   [lh/img "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.27-AM.png" "page w customer testimonial"]
-   [lh/img "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.33-AM.png" "public beta coming soon"]
+   [lh/img "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.22-AM.png" "front page w background of piano hammers"]
+   [lh/img "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.32-AM.png" "loser.io as true genius"]
+   [lh/img "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.29-AM.png" "three icons. computer keyboard, piano keyboard, analytics dashboard."]
+   [lh/img "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.27-AM.png" "page w customer testimonial"]
+   [lh/img "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-09-itpthesis-alpha/Screen-Shot-2020-04-07-at-7.49.33-AM.png" "public beta coming soon"]
 
    (lh/sectitle oneone)
    (lh/span "one of the three posts was a brief points-of-interest i'd like to do for a point on sampling/tapping/aliasing.")

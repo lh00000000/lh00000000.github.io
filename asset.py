@@ -17,15 +17,16 @@ s3_client = boto3.client(
     aws_secret_access_key=os.environ["DO_SPACES_00000000_SECRET"],
 )
 folder_prefix = "siteassets"
-# url_prefix = "https://lh00000000.nyc3.digitaloceanspaces.com/"
-url_prefix = "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/"
+# url_prefix = "https://lh00000000-public.s3.amazonaws.com/do/"
+url_prefix = "https://lh00000000-public.s3.amazonaws.com/do/"
 key_lookup = {}
 local_asset_folder_name = sys.argv[1]
 
 os.system(f"jhead -autorot {os.getcwd()}/{local_asset_folder_name}/*.jpg")
 
 filetypes = ["pdf", "gif", "jpg", "mov", "png"]
-upper_and_lower = itertools.chain.from_iterable([[ft, ft.upper()] for ft in filetypes])
+upper_and_lower = itertools.chain.from_iterable(
+    [[ft, ft.upper()] for ft in filetypes])
 asset_filepaths = itertools.chain.from_iterable(
     [
         glob.glob(f"./{local_asset_folder_name}/*.{filetype}")
@@ -39,7 +40,8 @@ for filepath in asset_filepaths:
     key_str = f"{folder_prefix}/{local_asset_folder_name}/{nice_filename}"
     print(f"uploading {filepath}")
     res = s3_client.upload_file(filepath, "lh00000000", key_str)
-    print(s3_client.put_object_acl( ACL='public-read', Bucket="lh00000000", Key=key_str ))
+    print(s3_client.put_object_acl(
+        ACL='public-read', Bucket="lh00000000", Key=key_str))
 
     key_lookup[nice_filename.split(".")[0]] = url_prefix + key_str
 

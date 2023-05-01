@@ -86,37 +86,37 @@
   (tsection
    "pix"
    (flexcols 4 (captioned-img
-                "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2213.jpg"
+                "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2213.jpg"
                 "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2212.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2212.jpg"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2215.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2215.jpg"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2214.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2214.jpg"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/B91DD900-BA91-45D6-BC85-1A5F3BC04A95.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/B91DD900-BA91-45D6-BC85-1A5F3BC04A95.jpg"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2217.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2217.jpg"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2219.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2219.jpg"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2224.png"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2224.png"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2220.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2220.jpg"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2221.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2221.jpg"
               "")
              (captioned-img
-              "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-31-containerhome/IMG_2222.jpg"
+              "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-31-containerhome/IMG_2222.jpg"
               ""))))
 (def notes
   (tsection "notes"

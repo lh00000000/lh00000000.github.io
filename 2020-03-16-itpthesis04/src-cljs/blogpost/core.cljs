@@ -50,13 +50,13 @@ for x in range(1, int(261.63 * 4)):
 
      [:pre [:code {:class "python"} pycode]]
      [:p "here is a recording of my laptop microphone recording laptop speaker playing (software) midi device (ableton lol)"]
-     (audioo "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-16-itpthesis04/2020-03-16-test.wav")
+     (audioo "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-16-itpthesis04/2020-03-16-test.wav")
      [:p "here are some experiments to see how slow my midi output event code was by using python. seems to get into \"audio rate\" so that seems fine."]
      (map
       audioo
-      ["https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-16-itpthesis04/2020-03-16-midobuzz0.wav"
-       "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-16-itpthesis04/2020-03-16-midobuzz1.wav"
-       "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-03-16-itpthesis04/2020-03-16-midobuzz2.wav"])]
+      ["https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-16-itpthesis04/2020-03-16-midobuzz0.wav"
+       "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-16-itpthesis04/2020-03-16-midobuzz1.wav"
+       "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-03-16-itpthesis04/2020-03-16-midobuzz2.wav"])]
     [:section 
      [:p "might as well put other updates here. switched from someone's template for using lein to get clojurescript builds for my blog to shadowcljs, which saves me some commands and hopefully takes some hassle out of my asset to object store workflow. working on that workflow got me some util functions i plan to use to upload the records to digital ocean spaces. tried to look into using loopback js but got scared off by it opening up ibm cloud user registration pages and now looking into using feathers js. also generally trying to work through my queue of semi-useless things to document (i.e. by posting them in this blog). partially telling myself that these externally hosted, although shittily formatted, documents will be easier to remember long-term-memory-wise in the future. 
 "]

@@ -30,11 +30,11 @@
    (->> imgs (take 12))
    (nth quotes 0)
    (->> imgs (drop 12) (take 4))
-   [lh/audio "https://lh00000000.nyc3.digitaloceanspaces.com/siteassets/2020-05-28-quar/2020-05-19-grad-alley.wav"]
+   [lh/audio "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-05-28-quar/2020-05-19-grad-alley.wav"]
    (->> imgs (drop 16) (take 8))
    (nth quotes 1)
    (->> imgs (drop 24) (take 6))
-   [lh/audio "https://lh00000000.nyc3.digitaloceanspaces.com/siteassets/2020-05-28-quar/2020-05-23-harp-bluebird.wav"]
+   [lh/audio "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-05-28-quar/2020-05-23-harp-bluebird.wav"]
    (->> imgs (drop 30) (take 2))
    (nth quotes 2)
    (->> imgs (drop 32) (take 10))

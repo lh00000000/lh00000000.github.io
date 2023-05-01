@@ -41,24 +41,24 @@
            :webkitallowfullscreen "true"}])
 
 (def pixsrcs
-  ["https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/3dfillpedlip-png"
-   "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/2020-03-05-png"
-   "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/multi-stl-png"
-   "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/papersketch.jpg"
-   "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/attempt-wegmans-png"
+  ["https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/3dfillpedlip-png"
+   "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/2020-03-05-png"
+   "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/multi-stl-png"
+   "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/papersketch.jpg"
+   "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/attempt-wegmans-png"
    
-;    "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/3dfillpedlip-png"
-; "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/2020-03-05-png"
-; "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/multi-stl-png"
-; "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/papersketch.jpg"
-; "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/attempt-wegmans-png"
+;    "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/3dfillpedlip-png"
+; "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/2020-03-05-png"
+; "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/multi-stl-png"
+; "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/papersketch.jpg"
+; "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/attempt-wegmans-png"
    ]
   )
 
 
 (def downloadsrcs 
-(str/split "https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/iso-01.3dm
-https://lh00000000.nyc3.cdn.digitaloceanspaces.com/siteassets/2020-04-02-biodes-final-nsf-files/iso-one.3dm" #"\n")
+(str/split "https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/iso-01.3dm
+https://lh00000000-public.s3.amazonaws.com/do/siteassets/2020-04-02-biodes-final-nsf-files/iso-one.3dm" #"\n")
   
   )
 
