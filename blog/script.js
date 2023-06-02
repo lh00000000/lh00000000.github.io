@@ -2,6 +2,7 @@ const NO_FILTER = "NO_FILTER"
 const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 const allPosts = [
+ { href: "/2023-06-02-codesnack-test", tags: ["#js"] },
   { href: "/2022-05-21-housewarming", tags: ["#event", "#personal"] },
   { href: "/2020-05-28-txtxtxt", tags: ["#exp", "#js"] },
   { href: "/2020-05-28-quar", tags: ["#update", "#mend", "#waste", "#audio", "#personal"] },
