@@ -2,13 +2,13 @@ const NO_FILTER = "NO_FILTER"
 const FILTERED_SOME = "FILTERED_SOME"
 const FILTERED_ALL = "FILTERED_ALL"
 const allPosts = [
-    {
-        href: "https://lh00000000.notion.site/2022-02-09-cabbagedye-f2db071f26fc401eb7651000a4b3c62a?pvs=4",
-        tags: ["exp", "textile"],
-        label: "2022-02-09-cabbagedye"
+  { href: "/2023-08-17-bday32-luming", tags: ["#event", "#personal"] },
+  {
+    href: "https://lh00000000.notion.site/2022-02-09-cabbagedye-f2db071f26fc401eb7651000a4b3c62a?pvs=4",
+    tags: ["exp", "textile"],
+    label: "2022-02-09-cabbagedye"
   },
-    
- { href: "/2023-06-02-codesnack-test", tags: ["#js"] },
+  { href: "/2023-06-02-codesnack-test", tags: ["#js"] },
   { href: "/2022-05-21-housewarming", tags: ["#event", "#personal"] },
   { href: "/2020-05-28-txtxtxt", tags: ["#exp", "#js"] },
   { href: "/2020-05-28-quar", tags: ["#update", "#mend", "#waste", "#audio", "#personal"] },
@@ -176,8 +176,8 @@ const update = () => {
 
     let labelText = post.hasOwnProperty("label") ? post.label : post.href
     let aContent = (
-        document
-            .createTextNode(`${labelText} ${post.tags.join(" ")}`)
+      document
+        .createTextNode(`${labelText} ${post.tags.join(" ")}`)
     )
     a.appendChild(aContent)
 
