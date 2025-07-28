@@ -1,0 +1,2 @@
+BUILD_TOOL=next
+BUILD_SCRIPT=build.sh 
