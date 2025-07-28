@@ -122,6 +122,35 @@ const update = () => {
     
     document.querySelector(".tags .list").appendChild(span)
   })
+
+  // Add ALL/NONE buttons
+  let allButton = document.createElement("span")
+  allButton.setAttribute("class", "tag-toggle all-none-toggle")
+  allButton.classList.add("enabled")
+  allButton.appendChild(document.createTextNode("ALL"))
+  allButton.addEventListener("click", () => {
+    // Enable all tags
+    allTags.forEach(tag => {
+      enabledTags.add(tag)
+      disabledTags.delete(tag)
+    })
+    update()
+  })
+  document.querySelector(".tags .list").appendChild(allButton)
+
+  let noneButton = document.createElement("span")
+  noneButton.setAttribute("class", "tag-toggle all-none-toggle")
+  noneButton.classList.add("enabled")
+  noneButton.appendChild(document.createTextNode("NONE"))
+  noneButton.addEventListener("click", () => {
+    // Disable all tags
+    allTags.forEach(tag => {
+      disabledTags.add(tag)
+      enabledTags.delete(tag)
+    })
+    update()
+  })
+  document.querySelector(".tags .list").appendChild(noneButton)
 }
 
 console.log('Script loaded, waiting for document ready...');
