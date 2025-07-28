@@ -6,8 +6,43 @@ a:hover {
   background-color: black;
 }
 
+a {
+  color: #ddd;
+}
+
 body {
   /*font-family: "helvetica neue";*/
   font-family: monospace;
-  font-size: 3em;
+  font-size: 1.2em;
+  background-color: #111;
+  color: #eee;
+  line-height: 1.5;
+}
+
+.tag-toggle {
+  display: inline-block;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.tag-toggle.enabled {
+  color: #aaa;
+}
+
+.tag-toggle.disabled {
+  color: #444;
+  text-decoration: line-through;
+}
+
+.tag-toggle:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.tag-toggle.disabled:hover {
+  background-color: #ccc;
+  color: #000;
 }

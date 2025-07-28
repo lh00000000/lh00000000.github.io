@@ -1,19 +1,26 @@
 {
   "name": "luminghao.com",
   "version": "1.0.0",
-  "description": "the idea was to make a website that consisted of a single long string  that was always rewriting more nested information into itself.",
-  "main": "bundle.js",
+  "description": "Luming Hao's blog with PUBLISH00000000.json system",
   "scripts": {
-    "test": "nyc mocha"
+    "build": "node scripts/build-blog-static.js",
+    "dev": "node scripts/build-blog-static.js && python3 -m http.server 8000",
+    "convert": "node convert-to-publish-json.js",
+    "update-dirs": "node build-blog-directories.js"
   },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lh00000000/luminghao.com.git"
   },
-  "author": "lh00000000",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lh00000000/luminghao.com/issues"
-  },
-  "homepage": "https://github.com/lh00000000/luminghao.com#readme"
+  "keywords": [
+    "blog",
+    "github-pages",
+    "static-site"
+  ],
+  "author": "Luming Hao",
+  "license": "MIT"
 }
