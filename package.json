@@ -2,12 +2,7 @@
   "name": "luminghao.com",
   "version": "1.0.0",
   "description": "Luming Hao's blog with PUBLISH00000000.json system",
-  "scripts": {
-    "build": "node scripts/build-blog-static.js",
-    "dev": "node scripts/build-blog-static.js && python3 -m http.server 8000",
-    "convert": "node convert-to-publish-json.js",
-    "update-dirs": "node build-blog-directories.js"
-  },
+  "scripts": { },
   "engines": {
     "node": ">=16.0.0"
   },

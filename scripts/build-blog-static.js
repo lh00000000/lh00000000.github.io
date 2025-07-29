@@ -9,6 +9,10 @@ const BLOG_DIR = path.join(ROOT_DIR, "blog");
 const DIST_DIR = path.join(BLOG_DIR, "dist");
 const API_DIR = path.join(DIST_DIR, "api");
 
+// File name constants
+const PUBLISH_FILE = "publish00000000.json";
+const BUILD_SCRIPT = "build00000000.sh";
+
 // Ensure dist directory exists
 function ensureDistDir() {
   if (!fs.existsSync(DIST_DIR)) {
@@ -45,9 +49,9 @@ function scanBlogDirectories() {
   }
 }
 
-// Read PUBLISH00000000.json file from a directory
+// Read publish00000000.json file from a directory
 function readPublishJson(directory) {
-  const publishPath = path.join(ROOT_DIR, directory, "PUBLISH00000000.json");
+  const publishPath = path.join(ROOT_DIR, directory, PUBLISH_FILE);
 
   try {
     if (fs.existsSync(publishPath)) {
@@ -56,7 +60,7 @@ function readPublishJson(directory) {
     }
   } catch (error) {
     console.warn(
-      `Error reading PUBLISH00000000.json from ${directory}:`,
+      `Error reading ${PUBLISH_FILE} from ${directory}:`,
       error
     );
   }
@@ -64,7 +68,7 @@ function readPublishJson(directory) {
   return null;
 }
 
-// Generate posts data from PUBLISH.json files
+// Generate posts data from publish.json files
 function generatePostsData(directories) {
   const posts = [];
 
@@ -171,35 +175,35 @@ function hasRecentGitChanges(directory) {
   }
 }
 
-// Run BUILD00000000.sh scripts in blog post directories (only if recent changes)
+// Run build00000000.sh scripts in blog post directories (only if recent changes)
 function runBuildScripts(directories) {
   const { execSync } = require("child_process");
 
   for (const dir of directories) {
-    const buildScriptPath = path.join(ROOT_DIR, dir, "BUILD00000000.sh");
+    const buildScriptPath = path.join(ROOT_DIR, dir, BUILD_SCRIPT);
 
     if (fs.existsSync(buildScriptPath)) {
       // Check if there are recent git changes in this directory
       if (hasRecentGitChanges(dir)) {
         try {
-          console.log(`🔧 Running BUILD00000000.sh in ${dir} (recent changes detected)...`);
+          console.log(`🔧 Running ${BUILD_SCRIPT} in ${dir} (recent changes detected)...`);
 
           // Make script executable and run it
           fs.chmodSync(buildScriptPath, "755");
-          execSync(`cd "${path.join(ROOT_DIR, dir)}" && ./BUILD00000000.sh`, {
+          execSync(`cd "${path.join(ROOT_DIR, dir)}" && ./${BUILD_SCRIPT}`, {
             stdio: "inherit",
             cwd: path.join(ROOT_DIR, dir),
           });
 
-          console.log(`✅ Completed BUILD00000000.sh in ${dir}`);
+          console.log(`✅ Completed ${BUILD_SCRIPT} in ${dir}`);
         } catch (error) {
           console.error(
-            `❌ Error running BUILD00000000.sh in ${dir}:`,
+            `❌ Error running ${BUILD_SCRIPT} in ${dir}:`,
             error.message
           );
         }
       } else {
-        console.log(`⏭️  Skipping BUILD00000000.sh in ${dir} (no recent changes)`);
+        console.log(`⏭️  Skipping ${BUILD_SCRIPT} in ${dir} (no recent changes)`);
       }
     }
   }
@@ -226,7 +230,7 @@ function buildBlog() {
   console.log("\n📁 Copying static assets...");
   copyStaticAssets();
 
-  console.log("\n🔧 Running BUILD00000000.sh scripts...");
+  console.log("\n🔧 Running build00000000.sh scripts...");
   runBuildScripts(directories);
 
   console.log("\n✅ Blog build complete!");
