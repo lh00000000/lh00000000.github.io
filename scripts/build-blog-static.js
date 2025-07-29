@@ -139,19 +139,6 @@ function writeStaticFiles(directories, posts, allTags) {
   console.log(`✓ Generated: ${combinedPath}`);
 }
 
-// Copy static assets (only essential files)
-function copyStaticAssets() {
-  // Copy other static files (index.html, etc.)
-  const staticFiles = ["index.html", "CNAME", "favicon.ico"];
-  for (const file of staticFiles) {
-    const srcPath = path.join(ROOT_DIR, file);
-    if (fs.existsSync(srcPath)) {
-      const destPath = path.join(DIST_DIR, file);
-      fs.copyFileSync(srcPath, destPath);
-      console.log(`✓ Copied: ${file}`);
-    }
-  }
-}
 
 
 
@@ -227,8 +214,6 @@ function buildBlog() {
   console.log("\n📝 Generating static files...");
   writeStaticFiles(directories, posts, allTags);
 
-  console.log("\n📁 Copying static assets...");
-  copyStaticAssets();
 
   console.log("\n🔧 Running build00000000.sh scripts...");
   runBuildScripts(directories);

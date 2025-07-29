@@ -49,10 +49,7 @@ body {
 
 .all-none-toggle {
   font-weight: bold;
-  margin-left: 0.5em;
   padding: 0.1em 0.3em;
-  border: 1px solid #666;
-  border-radius: 3px;
 }
 
 .all-none-toggle:hover {

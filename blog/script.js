@@ -12,7 +12,8 @@ let disabledTags = new Set() // Tags that are currently disabled
 const disabledByDefault = new Set([
   '#itp', 
   "#itpthesis",
-  "#js"
+  "#js",
+  "#test"
 ])
 
 // Load posts from pre-built static files
@@ -58,13 +59,9 @@ function toggleTag(tag) {
 
 // Check if a post should be visible based on current tag filters
 function isPostVisible(post) {
-  // If no tags are enabled, show all posts
-  if (enabledTags.size === 0) {
-    return false;
-  }
   
   // A post is visible if it has at least one enabled tag
-  return post.tags.some(tag => enabledTags.has(tag));
+  return post.tags.some(tag => enabledTags.has(tag)) && !post.tags.some(tag => disabledTags.has(tag))
 }
 
 const reset = () => {
@@ -103,7 +100,7 @@ const update = () => {
   })
 
   // Render tag toggles
-  allTags.forEach((tag, i, all) => {
+  allTags.sort().forEach((tag, i, all) => {
     let span = document.createElement("span")
     span.setAttribute("class", "tag-toggle")
     
