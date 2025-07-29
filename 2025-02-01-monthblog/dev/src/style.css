@@ -3,7 +3,6 @@
   line-height: 1.4;
   font-weight: 400;
   color: #fff;
-  background-color: #000;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,20 +17,18 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #000;
   color: #fff;
   font-family: monospace;
+  background-color: #fff;
 }
 
 #root {
   min-height: 100vh;
-  background-color: #000;
 }
 
 /* Web Brutalist styles */
 .blog-entry {
   border: 1px solid #fff;
-  background-color: #000;
 }
 
 .blog-entry:hover {
