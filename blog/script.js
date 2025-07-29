@@ -60,7 +60,7 @@ function toggleTag(tag) {
 function isPostVisible(post) {
   // If no tags are enabled, show all posts
   if (enabledTags.size === 0) {
-    return true;
+    return false;
   }
   
   // A post is visible if it has at least one enabled tag
