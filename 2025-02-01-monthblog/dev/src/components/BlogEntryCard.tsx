@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import VideoPreview from "./VideoPreview";
+import { getThumbnailUrl, createPlaceholder } from "../utils/imageUtils";
 
 interface BlogEntry {
   id: number;
@@ -15,6 +16,40 @@ interface BlogEntryCardProps {
 }
 
 const BlogEntryCard: React.FC<BlogEntryCardProps> = ({ entry }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [placeholderUrl, setPlaceholderUrl] = useState<string>("");
+  const imageRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Create placeholder on mount
+  useEffect(() => {
+    setPlaceholderUrl(createPlaceholder(250, 200));
+  }, []);
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect(); // Stop observing once loaded
+        }
+      },
+      {
+        rootMargin: "150px", // Start loading 150px before the image comes into view
+        threshold: 0.1,
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleImageClick = () => {
     window.open(entry.image, "_blank");
   };
@@ -31,6 +66,7 @@ const BlogEntryCard: React.FC<BlogEntryCardProps> = ({ entry }) => {
   return (
     <>
       <div
+        ref={containerRef}
         style={{
           position: "relative",
           display: "inline-block",
@@ -42,24 +78,69 @@ const BlogEntryCard: React.FC<BlogEntryCardProps> = ({ entry }) => {
         {entry.isVideo || isVideo(entry.image) ? (
           <VideoPreview src={entry.image} alt="Blog video" />
         ) : (
-          <img
-            src={entry.image}
-            alt="Blog image"
-            style={{
-              maxWidth: "250px",
-              maxHeight: "300px",
-              width: "auto",
-              height: "auto",
-              objectFit: "contain",
-              cursor: "pointer",
-              transition: "opacity 0.2s ease",
-            }}
-            onClick={handleImageClick}
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = "none";
-            }}
-          />
+          <div style={{ position: "relative" }}>
+            {/* Low-res thumbnail */}
+            {isInView && !isLoaded && !imageError && (
+              <img
+                src={getThumbnailUrl(entry.image, 100)}
+                alt=""
+                style={{
+                  maxWidth: "250px",
+                  maxHeight: "300px",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
+                  filter: "blur(3px)",
+                  opacity: 0.9,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 0,
+                }}
+              />
+            )}
+            
+            {/* Main image */}
+            {isInView && (
+              <img
+                ref={imageRef}
+                src={entry.image}
+                alt="Blog image"
+                style={{
+                  maxWidth: "250px",
+                  maxHeight: "300px",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
+                  cursor: "pointer",
+                  transition: "opacity 0.5s ease",
+                  opacity: isLoaded ? 1 : 0,
+                  position: "relative",
+                  zIndex: 1,
+                }}
+                onClick={handleImageClick}
+                onLoad={() => setIsLoaded(true)}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  setImageError(true);
+                  target.style.display = "none";
+                }}
+              />
+            )}
+            
+            {/* Loading placeholder */}
+            {!isInView && placeholderUrl && (
+              <img
+                src={placeholderUrl}
+                alt=""
+                style={{
+                  width: "250px",
+                  height: "200px",
+                  objectFit: "cover",
+                }}
+              />
+            )}
+          </div>
         )}
         <span
           style={{
