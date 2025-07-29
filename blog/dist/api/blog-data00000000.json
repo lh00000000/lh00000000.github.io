@@ -2,7 +2,6 @@
   "directories": [
     "2025-07-28-vitetest",
     "2025-02-01-monthblog",
-    "2025-02-01-febblog",
     "2023-08-17-bday32-luming",
     "2023-06-20-test-txt",
     "2023-06-02-codesnack-test",
@@ -133,6 +132,20 @@
     "2018-09-11-bloginit"
   ],
   "posts": [
+    {
+      "href": "/2025-07-28-vitetest",
+      "tags": [
+        "#dev",
+        "#test"
+      ]
+    },
+    {
+      "href": "/2025-02-01-monthblog",
+      "tags": [
+        "#event",
+        "#personal"
+      ]
+    },
     {
       "href": "/2023-08-17-bday32-luming",
       "tags": [
@@ -992,6 +1005,7 @@
     "#blog",
     "#clojure",
     "#compmus",
+    "#dev",
     "#digisig",
     "#energy",
     "#event",
@@ -1026,6 +1040,7 @@
     "#solar",
     "#subtract",
     "#talk",
+    "#test",
     "#textile",
     "#theories",
     "#tuneclass",
@@ -1036,5 +1051,5 @@
     "#workflow",
     "#writing"
   ],
-  "generatedAt": "2025-07-28T18:49:21.773Z"
+  "generatedAt": "2025-07-29T02:34:30.904Z"
 }
