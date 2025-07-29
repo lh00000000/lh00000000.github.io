@@ -14,7 +14,7 @@ interface BlogEntry {
 
 function App() {
   useEffect(() => {
-    document.title = "2025-06";
+    document.title = "blog 2025-06";
   }, []);
 
   return (
