@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+
 import "./style.css";
 import BlogEntryCard from "./components/BlogEntryCard";
 
@@ -13,9 +13,6 @@ interface BlogEntry {
 }
 
 function App() {
-  useEffect(() => {
-    document.title = "blog 2025-06";
-  }, []);
 
   return (
     <div
