@@ -1,4 +1,4 @@
-name: Build Blog
+name: buildblog00000000
 
 on:
   push:
