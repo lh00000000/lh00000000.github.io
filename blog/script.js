@@ -61,7 +61,7 @@ function toggleTag(tag) {
 function isPostVisible(post) {
   
   // A post is visible if it has at least one enabled tag
-  return post.tags.some(tag => enabledTags.has(tag)) && !post.tags.some(tag => disabledTags.has(tag))
+  return post.tags.some(tag => enabledTags.has(tag))
 }
 
 const reset = () => {
