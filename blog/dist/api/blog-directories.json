@@ -1,4 +1,13 @@
 [
+  "waittogether",
+  "timers",
+  "scripts",
+  "resume",
+  "liao",
+  "calibrationlabor",
+  "blog",
+  "bday34",
+  "api",
   "2025-07-28-vitetest",
   "2025-02-01-monthblog",
   "2023-08-17-bday32-luming",
@@ -128,5 +137,7 @@
   "2018-09-19-concreteswitch",
   "2018-09-13-interactivity",
   "2018-09-13-genmusic",
-  "2018-09-11-bloginit"
+  "2018-09-11-bloginit",
+  ".github",
+  ".git"
 ]

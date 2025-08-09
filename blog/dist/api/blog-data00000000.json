@@ -1,5 +1,14 @@
 {
   "directories": [
+    "waittogether",
+    "timers",
+    "scripts",
+    "resume",
+    "liao",
+    "calibrationlabor",
+    "blog",
+    "bday34",
+    "api",
     "2025-07-28-vitetest",
     "2025-02-01-monthblog",
     "2023-08-17-bday32-luming",
@@ -129,9 +138,18 @@
     "2018-09-19-concreteswitch",
     "2018-09-13-interactivity",
     "2018-09-13-genmusic",
-    "2018-09-11-bloginit"
+    "2018-09-11-bloginit",
+    ".github",
+    ".git"
   ],
   "posts": [
+    {
+      "href": "/bday34",
+      "tags": [
+        "#event",
+        "#personal"
+      ]
+    },
     {
       "href": "/2025-07-28-vitetest",
       "tags": [
@@ -1054,5 +1072,5 @@
     "#workflow",
     "#writing"
   ],
-  "generatedAt": "2025-08-09T19:51:32.507Z"
+  "generatedAt": "2025-08-09T21:14:51.591Z"
 }
