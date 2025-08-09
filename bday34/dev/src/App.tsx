@@ -1,14 +1,5 @@
 import "./style.css";
-
-// TypeScript interface for the blog entry structure
-interface BlogEntry {
-  id: number;
-  date: string;
-  caption: string;
-  image: string;
-  hasImage: boolean;
-  isVideo?: boolean;
-}
+import ReccList from "./components/ReccList";
 
 function App() {
   return (
@@ -72,6 +63,22 @@ function App() {
       <div>
         <h2 className="inline">GIFT</h2>
         <span className="inline">i'd like you to listen to these artists</span>
+        <ReccList
+        reccs={
+          [
+            {
+              name: "artist name",
+              blurb: "artist blurb",
+              links: [
+                {
+                  name: "link name",
+                  link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                }
+              ]
+            }
+          ]
+        }
+        ></ReccList>
       </div>
     </div>
   );
