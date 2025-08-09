@@ -34,7 +34,7 @@ function scanBlogDirectories() {
       const itemPath = path.join(ROOT_DIR, item);
       const stat = fs.statSync(itemPath);
 
-      if (stat.isDirectory() && /^\d{4}-\d{2}-\d{2}-/.test(item)) {
+      if (stat.isDirectory()) {
         directories.push(item);
       }
     }
