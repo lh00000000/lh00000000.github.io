@@ -101,10 +101,7 @@ function App() {
       </div>
       <div>
         <h2 style={{ display: "inline", margin: "0px" }}>GIFT&nbsp;</h2>
-        <span style={{ display: "inline" }}>
-          to me: i'd like you to listen/watch these people that have filled my
-          last year with WARMTHNESS.
-        </span>
+
         <ReccList
           reccs={[
             {
@@ -251,6 +248,9 @@ function App() {
                   link: "https://open.spotify.com/album/65toYBy1QzfMWuKSWgNj16?si=FRjvM91iQGa5r7U0V81spw",
                 },
               ],
+            },
+            {
+              name: "sarabeth",
             },
           ]}
         ></ReccList>
