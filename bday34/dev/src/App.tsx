@@ -165,6 +165,9 @@ function App() {
               ],
             },
             {
+              name: "caroline kuhn",
+            },
+            {
               name: "border house",
               links: [
                 {
