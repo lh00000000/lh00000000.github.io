@@ -120,6 +120,10 @@ function App() {
                   link: "https://williamhtravis.bandcamp.com/track/unfuck-my-mind",
                 },
                 {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/artist/william-h-travis/1170140734",
+                },
+                {
                   name: "spotify",
                   link: "https://open.spotify.com/artist/3fCdfTlmlwGZBbJbVR2Ce5",
                 },
@@ -143,6 +147,45 @@ function App() {
               ],
             },
             {
+              name: "laenz",
+              links: [
+                {
+                  name: "bandcamp",
+                  link: "https://laenz.bandcamp.com/album/88-keys?fbclid=PAZXh0bgNhZW0CMTEAAacUDaXZy_DDVRiepJ9lNdKlg00fyEUGp0bNQiExYpd67hAegkeZXZfcZcou8g_aem_CGunUsz2VQZMIjbCheg8qA",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/album/3Ggi98CiqHNjpuoYtae6Lw?si=64Vsog0-RSiaDMa0jP0eSg",
+                },
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/album/88-keys/1813804960",
+                },
+              ],
+            },
+            {
+              name: "emma munger",
+              links: [
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/album/pattern/1785819906",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/artist/4ip4LQgpGhWnn8DaPhkK8N?si=4cotOnWaT-a830MCKGvoZg",
+                },
+              ],
+            },
+            {
+              name: "emily eagen",
+              links: [
+                {
+                  name: "website",
+                  link: "https://www.emilyeagen.com/",
+                },
+              ],
+            },
+            {
               name: "grace carney",
               links: [
                 {
@@ -160,12 +203,47 @@ function App() {
                 },
                 {
                   name: "spotify",
-                  link: "https://open.spotify.com/artist/20000000000000000000000000000000",
+                  link: "https://open.spotify.com/artist/0FbnppP4a1bexi3vpcLUAl?si=IZ4zZWVmTVSJBB-nXBY1NA",
+                },
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/artist/ewe-dew/1355144050",
+                },
+              ],
+            },
+            {
+              name: "zoe firn",
+              links: [
+                {
+                  name: "bandcamp",
+                  link: "https://zoefirn.bandcamp.com/album/whats-my-plan",
+                },
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/artist/zoe-firn/1610607063",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/album/0eYc6O8340Z8FFnCrMFbPM?si=WGUxuZMIQiOXBh8khgYuZQ",
                 },
               ],
             },
             {
               name: "caroline kuhn",
+              links: [
+                {
+                  name: "bandcamp",
+                  link: "https://carolinekuhn.bandcamp.com/album/be-something",
+                },
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/artist/caroline-kuhn/1116316025",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/artist/6UoDT3aOJqE5DFnwqrAQlu",
+                },
+              ],
             },
             {
               name: "border house",
@@ -174,13 +252,32 @@ function App() {
                   name: "bandcamp",
                   link: "https://borderhouse.bandcamp.com/track/finishing-the-record",
                 },
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/artist/border-house/1450246460",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/artist/2EClYJQiVM3X0lCVUte45p?si=NWabB9yNTx2BhuaJuCuUsA",
+                },
               ],
             },
             {
               name: "micelf",
-            },
-            {
-              name: "amelia gillis",
+              links: [
+                {
+                  name: "tiktok",
+                  link: "https://www.tiktok.com/@micelf_micelf",
+                },
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/artist/micelf/1682570517",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/artist/2oJQ6xl9JSTK0jb8I7j5EF?si=I2Odxgz9QhaRATd_caYwlQ",
+                },
+              ],
             },
             {
               name: "audrey morgan",
@@ -193,12 +290,29 @@ function App() {
             },
             {
               name: "juliet by night",
+              links: [
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/artist/juliet-by-night/1571475609",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/artist/4kFlZCpQ9vLFSlqsqs24HP?si=m8MYatY3Qi-zp-I4lQ7Jmg",
+                },
+              ],
             },
             {
               name: "sunskip",
-            },
-            {
-              name: "mauro",
+              links: [
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/album/smoke-and-mirrors-ep/1819833393",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/album/5jMfvEuci6TSyCyfAcBFA1?si=Txpr0ZTETcS5wGJ_1oFyxg",
+                },
+              ],
             },
             {
               name: "alex wolfe",
@@ -254,6 +368,38 @@ function App() {
             },
             {
               name: "sarabeth",
+              links: [
+                {
+                  name: "ig",
+                  link: "https://www.instagram.com/essbeewritessongs/",
+                },
+              ],
+            },
+            {
+              name: "isaac gillespie",
+              links: [
+                {
+                  name: "bandcamp",
+                  link: "https://isaacgillespie.bandcamp.com/album/they-call-this-art",
+                },
+                {
+                  name: "apple music",
+                  link: "https://music.apple.com/us/album/spring-formal-single/1739437010",
+                },
+                {
+                  name: "spotify",
+                  link: "https://open.spotify.com/artist/3w5fMSeof5NXivymTqA0Dx?si=yZQ9NSYaRYGHi8GLIOd-aw",
+                },
+              ],
+            },
+            {
+              name: "big feelings floral",
+              links: [
+                {
+                  name: "ig",
+                  link: "https://www.instagram.com/bigfeelingsfloral/",
+                },
+              ],
             },
           ]}
         ></ReccList>
