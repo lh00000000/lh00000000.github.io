@@ -152,6 +152,7 @@ function App() {
               zIndex: -9999,
             }}
           >
+            <a href="https://chat.whatsapp.com/HgK02WE1nmM0dBRtmg7gVs" target="_blank">
             <CloudinaryImage
               src="https://lh00000000-public.s3.amazonaws.com/2025/bday34whatsapp.jpg"
               alt="qrcode for whatsapp group"
@@ -159,6 +160,7 @@ function App() {
               placeholder={false}
               responsive={true}
             />
+            </a>
           </div>
         </div>
         <div>
