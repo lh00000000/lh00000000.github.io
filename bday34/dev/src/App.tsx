@@ -115,7 +115,7 @@ function App() {
           <span style={{ display: "inline" }}>
             <b>WHERE:</b>{" "}
             <span style={{ display: "inline" }}>
-              <a href="https://maps.app.goo.gl/SnzGEKzthw4pAK1F7/">judys</a>
+              <a href="https://maps.app.goo.gl/DSDtLB6UWLgoTEEp6/">judys</a>
             </span>
             &nbsp;
           </span>
