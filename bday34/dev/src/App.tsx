@@ -10,8 +10,8 @@ function App() {
   useEffect(() => {
     let rafId = 0;
     const start = performance.now();
-    const amplitude = 0.08; // 8% size oscillation
-    const periodMs = 1600; // 1.6s per cycle
+    const amplitude = 0.1; // 8% size oscillation
+    const periodMs = 500; // 1.6s per cycle
 
     const animate = (now: number) => {
       const elapsed = now - start;
