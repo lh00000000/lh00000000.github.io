@@ -136,7 +136,7 @@ function ReccList(props: ReccListProps) {
                 whiteSpace: "nowrap",
               }}
             >
-              {item.name}:
+              {item.name}:{" "}
             </h3>
 
             {item.role ? (
