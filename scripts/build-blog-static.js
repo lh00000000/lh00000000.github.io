@@ -13,6 +13,26 @@ const API_DIR = path.join(DIST_DIR, "api");
 const PUBLISH_FILE = "publish00000000.json";
 const BUILD_SCRIPT = "build00000000.sh";
 
+// Escape text for GitHub Actions workflow commands
+function escapeForWorkflowCommand(text) {
+  if (text === undefined || text === null) return "";
+  return String(text)
+    .replace(/%/g, "%25")
+    .replace(/\r/g, "%0D")
+    .replace(/\n/g, "%0A");
+}
+
+// Emit a GitHub Actions warning annotation
+function emitGithubWarning({ title, file, line, col, message }) {
+  const props = [];
+  if (title) props.push(`title=${escapeForWorkflowCommand(title)}`);
+  if (file) props.push(`file=${escapeForWorkflowCommand(file)}`);
+  if (line) props.push(`line=${line}`);
+  if (col) props.push(`col=${col}`);
+  const cmd = `::warning ${props.join(",")}::${escapeForWorkflowCommand(message)}`;
+  console.log(cmd);
+}
+
 // Ensure dist directory exists
 function ensureDistDir() {
   if (!fs.existsSync(DIST_DIR)) {
@@ -184,10 +204,15 @@ function runBuildScripts(directories) {
 
           console.log(`✅ Completed ${BUILD_SCRIPT} in ${dir}`);
         } catch (error) {
-          console.error(
-            `❌ Error running ${BUILD_SCRIPT} in ${dir}:`,
-            error.message
-          );
+          const message = `Error running ${BUILD_SCRIPT} in ${dir}. See logs above. Exit status: ${error.status ?? 'unknown'}`;
+          console.error(`❌ ${message}`);
+          emitGithubWarning({
+            title: `Post build failed in ${dir}`,
+            file: path.join(dir, BUILD_SCRIPT),
+            line: 1,
+            col: 1,
+            message,
+          });
         }
       } else {
         console.log(`⏭️  Skipping ${BUILD_SCRIPT} in ${dir} (no recent changes)`);
