@@ -474,6 +474,27 @@ function App() {
                   },
                 ],
               },
+              {
+                name: "amy fy lee",
+                links: [
+                  {
+                    name: "website",
+                    link: "https://www.amyfyleemusic.com/about.html",
+                  },
+                  {
+                    name: "bandcamp",
+                    link: "https://amyfylee.bandcamp.com/",
+                  },
+                  {
+                    name: "apple music",
+                    link: "https://music.apple.com/us/artist/amy-fy-lee/1733464453",
+                  },
+                  {
+                    name: "spotify",
+                    link: "https://open.spotify.com/artist/5ohowu65eQJMaOlalZlWo7?si=fhRMl4_aTCmIvGoplNQNSA",
+                  },
+                ],
+              },
             ]}
           ></ReccList>
         </div>
