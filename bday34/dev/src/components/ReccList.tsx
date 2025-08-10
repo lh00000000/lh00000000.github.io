@@ -17,6 +17,8 @@ interface ReccListProps {
   reccs: RecommendationItem[];
 }
 
+const randomSequence = Array.from({ length: 100 }, (_, i) => i).map(i => Math.random())
+
 function ReccList(props: ReccListProps) {
   const { title, reccs } = props;
   const [orderedReccs, setOrderedReccs] =
@@ -24,6 +26,7 @@ function ReccList(props: ReccListProps) {
 
   React.useEffect(() => {
     setOrderedReccs(reccs);
+    handleRandomize()
   }, [reccs]);
 
   const handleSortByName = () => {
@@ -44,6 +47,7 @@ function ReccList(props: ReccListProps) {
 
   return (
     <div style={{ display: "inline", padding: "5px", width: "100vw" }}>
+      <h2 style={{ display: "inline", margin: "0px",  }}>GIFT </h2>
       <span style={{ display: "inline" }}>
         to me: i'd like you to listen/watch these people that have filled my
         last year with WARMTHNESS.
@@ -87,7 +91,7 @@ function ReccList(props: ReccListProps) {
       {orderedReccs.map((item, idx) => (
         <React.Fragment key={`recc-${item.name}`}>
           <span>
-            <h3 style={{ display: "inline" }}>{item.name}: </h3>
+            <h3 style={{ display: "inline", position: "sticky", top: `${randomSequence[idx] * 100}px` }}>{item.name}: </h3>
           </span>
           {item.role ? (
             <span style={{ marginLeft: "8px", color: "#666" }}>
