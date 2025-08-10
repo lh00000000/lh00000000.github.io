@@ -502,7 +502,27 @@ function App() {
         </div>
       </div>
 
-      <div style={{ height: "100vh" }}></div>
+      <div style={{ height: "80vh" }}></div>
+      <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100vw",
+      }}>
+        <CloudinaryImage
+          src="https://lh00000000-public.s3.amazonaws.com/iosupload/2025-08-10T15%3A12%3A56-04%3A00-IMG_5181-DEC62B5F-EF79-434A-B7F2-22DFB7054AED.jpeg"
+          alt="a photo of a bottle of yogurt"
+          style={{
+            width: "100%",
+            // height: "100%",
+            // objectFit: "contain",
+          }}
+          placeholder={false}
+          responsive={false}
+        />
+      </div>
       <div>{"<33333333"}</div>
     </div>
   );
