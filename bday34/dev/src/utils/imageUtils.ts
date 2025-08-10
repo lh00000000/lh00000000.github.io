@@ -1,32 +1,15 @@
 // Image utility functions for optimizing loading performance
+import { createCloudinaryUrl } from '../config/cloudinary';
 
 /**
- * Generates a thumbnail URL for S3 images
- * This can be customized based on your CDN setup
+ * Generates a thumbnail URL for S3 images using Cloudinary
+ * Cloudinary will fetch the image from S3 and serve it through their CDN
  */
 export const getThumbnailUrl = (originalUrl: string, width: number = 100): string => {
-  // Option 1: If using CloudFront with Lambda@Edge
-  // return `${originalUrl}?w=${width}&q=60&f=webp`;
-  
-  // Option 2: If using AWS CloudFront with Image Optimizer
-  // return `${originalUrl}?width=${width}&quality=60&format=webp`;
-  
-  // Option 3: If using a custom thumbnail path structure
-  // const urlParts = originalUrl.split('/');
-  // const filename = urlParts[urlParts.length - 1];
-  // const thumbnailPath = originalUrl.replace(filename, `thumbnails/${width}/${filename}`);
-  // return thumbnailPath;
-  
-  // Option 4: If using AWS S3 with pre-generated thumbnails
-  // return originalUrl.replace('/iosupload/', `/iosupload/thumbnails/${width}/`);
-  
-  // For now, we'll use the same URL but you can implement any of the above
-  // The best approach depends on your AWS setup:
-  // - CloudFront with Lambda@Edge for on-the-fly resizing
-  // - Pre-generated thumbnails stored in S3
-  // - Third-party services like imgix, Cloudinary, etc.
-  
-  return originalUrl;
+  // Use Cloudinary to serve S3 images with transformations
+  // This fetches the image from S3 and serves it through Cloudinary's CDN
+  const transformations = `w_${width},q_auto,f_auto`;
+  return createCloudinaryUrl(originalUrl, transformations);
 };
 
 /**
@@ -59,6 +42,57 @@ export const createPlaceholder = (width: number = 250, height: number = 200): st
   }
   
   return canvas.toDataURL();
+};
+
+/**
+ * Common Cloudinary transformations for different use cases
+ */
+export const commonTransformations = {
+  // Avatar/Profile picture
+  avatar: (size: number = 100) => `w_${size},h_${size},c_fill,g_face,f_auto,q_auto`,
+  
+  // Hero/Banner image
+  hero: (width: number = 1200) => `w_${width},c_fill,f_auto,q_auto`,
+  
+  // Thumbnail with aspect ratio preservation
+  thumbnail: (width: number = 300) => `w_${width},c_scale,f_auto,q_auto`,
+  
+  // Card image
+  card: (width: number = 400, height: number = 300) => `w_${width},h_${height},c_fill,f_auto,q_auto`,
+  
+  // Gallery image
+  gallery: (width: number = 600) => `w_${width},c_scale,f_auto,q_auto`,
+  
+  // Social media preview
+  social: (width: number = 1200, height: number = 630) => `w_${width},h_${height},c_fill,f_auto,q_auto`,
+  
+  // Lazy loading placeholder
+  lazyPlaceholder: (width: number = 50) => `w_${width},q_10,blur_1000,f_auto`,
+  
+  // High quality print
+  print: (width: number = 2400) => `w_${width},q_100,f_auto`,
+  
+  // Mobile optimized
+  mobile: (width: number = 400) => `w_${width},c_scale,f_auto,q_60`,
+  
+  // Desktop optimized
+  desktop: (width: number = 800) => `w_${width},c_scale,f_auto,q_80`,
+};
+
+/**
+ * Helper function to get URLs with common transformations
+ */
+export const getCommonImageUrl = (
+  originalUrl: string, 
+  transformationType: keyof typeof commonTransformations,
+  ...args: any[]
+): string => {
+  const transformation = commonTransformations[transformationType];
+  if (typeof transformation === 'function') {
+    const transformString = transformation(...args);
+    return createCloudinaryUrl(originalUrl, transformString);
+  }
+  return originalUrl;
 };
 
 /**
@@ -123,7 +157,43 @@ export const generateLowQualityPlaceholder = async (imageUrl: string): Promise<s
 };
 
 /**
- * AWS S3 specific utilities
+ * Cloudinary-specific utilities for S3 images
+ */
+export const cloudinaryUtils = {
+  /**
+   * Creates a responsive image URL with multiple breakpoints
+   */
+  getResponsiveImageUrl: (originalUrl: string, breakpoints: number[] = [300, 600, 900, 1200]): string[] => {
+    return breakpoints.map(width => getThumbnailUrl(originalUrl, width));
+  },
+
+  /**
+   * Creates a blurred placeholder image URL
+   */
+  getBlurredPlaceholderUrl: (originalUrl: string, width: number = 50): string => {
+    const transformations = `w_${width},q_10,blur_1000,f_auto`;
+    return createCloudinaryUrl(originalUrl, transformations);
+  },
+
+  /**
+   * Creates a WebP version of the image for better compression
+   */
+  getWebPUrl: (originalUrl: string, width?: number): string => {
+    const transformations = width ? `w_${width},f_webp,q_auto` : 'f_webp,q_auto';
+    return createCloudinaryUrl(originalUrl, transformations);
+  },
+
+  /**
+   * Creates an optimized image URL with automatic quality and format
+   */
+  getOptimizedUrl: (originalUrl: string, width?: number): string => {
+    const transformations = width ? `w_${width},q_auto,f_auto` : 'q_auto,f_auto';
+    return createCloudinaryUrl(originalUrl, transformations);
+  }
+};
+
+/**
+ * AWS S3 specific utilities (kept for backward compatibility)
  */
 export const s3Utils = {
   /**
@@ -135,23 +205,10 @@ export const s3Utils = {
   },
   
   /**
-   * Creates a thumbnail URL for S3 images
-   * Assumes you have a thumbnail generation system in place
+   * Creates a thumbnail URL for S3 images using Cloudinary
    */
   getS3ThumbnailUrl: (originalUrl: string, width: number = 100): string => {
-    // This is where you'd implement your S3 thumbnail logic
-    // Examples:
-    
-    // 1. Using CloudFront with Lambda@Edge
-    // return `${originalUrl}?w=${width}&q=60`;
-    
-    // 2. Using a separate thumbnail bucket
-    // const s3Key = s3Utils.getS3Key(originalUrl);
-    // return `https://your-thumbnail-bucket.s3.amazonaws.com/${width}/${s3Key}`;
-    
-    // 3. Using AWS Image Optimizer
-    // return `${originalUrl}?width=${width}&quality=60&format=webp`;
-    
-    return originalUrl;
+    // Now using Cloudinary to serve S3 images
+    return getThumbnailUrl(originalUrl, width);
   }
 };
