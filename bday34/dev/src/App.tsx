@@ -195,9 +195,14 @@ function App() {
                 name: "jackie liu",
                 links: [
                   {
+                    name: "website",
+                    link: "https://jackieis.online",
+                  },
+                  {
                     name: "i feel so so much shame",
                     link: "https://jackieis.online/projects/i-feel-so-much-shame",
                   },
+                  
                 ],
               },
               {
