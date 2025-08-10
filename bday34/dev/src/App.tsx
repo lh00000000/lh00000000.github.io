@@ -241,7 +241,7 @@ function App() {
               },
               {
                 name: "gina yang",
-                links [
+                links: [
                   {
                     name: "the color of summer",
                     link: "https://www.mootpointmagazine.com/post/color-of-summer-gina-Yang"
