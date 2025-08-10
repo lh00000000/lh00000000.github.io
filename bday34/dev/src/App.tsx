@@ -240,6 +240,24 @@ function App() {
                 ],
               },
               {
+                name: "gina yang",
+                links [
+                  {
+                    name: "the color of summer",
+                    link: "https://www.mootpointmagazine.com/post/color-of-summer-gina-Yang"
+                  }
+                } 
+              }, 
+              {
+                name: "christin marks"
+                links: [
+                  {
+                    name: "instagram",
+                    link: "https://www.instagram.com/christinjmarks"
+                  }
+                ]
+              },
+              {
                 name: "emma munger",
                 links: [
                   {
