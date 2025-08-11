@@ -110,6 +110,25 @@ function App() {
             Picnic&nbsp;
           </span>
         </div>
+        <div
+            style={{
+              display: "flex",
+              width: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: -9999,
+            }}
+          >
+            <a href="https://chat.whatsapp.com/HgK02WE1nmM0dBRtmg7gVs" target="_blank">
+            <CloudinaryImage
+              src="https://lh00000000-public.s3.amazonaws.com/2025/bday34dadsgiving.jpg"
+              alt="a group of friends sharing a meal on a bed of hay"
+              width={300}
+              placeholder={false}
+              responsive={true}
+            />
+            </a>
+          </div>
         <div>
           <h2 style={{ display: "inline", margin: "0px" }}>PHASE 2:&nbsp;</h2>
           <span style={{ display: "inline" }}>
