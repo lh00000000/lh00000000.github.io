@@ -249,7 +249,7 @@ function App() {
                 ] 
               }, 
               {
-                name: "christin marks"
+                name: "christin marks",
                 links: [
                   {
                     name: "instagram",
