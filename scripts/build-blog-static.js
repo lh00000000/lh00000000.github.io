@@ -33,6 +33,17 @@ function emitGithubWarning({ title, file, line, col, message }) {
   console.log(cmd);
 }
 
+// Emit a GitHub Actions error annotation
+function emitGithubError({ title, file, line, col, message }) {
+  const props = [];
+  if (title) props.push(`title=${escapeForWorkflowCommand(title)}`);
+  if (file) props.push(`file=${escapeForWorkflowCommand(file)}`);
+  if (line) props.push(`line=${line}`);
+  if (col) props.push(`col=${col}`);
+  const cmd = `::error ${props.join(",")}::${escapeForWorkflowCommand(message)}`;
+  console.log(cmd);
+}
+
 // Ensure dist directory exists
 function ensureDistDir() {
   if (!fs.existsSync(DIST_DIR)) {
@@ -186,6 +197,8 @@ function hasRecentGitChanges(directory) {
 function runBuildScripts(directories) {
   const { execSync } = require("child_process");
 
+  let anyFailures = false;
+
   for (const dir of directories) {
     const buildScriptPath = path.join(ROOT_DIR, dir, BUILD_SCRIPT);
 
@@ -197,27 +210,34 @@ function runBuildScripts(directories) {
 
           // Make script executable and run it
           fs.chmodSync(buildScriptPath, "755");
-          execSync(`cd "${path.join(ROOT_DIR, dir)}" && ./${BUILD_SCRIPT}`, {
-            stdio: "inherit",
-            cwd: path.join(ROOT_DIR, dir),
-          });
+          execSync(`cd "${path.join(ROOT_DIR, dir)}" && ./${BUILD_SCRIPT}`,
+            {
+              stdio: "inherit",
+              cwd: path.join(ROOT_DIR, dir),
+            }
+          );
 
           console.log(`✅ Completed ${BUILD_SCRIPT} in ${dir}`);
         } catch (error) {
           const message = `Error running ${BUILD_SCRIPT} in ${dir}. See logs above. Exit status: ${error.status ?? 'unknown'}`;
           console.error(`❌ ${message}`);
-          emitGithubWarning({
+          emitGithubError({
             title: `Post build failed in ${dir}`,
             file: path.join(dir, BUILD_SCRIPT),
             line: 1,
             col: 1,
             message,
           });
+          anyFailures = true;
         }
       } else {
         console.log(`⏭️  Skipping ${BUILD_SCRIPT} in ${dir} (no recent changes)`);
       }
     }
+  }
+
+  if (anyFailures) {
+    throw new Error("One or more post build scripts failed");
   }
 }
 
@@ -253,7 +273,13 @@ function buildBlog() {
 
 // Run if called directly
 if (require.main === module) {
-  buildBlog();
+  try {
+    buildBlog();
+  } catch (err) {
+    // Ensure failing exit code for CI
+    console.error(err?.stack || String(err));
+    process.exitCode = 1;
+  }
 }
 
 module.exports = { buildBlog };
