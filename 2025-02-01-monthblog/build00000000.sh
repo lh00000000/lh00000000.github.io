@@ -2,13 +2,18 @@
 
 # Vite project build script
 # This script builds the project from the dev/ directory and places assets in the parent directory
+# Designed to work cross-platform (macOS and Linux) for local testing and GitHub Actions
 
 set -e
 
+# Always run from this script's directory
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
 echo "Building Vite project from dev/ directory..."
 
-rm -rf dist
-rm -rf index.html
+# Only clean build artifacts inside dev/, never remove existing outputs in the root until we have a successful build
+rm -rf dev/dist
 
 # Change to dev directory
 cd dev
@@ -19,6 +24,7 @@ npm install
 # Build the project
 npm run build
 
+# After a successful build, copy built files to parent
 cp -r dist/* ../
 
 # Go back to parent directory
@@ -31,17 +37,17 @@ if [ -f "dev/index.html" ]; then
   # Create template by replacing script and link tags with placeholders
   sed 's|<script type="module" src="/src/main.tsx"></script>|<script type="module" crossorigin src="{{JS_PATH}}"></script>|g; s|<link rel="icon" type="image/svg+xml" href="/vite.svg" />|<link rel="icon" type="image/svg+xml" href="./vite.svg" />|g' dev/index.html > index.template.html
   
-  # Add CSS placeholder if it doesn't exist
+  # Ensure CSS placeholder exists
   if ! grep -q "{{CSS_PATH}}" index.template.html; then
-    # Insert CSS placeholder after the title tag, preserving the title content
-    sed -i '' 's|\(<title>.*</title>\)|\1\n    <link rel="stylesheet" crossorigin href="{{CSS_PATH}}">|' index.template.html
+    # Insert CSS placeholder after the title tag - cross-platform approach
+    awk '/<title>.*<\/title>/ {print $0; print "    <link rel=\"stylesheet\" crossorigin href=\"{{CSS_PATH}}\">"; next} 1' index.template.html > index.template.html.tmp && mv index.template.html.tmp index.template.html
   fi
   
   echo "Successfully generated index.template.html"
 fi
 
 # Update the root index.html to use built assets
-if [ -f "index.template.html" ]; then
+if [ -f "index.template.html" ] && [ -f "index.html" ]; then
   echo "Updating index.html with built asset paths using template..."
   
   # Extract the built asset paths from the copied index.html (now in parent directory)
@@ -63,7 +69,7 @@ if [ -f "index.template.html" ]; then
     echo "Warning: Could not extract asset paths from index.html"
   fi
 else
-  echo "Warning: index.template.html not found"
+  echo "Warning: index.template.html or base index.html not found"
 fi
 
 echo "Vite project build complete!" 
