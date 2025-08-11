@@ -11,8 +11,8 @@ cd "$SCRIPT_DIR"
 
 echo "Building Vite project from dev/ directory..."
 
-rm -rf dist
-rm -rf index.html
+# Only clean build artifacts inside dev/, never remove existing outputs in the root until we have a successful build
+rm -rf dev/dist
 
 # Change to dev directory
 cd dev
@@ -23,6 +23,7 @@ npm install
 # Build the project
 npm run build
 
+# After a successful build, copy built files to parent
 cp -r dist/* ../
 
 # Go back to parent directory
@@ -64,7 +65,7 @@ if [ -f "dev/index.html" ]; then
 fi
 
 # Update the root index.html to use built assets
-if [ -f "index.template.html" ]; then
+if [ -f "index.template.html" ] && [ -f "index.html" ]; then
   echo "Updating index.html with built asset paths using template..."
   
   # Extract the built asset paths from the copied index.html (now in parent directory)
@@ -92,7 +93,7 @@ if [ -f "index.template.html" ]; then
     echo "Warning: Could not extract asset paths from index.html"
   fi
 else
-  echo "Warning: index.template.html not found"
+  echo "Warning: index.template.html or base index.html not found"
 fi
 
 echo "Vite project build complete!" 
