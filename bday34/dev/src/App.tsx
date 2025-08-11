@@ -246,7 +246,7 @@ function App() {
                     name: "the color of summer",
                     link: "https://www.mootpointmagazine.com/post/color-of-summer-gina-Yang"
                   }
-                } 
+                ] 
               }, 
               {
                 name: "christin marks"
