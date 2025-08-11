@@ -2,6 +2,7 @@
 
 # Vite project build script
 # This script builds the project from the dev/ directory and places assets in the parent directory
+# Designed to work cross-platform (macOS and Linux) for local testing and GitHub Actions
 
 set -e
 
@@ -38,27 +39,37 @@ if [ -f "dev/index.html" ]; then
   
   # Ensure CSS placeholder exists
   if ! grep -q "{{CSS_PATH}}" index.template.html; then
-    # Insert CSS placeholder after the title tag, preserving the title content
-    sed -i 's|\(<title>.*</title>\)|\1\n    <link rel="stylesheet" crossorigin href="{{CSS_PATH}}">|' index.template.html
+    # Insert CSS placeholder after the title tag - cross-platform approach
+    awk '/<title>.*<\/title>/ {print $0; print "    <link rel=\"stylesheet\" crossorigin href=\"{{CSS_PATH}}\">"; next} 1' index.template.html > index.template.html.tmp && mv index.template.html.tmp index.template.html
   fi
 
   # Ensure PWA manifest and theme-color are present in the template
   if ! grep -q '<link rel="manifest"' index.template.html; then
-    awk '1; /<meta name="viewport"/ {print "    <link rel=\"manifest\" href=\"./manifest.webmanifest\" />\n    <meta name=\"theme-color\" content=\"#111111\" />"; }' index.template.html > index.template.html.tmp && mv index.template.html.tmp index.template.html
+    awk '1; /<meta name="viewport"/ {print "    <link rel=\"manifest\" href=\"./manifest.webmanifest\" />"; print "    <meta name=\"theme-color\" content=\"#111111\" />"; }' index.template.html > index.template.html.tmp && mv index.template.html.tmp index.template.html
   fi
 
   # Ensure service worker registration is present before </body>
   if ! grep -q "navigator.serviceWorker.register('./sw.js')" index.template.html; then
-    sed -i '/<\/body>/ i \
-    <script>\
-      if ("serviceWorker" in navigator) {\
-        window.addEventListener("load", function() {\
-          navigator.serviceWorker.register("./sw.js").catch(function(err){\
-            console.warn("SW registration failed:", err);\
-          });\
-        });\
-      }\
-    <\/script>' index.template.html
+    # Create a temporary file with the service worker script
+    cat > sw_script_temp.html << 'EOF'
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+          navigator.serviceWorker.register("./sw.js").catch(function(err){
+            console.warn("SW registration failed:", err);
+          });
+        });
+      }
+    </script>
+EOF
+    
+    # Insert the script before </body>
+    sed '/<\/body>/ {
+      r sw_script_temp.html
+    }' index.template.html > index.template.html.tmp && mv index.template.html.tmp index.template.html
+    
+    # Clean up temporary file
+    rm sw_script_temp.html
   fi
   
   echo "Successfully generated index.template.html"

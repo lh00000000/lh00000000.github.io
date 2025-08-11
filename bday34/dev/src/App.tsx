@@ -1,17 +1,17 @@
 import "./style.css";
 import ReccList from "./components/ReccList";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CloudinaryImage from "./components/CloudinaryImage";
-import DemoImage from "./components/DemoImage";
 
 function App() {
   const animatedRef = useRef<HTMLDivElement | null>(null);
 
+
   useEffect(() => {
     let rafId = 0;
     const start = performance.now();
-    const amplitude = 0.1; // 8% size oscillation
-    const periodMs = 500; // 1.6s per cycle
+    const amplitude = 0.2; // 8% size oscillation
+    const periodMs = 200
 
     const animate = (now: number) => {
       const elapsed = now - start;
@@ -25,7 +25,7 @@ function App() {
 
     rafId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafId);
-  }, []);
+  }, [scrollY]);
   return (
     <div
       style={{
