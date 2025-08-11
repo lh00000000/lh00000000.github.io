@@ -180,7 +180,7 @@ function hasRecentGitChanges(directory) {
   try {
     // Get the most recent commit date for files in this directory
     const result = execSync(
-      `git log --since="7 days ago" --oneline -- "${directory}"`,
+      `git log --since="1 day ago" --oneline -- "${directory}"`,
       { cwd: ROOT_DIR, encoding: 'utf8' }
     );
     
