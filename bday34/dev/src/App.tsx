@@ -6,12 +6,20 @@ import CloudinaryImage from "./components/CloudinaryImage";
 function App() {
   const animatedRef = useRef<HTMLDivElement | null>(null);
 
-
   useEffect(() => {
     let rafId = 0;
     const start = performance.now();
     const amplitude = 0.2; // 8% size oscillation
-    const periodMs = 200
+
+    // Calculate days until 2025-08-16 and use that to determine animation period
+    const targetDate = new Date("2025-08-16");
+    const now = new Date();
+    const daysUntil = Math.max(
+      0,
+      Math.ceil((targetDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+    );
+
+    const periodMs = Math.max(10, daysUntil * 150); // 50ms per day, minimum 100ms
 
     const animate = (now: number) => {
       const elapsed = now - start;
@@ -33,7 +41,7 @@ function App() {
         // fontFamily: "monospace",
       }}
     >
-      <div style={{}}>
+      <div style={{ margin: "0px" }}>
         <CloudinaryImage
           src="https://lh00000000-public.s3.amazonaws.com/2025/IMG_5162.HEIC"
           alt="bin with label that says bday34"
@@ -42,7 +50,6 @@ function App() {
           responsive={true}
         />
       </div>
-      {/* Demo component showing Cloudinary integration */}
       <div
         style={{
           width: "100%",
@@ -52,8 +59,19 @@ function App() {
         }}
       >
         <span style={{ fontSize: "2rem" }}>
-          hello. on 2025-08-16 i will be celebrating my <span style={{ border: "1px solid #000", borderRadius: "8px", padding: "0 5px", position: "sticky", top: "10px" }}>BDAY34</span>th birthday and i'd
-          like
+          hello. on 2025-08-16 i will be celebrating my{" "}
+          <span
+            style={{
+              border: "1px solid #000",
+              borderRadius: "8px",
+              padding: "0 5px",
+              position: "sticky",
+              top: "10px",
+            }}
+          >
+            BDAY34
+          </span>
+          th birthday and i'd like
         </span>
         <div
           ref={animatedRef}
@@ -111,15 +129,18 @@ function App() {
           </span>
         </div>
         <div
-            style={{
-              display: "flex",
-              width: "100%",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: -9999,
-            }}
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: -9999,
+          }}
+        >
+          <a
+            href="https://chat.whatsapp.com/HgK02WE1nmM0dBRtmg7gVs"
+            target="_blank"
           >
-            <a href="https://chat.whatsapp.com/HgK02WE1nmM0dBRtmg7gVs" target="_blank">
             <CloudinaryImage
               src="https://lh00000000-public.s3.amazonaws.com/2025/bday34dadsgiving.jpg"
               alt="a group of friends sharing a meal on a bed of hay"
@@ -127,8 +148,8 @@ function App() {
               placeholder={false}
               responsive={true}
             />
-            </a>
-          </div>
+          </a>
+        </div>
         <div>
           <h2 style={{ display: "inline", margin: "0px" }}>PHASE 2:&nbsp;</h2>
           <span style={{ display: "inline" }}>
@@ -171,14 +192,17 @@ function App() {
               zIndex: -9999,
             }}
           >
-            <a href="https://chat.whatsapp.com/HgK02WE1nmM0dBRtmg7gVs" target="_blank">
-            <CloudinaryImage
-              src="https://lh00000000-public.s3.amazonaws.com/2025/bday34whatsapp.jpg"
-              alt="qrcode for whatsapp group"
-              width={300}
-              placeholder={false}
-              responsive={true}
-            />
+            <a
+              href="https://chat.whatsapp.com/HgK02WE1nmM0dBRtmg7gVs"
+              target="_blank"
+            >
+              <CloudinaryImage
+                src="https://lh00000000-public.s3.amazonaws.com/2025/bday34whatsapp.jpg"
+                alt="qrcode for whatsapp group"
+                width={300}
+                placeholder={false}
+                responsive={true}
+              />
             </a>
           </div>
         </div>
@@ -221,7 +245,6 @@ function App() {
                     name: "i feel so so much shame",
                     link: "https://jackieis.online/projects/i-feel-so-much-shame",
                   },
-                  
                 ],
               },
               {
@@ -263,18 +286,18 @@ function App() {
                 links: [
                   {
                     name: "the color of summer",
-                    link: "https://www.mootpointmagazine.com/post/color-of-summer-gina-Yang"
-                  }
-                ] 
-              }, 
+                    link: "https://www.mootpointmagazine.com/post/color-of-summer-gina-Yang",
+                  },
+                ],
+              },
               {
                 name: "christin marks",
                 links: [
                   {
                     name: "instagram",
-                    link: "https://www.instagram.com/christinjmarks"
-                  }
-                ]
+                    link: "https://www.instagram.com/christinjmarks",
+                  },
+                ],
               },
               {
                 name: "emma munger",
@@ -555,13 +578,14 @@ function App() {
 
       <div style={{ height: "80vh" }}></div>
       <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100vw",
-      }}>
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100vw",
+        }}
+      >
         <CloudinaryImage
           src="https://lh00000000-public.s3.amazonaws.com/iosupload/2025-08-10T15%3A12%3A56-04%3A00-IMG_5181-DEC62B5F-EF79-434A-B7F2-22DFB7054AED.jpeg"
           alt="a photo of a bottle of yogurt"
