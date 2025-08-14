@@ -109,6 +109,22 @@ function App() {
         </div>
         <span style={{ fontSize: "2rem" }}> to come.</span>
         <div>
+          <h2 style={{ display: "inline" }}>PHASE 0 (OPTIONAL): </h2>
+          <span style={{ display: "inline" }}>
+            <b>WHERE:</b>{" "}
+            <a href="https://www.google.com/maps/place/Sunset+Park,+Brooklyn,+NY/@40.6514644,-74.0074178,14z/data=!3m1!4b1!4m6!3m5!1s0x89c25ab3e466657d:0x83eb32ea80df632!8m2!3d40.6526345!4d-74.0091872!16zL20vMDJubmxo?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D">
+              sunset park POOL
+            </a>
+            &nbsp;
+          </span>
+          <span style={{ display: "inline" }}>
+            <b>WHEN:</b> 2025-08-16 12:00 to 15:00&nbsp;
+          </span>
+          <span style={{ display: "inline" }}>
+            tbh i don't even know to swim. just want to Share my Proximity to the Pool. i live a block away if you need a Shower base.
+          </span>
+        </div>
+        <div>
           <h2 style={{ display: "inline" }}>PHASE 1: </h2>
           <span style={{ display: "inline" }}>
             <b>WHERE:</b>{" "}
