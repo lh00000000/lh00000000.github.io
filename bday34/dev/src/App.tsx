@@ -165,8 +165,7 @@ function App() {
           <span style={{ display: "inline" }}>
             <b>WHAT:</b> it is a Wine Bar. i will probably get Some Bottles.
             <span style={{ display: "inline", fontSize: "1.2rem" }}>
-              please Consolidate your orders / tip Cash if you want other
-              things.
+              PLEASE bring PHYSICAL ID. picture of id won't cut it. help me make look Cool to Cilla! 
             </span>
           </span>
         </div>
