@@ -9,6 +9,7 @@
     "blog",
     "bday34",
     "api",
+    "albumaugust",
     "2025-07-28-vitetest",
     "2025-02-01-monthblog",
     "2023-08-17-bday32-luming",
@@ -145,6 +146,13 @@
   "posts": [
     {
       "href": "/bday34",
+      "tags": [
+        "#event",
+        "#personal"
+      ]
+    },
+    {
+      "href": "/albumaugust",
       "tags": [
         "#event",
         "#personal"
@@ -1072,5 +1080,5 @@
     "#workflow",
     "#writing"
   ],
-  "generatedAt": "2025-08-14T23:37:42.931Z"
+  "generatedAt": "2025-08-16T15:21:16.170Z"
 }
