@@ -1,4 +1,7 @@
 const assets = {
+  albumaugust: {
+
+  },
   liao: {
     iframe: '<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1157080646/size=small/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/liao">liao by (*...)</a></iframe>',
     img: 'https://lh00000000-public.s3.us-east-1.amazonaws.com/2020/liao/2019-12-26-coverart.png'
@@ -95,6 +98,13 @@ const assets = {
 }
 
 const projectIndex = {
+  albumaugust: {
+    id: "albumaugust",
+    head: group(
+      tag("<b>", "albumaugust", "</b>"),
+      tag("<span>", " is a collection of performances of songs of 2025. ", "</span>")
+    ),
+  },
   loser: {
     id: "loser",
     head: group(
@@ -498,6 +508,7 @@ const orderedProjectDatums = [
   // projectIndex.chatter,
   // projectIndex.invisibleCat,
   // projectIndex.badly,
+  projectIndex.albumaugust,
   projectIndex.loser,
   projectIndex.concreteswitch,
   projectIndex.sunadd,
