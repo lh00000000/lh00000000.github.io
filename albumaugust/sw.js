@@ -5,8 +5,8 @@ const RUNTIME_CACHE = 'bday34-runtime-' + CACHE_VERSION;
 const PRECACHE_ASSETS = [
   './',
   './index.html',
-  './assets/index-BhK_jFlZ.js',
-  './assets/index-B0mmezy0.css',
+  './assets/index-Dry32J1w.js',
+  './assets/index-DinsmSre.css',
   './vite.svg'
 ];
 
