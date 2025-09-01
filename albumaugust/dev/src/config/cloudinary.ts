@@ -2,7 +2,7 @@
 // For GitHub Pages deployment, you can hardcode your cloud name here
 export const cloudinaryConfig = {
   // ⚠️ IMPORTANT: Replace this with your actual Cloudinary cloud name
-  cloudName: 'your-cloud-name', // ← Change this to your actual cloud name
+  cloudName: 'dgwqhdbso', // ← Change this to your actual cloud name
   
   // 🧪 For testing without setup, uncomment this line:
   // cloudName: 'demo',

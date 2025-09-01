@@ -1,6 +1,6 @@
 const assets = {
   albumaugust: {
-
+    img: 'https://lh00000000-public.s3.amazonaws.com/2025/albumaugust.jpg'
   },
   liao: {
     iframe: '<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1157080646/size=small/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://asteriskellipsis.bandcamp.com/album/liao">liao by (*...)</a></iframe>',
@@ -104,6 +104,20 @@ const projectIndex = {
       tag("<b>", "albumaugust", "</b>"),
       tag("<span>", " is a collection of performances of songs of 2025. ", "</span>")
     ),
+    guts: group(
+      [`<a href='https://luminghao.com/albumaugust'><img class="hovertrans" src="${assets.albumaugust.img}" width="100%"/></a>`]
+      ,
+      tag("<span>", " six of the songs are songs writtened 2024/2025. ", "</span>"),
+      tag("<span>", " two of the songs are older but were arranged in 2024/2025. ", "</span>"),
+      tag("<span>", " all the songs were performed live in a single take. ", "</span>"),
+      tag("<span>", " it was released on ", "</span>"),
+      tag("<a href='https://www.nbdmusic.com/release/cmeb1rzca0001k504s1zebtav'>", "nbd", "</a>"),
+      tag("<span>", " a new anti-spotify music platform. ", "</span>"),
+      tag("<span>", " more information can be found ", "</span>"),
+      tag("<a href='/albumaugust'>", "here", "</a>"),
+      tag("<span>", ". ", "</span>"),
+      ["<br />"]
+    )
   },
   loser: {
     id: "loser",

@@ -41,6 +41,10 @@ function App() {
       </p>
 
       <p>
+        <a href="https://www.nbdmusic.com/release/cmeb1rzca0001k504s1zebtav">albumaugust</a> is available on nbd.
+      </p>
+
+      <p>
         "albumaugust" is 8 single-take unedited performances of 6 new(er) songs
         and 2 older ones i arranged for "openmic mode". it is kind of a seed and
         a “preview” for `album`, which i plan to work on later this year with
