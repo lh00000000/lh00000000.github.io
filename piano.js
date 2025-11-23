@@ -1,3 +1,18 @@
+// Track if user has interacted - sounds only play after first interaction
+let userHasInteracted = false
+
+// Set up listeners for first user interaction
+const enableAudio = () => {
+  if (!userHasInteracted) {
+    userHasInteracted = true
+  }
+}
+
+// Listen for various interaction events
+['click', 'keydown', 'touchstart', 'mousedown'].forEach(eventType => {
+  document.addEventListener(eventType, enableAudio, { once: true })
+})
+
 const pianoKey = (src, preload) => {
   let h = new Howl({ src })
   if (preload) {
@@ -5,6 +20,11 @@ const pianoKey = (src, preload) => {
   }
   return {
     play: (vol) => {
+      // Only play if user has interacted
+      if (!userHasInteracted) {
+        return
+      }
+      
       let tryToPlayIt = (overrideVol = vol, delay = 0) => {
         setTimeout(
           () => {
