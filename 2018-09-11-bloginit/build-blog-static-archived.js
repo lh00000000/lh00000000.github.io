@@ -1,3 +1,10 @@
+// ARCHIVED COPY — kept in each blog folder for reference if the folder is detached.
+// This was the central blog build script. It must be run from the repository root (not this folder):
+//   node scripts/build-blog-static.js
+// It: scans all blog dirs, reads publish00000000.json, writes blog/dist/api/*.json, and runs
+// build00000000.sh in dirs with recent git changes (1 day). See README.md in this folder.
+// -----------------------------------------------------------------------------
+
 #!/usr/bin/env node
 
 const fs = require("fs");

@@ -1,120 +1,66 @@
-# Vite Test Blog Post
+# Blog post workflow (build & publish)
 
-This is a test blog post that demonstrates automatic building of Vite projects using GitHub Actions with a standardized `/dev` subdirectory structure and TypeScript support.
+This folder was part of a blog that used a simple file-based workflow. The same layout works whether the folder lives in the main repo or is **detached** and served on its own. The only long-term contract is **HTML and static assets**—dev tooling (Vite, React, etc.) may change over time.
 
-## How it works
+---
 
-1. **Development**: All development files are in the `dev/` subdirectory
-2. **Build Process**: The `build.sh` script builds from `dev/` and updates the root `index.html`
-3. **Production**: The root directory contains the production-ready files
-4. **TypeScript**: Full TypeScript support with proper type checking
+## `publish00000000.json`
 
-## Project Structure
+**Purpose:** Tells the blog index how to list this post and how to reach it.
 
-```
-2025-07-28-vitetest/
-├── .build-config          # Configuration for GitHub Actions
-├── build.sh               # Build script that builds from dev/ and updates root
-├── index.html            # Production entry point (updated by build script)
-├── README.md            # This file
-└── dev/                  # Development directory
-    ├── src/
-    │   ├── main.ts       # Main TypeScript file
-    │   ├── style.css     # Styles
-    │   └── counter.ts    # Counter functionality (TypeScript)
-    ├── public/           # Static assets
-    ├── dist/             # Built files (generated)
-    ├── node_modules/     # Dependencies
-    ├── index.html        # Development entry point
-    ├── package.json      # Dependencies and scripts
-    ├── vite.config.ts    # Vite configuration (TypeScript)
-    ├── tsconfig.json     # TypeScript configuration
-    ├── tsconfig.node.json # Node.js TypeScript configuration
-    └── .gitignore        # Git ignore rules
-```
+- **Location:** This file must live in the **root of this folder** (same level as `index.html` or your built output).
+- **Format:** JSON.
 
-## Development Workflow
+**Fields:**
 
-### 1. Development
-```bash
-# Navigate to the dev directory
-cd 2025-07-28-vitetest/dev
+| Field      | Required | Description |
+|-----------|----------|-------------|
+| `tags`    | No       | Array of strings, e.g. `["#personal", "#event"]`. Used for filtering and display on the blog index. |
+| `redirect`| No       | If set, the blog index will link to this URL instead of the folder path. Use for posts that live elsewhere (e.g. Notion, external site). The folder name is still shown as the post label. |
 
-# Install dependencies (first time only)
-npm install
+**Examples:**
 
-# Start development server
-npm run dev
-```
+- Local post (content in this folder):
+  ```json
+  { "tags": ["#personal", "#event"] }
+  ```
+- Redirect to an external URL:
+  ```json
+  { "tags": ["#personal"], "redirect": "https://example.com/my-post" }
+  ```
 
-### 2. Building for Production
-```bash
-# From the project root directory
-cd 2025-07-28-vitetest
+When **statically served**, this folder should be exposed at a path that matches the folder name (e.g. `/2019-06-19-mypost`). The blog index uses either that path or `redirect` as the post link.
 
-# Run the build script
-./build.sh
-```
+---
 
-This will:
-- Build the TypeScript project from `dev/` directory
-- Update the root `index.html` with correct asset paths
-- Make the project ready for static hosting
+## `build00000000.sh` (optional)
 
-### 3. Preview Production Build
-```bash
-# From the project root directory
-cd 2025-07-28-vitetest
+**Purpose:** Per-post build script. Used to compile a dev setup (e.g. Vite, npm) into static HTML/CSS/JS in this folder so the result can be served anywhere.
 
-# Use live-server or any static file server
-live-server .
-```
+- **Location:** Root of this folder.
+- **When it runs (in the original repo):** The main blog build (`scripts/build-blog-static.js`) only runs this script for directories that have **recent git changes** (commits in the last 1 day). That avoids rebuilding every post on every run.
+- **When detached:** You can run it yourself from this folder:
+  ```bash
+  chmod +x build00000000.sh
+  ./build00000000.sh
+  ```
+  Run from the **folder that contains** `build00000000.sh` (the script should `cd` to its own directory).
 
-## Build Script Details
+**What it does:** Depends on the post. Common pattern:
 
-The `build.sh` script:
-1. Changes to the `dev/` directory
-2. Installs dependencies with `npm ci`
-3. Builds the TypeScript project with `npm run build`
-4. Extracts the built asset filenames from `dev/dist/index.html`
-5. Creates a new root `index.html` with the correct asset paths pointing to `./dev/dist/`
+- Build from a `dev/` (or similar) subfolder (e.g. `npm install` + `npm run build`).
+- Copy built assets (e.g. `dev/dist/*`) into the folder root so the result is a flat set of `index.html`, JS, CSS, and other static files.
+- Optionally generate or rewrite `index.html` (e.g. inject hashed asset paths, service worker).
 
-## TypeScript Features
+**Important:** There is **no single standard** for what’s inside `build00000000.sh`. Different posts may use different stacks (Vite, plain JS, etc.). The only requirement for the blog is that after building (or without building, if there’s no script), this folder is **statically servable** and uses normal HTML/CSS/JS.
 
-- **Full TypeScript Support**: All source files are TypeScript
-- **Type Safety**: Proper type annotations for DOM elements and functions
-- **Strict Mode**: Enabled for better code quality
-- **Modern Configuration**: Uses Vite's recommended TypeScript setup
+An archived copy of the **central** blog build script (that used to run in the repo and in CI) is in this folder as `build-blog-static-archived.js`. It is for reference only; it must be run from the repository root, not from this folder.
 
-## GitHub Actions Integration
+---
 
-The GitHub Actions workflow automatically:
-- Detects the `.build-config` file
-- Runs the project's own `build.sh` script
-- Commits both the built files in `dev/dist/` and the updated root `index.html`
+## Serving this folder
 
-## Benefits of the /dev Structure
+- **In the original repo:** The site build collects all such folders, reads each `publish00000000.json`, and serves the folder contents at a path derived from the folder name.
+- **Detached:** Serve this folder as a static site (e.g. `npx serve .`, or any static host). Ensure the server is configured so that the URL path for this folder matches how the blog index expects to link to it (or use `redirect` in `publish00000000.json` to point elsewhere).
 
-- **Clear Separation**: Development files are separate from production files
-- **Standardized Workflow**: All projects follow the same pattern
-- **Easy Development**: Just `cd dev && npm run dev`
-- **Clean Production**: Root directory only contains what's needed for hosting
-- **Flexible**: Can easily add more build tools or frameworks
-- **TypeScript Ready**: Full TypeScript support out of the box
-
-## Adding More Projects
-
-To add another project with this structure:
-
-1. Create a new directory: `mkdir 2025-08-01-new-post`
-2. Create the dev subdirectory: `mkdir 2025-08-01-new-post/dev`
-3. Initialize your project in the dev directory
-4. Add `.build-config` and `build.sh` to the root
-5. The GitHub Action will automatically detect and build it
-
-## URL Structure
-
-- **Development**: `http://localhost:5173/` (when running `npm run dev` from `dev/`)
-- **Production**: `http://127.0.0.1:8080/2025-07-28-vitetest/` (when served from root)
-
-This structure makes it easy to develop locally with TypeScript while maintaining a clean production setup! 
+No server-side logic is required; everything is static HTML and assets.
