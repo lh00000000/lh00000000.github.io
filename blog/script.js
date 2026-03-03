@@ -85,11 +85,10 @@ const update = () => {
     let a = document.createElement("a")
     a.href = post.href
 
-    let labelText = post.hasOwnProperty("label") ? post.label : post.href
-    let aContent = (
-      document
-        .createTextNode(`${labelText} ${post.tags.join(" ")}`)
-    )
+    const foldername = post.hasOwnProperty("label") ? post.label : post.href.replace(/^\//, "")
+    const dtPart = post.dt ? ` (${post.dt})` : ""
+    const labelText = `/${foldername}${dtPart} ${post.tags.join(" ")}`
+    let aContent = document.createTextNode(labelText)
     a.appendChild(aContent)
 
     if (i != 0) {

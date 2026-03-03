@@ -119,6 +119,11 @@ function generatePostsData(directories) {
         post.label = dir;
       }
 
+      // Optional display date (for folders without date in name)
+      if (publishData.dt != null && publishData.dt !== "") {
+        post.dt = publishData.dt;
+      }
+
       posts.push(post);
     }
   }
