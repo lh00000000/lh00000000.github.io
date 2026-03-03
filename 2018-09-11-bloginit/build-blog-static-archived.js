@@ -1,3 +1,10 @@
+// ARCHIVED COPY — kept in each blog folder for reference if the folder is detached.
+// This was the central blog build script. It must be run from the repository root (not this folder):
+//   node scripts/build-blog-static.js
+// It: scans all blog dirs, reads publish00000000.json, writes blog/dist/api/*.json, and runs
+// build00000000.sh in dirs with recent git changes (1 day). See README.md in this folder.
+// -----------------------------------------------------------------------------
+
 #!/usr/bin/env node
 
 const fs = require("fs");
@@ -22,16 +29,6 @@ function escapeForWorkflowCommand(text) {
     .replace(/\n/g, "%0A");
 }
 
-// Emit a GitHub Actions warning annotation
-function emitGithubWarning({ title, file, line, col, message }) {
-  const props = [];
-  if (title) props.push(`title=${escapeForWorkflowCommand(title)}`);
-  if (file) props.push(`file=${escapeForWorkflowCommand(file)}`);
-  if (line) props.push(`line=${line}`);
-  if (col) props.push(`col=${col}`);
-  const cmd = `::warning ${props.join(",")}::${escapeForWorkflowCommand(message)}`;
-  console.log(cmd);
-}
 
 // Emit a GitHub Actions error annotation
 function emitGithubError({ title, file, line, col, message }) {
@@ -61,11 +58,12 @@ function scanBlogDirectories() {
   try {
     const items = fs.readdirSync(ROOT_DIR);
 
+    const blogDirPattern = /^\d{4}-\d{2}-\d{2}-.+$/;
     for (const item of items) {
       const itemPath = path.join(ROOT_DIR, item);
       const stat = fs.statSync(itemPath);
 
-      if (stat.isDirectory()) {
+      if (stat.isDirectory() && blogDirPattern.test(item)) {
         directories.push(item);
       }
     }
