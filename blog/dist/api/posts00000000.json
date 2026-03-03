@@ -1,6 +1,13 @@
 [
   {
+    "href": "/2026-03-01-mailsign",
+    "tags": [
+      "#fab"
+    ]
+  },
+  {
     "href": "/bday34",
+    "dt": "2025-08-16",
     "tags": [
       "#event",
       "#personal"
@@ -67,6 +74,7 @@
     "tags": [
       "#update",
       "#mend",
+      "#fab",
       "#waste",
       "#audio",
       "#personal"
@@ -389,6 +397,7 @@
     "href": "/2019-11-30-solarboard",
     "tags": [
       "#homehard",
+      "#fab",
       "#itp",
       "#smt"
     ]
@@ -397,6 +406,7 @@
     "href": "/2019-11-29-homehard-letter",
     "tags": [
       "#homehard",
+      "#fab",
       "#itp",
       "#smt"
     ]
@@ -537,7 +547,8 @@
     "href": "/2019-04-22-sunbom",
     "tags": [
       "#itp",
-      "#homehard"
+      "#homehard",
+      "#fab"
     ]
   },
   {
@@ -572,6 +583,7 @@
     "href": "/2019-04-19-sockpatch",
     "tags": [
       "#mend",
+      "#fab",
       "#process",
       "#apt"
     ]
@@ -594,7 +606,8 @@
     "href": "/2019-04-19-comedowntous",
     "tags": [
       "#process",
-      "#mend"
+      "#mend",
+      "#fab"
     ]
   },
   {
@@ -608,14 +621,16 @@
     "href": "/2019-04-08-eagleboard",
     "tags": [
       "#itp",
-      "#homehard"
+      "#homehard",
+      "#fab"
     ]
   },
   {
     "href": "/2019-04-02-attinyapp",
     "tags": [
       "#itp",
-      "#homehard"
+      "#homehard",
+      "#fab"
     ]
   },
   {
@@ -629,21 +644,27 @@
     "href": "/2019-03-14-subtractfailure",
     "tags": [
       "#itp",
-      "#subtract"
+      "#subtract",
+      "#cnc",
+      "#fab"
     ]
   },
   {
     "href": "/2019-03-14-dovetailfailure",
     "tags": [
       "#itp",
-      "#subtract"
+      "#subtract",
+      "#cnc",
+      "#fab"
     ]
   },
   {
     "href": "/2019-03-14-cncfailure",
     "tags": [
       "#itp",
-      "#subtract"
+      "#subtract",
+      "#cnc",
+      "#fab"
     ]
   },
   {
@@ -671,7 +692,9 @@
     "href": "/2019-02-23-otherfailure",
     "tags": [
       "#itp",
-      "#subtract"
+      "#subtract",
+      "#cnc",
+      "#fab"
     ]
   },
   {
@@ -685,7 +708,9 @@
     "href": "/2019-02-10-stavecardfailure",
     "tags": [
       "#itp",
-      "#subtract"
+      "#subtract",
+      "#cnc",
+      "#fab"
     ]
   },
   {
@@ -699,7 +724,9 @@
     "href": "/2019-02-06-handrouter",
     "tags": [
       "#itp",
-      "#subtract"
+      "#subtract",
+      "#cnc",
+      "#fab"
     ]
   },
   {
