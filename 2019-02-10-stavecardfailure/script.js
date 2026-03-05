@@ -1,4 +1,4 @@
-const s3prefix = https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-02-10-stavecardfailure/
+const s3prefix = "https://lh00000000-public.s3.amazonaws.com/2019/siteimg/2019-02-10-stavecardfailure/"
 const captionedImage = ({caption, imgSrc}, x, y) => {
   let div = document.createElement("div")
   let img = document.createElement("img")
