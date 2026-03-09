@@ -8,6 +8,13 @@ body {
   justify-content: center;
 }
 
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
 #iframeholder {
   max-width: 100%;
   width: 400px;

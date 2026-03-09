@@ -8,9 +8,9 @@ function App() {
     <div
       style={{
         color: "#222",
-        maxWidth: "400px",
+        maxWidth: "720px",
         margin: "0 auto",
-        // fontFamily: "monospace",
+        padding: "0 24px",
       }}
     >
       <div

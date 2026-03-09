@@ -533,12 +533,13 @@ const orderedProjectDatums = [
   {
     id: "musiclink",
     head: group(
-      tag("<a href='/music'>", "all music related projects can be found here. ", "</a>")
+      tag("<a href='/music'>", "all music related projects can be found here.", "</a>")
     ),
   },
   {
     id: "bloglink",
     head: group(
+      tag("<span>", " ", "</span>"),
       tag("<a href='./blog'><span>", "more projects and experiments can be found on ", "</span></a>"),
       tag("<a href='./blog'><b>", "this blog", "</b></a>"),
     )

@@ -49,7 +49,8 @@ const update = (datums) => {
 
   const projectsEnter = projects.enter()
     .append("span")
-    .attr("class", d => d.id === "bloglink" ? "project bloglink" : "project")
+    .attr("class", d => d.id === "bloglink" ? "project bloglink" : 
+      d.id === "musiclink" ? "project musiclink" : "project")
     .attr("id", _.iteratee("id"))
 
   const headsEnter = projectsEnter
