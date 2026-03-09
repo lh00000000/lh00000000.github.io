@@ -31,6 +31,13 @@ body {
   text-decoration: underline dotted;
 }
 
+.musiclink a {
+  color: black;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}
+
+
 .head:hover {
   text-decoration: underline;
   cursor: pointer;

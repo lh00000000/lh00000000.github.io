@@ -102,7 +102,7 @@ const projectIndex = {
     id: "albumaugust",
     head: group(
       tag("<b>", "albumaugust", "</b>"),
-      tag("<span>", " is a collection of performances of songs of 2025. ", "</span>")
+      tag("<span>", " is a collection of performances of songs from 2025. ", "</span>")
     ),
     guts: group(
       [`<a href='https://luminghao.com/albumaugust'><img class="hovertrans" src="${assets.albumaugust.img}" width="100%"/></a>`]
@@ -272,6 +272,7 @@ const projectIndex = {
       twttr.widgets.load(document.getElementById("#chatter"))
     }
   },
+  
   bio: {
     id: "bio",
     head: group(
@@ -500,12 +501,9 @@ const projectIndex = {
       tag(`<a href="http://luminghao.com/2018-09-19-concreteswitch/" target="_blank">`, " an earlier prototype can be found here", "</a>"),
       tag("<span>", ". ", "</span>"),
       ["<br />"]
-
-
     )
-
-
-  }
+  },
+  
 }
 
 const orderedProjectDatums = [
@@ -533,10 +531,17 @@ const orderedProjectDatums = [
   projectIndex.liao,
   projectIndex.bio,
   {
+    id: "musiclink",
+    head: group(
+      tag("<a href='/music'>", "all music related projects can be found here. ", "</a>")
+    ),
+  },
+  {
     id: "bloglink",
     head: group(
       tag("<a href='./blog'><span>", "more projects and experiments can be found on ", "</span></a>"),
       tag("<a href='./blog'><b>", "this blog", "</b></a>"),
     )
-  }
+  },
+  
 ]
