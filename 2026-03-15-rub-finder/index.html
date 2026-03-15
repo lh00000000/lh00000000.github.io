@@ -223,31 +223,97 @@ const { useState, useEffect } = React;
 // ─── Really Useful Boxes — internal dimensions (mm) ──────────────────────────
 // Approximate. Verify at reallyusefulproducts.co.uk before buying.
 const DEFAULT_BOXES = [
-  { id: '0.07L',  litres: 0.07,  w: 85,  d: 55,  h: 28  },
-  { id: '0.14L',  litres: 0.14,  w: 85,  d: 55,  h: 55  },
-  { id: '0.3L',   litres: 0.3,   w: 100, d: 137, h: 40  },
-  { id: '0.55L',  litres: 0.55,  w: 125, d: 89,  h: 55  },
-  { id: '1.6L',   litres: 1.6,   w: 180, d: 116, h: 75  },
-  { id: '3L',     litres: 3,     w: 230, d: 180, h: 80  },
-  { id: '4L',     litres: 4,     w: 395, d: 255, h: 65  },
-  { id: '5L',     litres: 5,     w: 320, d: 186, h: 100 },
-  { id: '9L',     litres: 9,     w: 370, d: 240, h: 130 },
-  { id: '12L',    litres: 12,    w: 395, d: 340, h: 105 },
-  { id: '14L',    litres: 14,    w: 370, d: 240, h: 165 },
-  { id: '17L',    litres: 17,    w: 455, d: 375, h: 105 },
-  { id: '20L',    litres: 20,    w: 455, d: 375, h: 130 },
-  { id: '22L',    litres: 22,    w: 435, d: 325, h: 200 },
-  { id: '32L',    litres: 32,    w: 455, d: 375, h: 185 },
-  { id: '35L',    litres: 35,    w: 490, d: 420, h: 175 },
-  { id: '42L',    litres: 42,    w: 490, d: 420, h: 215 },
-  { id: '48L',    litres: 48,    w: 490, d: 420, h: 255 },
-  { id: '50L',    litres: 50,    w: 680, d: 420, h: 175 },
-  { id: '64L',    litres: 64,    w: 680, d: 420, h: 235 },
-  { id: '84L',    litres: 84,    w: 680, d: 420, h: 295 },
-  { id: '145L',   litres: 145,   w: 960, d: 420, h: 295 },
+  { id: '0.07L',         litres: 0.07,  w: 61,   d: 48,  h: 24  },
+  { id: '0.14L',         litres: 0.14,  w: 64,   d: 48,  h: 42  },
+  { id: '0.2L',          litres: 0.2,   w: 90,   d: 65,  h: 32  },
+  { id: '0.3L',          litres: 0.3,   w: 90,   d: 65,  h: 55  },
+  { id: '0.35L',         litres: 0.35,  w: 120,  d: 80,  h: 35  },
+  { id: '0.55L',         litres: 0.55,  w: 185,  d: 80,  h: 30  },
+  { id: '0.7L',          litres: 0.7,   w: 120,  d: 80,  h: 70  },
+  { id: '0.75L',         litres: 0.75,  w: 150,  d: 110, h: 45  },
+  { id: '0.8L',          litres: 0.8,   w: 320,  d: 80,  h: 30  },
+  { id: '0.9L',          litres: 0.9,   w: 185,  d: 80,  h: 60  },
+  { id: '1.5L',          litres: 1.5,   w: 320,  d: 80,  h: 60  },
+  { id: '1.6L',          litres: 1.6,   w: 150,  d: 110, h: 95  },
+  { id: '1.7L folding',  litres: 1.7,   w: 160,  d: 115, h: 87  },
+  { id: '1.75L',         litres: 1.75,  w: 195,  d: 150, h: 60  },
+  { id: '2.1L',          litres: 2.1,   w: 190,  d: 100, h: 104 },
+  { id: '2.5L',          litres: 2.5,   w: 290,  d: 160, h: 50  },
+  { id: '3L',            litres: 3,     w: 190,  d: 143, h: 120 },
+  { id: '4L',            litres: 4,     w: 348,  d: 220, h: 68  },
+  { id: '4L XL',         litres: 4,     w: 348,  d: 220, h: 118 },
+  { id: '5L',            litres: 5,     w: 285,  d: 160, h: 105 },
+  { id: '5L XL',         litres: 5,     w: 285,  d: 160, h: 135 },
+  { id: '6L',            litres: 6,     w: 400,  d: 225, h: 70  },
+  { id: '6.5L',          litres: 6.5,   w: 380,  d: 143, h: 120 },
+  { id: '7L',            litres: 7,     w: 340,  d: 307, h: 70  },
+  { id: '8L open front', litres: 8,     w: 290,  d: 165, h: 153 },
+  { id: '9L',            litres: 9,     w: 335,  d: 210, h: 140 },
+  { id: '9L XL',         litres: 9,     w: 335,  d: 210, h: 180 },
+  { id: '10L',           litres: 10,    w: 460,  d: 298, h: 70  },
+  { id: '11L',           litres: 11,    w: 375,  d: 310, h: 91  },
+  { id: '11L XL',        litres: 11,    w: 375,  d: 310, h: 125 },
+  { id: '12L',           litres: 12,    w: 415,  d: 235, h: 140 },
+  { id: '14L open front',litres: 14,    w: 336,  d: 214, h: 190 },
+  { id: '18L',           litres: 18,    w: 395,  d: 335, h: 170 },
+  { id: '18L XL',        litres: 18,    w: 395,  d: 335, h: 200 },
+  { id: '19L',           litres: 19,    w: 315,  d: 205, h: 270 },
+  { id: '19L XL',        litres: 19,    w: 315,  d: 205, h: 310 },
+  { id: '20L',           litres: 20,    w: 610,  d: 370, h: 90  },
+  { id: '21L',           litres: 21,    w: 370,  d: 300, h: 175 },
+  { id: '21L XL',        litres: 21,    w: 370,  d: 300, h: 210 },
+  { id: '22L',           litres: 22,    w: 750,  d: 210, h: 140 },
+  { id: '24L',           litres: 24,    w: 380,  d: 230, h: 270 },
+  { id: '24.5L',         litres: 24.5,  w: 530,  d: 350, h: 130 },
+  { id: '25L',           litres: 25,    w: 330,  d: 220, h: 345 },
+  { id: '32L folding',   litres: 32,    w: 443,  d: 315, h: 225 },
+  { id: '33L',           litres: 33,    w: 605,  d: 370, h: 145 },
+  { id: '35L',           litres: 35,    w: 370,  d: 310, h: 280 },
+  { id: '35L XL',        litres: 35,    w: 370,  d: 310, h: 315 },
+  { id: '42L',           litres: 42,    w: 405,  d: 365, h: 280 },
+  { id: '45L folding',   litres: 45,    w: 520,  d: 360, h: 280 },
+  { id: '48L',           litres: 48,    w: 530,  d: 325, h: 289 },
+  { id: '48L XL',        litres: 48,    w: 530,  d: 325, h: 330 },
+  { id: '50L',           litres: 50,    w: 605,  d: 370, h: 200 },
+  { id: '64L',           litres: 64,    w: 605,  d: 370, h: 280 },
+  { id: '70L',           litres: 70,    w: 710,  d: 545, h: 190 },
+  { id: '77L',           litres: 77,    w: 1135, d: 232, h: 340 },
+  { id: '84L',           litres: 84,    w: 605,  d: 370, h: 355 },
+  { id: '145L',          litres: 145,   w: 710,  d: 545, h: 400 },
 ];
 
 const sortByVol = (arr) => [...arr].sort((a, b) => a.w*a.d*a.h - b.w*b.d*b.h);
+
+// Parse dimension string like "280", "11in", "28 cm", "2.5in" → mm (or null if invalid)
+function parseDimensionToMm(str) {
+  if (str == null || String(str).trim() === '') return null;
+  const s = String(str).trim().toLowerCase();
+  const m = s.match(/^([\d.]+)\s*(mm|cm|in)?$/);
+  if (!m) return null;
+  const num = parseFloat(m[1]);
+  if (isNaN(num) || num <= 0) return null;
+  const u = (m[2] || 'mm');
+  if (u === 'mm') return num;
+  if (u === 'cm') return num * 10;
+  if (u === 'in') return num * 25.4;
+  return null;
+}
+
+// Convert mm to display value in given unit
+function mmToUnit(mm, unit) {
+  if (unit === 'mm') return mm;
+  if (unit === 'cm') return mm / 10;
+  if (unit === 'in') return mm / 25.4;
+  return mm;
+}
+function unitToMm(val, unit) {
+  const n = parseFloat(val);
+  if (isNaN(n)) return null;
+  if (unit === 'mm') return n;
+  if (unit === 'cm') return n * 10;
+  if (unit === 'in') return n * 25.4;
+  return null;
+}
 
 // Fits in any rotation?
 function fits(obj, box) {
@@ -329,8 +395,8 @@ function ObjectsTab({ objects, setObjects, getFitting }) {
 
   const save = () => {
     if (!form.name.trim())                          { setErr('need a name'); return; }
-    const w=parseFloat(form.w), d=parseFloat(form.d), h=parseFloat(form.h);
-    if ([w,d,h].some(v => isNaN(v)||v<=0))          { setErr('all dims must be positive numbers (mm)'); return; }
+    const w = parseDimensionToMm(form.w), d = parseDimensionToMm(form.d), h = parseDimensionToMm(form.h);
+    if (w == null || d == null || h == null)        { setErr('use positive numbers with optional unit: 280mm, 11in, 28cm'); return; }
     setErr('');
     const obj = { id: editId||Date.now().toString(), name: form.name.trim(), w, d, h };
     setObjects(prev => editId ? prev.map(o => o.id===editId ? obj : o) : [...prev, obj]);
@@ -340,13 +406,17 @@ function ObjectsTab({ objects, setObjects, getFitting }) {
   const edit = (o) => { setForm({name:o.name,w:''+o.w,d:''+o.d,h:''+o.h}); setEditId(o.id); };
   const del  = (id) => setObjects(prev => prev.filter(o => o.id!==id));
   const kd   = (e) => e.key==='Enter' && save();
+  const blurToMm = (key) => () => {
+    const mm = parseDimensionToMm(form[key]);
+    if (mm != null) setForm(prev => ({ ...prev, [key]: String(Math.round(mm)) }));
+  };
 
   return (
     <div>
       <div className="section">
         <h2>{editId ? 'edit object' : 'add object'}</h2>
         <p style={{fontSize:'0.78rem',color:'#888',marginBottom:10}}>
-          enter the <b style={{color:'#ccc'}}>outer</b> dimensions of the object in mm. rotation is considered automatically.
+          enter the <b style={{color:'#ccc'}}>outer</b> dimensions. use units: <code style={{background:'#222',padding:'1px 4px',borderRadius:3}}>280mm</code>, <code style={{background:'#222',padding:'1px 4px',borderRadius:3}}>11in</code>, <code style={{background:'#222',padding:'1px 4px',borderRadius:3}}>28cm</code> (default mm). rotation is considered automatically.
         </p>
         <div className="form-grid">
           <div>
@@ -355,19 +425,19 @@ function ObjectsTab({ objects, setObjects, getFitting }) {
               onChange={e=>f('name',e.target.value)} onKeyDown={kd} />
           </div>
           <div>
-            <label>width (mm)</label>
-            <input type="number" min="1" placeholder="280" value={form.w}
-              onChange={e=>f('w',e.target.value)} onKeyDown={kd} />
+            <label>width</label>
+            <input type="text" placeholder="280mm or 11in" value={form.w}
+              onChange={e=>f('w',e.target.value)} onBlur={blurToMm('w')} onKeyDown={kd} />
           </div>
           <div>
-            <label>depth (mm)</label>
-            <input type="number" min="1" placeholder="190" value={form.d}
-              onChange={e=>f('d',e.target.value)} onKeyDown={kd} />
+            <label>depth</label>
+            <input type="text" placeholder="190mm or 7.5in" value={form.d}
+              onChange={e=>f('d',e.target.value)} onBlur={blurToMm('d')} onKeyDown={kd} />
           </div>
           <div>
-            <label>height (mm)</label>
-            <input type="number" min="1" placeholder="60" value={form.h}
-              onChange={e=>f('h',e.target.value)} onKeyDown={kd} />
+            <label>height</label>
+            <input type="text" placeholder="60mm or 2.4in" value={form.h}
+              onChange={e=>f('h',e.target.value)} onBlur={blurToMm('h')} onKeyDown={kd} />
           </div>
         </div>
         <div className="btn-row">
@@ -486,35 +556,63 @@ function ShoppingTab({ objects, list, boxes, getFitting }) {
 function BoxesTab({ boxes, setBoxes }) {
   const [editing, setEditing] = useState(null);
   const [form,    setForm]    = useState({});
+  const [boxUnit, setBoxUnit] = useState('mm'); // 'mm' | 'cm' | 'in'
 
-  const startEdit = (b) => { setEditing(b.id); setForm({w:b.w,d:b.d,h:b.h}); };
+  const fmt = (mm) => {
+    const v = mmToUnit(mm, boxUnit);
+    return boxUnit === 'in' ? v.toFixed(2) : Number.isInteger(v) ? String(v) : v.toFixed(1);
+  };
+
+  const startEdit = (b) => {
+    setEditing(b.id);
+    setForm({ w: mmToUnit(b.w, boxUnit), d: mmToUnit(b.d, boxUnit), h: mmToUnit(b.h, boxUnit) });
+  };
   const saveEdit  = (id) => {
-    setBoxes(prev => prev.map(b => b.id===id
-      ? {...b, w:parseFloat(form.w), d:parseFloat(form.d), h:parseFloat(form.h)}
-      : b));
-    setEditing(null);
+    const w = unitToMm(form.w, boxUnit), d = unitToMm(form.d, boxUnit), h = unitToMm(form.h, boxUnit);
+    if (w != null && d != null && h != null && w > 0 && d > 0 && h > 0) {
+      setBoxes(prev => prev.map(b => b.id === id ? { ...b, w, d, h } : b));
+      setEditing(null);
+    }
   };
   const reset = () => { if (confirm('reset all dims to defaults?')) { setBoxes(DEFAULT_BOXES); setEditing(null); } };
 
+  const switchUnit = (newUnit) => {
+    if (editing != null && boxUnit !== newUnit) {
+      const wMm = unitToMm(form.w, boxUnit), dMm = unitToMm(form.d, boxUnit), hMm = unitToMm(form.h, boxUnit);
+      if (wMm != null && dMm != null && hMm != null) {
+        setForm({ w: mmToUnit(wMm, newUnit), d: mmToUnit(dMm, newUnit), h: mmToUnit(hMm, newUnit) });
+      }
+    }
+    setBoxUnit(newUnit);
+  };
+
   const sorted = sortByVol(boxes);
+  const unitLabel = { mm: 'mm', cm: 'cm', in: 'in' }[boxUnit];
 
   return (
     <div>
       <div className="notice">
-        internal dimensions (mm), approximate. verify at{' '}
+        internal dimensions, approximate. verify at{' '}
         <a href="https://www.reallyusefulproducts.co.uk/uk/html/onlineshop/fullrange_rub.php" target="_blank" rel="noopener">
           reallyusefulproducts.co.uk
         </a>{' '}
         before buying. edit any row if you find a discrepancy.
       </div>
-      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:10,flexWrap:'wrap',gap:'8px'}}>
         <h2 style={{marginBottom:0}}>box dimensions</h2>
-        <button className="btn btn-cancel btn-sm" onClick={reset}>reset defaults</button>
+        <div style={{display:'flex',alignItems:'center',gap:0}}>
+          <span style={{fontSize:'0.75rem',color:'#666',marginRight:8}}>units:</span>
+          {['mm','cm','in'].map(u => (
+            <button key={u} className={`tab ${boxUnit===u?'active':''}`} style={{padding:'4px 10px',marginBottom:0,borderBottomWidth:2}}
+              onClick={()=>switchUnit(u)}>{u}</button>
+          ))}
+          <button className="btn btn-cancel btn-sm" onClick={reset} style={{marginLeft:12}}>reset defaults</button>
+        </div>
       </div>
       <table className="box-table">
         <thead>
           <tr>
-            <th>size</th><th>W</th><th>D</th><th>H</th><th>vol (cm³)</th><th></th>
+            <th>size</th><th>W ({unitLabel})</th><th>D ({unitLabel})</th><th>H ({unitLabel})</th><th>vol (cm³)</th><th></th>
           </tr>
         </thead>
         <tbody>
@@ -525,10 +623,10 @@ function BoxesTab({ boxes, setBoxes }) {
                 <td style={{fontWeight:600}}>{b.id}</td>
                 {isEdit ? (
                   <>
-                    <td><input type="number" value={form.w} onChange={e=>setForm(f=>({...f,w:e.target.value}))} /></td>
-                    <td><input type="number" value={form.d} onChange={e=>setForm(f=>({...f,d:e.target.value}))} /></td>
-                    <td><input type="number" value={form.h} onChange={e=>setForm(f=>({...f,h:e.target.value}))} /></td>
-                    <td style={{color:'#555'}}>{(parseFloat(form.w||0)*parseFloat(form.d||0)*parseFloat(form.h||0)/1000).toFixed(0)}</td>
+                    <td><input type="number" step={boxUnit==='in'?0.01:1} value={form.w} onChange={e=>setForm(f=>({...f,w:e.target.value}))} /></td>
+                    <td><input type="number" step={boxUnit==='in'?0.01:1} value={form.d} onChange={e=>setForm(f=>({...f,d:e.target.value}))} /></td>
+                    <td><input type="number" step={boxUnit==='in'?0.01:1} value={form.h} onChange={e=>setForm(f=>({...f,h:e.target.value}))} /></td>
+                    <td style={{color:'#555'}}>{((unitToMm(form.w,boxUnit)||0)*(unitToMm(form.d,boxUnit)||0)*(unitToMm(form.h,boxUnit)||0)/1000).toFixed(0)}</td>
                     <td>
                       <button className="btn btn-save btn-sm" onClick={()=>saveEdit(b.id)} style={{marginRight:4}}>save</button>
                       <button className="btn btn-cancel btn-sm" onClick={()=>setEditing(null)}>cancel</button>
@@ -536,9 +634,9 @@ function BoxesTab({ boxes, setBoxes }) {
                   </>
                 ) : (
                   <>
-                    <td style={{color:'#aaa'}}>{b.w}</td>
-                    <td style={{color:'#aaa'}}>{b.d}</td>
-                    <td style={{color:'#aaa'}}>{b.h}</td>
+                    <td style={{color:'#aaa'}}>{fmt(b.w)}</td>
+                    <td style={{color:'#aaa'}}>{fmt(b.d)}</td>
+                    <td style={{color:'#aaa'}}>{fmt(b.h)}</td>
                     <td style={{color:'#555'}}>{(b.w*b.d*b.h/1000).toFixed(0)}</td>
                     <td><button className="btn btn-edit btn-sm" onClick={()=>startEdit(b)}>edit</button></td>
                   </>
