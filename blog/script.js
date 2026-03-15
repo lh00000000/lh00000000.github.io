@@ -21,7 +21,7 @@ async function loadPosts() {
   try {
     // Try to load from the pre-built posts.json file (fastest)
     console.log('Loading posts from pre-built data');
-    const response = await fetch('./dist/api/posts00000000.json');
+    const response = await fetch('./posts00000000.json');
     if (response.ok) {
       allPosts = await response.json();
       allTags = _(allPosts).chain().flatMap("tags").uniq().value();

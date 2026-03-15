@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rub finder</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111111;
+      color: #f4f4f4;
+      min-height: 100vh;
+    }
+
+    #root {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    a { color: #8ecbff; }
+
+    h1 { font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+    h2 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+    h3 { font-size: 0.9rem; font-weight: 700; }
+
+    .intro { color: #cccccc; font-size: 0.875rem; margin-bottom: 24px; }
+
+    .section {
+      border-top: 1px solid #333333;
+      padding: 16px 0 0;
+      margin-bottom: 20px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #333;
+    }
+    .tab {
+      padding: 8px 16px;
+      background: none;
+      border: none;
+      color: #888;
+      font-size: 0.875rem;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.15s;
+    }
+    .tab:hover { color: #f4f4f4; }
+    .tab.active { color: #f4f4f4; border-bottom-color: #8ecbff; }
+
+    /* Form */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    label { font-size: 0.75rem; color: #888; display: block; margin-bottom: 3px; }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 7px 10px;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: #f4f4f4;
+      font-size: 0.875rem;
+      font-family: Arial, sans-serif;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    input:focus { border-color: #8ecbff; }
+
+    .btn {
+      padding: 7px 14px;
+      border-radius: 4px;
+      border: none;
+      font-size: 0.8rem;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-add    { background: #2a5f8f; color: #f4f4f4; }
+    .btn-edit   { background: #333; color: #ccc; }
+    .btn-delete { background: #3d1a1a; color: #f48888; }
+    .btn-save   { background: #2a5f8f; color: #f4f4f4; }
+    .btn-cancel { background: #333; color: #ccc; }
+    .btn-sm { padding: 4px 10px; font-size: 0.75rem; }
+
+    .btn-row { display: flex; gap: 6px; margin-top: 8px; }
+
+    /* Object cards */
+    .obj-card {
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      background: #161616;
+    }
+    .obj-card:hover { border-color: #3a3a3a; }
+    .obj-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .obj-name { font-weight: 700; font-size: 0.925rem; }
+    .obj-dims { font-size: 0.78rem; color: #888; margin: 3px 0 8px; }
+    .obj-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+    /* Box tags */
+    .tags-row { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+    .box-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .box-tag-best { background: #1a3a2a; color: #6fcfa0; border: 1px solid #2a5a3a; }
+    .box-tag-other { background: #1e1e1e; color: #888; border: 1px solid #2a2a2a; }
+    .box-tag-none  { background: #3d1a1a; color: #f48888; border: 1px solid #5a2a2a; }
+
+    .fit-label { font-size: 0.75rem; color: #666; }
+
+    /* Shopping list */
+    .shop-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      background: #161616;
+    }
+    .shop-item:hover { border-color: #3a3a3a; }
+    .shop-count {
+      background: #2a5f8f;
+      color: #f4f4f4;
+      border-radius: 3px;
+      padding: 2px 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      min-width: 28px;
+      text-align: center;
+    }
+    .shop-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; }
+    .shop-dims { font-size: 0.75rem; color: #777; }
+
+    .total-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border: 1px solid #2a5f8f;
+      border-radius: 6px;
+      margin-top: 10px;
+      background: #0e1e2e;
+    }
+    .total-num { font-size: 1.2rem; font-weight: 700; color: #8ecbff; }
+
+    /* Box data table */
+    .box-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .box-table th { text-align: left; color: #666; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 8px 8px; }
+    .box-table td { padding: 6px 8px; border-top: 1px solid #222; }
+    .box-table tr:hover td { background: #1a1a1a; }
+    .box-table input { padding: 3px 6px; font-size: 0.78rem; width: 60px; }
+
+    .notice {
+      background: #1e1a0e;
+      border: 1px solid #4a3a0e;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      color: #c0a060;
+      margin-bottom: 14px;
+    }
+
+    .warn {
+      background: #2d1212;
+      border: 1px solid #5a2222;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      color: #f48888;
+      margin-bottom: 10px;
+    }
+
+    .empty { text-align: center; padding: 40px 0; color: #555; font-size: 0.875rem; }
+
+    .err { color: #f48888; font-size: 0.8rem; margin-top: 6px; }
+
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: 4px;
+      font-size: 0.8rem;
+    }
+    .breakdown-header span { font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 0.04em; }
+    .breakdown-row { padding: 5px 0; border-top: 1px solid #1e1e1e; }
+    .breakdown-row span { display: block; padding: 4px 0; color: #aaa; }
+    .breakdown-row span:first-child { color: #f4f4f4; font-weight: 600; }
+
+    @media (max-width: 560px) {
+      .form-grid { grid-template-columns: 1fr 1fr; }
+      .form-grid > *:first-child { grid-column: 1 / -1; }
+      .breakdown-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+// ─── Really Useful Boxes — internal dimensions (mm) ──────────────────────────
+// Approximate. Verify at reallyusefulproducts.co.uk before buying.
+const DEFAULT_BOXES = [
+  { id: '0.07L',  litres: 0.07,  w: 85,  d: 55,  h: 28  },
+  { id: '0.14L',  litres: 0.14,  w: 85,  d: 55,  h: 55  },
+  { id: '0.3L',   litres: 0.3,   w: 100, d: 137, h: 40  },
+  { id: '0.55L',  litres: 0.55,  w: 125, d: 89,  h: 55  },
+  { id: '1.6L',   litres: 1.6,   w: 180, d: 116, h: 75  },
+  { id: '3L',     litres: 3,     w: 230, d: 180, h: 80  },
+  { id: '4L',     litres: 4,     w: 395, d: 255, h: 65  },
+  { id: '5L',     litres: 5,     w: 320, d: 186, h: 100 },
+  { id: '9L',     litres: 9,     w: 370, d: 240, h: 130 },
+  { id: '12L',    litres: 12,    w: 395, d: 340, h: 105 },
+  { id: '14L',    litres: 14,    w: 370, d: 240, h: 165 },
+  { id: '17L',    litres: 17,    w: 455, d: 375, h: 105 },
+  { id: '20L',    litres: 20,    w: 455, d: 375, h: 130 },
+  { id: '22L',    litres: 22,    w: 435, d: 325, h: 200 },
+  { id: '32L',    litres: 32,    w: 455, d: 375, h: 185 },
+  { id: '35L',    litres: 35,    w: 490, d: 420, h: 175 },
+  { id: '42L',    litres: 42,    w: 490, d: 420, h: 215 },
+  { id: '48L',    litres: 48,    w: 490, d: 420, h: 255 },
+  { id: '50L',    litres: 50,    w: 680, d: 420, h: 175 },
+  { id: '64L',    litres: 64,    w: 680, d: 420, h: 235 },
+  { id: '84L',    litres: 84,    w: 680, d: 420, h: 295 },
+  { id: '145L',   litres: 145,   w: 960, d: 420, h: 295 },
+];
+
+const sortByVol = (arr) => [...arr].sort((a, b) => a.w*a.d*a.h - b.w*b.d*b.h);
+
+// Fits in any rotation?
+function fits(obj, box) {
+  const o = [obj.w, obj.d, obj.h].sort((a,b) => a-b);
+  const b = [box.w, box.d, box.h].sort((a,b) => a-b);
+  return o[0] <= b[0] && o[1] <= b[1] && o[2] <= b[2];
+}
+
+function load(key, fallback) {
+  try { return JSON.parse(localStorage.getItem(key)) ?? fallback; }
+  catch { return fallback; }
+}
+
+// ─── App ─────────────────────────────────────────────────────────────────────
+function App() {
+  const [tab,     setTab]     = useState('objects');
+  const [objects, setObjects] = useState(() => load('rub-objects', []));
+  const [boxes,   setBoxes]   = useState(() => load('rub-boxes', DEFAULT_BOXES));
+
+  useEffect(() => localStorage.setItem('rub-objects', JSON.stringify(objects)), [objects]);
+  useEffect(() => localStorage.setItem('rub-boxes',   JSON.stringify(boxes)),  [boxes]);
+
+  const sorted = sortByVol(boxes);
+  const getFitting = (obj) => sorted.filter(b => fits(obj, b));
+
+  const shoppingList = (() => {
+    const counts = {};
+    const unfit  = [];
+    objects.forEach(obj => {
+      const f = getFitting(obj);
+      if (!f.length) { unfit.push(obj); return; }
+      const k = f[0].id;
+      counts[k] = (counts[k] || 0) + 1;
+    });
+    const items = Object.entries(counts)
+      .map(([id, count]) => ({ box: boxes.find(b => b.id === id), count }))
+      .sort((a, b) => a.box.litres - b.box.litres);
+    return { items, unfit, total: items.reduce((s, x) => s + x.count, 0) };
+  })();
+
+  return (
+    <div>
+      <h1>really useful box finder</h1>
+      <p className="intro">
+        enter objects by dimension to find the smallest{' '}
+        <a href="https://www.reallyusefulproducts.co.uk" target="_blank" rel="noopener">
+          really useful box
+        </a>{' '}
+        that fits each one, and see your minimum shopping list.
+      </p>
+
+      <div className="tabs">
+        {[
+          ['objects',  `objects${objects.length ? ` (${objects.length})` : ''}`],
+          ['shopping', `shopping list${shoppingList.total ? ` — ${shoppingList.total}` : ''}`],
+          ['boxes',    'box data'],
+        ].map(([key, label]) => (
+          <button key={key} className={`tab${tab===key?' active':''}`} onClick={() => setTab(key)}>
+            {label}
+          </button>
+        ))}
+      </div>
+
+      {tab === 'objects'  && <ObjectsTab  objects={objects} setObjects={setObjects} getFitting={getFitting} />}
+      {tab === 'shopping' && <ShoppingTab objects={objects} list={shoppingList} boxes={boxes} getFitting={getFitting} />}
+      {tab === 'boxes'    && <BoxesTab    boxes={boxes} setBoxes={setBoxes} />}
+    </div>
+  );
+}
+
+// ─── Objects tab ─────────────────────────────────────────────────────────────
+function ObjectsTab({ objects, setObjects, getFitting }) {
+  const blank = { name: '', w: '', d: '', h: '' };
+  const [form,   setForm]   = useState(blank);
+  const [editId, setEditId] = useState(null);
+  const [err,    setErr]    = useState('');
+
+  const f = (k, v) => setForm(p => ({ ...p, [k]: v }));
+
+  const save = () => {
+    if (!form.name.trim())                          { setErr('need a name'); return; }
+    const w=parseFloat(form.w), d=parseFloat(form.d), h=parseFloat(form.h);
+    if ([w,d,h].some(v => isNaN(v)||v<=0))          { setErr('all dims must be positive numbers (mm)'); return; }
+    setErr('');
+    const obj = { id: editId||Date.now().toString(), name: form.name.trim(), w, d, h };
+    setObjects(prev => editId ? prev.map(o => o.id===editId ? obj : o) : [...prev, obj]);
+    setForm(blank); setEditId(null);
+  };
+
+  const edit = (o) => { setForm({name:o.name,w:''+o.w,d:''+o.d,h:''+o.h}); setEditId(o.id); };
+  const del  = (id) => setObjects(prev => prev.filter(o => o.id!==id));
+  const kd   = (e) => e.key==='Enter' && save();
+
+  return (
+    <div>
+      <div className="section">
+        <h2>{editId ? 'edit object' : 'add object'}</h2>
+        <p style={{fontSize:'0.78rem',color:'#888',marginBottom:10}}>
+          enter the <b style={{color:'#ccc'}}>outer</b> dimensions of the object in mm. rotation is considered automatically.
+        </p>
+        <div className="form-grid">
+          <div>
+            <label>name</label>
+            <input type="text" placeholder="e.g. lego technic set" value={form.name}
+              onChange={e=>f('name',e.target.value)} onKeyDown={kd} />
+          </div>
+          <div>
+            <label>width (mm)</label>
+            <input type="number" min="1" placeholder="280" value={form.w}
+              onChange={e=>f('w',e.target.value)} onKeyDown={kd} />
+          </div>
+          <div>
+            <label>depth (mm)</label>
+            <input type="number" min="1" placeholder="190" value={form.d}
+              onChange={e=>f('d',e.target.value)} onKeyDown={kd} />
+          </div>
+          <div>
+            <label>height (mm)</label>
+            <input type="number" min="1" placeholder="60" value={form.h}
+              onChange={e=>f('h',e.target.value)} onKeyDown={kd} />
+          </div>
+        </div>
+        <div className="btn-row">
+          <button className="btn btn-add" onClick={save}>{editId ? 'update' : 'add'}</button>
+          {editId && <button className="btn btn-cancel" onClick={()=>{setForm(blank);setEditId(null);setErr('');}}>cancel</button>}
+        </div>
+        {err && <div className="err">{err}</div>}
+      </div>
+
+      {objects.length === 0
+        ? <div className="empty">no objects yet. add one above.</div>
+        : objects.map(obj => {
+          const fitting = getFitting(obj);
+          const best    = fitting[0];
+          return (
+            <div key={obj.id} className="obj-card">
+              <div className="obj-header">
+                <div>
+                  <div className="obj-name">{obj.name}</div>
+                  <div className="obj-dims">{obj.w} × {obj.d} × {obj.h} mm</div>
+                </div>
+                <div className="obj-actions">
+                  <button className="btn btn-edit btn-sm"   onClick={()=>edit(obj)}>edit</button>
+                  <button className="btn btn-delete btn-sm" onClick={()=>del(obj.id)}>×</button>
+                </div>
+              </div>
+              <div className="tags-row">
+                {fitting.length === 0
+                  ? <span className="box-tag box-tag-none">too large for any RUB</span>
+                  : <>
+                    <span className="fit-label">smallest fit:</span>
+                    <span className="box-tag box-tag-best">{best.id}</span>
+                    {fitting.length > 1 && <>
+                      <span className="fit-label" style={{marginLeft:4}}>also fits:</span>
+                      {fitting.slice(1).map(b => <span key={b.id} className="box-tag box-tag-other">{b.id}</span>)}
+                    </>}
+                  </>
+                }
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  );
+}
+
+// ─── Shopping tab ─────────────────────────────────────────────────────────────
+function ShoppingTab({ objects, list, boxes, getFitting }) {
+  if (!objects.length)
+    return <div className="empty">add some objects first.</div>;
+
+  return (
+    <div>
+      <div className="notice">
+        each object is assigned its smallest fitting box (any rotation). one box per object — you may be able to pack small objects together to reduce the count.
+      </div>
+
+      {list.unfit.length > 0 &&
+        <div className="warn">
+          ⚠ too large for any RUB: {list.unfit.map(o=>o.name).join(', ')}
+        </div>
+      }
+
+      <div className="section">
+        <h2>what to buy</h2>
+        {list.items.length === 0
+          ? <div className="empty">nothing fits any RUB.</div>
+          : <>
+            {list.items.map(({box,count}) => (
+              <div key={box.id} className="shop-item">
+                <div>
+                  <div className="shop-name">really useful box {box.id}</div>
+                  <div className="shop-dims">internal: {box.w} × {box.d} × {box.h} mm</div>
+                </div>
+                <span className="shop-count">× {count}</span>
+              </div>
+            ))}
+            <div className="total-bar">
+              <span>total boxes</span>
+              <span className="total-num">{list.total}</span>
+            </div>
+          </>
+        }
+      </div>
+
+      <div className="section">
+        <h2>per-object breakdown</h2>
+        <div className="breakdown-grid breakdown-header" style={{marginBottom:6}}>
+          {['object','dims','smallest fit','also fits'].map(h=>(
+            <span key={h}>{h}</span>
+          ))}
+        </div>
+        {objects.map(obj => {
+          const fitting = getFitting(obj);
+          const best = fitting[0];
+          return (
+            <div key={obj.id} className="breakdown-grid breakdown-row">
+              <span>{obj.name}</span>
+              <span>{obj.w}×{obj.d}×{obj.h}</span>
+              <span style={{color: best ? '#6fcfa0' : '#f48888'}}>
+                {best ? best.id : 'none'}
+              </span>
+              <span style={{color:'#666'}}>
+                {fitting.length > 1 ? fitting.slice(1).map(b=>b.id).join(', ') : '—'}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Box data tab ─────────────────────────────────────────────────────────────
+function BoxesTab({ boxes, setBoxes }) {
+  const [editing, setEditing] = useState(null);
+  const [form,    setForm]    = useState({});
+
+  const startEdit = (b) => { setEditing(b.id); setForm({w:b.w,d:b.d,h:b.h}); };
+  const saveEdit  = (id) => {
+    setBoxes(prev => prev.map(b => b.id===id
+      ? {...b, w:parseFloat(form.w), d:parseFloat(form.d), h:parseFloat(form.h)}
+      : b));
+    setEditing(null);
+  };
+  const reset = () => { if (confirm('reset all dims to defaults?')) { setBoxes(DEFAULT_BOXES); setEditing(null); } };
+
+  const sorted = sortByVol(boxes);
+
+  return (
+    <div>
+      <div className="notice">
+        internal dimensions (mm), approximate. verify at{' '}
+        <a href="https://www.reallyusefulproducts.co.uk/uk/html/onlineshop/fullrange_rub.php" target="_blank" rel="noopener">
+          reallyusefulproducts.co.uk
+        </a>{' '}
+        before buying. edit any row if you find a discrepancy.
+      </div>
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
+        <h2 style={{marginBottom:0}}>box dimensions</h2>
+        <button className="btn btn-cancel btn-sm" onClick={reset}>reset defaults</button>
+      </div>
+      <table className="box-table">
+        <thead>
+          <tr>
+            <th>size</th><th>W</th><th>D</th><th>H</th><th>vol (cm³)</th><th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map(b => {
+            const isEdit = editing === b.id;
+            return (
+              <tr key={b.id} style={isEdit ? {background:'#0e1e2e'} : {}}>
+                <td style={{fontWeight:600}}>{b.id}</td>
+                {isEdit ? (
+                  <>
+                    <td><input type="number" value={form.w} onChange={e=>setForm(f=>({...f,w:e.target.value}))} /></td>
+                    <td><input type="number" value={form.d} onChange={e=>setForm(f=>({...f,d:e.target.value}))} /></td>
+                    <td><input type="number" value={form.h} onChange={e=>setForm(f=>({...f,h:e.target.value}))} /></td>
+                    <td style={{color:'#555'}}>{(parseFloat(form.w||0)*parseFloat(form.d||0)*parseFloat(form.h||0)/1000).toFixed(0)}</td>
+                    <td>
+                      <button className="btn btn-save btn-sm" onClick={()=>saveEdit(b.id)} style={{marginRight:4}}>save</button>
+                      <button className="btn btn-cancel btn-sm" onClick={()=>setEditing(null)}>cancel</button>
+                    </td>
+                  </>
+                ) : (
+                  <>
+                    <td style={{color:'#aaa'}}>{b.w}</td>
+                    <td style={{color:'#aaa'}}>{b.d}</td>
+                    <td style={{color:'#aaa'}}>{b.h}</td>
+                    <td style={{color:'#555'}}>{(b.w*b.d*b.h/1000).toFixed(0)}</td>
+                    <td><button className="btn btn-edit btn-sm" onClick={()=>startEdit(b)}>edit</button></td>
+                  </>
+                )}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
