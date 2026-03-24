@@ -4,42 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hanna Deck: Hand-Drawn Illustrations to 3D Printed Stencil Cards</title>
-        <style>body { font-family: Georgia, serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; background: #fafafa; } h1 { font-size: 1.8rem; margin-bottom: 0.25rem; } .date { color: #888; font-size: 0.9rem; margin-bottom: 2rem; } p { margin: 1rem 0; } .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; } .gallery img { width: 100%; border-radius: 4px; display: block; } .full img { width: 100%; border-radius: 4px; display: block; margin: 1.5rem 0; } .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.5rem 0; } .pair img { width: 100%; border-radius: 4px; display: block; } figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.25rem; } figure { margin: 0; } ul { margin: 1rem 0; padding-left: 1.25rem; } #scans-gallery figure { position: relative; } #scans-gallery .dup-remove-cb { position: absolute; top: 6px; left: 6px; z-index: 2; width: 20px; height: 20px; margin: 0; cursor: pointer; } #scans-dup-toolbar { margin: 0 0 0.75rem 0; padding: 0.5rem 0.75rem; background: #fff3cd; border: 1px solid #e0c040; border-radius: 4px; font-size: 0.9rem; } #scans-dup-toolbar button { margin-left: 0.5rem; cursor: pointer; padding: 0.25rem 0.5rem; } #scans-copy-status { color: #666; }</style>
+        <style>body { font-family: Georgia, serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; background: #fafafa; } h1 { font-size: 1.8rem; margin-bottom: 0.25rem; } .date { color: #888; font-size: 0.9rem; margin-bottom: 2rem; } p { margin: 1rem 0; } .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; } .gallery img { width: 100%; border-radius: 4px; display: block; } .full img { width: 100%; border-radius: 4px; display: block; margin: 1.5rem 0; } .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.5rem 0; } .pair img { width: 100%; border-radius: 4px; display: block; } figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.25rem; } figure { margin: 0; } ul { margin: 1rem 0; padding-left: 1.25rem; } #scans-gallery figure { position: relative; } #scans-gallery .dup-remove-cb { position: absolute; top: 6px; left: 6px; z-index: 2; width: 20px; height: 20px; margin: 0; cursor: pointer; } #scans-gallery img { cursor: pointer; } #scans-dup-toolbar { margin: 0 0 0.75rem 0; padding: 0.5rem 0.75rem; background: #fff3cd; border: 1px solid #e0c040; border-radius: 4px; font-size: 0.9rem; } #scans-dup-toolbar button { margin-left: 0.5rem; cursor: pointer; padding: 0.25rem 0.5rem; } #scans-copy-status { color: #666; } .svg-collage-section { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 1.25rem 0 2.5rem; background: linear-gradient(180deg, #f2f2f2 0%, #e8e8e8 100%); box-sizing: border-box; } .svg-collage-section h2 { max-width: 720px; margin: 0 auto 0.5rem; padding: 0 1rem; } .svg-collage { position: relative; min-height: 92vh; margin: 0; padding: 0 1vw 4vh; box-sizing: border-box; overflow: visible; } .svg-collage figure { margin: 0; } .svg-collage img { width: 100%; height: auto; display: block; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12)); border-radius: 2px; mix-blend-mode: multiply; }</style>
     </head>
     <body>
         <h1>hannadeck</h1>
         <div class="date">November 2022</div>
         <p>I wanted to make a tarot-like deck of cards for my friend Hanna. After trying a few methods, I settled on making goopy sharpie illustrations and rendering them as stencils to be printed with my ender. Each card represents something about Hanna.&nbsp;</p>
-        <p>Each card started as a quick brush pen illustration on paper, then was photographed, traced to SVG, extruded in Fusion 360, and printed flat on an FDM printer. The illustrations become cut-through stencils &mdash; hold a card up to the light and the drawing glows through. 36 cards in total, each one a different character. Assets below are grouped by folder on disk (HEIC masters live in <code>heic/</code> and are omitted here).</p>
 
 
-        <h2>Scans</h2>
-        <div class="gallery" id="scans-gallery">
+        <h3>some sharpie drawings</h3>
+        <div class="gallery">
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3222%202.jpg" alt="IMG_3222 2.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3222%281%29.jpg" alt="IMG_3222(1).jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3222.jpg" alt="IMG_3222.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3234.jpg" alt="IMG_3234.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3237.jpg" alt="IMG_3237.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3238.jpg" alt="IMG_3238.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3242.jpg" alt="IMG_3242.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3243.jpg" alt="IMG_3243.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3244.jpg" alt="IMG_3244.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3245.jpg" alt="IMG_3245.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3246.jpg" alt="IMG_3246.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3248.jpg" alt="IMG_3248.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3249.jpg" alt="IMG_3249.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3289.jpg" alt="IMG_3289.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3290.jpg" alt="IMG_3290.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3312.jpg" alt="IMG_3312.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3313.jpeg" alt="IMG_3313.jpeg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3313.jpg" alt="IMG_3313.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3314.jpeg" alt="IMG_3314.jpeg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3314.jpg" alt="IMG_3314.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3315.jpg" alt="IMG_3315.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3317.jpg" alt="IMG_3317.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3319.jpg" alt="IMG_3319.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3320.jpg" alt="IMG_3320.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3321.jpg" alt="IMG_3321.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3322.jpg" alt="IMG_3322.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3323.jpg" alt="IMG_3323.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3324.jpg" alt="IMG_3324.jpg" loading="lazy"></figure>
@@ -50,9 +34,7 @@
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3329.jpg" alt="IMG_3329.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3330.jpg" alt="IMG_3330.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3331.jpg" alt="IMG_3331.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3332.jpg" alt="IMG_3332.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3333.jpg" alt="IMG_3333.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3334.jpg" alt="IMG_3334.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3335.jpg" alt="IMG_3335.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3336.jpg" alt="IMG_3336.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3337.jpg" alt="IMG_3337.jpg" loading="lazy"></figure>
@@ -64,24 +46,18 @@
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3343.jpg" alt="IMG_3343.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3344.jpg" alt="IMG_3344.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3345.jpg" alt="IMG_3345.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3410.jpg" alt="IMG_3410.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3451.jpg" alt="IMG_3451.jpg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3452.jpg" alt="IMG_3452.jpg" loading="lazy"></figure>
         </div>
 
         <h2>Blobbed</h2>
         <div class="gallery">
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/10cycloneguide-11-14-2251.png" alt="10cycloneguide-11-14-2251.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/10cycloneguide-11-15-2321.png" alt="10cycloneguide-11-15-2321.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/10cycloneguide-11-15-2324.png" alt="10cycloneguide-11-15-2324.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/11beachgal-11-14-2338.png" alt="11beachgal-11-14-2338.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/12qcatcher-11-14-2352.png" alt="12qcatcher-11-14-2352.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/13fidipubber-11-14-2359.png" alt="13fidipubber-11-14-2359.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/13fidipubber-11-16-2310.png" alt="13fidipubber-11-16-2310.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/14womanbarreg-11-15-0011.png" alt="14womanbarreg-11-15-0011.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/15mexicodimer-11-15-0017.png" alt="15mexicodimer-11-15-0017.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/16embroideryhooper-11-15-0030.png" alt="16embroideryhooper-11-15-0030.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/17nothingbuyer-11-15-0037.png" alt="17nothingbuyer-11-15-0037.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/17nothingbuyer-11-16-2342.png" alt="17nothingbuyer-11-16-2342.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/18cortelyoupedestrian-11-15-0046.png" alt="18cortelyoupedestrian-11-15-0046.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/19whiskeylegger-11-15-1635.png" alt="19whiskeylegger-11-15-1635.png" loading="lazy"></figure>
@@ -91,47 +67,31 @@
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/22eyemasker-11-15-1638.png" alt="22eyemasker-11-15-1638.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/23kindlereader-11-15-1946.png" alt="23kindlereader-11-15-1946.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/24vinylcollector-11-15-1955.png" alt="24vinylcollector-11-15-1955.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/25strawmantosser-11-15-2041.png" alt="25strawmantosser-11-15-2041.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/25strawmantosser-11-18-2048.png" alt="25strawmantosser-11-18-2048.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/26cupstacker-11-15-2042.png" alt="26cupstacker-11-15-2042.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/27frenchknotter-11-15-1926.png" alt="27frenchknotter-11-15-1926.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/27frenchknotter-11-16-2103.png" alt="27frenchknotter-11-16-2103.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/27frenchknotter-11-16-2104.png" alt="27frenchknotter-11-16-2104.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/27frenchknotter-11-18-1822.png" alt="27frenchknotter-11-18-1822.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/28medievalmapper-11-15-1934.png" alt="28medievalmapper-11-15-1934.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/29flashcardflipper-11-18-2032.png" alt="29flashcardflipper-11-18-2032.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/29spanishflashcards-11-15-1925.png" alt="29spanishflashcards-11-15-1925.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/2museumtour-11-12-1133.png" alt="2museumtour-11-12-1133.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/30powercouplist-11-15-2005.png" alt="30powercouplist-11-15-2005.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/30powercouplist-11-18-0308.png" alt="30powercouplist-11-18-0308.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/30powercouplist-11-18-1955.png" alt="30powercouplist-11-18-1955.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/31showerdoodler-11-15-1948.png" alt="31showerdoodler-11-15-1948.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/32copyeditor-11-15-1953.png" alt="32copyeditor-11-15-1953.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/33measurementguesser-11-15-1902.png" alt="33measurementguesser-11-15-1902.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/33measurementguesser-11-18-1859.png" alt="33measurementguesser-11-18-1859.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/33measurementguesser-11-19-0028.png" alt="33measurementguesser-11-19-0028.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/34mymtauser-11-15-2002.png" alt="34mymtauser-11-15-2002.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/35clawoperator-11-15-2035.png" alt="35clawoperator-11-15-2035.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/36labelcritic-11-15-1924.png" alt="36labelcritic-11-15-1924.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/3ferryride-11-12-1528.png" alt="3ferryride-11-12-1528.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/4aperolspritz-11-12-1553.png" alt="4aperolspritz-11-12-1553.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/4aperolspritz-11-12-1604.png" alt="4aperolspritz-11-12-1604.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/5microsafarist-11-12-1651.png" alt="5microsafarist-11-12-1651.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/5microsafarist-11-17-0002.png" alt="5microsafarist-11-17-0002.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/6crosswords-11-13-2156.png" alt="6crosswords-11-13-2156.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/6crosswords-11-17-0016.png" alt="6crosswords-11-17-0016.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/7bottlegifter-11-12-1704.png" alt="7bottlegifter-11-12-1704.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/7bottlegifter-11-18-2042.png" alt="7bottlegifter-11-18-2042.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/8hatban-11-13-2348.png" alt="8hatban-11-13-2348.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/8hatban-11-14-0022.png" alt="8hatban-11-14-0022.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/9scrambledegg-11-14-2209.png" alt="9scrambledegg-11-14-2209.png" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/9scrambledegg-11-15-0404.png" alt="9scrambledegg-11-15-0404.png" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/blobbed/9scrambledegg.png" alt="9scrambledegg.png" loading="lazy"></figure>
         </div>
-
-        <h2>SVGs</h2>
-        <div class="gallery">
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/10cycloneguide-11-15-2318.svg" alt="10cycloneguide-11-15-2318.svg" loading="lazy"></figure>
+        <section class="svg-collage-section" aria-label="SVG exports">
+            <h2>SVGs</h2>
+            <div class="svg-collage" id="svg-collage">
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/10cycloneguide.svg" alt="10cycloneguide.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/11beachgal.svg" alt="11beachgal.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/12qcatcher.svg" alt="12qcatcher.svg" loading="lazy"></figure>
@@ -140,7 +100,6 @@
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/15mexicodimer.svg" alt="15mexicodimer.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/16embroideryhooper.svg" alt="16embroideryhooper.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/17nothingbuyer-11-16-2343.svg" alt="17nothingbuyer-11-16-2343.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/17nothingbuyer.svg" alt="17nothingbuyer.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/18cortelyoupedestrian.svg" alt="18cortelyoupedestrian.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/19whiskeylegger.svg" alt="19whiskeylegger.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/1socialwork-11-12-1437.svg" alt="1socialwork-11-12-1437.svg" loading="lazy"></figure>
@@ -149,29 +108,18 @@
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/22eyemasker.svg" alt="22eyemasker.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/23kindlereader.svg" alt="23kindlereader.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/24vinylcollector.svg" alt="24vinylcollector.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/25strawmantosser-11-18-2049.svg" alt="25strawmantosser-11-18-2049.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/25strawmantosser.svg" alt="25strawmantosser.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/26cupstacker-11-16-2049.svg" alt="26cupstacker-11-16-2049.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/26cupstacker.svg" alt="26cupstacker.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/27frenchknotter-11-16-2106.svg" alt="27frenchknotter-11-16-2106.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/27frenchknotter-11-18-1823.svg" alt="27frenchknotter-11-18-1823.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/27frenchknotter.svg" alt="27frenchknotter.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/28medievalmapper.svg" alt="28medievalmapper.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/29flashcardflipper-11-18-2037.svg" alt="29flashcardflipper-11-18-2037.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/29flashcardflipper.svg" alt="29flashcardflipper.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/2museumtour-11-11-2039.svg" alt="2museumtour-11-11-2039.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/2museumtour-11-11-2041.svg" alt="2museumtour-11-11-2041.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/2museumtour-11-11-2042.svg" alt="2museumtour-11-11-2042.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/2museumtour-11-11-2054.svg" alt="2museumtour-11-11-2054.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/2museumtour-11-11-2057.svg" alt="2museumtour-11-11-2057.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/2museumtour-11-12-1150.svg" alt="2museumtour-11-12-1150.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/30powercouplist-11-18-0310.svg" alt="30powercouplist-11-18-0310.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/30powercouplist-11-18-1955.svg" alt="30powercouplist-11-18-1955.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/30powercouplist.svg" alt="30powercouplist.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/31showerdoodler.svg" alt="31showerdoodler.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/32copyeditor.svg" alt="32copyeditor.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/33measurementguesser-11-18-1900.svg" alt="33measurementguesser-11-18-1900.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/33measurementguesser-11-19-0029.svg" alt="33measurementguesser-11-19-0029.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/33measurementguesser.svg" alt="33measurementguesser.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/34mymtauser.svg" alt="34mymtauser.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/35clawoperator.svg" alt="35clawoperator.svg" loading="lazy"></figure>
@@ -181,14 +129,13 @@
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/5microsafarist-11-12-1652.svg" alt="5microsafarist-11-12-1652.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/5microsafarist.svg" alt="5microsafarist.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/6crosswords-11-13-2156.svg" alt="6crosswords-11-13-2156.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/6crosswords-11-17-0017.svg" alt="6crosswords-11-17-0017.svg" loading="lazy"></figure>
-            <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/7bottlegifter-11-13-2230.svg" alt="7bottlegifter-11-13-2230.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/7bottlegifter-11-18-2042.svg" alt="7bottlegifter-11-18-2042.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/8hatban-11-13-2350.svg" alt="8hatban-11-13-2350.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/8hatban-11-14-0025.svg" alt="8hatban-11-14-0025.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/9scrambledegg-11-15-0405.svg" alt="9scrambledegg-11-15-0405.svg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/svgs/test-thickstroke.svg" alt="test-thickstroke.svg" loading="lazy"></figure>
-        </div>
+            </div>
+        </section>
 
         <h2>Vectornator</h2>
         <p>Source <code>.vectornator</code> files (open in Vectornator).</p>
@@ -247,6 +194,87 @@
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/final/IMG_3467.jpg" alt="IMG_3467.jpg" loading="lazy"></figure>
         </div>
 
+        <script>
+(function () {
+    var root = document.getElementById("svg-collage");
+    if (!root) return;
+    var figures = Array.prototype.slice.call(root.querySelectorAll("figure"));
+    function shuffle(a) {
+        var i = a.length;
+        while (i > 1) {
+            var j = Math.floor(Math.random() * i);
+            i -= 1;
+            var t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+        }
+        return a;
+    }
+    shuffle(figures);
+    figures.forEach(function (fig) {
+        root.appendChild(fig);
+    });
+    var specs = figures.map(function () {
+        var left = Math.random() * 72;
+        var top = Math.random() * 68;
+        var width = 6 + Math.random() * 11;
+        var angle = Math.random() * 44 - 22;
+        return {
+            left: left,
+            top: top,
+            width: width,
+            angle: angle,
+            visLeft: left,
+            visTop: top,
+            visWidth: width,
+            visAngle: angle
+        };
+    });
+    figures.forEach(function (fig, i) {
+        var s = specs[i];
+        fig.style.position = "absolute";
+        fig.style.left = s.visLeft + "%";
+        fig.style.top = s.visTop + "%";
+        fig.style.width = s.visWidth + "%";
+        fig.style.transform = "rotate(" + s.visAngle + "deg)";
+        fig.style.zIndex = String(1 + Math.floor(Math.random() * 60));
+    });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var lastT = performance.now();
+    const smoothTimeConstantSec = 0.45;
+    function clamp(x, lo, hi) {
+        return Math.max(lo, Math.min(hi, x));
+    }
+    function tick(now) {
+        var dtMs = Math.min(48, now - lastT);
+        lastT = now;
+        var dtNorm = (dtMs / 16.67);
+        var i;
+        for (i = 0; i < figures.length; i += 1) {
+            var s = specs[i];
+            var fig = figures[i];
+            s.left += (Math.random() - 0.5) * 1;
+            s.top += (Math.random() - 0.5) * 1;
+            s.width += (Math.random() - 0.5) * 1;
+            s.angle += (Math.random() - 0.5) * 1;
+            s.left = clamp(s.left, -4, 80);
+            s.top = clamp(s.top, -4, 76);
+            s.width = clamp(s.width, 5.5, 19);
+            s.angle = clamp(s.angle, -90, 90);
+            s.visLeft += (s.left - s.visLeft) * 0.1;
+            s.visTop += (s.top - s.visTop) * 0.1;
+            s.visWidth += (s.width - s.visWidth) * 0.1;
+            s.visAngle += (s.angle - s.visAngle) * 0.1;
+            fig.style.left = s.visLeft + "%";
+            fig.style.top = s.visTop + "%";
+            fig.style.width = s.visWidth + "%";
+            fig.style.transform = "rotate(" + s.visAngle + "deg)";
+        }
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+})();
+        </script>
         <!-- TEMP: duplicate-removal UI for Scans — remove this script + #scans-gallery id + dup CSS for production -->
         <script>
 (function () {
@@ -265,6 +293,12 @@
         cb.className = "dup-remove-cb";
         cb.title = "Mark for removal";
         fig.insertBefore(cb, fig.firstChild);
+        var img = fig.querySelector("img");
+        if (img) {
+            img.addEventListener("click", function () {
+                cb.checked = !cb.checked;
+            });
+        }
     });
     document.getElementById("scans-copy-removal-urls").addEventListener("click", function () {
         var urls = [];
