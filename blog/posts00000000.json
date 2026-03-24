@@ -2,7 +2,8 @@
   {
     "href": "/2026-03-15-rub-finder",
     "tags": [
-      "#storage"
+      "#storage",
+      "#exp"
     ]
   },
   {
@@ -16,6 +17,14 @@
     "tags": [
       "#fab",
       "#coffee"
+    ]
+  },
+  {
+    "href": "/2026-03-02-harp-kehillat-harlem",
+    "tags": [
+      "#harp",
+      "#event",
+      "#performance"
     ]
   },
   {
@@ -39,6 +48,7 @@
       "#personal"
     ]
   },
+  
   {
     "href": "/2025-07-28-vitetest",
     "tags": [
@@ -555,6 +565,12 @@
     ]
   },
   {
+    "href": "/2019-08-13-annualoffsite",
+    "tags": [
+      "#event",
+      "#personal"
+    ]
+  }, {
     "href": "/2019-06-19-squeezehit",
     "tags": [
       "#liao",

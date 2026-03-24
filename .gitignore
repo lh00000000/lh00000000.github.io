@@ -6,3 +6,12 @@
 target
 /template/app.js
 node_modules
+
+# hannadeck assets
+2022-11-12-hannadeck/**/*.svg
+2022-11-12-hannadeck/**/*.vectornator
+2022-11-12-hannadeck/**/*.heic
+2022-11-12-hannadeck/**/*.HEIC
+2022-11-12-hannadeck/**/*.pxd
+2022-11-12-hannadeck/**/*.jpeg
+2022-11-12-hannadeck/**/*.f3d

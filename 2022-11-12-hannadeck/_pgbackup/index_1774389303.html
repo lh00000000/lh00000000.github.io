@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hanna Deck: Hand-Drawn Illustrations to 3D Printed Stencil Cards</title>
+<style>
+  body {
+    font-family: Georgia, serif;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    line-height: 1.6;
+    color: #222;
+    background: #fafafa;
+  }
+  h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+  .date { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  p { margin: 1rem 0; }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .gallery img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+  }
+  .full img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    margin: 1.5rem 0;
+  }
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .pair img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+  }
+  figcaption {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+  figure { margin: 0; }
+</style>
+</head>
+<body>
+
+<h1>Hanna Deck</h1>
+<div class="date">November 2022</div>
+
+<p>A deck of 36 stencil cards, each featuring a hand-drawn illustration of a person defined by a single quirky activity. Drawn with brush pen on paper, vectorized into SVGs, extruded into 3D card models, and 3D printed as thin black stencil cards you can hold up to the light.</p>
+
+<h2>Drawing</h2>
+
+<p>Each card started as a quick brush pen illustration on paper. The constraint: one figure, one activity, captured in a few bold strokes that would read clearly as a cut-out silhouette.</p>
+
+<div class="gallery">
+  <figure>
+    <img src="IMG_3312.jpg" alt="Brush pen drawing closeup" loading="lazy">
+  </figure>
+  <figure>
+    <img src="IMG_3345.jpg" alt="Drawing of a desk scene" loading="lazy">
+  </figure>
+  <figure>
+    <img src="IMG_3410.jpg" alt="Drawing of a bird in a magnifying glass" loading="lazy">
+  </figure>
+  <figure>
+    <img src="IMG_3451.jpg" alt="Drawing of torn tickets" loading="lazy">
+  </figure>
+</div>
+
+<h2>Vectorizing</h2>
+
+<p>The pen drawings were photographed and traced into black-and-white SVGs, cleaning up the shapes while keeping the hand-drawn character. Each illustration was placed inside a card layout with a title at the top and bottom.</p>
+
+<div class="pair">
+  <figure>
+    <img src="1socialwork-11-12-1437.png" alt="Vectorized social worker illustration">
+    <figcaption>Traced SVG artwork</figcaption>
+  </figure>
+  <figure>
+    <img src="Screenshot 2022-11-15 at 21.54.56.png" alt="Card layouts in vector editor">
+    <figcaption>Card layouts in editor</figcaption>
+  </figure>
+</div>
+
+<h2>3D Printing</h2>
+
+<p>The SVG outlines were extruded into thin 3D card bodies in Fusion 360, then printed flat on an FDM printer. The illustrations become cut-through stencils &mdash; hold a card up to the light and the drawing glows through.</p>
+
+<div class="pair">
+  <figure>
+    <img src="69051773297__4A9D8CB3-E3D0-465B-9D69-62DBDA19772B.fullsizerender.jpg" alt="3D printed stencil card - Strawman Tosser">
+    <figcaption>Stencil card held to light</figcaption>
+  </figure>
+  <figure>
+    <img src="IMG_3219.jpg" alt="3D printed card held up to light showing museum tour illustration">
+    <figcaption>Light shining through cut-outs</figcaption>
+  </figure>
+</div>
+
+<h2>The Full Deck</h2>
+
+<p>36 cards in total, each one a different character.</p>
+
+<div class="full">
+  <figure>
+    <img src="IMG_3467.jpg" alt="All 36 stencil cards laid out on a table">
+    <figcaption>The complete deck</figcaption>
+  </figure>
+</div>
+
+<div class="pair">
+  <figure>
+    <img src="IMG_3392.jpg" alt="Hand holding a fan of 3D printed stencil cards">
+    <figcaption>A hand of cards</figcaption>
+  </figure>
+  <figure>
+    <img src="IMG_3376.jpg" alt="Card models in Fusion 360">
+    <figcaption>Cards modeled in Fusion 360</figcaption>
+  </figure>
+</div>
+
+<!-- EDIT MODE: remove this script block for production -->
+<script>
+(function() {
+  const toolbar = document.createElement('div');
+  toolbar.id = 'edit-toolbar';
+  toolbar.innerHTML = `
+    <button id="edit-toggle">Edit</button>
+    <button id="edit-save" style="display:none">Copy HTML</button>
+    <span id="edit-status" style="margin-left:8px;font-size:13px;color:#666"></span>
+  `;
+  Object.assign(toolbar.style, {
+    position: 'fixed', top: '0', left: '0', right: '0',
+    padding: '8px 16px', background: '#fff', borderBottom: '2px solid #007bff',
+    zIndex: '99999', display: 'flex', alignItems: 'center', gap: '8px'
+  });
+  document.body.prepend(toolbar);
+  document.body.style.paddingTop = '48px';
+
+  const btnToggle = document.getElementById('edit-toggle');
+  const btnSave = document.getElementById('edit-save');
+  const status = document.getElementById('edit-status');
+  let editing = false;
+  let dragSrc = null;
+
+  function setStatus(msg) {
+    status.textContent = msg;
+    setTimeout(() => status.textContent = '', 2000);
+  }
+
+  function enableDrag(fig) {
+    fig.setAttribute('draggable', 'true');
+    fig.style.cursor = 'grab';
+    fig.addEventListener('dragstart', onDragStart);
+    fig.addEventListener('dragover', onDragOver);
+    fig.addEventListener('drop', onDrop);
+    fig.addEventListener('dragend', onDragEnd);
+  }
+
+  function disableDrag(fig) {
+    fig.removeAttribute('draggable');
+    fig.style.cursor = '';
+    fig.removeEventListener('dragstart', onDragStart);
+    fig.removeEventListener('dragover', onDragOver);
+    fig.removeEventListener('drop', onDrop);
+    fig.removeEventListener('dragend', onDragEnd);
+  }
+
+  function onDragStart(e) {
+    dragSrc = this;
+    this.style.opacity = '0.4';
+    e.dataTransfer.effectAllowed = 'move';
+  }
+
+  function onDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    const target = this.closest('figure');
+    if (target && target !== dragSrc) {
+      target.style.outline = '2px dashed #007bff';
+    }
+  }
+
+  function onDrop(e) {
+    e.preventDefault();
+    const target = this.closest('figure');
+    if (target && target !== dragSrc && target.parentNode === dragSrc.parentNode) {
+      const parent = target.parentNode;
+      const figures = [...parent.querySelectorAll(':scope > figure')];
+      const fromIdx = figures.indexOf(dragSrc);
+      const toIdx = figures.indexOf(target);
+      if (fromIdx < toIdx) {
+        parent.insertBefore(dragSrc, target.nextSibling);
+      } else {
+        parent.insertBefore(dragSrc, target);
+      }
+      setStatus('Moved!');
+    }
+    document.querySelectorAll('figure').forEach(f => f.style.outline = '');
+  }
+
+  function onDragEnd() {
+    this.style.opacity = '1';
+    document.querySelectorAll('figure').forEach(f => f.style.outline = '');
+  }
+
+  btnToggle.addEventListener('click', () => {
+    editing = !editing;
+    btnToggle.textContent = editing ? 'Stop Editing' : 'Edit';
+    btnSave.style.display = editing ? '' : 'none';
+
+    // text editing
+    document.querySelectorAll('h1, h2, p, figcaption, .date').forEach(el => {
+      if (el.closest('#edit-toolbar')) return;
+      el.contentEditable = editing;
+      el.style.outline = editing ? '1px dashed #ccc' : '';
+    });
+
+    // image dragging
+    document.querySelectorAll('.gallery figure, .pair figure, .full figure').forEach(fig => {
+      editing ? enableDrag(fig) : disableDrag(fig);
+    });
+
+    setStatus(editing ? 'Click text to edit, drag images to reorder' : '');
+  });
+
+  btnSave.addEventListener('click', () => {
+    // clean up edit artifacts before copying
+    document.querySelectorAll('[contenteditable]').forEach(el => {
+      el.removeAttribute('contenteditable');
+      el.style.outline = '';
+    });
+    document.querySelectorAll('.gallery figure, .pair figure, .full figure').forEach(fig => {
+      disableDrag(fig);
+    });
+
+    // grab clean body HTML (without the toolbar and script)
+    const clone = document.body.cloneNode(true);
+    clone.querySelector('#edit-toolbar').remove();
+    clone.querySelector('script:last-of-type')?.remove();
+    clone.style.paddingTop = '';
+
+    const full = `<!DOCTYPE html>
+<html lang="en">
+<head>
+${document.head.innerHTML.trim()}
+</head>
+<body>
+
+${clone.innerHTML.trim()}
+
+</body>
+</html>`;
+
+    navigator.clipboard.writeText(full).then(() => {
+      setStatus('HTML copied to clipboard!');
+    }).catch(() => {
+      // fallback: open in new window
+      const w = window.open();
+      w.document.write('<pre>' + full.replace(/</g, '&lt;') + '</pre>');
+      setStatus('Opened in new window — copy from there');
+    });
+
+    // re-enable editing
+    editing = false;
+    btnToggle.click();
+  });
+
+  [btnToggle, btnSave].forEach(btn => Object.assign(btn.style, {
+    padding: '4px 12px', border: '1px solid #007bff', borderRadius: '4px',
+    background: '#007bff', color: '#fff', cursor: 'pointer', fontSize: '13px'
+  }));
+})();
+</script>
+
+</body>
+</html>
