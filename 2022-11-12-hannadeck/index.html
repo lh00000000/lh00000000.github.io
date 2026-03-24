@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hanna Deck: Hand-Drawn Illustrations to 3D Printed Stencil Cards</title>
-        <style>body { font-family: Georgia, serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; background: #fafafa; } h1 { font-size: 1.8rem; margin-bottom: 0.25rem; } .date { color: #888; font-size: 0.9rem; margin-bottom: 2rem; } p { margin: 1rem 0; } .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; } .gallery img { width: 100%; border-radius: 4px; display: block; } .full img { width: 100%; border-radius: 4px; display: block; margin: 1.5rem 0; } .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.5rem 0; } .pair img { width: 100%; border-radius: 4px; display: block; } figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.25rem; } figure { margin: 0; } ul { margin: 1rem 0; padding-left: 1.25rem; }</style>
+        <style>body { font-family: Georgia, serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; background: #fafafa; } h1 { font-size: 1.8rem; margin-bottom: 0.25rem; } .date { color: #888; font-size: 0.9rem; margin-bottom: 2rem; } p { margin: 1rem 0; } .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; } .gallery img { width: 100%; border-radius: 4px; display: block; } .full img { width: 100%; border-radius: 4px; display: block; margin: 1.5rem 0; } .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.5rem 0; } .pair img { width: 100%; border-radius: 4px; display: block; } figcaption { font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.25rem; } figure { margin: 0; } ul { margin: 1rem 0; padding-left: 1.25rem; } #scans-gallery figure { position: relative; } #scans-gallery .dup-remove-cb { position: absolute; top: 6px; left: 6px; z-index: 2; width: 20px; height: 20px; margin: 0; cursor: pointer; } #scans-dup-toolbar { margin: 0 0 0.75rem 0; padding: 0.5rem 0.75rem; background: #fff3cd; border: 1px solid #e0c040; border-radius: 4px; font-size: 0.9rem; } #scans-dup-toolbar button { margin-left: 0.5rem; cursor: pointer; padding: 0.25rem 0.5rem; } #scans-copy-status { color: #666; }</style>
     </head>
     <body>
         <h1>hannadeck</h1>
@@ -14,7 +14,7 @@
 
 
         <h2>Scans</h2>
-        <div class="gallery">
+        <div class="gallery" id="scans-gallery">
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3222%202.jpg" alt="IMG_3222 2.jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3222%281%29.jpg" alt="IMG_3222(1).jpg" loading="lazy"></figure>
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/scans/IMG_3222.jpg" alt="IMG_3222.jpg" loading="lazy"></figure>
@@ -247,6 +247,65 @@
             <figure><img src="https://lh00000000-public.s3.amazonaws.com/2022-11-12-hannadeck/final/IMG_3467.jpg" alt="IMG_3467.jpg" loading="lazy"></figure>
         </div>
 
-        <!-- EDIT MODE: remove this script block for production -->
-            </body>
+        <!-- TEMP: duplicate-removal UI for Scans — remove this script + #scans-gallery id + dup CSS for production -->
+        <script>
+(function () {
+    var g = document.getElementById("scans-gallery");
+    if (!g) return;
+    var toolbar = document.createElement("div");
+    toolbar.id = "scans-dup-toolbar";
+    toolbar.innerHTML =
+        "<strong>Temporary:</strong> check images to mark for removal. " +
+        '<button type="button" id="scans-copy-removal-urls">Copy removal URLs</button> ' +
+        '<span id="scans-copy-status"></span>';
+    g.parentNode.insertBefore(toolbar, g);
+    g.querySelectorAll("figure").forEach(function (fig) {
+        var cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.className = "dup-remove-cb";
+        cb.title = "Mark for removal";
+        fig.insertBefore(cb, fig.firstChild);
+    });
+    document.getElementById("scans-copy-removal-urls").addEventListener("click", function () {
+        var urls = [];
+        g.querySelectorAll("figure").forEach(function (fig) {
+            var box = fig.querySelector("input.dup-remove-cb");
+            var img = fig.querySelector("img");
+            if (box && box.checked && img && img.src) urls.push(img.src);
+        });
+        var status = document.getElementById("scans-copy-status");
+        if (!urls.length) {
+            status.textContent = "(none checked)";
+            return;
+        }
+        var text = urls.join("\n");
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+                status.textContent = "Copied " + urls.length + " URL(s).";
+            }).catch(function () {
+                fallbackCopy(text, status, urls.length);
+            });
+        } else {
+            fallbackCopy(text, status, urls.length);
+        }
+    });
+    function fallbackCopy(text, status, n) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand("copy");
+            status.textContent = "Copied " + n + " URL(s).";
+        } catch (e) {
+            status.textContent = "Copy failed; URLs logged to console.";
+            console.log(text);
+        }
+        document.body.removeChild(ta);
+    }
+})();
+        </script>
+    </body>
 </html>
