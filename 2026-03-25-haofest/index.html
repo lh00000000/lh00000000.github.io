@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2026-03-25-haofest</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      body { margin: 0; font-family: Arial, sans-serif; background: #111111; color: #f4f4f4; }
+      main { max-width: 640px; margin: 0 auto; padding: 16px; }
+      main h1 { margin: 0 0 8px 0; font-size: 28px; }
+      #content h2 { margin: 24px 0 8px 0; border-bottom: 1px solid #333; padding-bottom: 4px; }
+      #content h3 { margin: 16px 0 8px 0; }
+      #content p { margin: 0 0 8px 0; line-height: 1.5; }
+      #content ul, #content ol { margin: 0 0 8px 0; padding-left: 24px; }
+      #content li { margin: 0 0 4px 0; line-height: 1.5; }
+      #content a { color: #8ecbff; }
+      #content img { display: block; max-width: 100%; height: auto; margin: 8px 0; }
+      #content blockquote { border-left: 3px solid #555; margin: 0 0 8px 0; padding: 4px 12px; color: #ccc; }
+      #content code { background: #222; padding: 2px 4px; border-radius: 3px; }
+      #content pre { background: #222; padding: 12px; border-radius: 4px; overflow-x: auto; }
+      #content pre code { background: none; padding: 0; }
+      #content hr { border: none; border-top: 1px solid #333; margin: 16px 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>2026-03-25-haofest</h1>
+      <div id="content"></div>
+    </main>
+    <script>
+const md = `
+a bunch of lumi(ng)s and haos i'd like to book for HAOFEST 20XX one day
+
+---
+- [lumi barron](https://lumibarron.com/)
+- [climbing lumi](https://www.instagram.com/climbing_lumi/)
+`;
+
+document.getElementById("content").innerHTML = marked.parse(md);
+    </script>
+  </body>
+</html>
