@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOT 2046 Archive</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: consolas, monospace;
+    background: #0a0a0a; color: #e0e0e0;
+    line-height: 1.6;
+}
+header {
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #222;
+}
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 0.3em;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+}
+header p {
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* NAV */
+nav {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #1a1a1a;
+}
+nav .nav-inner {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    justify-content: center;
+}
+nav a {
+    color: #888; text-decoration: none; font-size: 0.7rem;
+    letter-spacing: 0.05em; padding: 0.2rem 0.5rem;
+    border: 1px solid #222; border-radius: 2px;
+    transition: all 0.2s;
+}
+nav a:hover { color: #fff; border-color: #555; }
+
+/* DROPS TIMELINE */
+.drops {
+    padding: 2rem 0;
+    border-bottom: 1px solid #1a1a1a;
+}
+.drops h2 {
+    font-size: 0.8rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #555;
+    margin-bottom: 1rem; text-align: center;
+}
+.drop-item {
+    display: flex; gap: 1rem; padding: 0.3rem 0;
+    font-size: 0.8rem; border-bottom: 1px solid #111;
+}
+.drop-month {
+    font-weight: 600; color: #999;
+    min-width: 5rem;
+    font-variant-numeric: tabular-nums;
+}
+.drop-lots a {
+    color: #666; text-decoration: none;
+}
+.drop-lots a:hover { color: #fff; }
+
+/* LOT CARDS */
+.lot-card {
+    padding: 3rem 0;
+    border-bottom: 1px solid #1a1a1a;
+}
+.lot-card h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+    color: #fff;
+}
+.lot-meta {
+    margin-top: 0.5rem;
+    display: flex; gap: 1.5rem; flex-wrap: wrap;
+}
+.lot-name {
+    color: #999;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.lot-date {
+    color: #555;
+    font-size: 0.8rem;
+}
+.lot-details {
+    margin-top: 1rem;
+}
+.detail {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 0.3rem;
+}
+.detail .label {
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+}
+
+/* SIGHTINGS */
+.sightings { margin-top: 1.5rem; }
+.sighting {
+    margin-bottom: 2rem;
+}
+.sighting-label {
+    font-size: 0.75rem;
+    color: #555;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+.img-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+.cat-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: #444;
+    padding: 0.3rem 0;
+    align-self: center;
+}
+.img-row img {
+    max-height: 300px;
+    width: auto;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.img-row img:hover { opacity: 0.8; }
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    cursor: zoom-out;
+    justify-content: center;
+    align-items: center;
+}
+.lightbox.active { display: flex; }
+.lightbox img {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    color: #333;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+    .img-row img { max-height: 200px; }
+    header { padding: 2rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>LOT 2046</h1>
+    <p>record of my items from LOT2046. tracked in airtable. exported 2026-04-05. page vibecoded &mdash; 38 items &mdash; Exported 2026-04-05</p>
+</header>
+
+<div class="container">
+
+<nav>
+    <div class="nav-inner">
+        <a href="#lot-0000">LOT 0000 (REPLACEMENT)</a><a href="#lot-0002">LOT 0002 (SOCKS, REGULAR)</a><a href="#lot-0003">LOT 0003 (T-SHIRT, LONG SLEEVE)</a><a href="#lot-0005">LOT 0005</a><a href="#lot-0006">LOT 0006 (POSTCARD)</a><a href="#lot-0007">LOT 0007</a><a href="#lot-0008">LOT 0008 (TOP, HOODIE)</a><a href="#lot-0009">LOT 0009 (PANTS)</a><a href="#lot-0010">LOT 0010</a><a href="#lot-0011">LOT 0011 (HAT)</a><a href="#lot-0012">LOT 0012</a><a href="#lot-0013">LOT 0013 (IDENTIFICATION BRACELET)</a><a href="#lot-0016">LOT 0016</a><a href="#lot-0017">LOT 0017 (JACKET)</a><a href="#lot-0018">LOT 0018</a><a href="#lot-0021">LOT 0021</a><a href="#lot-0022">LOT 0022</a><a href="#lot-0027">LOT 0027 (SHOES)</a><a href="#lot-0028">LOT 0028</a><a href="#lot-0029">LOT 0029 (SOAP)</a><a href="#lot-0030">LOT 0030 (UNDERWEAR, BOXER BRIEFS)</a><a href="#lot-0032">LOT 0032 (BEANIE)</a><a href="#lot-0034">LOT 0034 (POSTER)</a><a href="#lot-0035">LOT 0035 (LAUNDRY BAG)</a><a href="#lot-0036">LOT 0036</a><a href="#lot-0042">LOT 0042</a><a href="#lot-0047">LOT 0047</a><a href="#lot-0048">LOT 0048 (BRALETTE)</a><a href="#lot-0054">LOT 0054</a><a href="#lot-0058">LOT 0058 (RAIN COAT)</a><a href="#lot-0065">LOT 0065</a><a href="#lot-0067">LOT 0067</a><a href="#lot-0069">LOT 0069</a><a href="#lot-0070">LOT 0070</a><a href="#lot-0073">LOT 0073 (T-SHIRT, LONG SLEEVE)</a><a href="#lot-0074">LOT 0074</a><a href="#lot-0075">LOT 0075</a><a href="#lot-0082">LOT 0082</a>
+    </div>
+</nav>
+
+<section class="drops">
+    <h2>Drop Timeline</h2>
+    <div class="drop-item"><span class="drop-month">2018-12</span> <span class="drop-lots"><a href="#lot-0073">LOT 0073</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0032">LOT 0032</a>, <a href="#lot-0013">LOT 0013</a></span></div><div class="drop-item"><span class="drop-month">2019-01</span> <span class="drop-lots"><a href="#lot-0030">LOT 0030</a>, <a href="#lot-0008">LOT 0008</a>, <a href="#lot-0002">LOT 0002</a></span></div><div class="drop-item"><span class="drop-month">2019-02</span> <span class="drop-lots"><a href="#lot-0027">LOT 0027</a>, <a href="#lot-0002">LOT 0002</a></span></div><div class="drop-item"><span class="drop-month">2019-03</span> <span class="drop-lots"><a href="#lot-0073">LOT 0073</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0000">LOT 0000</a>, <a href="#lot-0048">LOT 0048</a>, <a href="#lot-0002">LOT 0002</a></span></div><div class="drop-item"><span class="drop-month">2019-04</span> <span class="drop-lots"><a href="#lot-0030">LOT 0030</a>, <a href="#lot-0013">LOT 0013</a>, <a href="#lot-0011">LOT 0011</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0017">LOT 0017</a></span></div><div class="drop-item"><span class="drop-month">2019-05</span> <span class="drop-lots"><a href="#lot-0030">LOT 0030</a>, <a href="#lot-0008">LOT 0008</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0003">LOT 0003</a></span></div><div class="drop-item"><span class="drop-month">2019-06</span> <span class="drop-lots"><a href="#lot-0006">LOT 0006</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0048">LOT 0048</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0009">LOT 0009</a></span></div><div class="drop-item"><span class="drop-month">2019-07</span> <span class="drop-lots"><a href="#lot-0022">LOT 0022</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0003">LOT 0003</a>, <a href="#lot-0034">LOT 0034</a></span></div><div class="drop-item"><span class="drop-month">2019-08</span> <span class="drop-lots"><a href="#lot-0030">LOT 0030</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0008">LOT 0008</a></span></div><div class="drop-item"><span class="drop-month">2019-09</span> <span class="drop-lots"><a href="#lot-0082">LOT 0082</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0075">LOT 0075</a>, <a href="#lot-0042">LOT 0042</a>, <a href="#lot-0021">LOT 0021</a>, <a href="#lot-0007">LOT 0007</a>, <a href="#lot-0016">LOT 0016</a>, <a href="#lot-0003">LOT 0003</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0027">LOT 0027</a></span></div><div class="drop-item"><span class="drop-month">2019-10</span> <span class="drop-lots"><a href="#lot-0069">LOT 0069</a>, <a href="#lot-0005">LOT 0005</a>, <a href="#lot-0082">LOT 0082</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0047">LOT 0047</a>, <a href="#lot-0067">LOT 0067</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0018">LOT 0018</a></span></div><div class="drop-item"><span class="drop-month">2019-11</span> <span class="drop-lots"><a href="#lot-0054">LOT 0054</a>, <a href="#lot-0082">LOT 0082</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0003">LOT 0003</a>, <a href="#lot-0075">LOT 0075</a>, <a href="#lot-0042">LOT 0042</a>, <a href="#lot-0008">LOT 0008</a></span></div><div class="drop-item"><span class="drop-month">2019-12</span> <span class="drop-lots"><a href="#lot-0082">LOT 0082</a>, <a href="#lot-0058">LOT 0058</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0074">LOT 0074</a>, <a href="#lot-0007">LOT 0007</a>, <a href="#lot-0005">LOT 0005</a>, <a href="#lot-0029">LOT 0029</a></span></div><div class="drop-item"><span class="drop-month">2020-01</span> <span class="drop-lots"><a href="#lot-0003">LOT 0003</a>, <a href="#lot-0036">LOT 0036</a>, <a href="#lot-0030">LOT 0030</a>, <a href="#lot-0032">LOT 0032</a>, <a href="#lot-0028">LOT 0028</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0042">LOT 0042</a>, <a href="#lot-0010">LOT 0010</a>, <a href="#lot-0075">LOT 0075</a></span></div><div class="drop-item"><span class="drop-month">2020-02</span> <span class="drop-lots"><a href="#lot-0030">LOT 0030</a>, <a href="#lot-0082">LOT 0082</a>, <a href="#lot-0070">LOT 0070</a>, <a href="#lot-0005">LOT 0005</a>, <a href="#lot-0069">LOT 0069</a>, <a href="#lot-0029">LOT 0029</a>, <a href="#lot-0009">LOT 0009</a>, <a href="#lot-0012">LOT 0012</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0016">LOT 0016</a>, <a href="#lot-0021">LOT 0021</a></span></div><div class="drop-item"><span class="drop-month">2021-03</span> <span class="drop-lots"><a href="#lot-0011">LOT 0011</a>, <a href="#lot-0065">LOT 0065</a>, <a href="#lot-0074">LOT 0074</a>, <a href="#lot-0005">LOT 0005</a>, <a href="#lot-0002">LOT 0002</a>, <a href="#lot-0007">LOT 0007</a>, <a href="#lot-0027">LOT 0027</a>, <a href="#lot-0030">LOT 0030</a></span></div>
+</section>
+
+
+        <article class="lot-card" id="lot-0000">
+            <h2>LOT 0000</h2>
+            <div class="lot-meta"><span class="lot-name">REPLACEMENT</span></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-03 : LOT 0000</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attiaHqSofiZYhsN0.jpg" alt="2019-03-09 21.02.30.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attQjP8mgZWNMEHAh.jpg" alt="2019-03-09 21.02.38.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attNouh6UNmV0Imq4.jpg" alt="2019-03-09 21.03.18.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0002">
+            <h2>LOT 0002</h2>
+            <div class="lot-meta"><span class="lot-name">SOCKS, REGULAR</span><span class="lot-date">Released: 2017-06-16</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 76% cotton, 14% polyester fiber, 10% spandex</div><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2018-12 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attXrfS4iBGxG6laB.jpg" alt="2019-01-07 21.58.13.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attrCk4nL1YcKVJ6o.jpg" alt="2019-01-07 21.58.40.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attzi0PxKHBCgZBOh.jpg" alt="2019-01-07 21.59.18.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-04 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attSqtCVeNH7gdLnw.jpg" alt="2019-04-04 00.35.27.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attvUtIsQu9pHKmp1.jpg" alt="2019-04-04 00.35.44.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attOOg0X9aR0CMvOq.jpg" alt="2019-04-04 00.36.06.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-05 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attt4rOWQTKmzq6U9.jpg" alt="2019-04-20 23.41.55.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attJKXXGihnZKIlqG.jpg" alt="2019-04-20 23.42.07.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attqCGXwcI22NH9Ig.jpg" alt="2019-04-20 23.43.06.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-06 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attsy6Cq9uWmkmSaB.jpg" alt="2019-06-11 21.07.16.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attuWppo1TyGfQS3h.jpg" alt="2019-06-11 21.07.25.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attcaq7wsAL9svkQ8.jpg" alt="2019-06-11 21.08.14.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-01 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attjPeJAitzhmuUoZ.jpg" alt="2019-01-14 18.25.40.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/atto7ul0E5Ugxgc2I.jpg" alt="2019-01-14 18.25.50.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att21yJC0nWyFSCQP.jpg" alt="2019-01-14 18.26.10.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-03 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZfJiM2cYTsW1VN.jpg" alt="2019-03-09 21.07.45.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attroGitHyOUVVuge.jpg" alt="2019-03-09 21.07.54.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attqP2eqtT8EvltMJ.jpg" alt="2019-03-09 21.08.26.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-07 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attSZwThFAR2m8YW0.jpg" alt="2019-06-25 21.35.41.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attiYoHtGIf8nRsj4.jpg" alt="2019-06-25 21.35.53.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attMuCw6tkqOGJlHF.jpg" alt="2019-06-25 21.36.29.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-08 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att2LN6GBl7NjI00k.jpg" alt="2019-07-29 17.28.35.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attCn9X5ypGcrhemY.jpg" alt="2019-07-29 17.28.47.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attm9xPFjocqPGSIF.jpg" alt="2019-07-29 17.29.06.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attvtoxWOne6DKZjS.jpg" alt="2019-08-29 00.46.56.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attVUdpKmPZKJV6tS.jpg" alt="2019-08-29 00.47.03.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attXzrRFdcxfXrVB6.jpg" alt="2019-08-29 00.47.21.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-10 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attS8y3sMOsY5jIGJ.jpg" alt="2019-09-29 23.29.43.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attCCkTqLh0ZkEZDS.jpg" alt="2019-09-29 23.29.49.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attUs5H6Ks0k22KR6.jpg" alt="2019-09-29 23.30.15.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-11 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attXSEHqIAw5EyT1G.jpg" alt="2019-11-09 02.12.28.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att9xR4kkvSgBzvbC.jpg" alt="2019-11-09 02.12.36.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attl9Ll9rxH4585PR.jpg" alt="2019-11-09 02.12.58.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-02 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attQpFFr7JALnsuAN.jpg" alt="2019-12-07 20.06.17.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att2vmRuwxYWxpsaA.jpg" alt="2019-12-07 20.06.25.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attjPlrSDn5yllO0C.jpg" alt="2019-12-07 20.06.47.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attS4RlDE2uu6HpiU.jpg" alt="2020-01-09 18.53.20.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att9UUiM5DufVW29c.jpg" alt="2020-01-09 18.53.28.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attWL2WyChI7z54pD.jpg" alt="2020-01-09 18.54.05.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attDLu7PDvADLfirn.25" alt="2020-01-21 15.51.25" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att3FBsMXp0G5QO9H.34" alt="2020-01-21 15.51.34" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attbjByhS4ofAigiO.49" alt="2020-01-21 15.51.49" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2021-03 : LOT 0002</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attS1InYs1IC4p1tO.jpg" alt="2021-02-22 16.01.37.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att42mns90QRZofFr.jpg" alt="2021-02-22 16.01.45.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attjKssLrT0xHeJdC.jpg" alt="2021-02-22 16.02.03.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0003">
+            <h2>LOT 0003</h2>
+            <div class="lot-meta"><span class="lot-name">T-SHIRT, LONG SLEEVE</span><span class="lot-date">Released: 2019-09-15</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Tumble dry low; remove promptly. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-05 : LOT 0003</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attTAMGVPD0zmPAQE.jpg" alt="2019-04-20 23.43.49.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attAUVy63RxzsFS9P.jpg" alt="2019-04-20 23.43.55.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att9s1pTes7idRCwD.jpg" alt="2019-04-20 23.44.17.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-07 : LOT 0003</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att91k0X3b7u0lApv.jpg" alt="2019-06-25 21.41.40.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attIkBZShFAZ8nH3B.jpg" alt="2019-06-25 21.41.49.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attI7ajA3zTuUGE8N.jpg" alt="2019-06-25 21.42.15.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0003</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attADmI48gqG6oL6x.jpg" alt="2019-08-29 00.45.56.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attx0kgikdcYCmKGY.jpg" alt="2019-08-29 00.46.05.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attoDIauYH5nnlx6x.jpg" alt="2019-08-29 00.46.27.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-11 : LOT 0003</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att5pThIlREZuRunQ.jpg" alt="2019-11-09 02.15.57.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att8KhH4PVc1YOZbl.jpg" alt="2019-11-09 02.16.07.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attIOe2Dyodn8MhkR.jpg" alt="2019-11-09 02.16.29.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0003</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attVDuogn14O1gB9P.jpg" alt="2020-01-09 18.37.17.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attwXSuQv0AtbEgV1.jpg" alt="2020-01-09 18.37.30.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attfXoxmZeeskzi1j.jpg" alt="2020-01-09 18.38.00.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0005">
+            <h2>LOT 0005</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-10 : LOT 0005</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att5W4hWIEnPFRwRG.jpg" alt="2019-09-29 23.25.33.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attzJ1vdyrQ3k0f0q.jpg" alt="2019-09-29 23.25.41.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att4cWfTpfoYH23nE.jpg" alt="2019-09-29 23.27.02.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-12 : LOT 0005</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attMOTYwAi2EPLsue.jpg" alt="2019-12-07 20.16.04.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attxuHS6qgc2HBt1n.jpg" alt="2019-12-07 20.16.18.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attXCrrpc6cOf8Lv9.jpg" alt="2019-12-07 20.16.54.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0005</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attt20WiKFVHUPc8l.25" alt="2020-01-21 15.43.25" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attAM3fuhNev2Saxw.41" alt="2020-01-21 15.43.41" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att5Y8yK6m39jGBGB.09" alt="2020-01-21 15.44.09" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2021-03 : LOT 0005</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attxpapfcuQnzduZk.jpg" alt="2021-02-22 15.59.56.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attxOfEgFzUSIK5c1.jpg" alt="2021-02-22 16.00.06.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attl2mSVwZE9cpvp9.jpg" alt="2021-02-22 16.01.01.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0006">
+            <h2>LOT 0006</h2>
+            <div class="lot-meta"><span class="lot-name">POSTCARD</span><span class="lot-date">Released: 2018-09-15</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 100% recycling paper</div><div class="detail"><span class="label">Components</span> Postcard (x3)</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-06 : LOT 0006</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attyDFg3UeuTz0nCu.jpg" alt="2019-06-11 21.00.39.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attBogdrcTwqmysMA.jpg" alt="2019-06-11 21.00.48.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attVvL8HEUYMVwRxK.jpg" alt="2019-06-11 21.01.51.jpg" loading="lazy" /><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attyIzWHqmHig2vCc.jpg" alt="2019-06-11 21.11.43.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0007">
+            <h2>LOT 0007</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0007</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att0TpTZyBpN6VCcf.jpg" alt="2019-08-29 00.40.10.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attutoq6rPlheCzRf.jpg" alt="2019-08-29 00.40.19.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attEQR7A5Fn1oyG8p.jpg" alt="2019-08-29 00.40.47.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-12 : LOT 0007</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attILAJgPuqka3BH6.jpg" alt="2019-12-07 20.15.06.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attWXRZz0imBG0qXl.jpg" alt="2019-12-07 20.15.13.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attJffVufNYLHH73t.jpg" alt="2019-12-07 20.15.30.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2021-03 : LOT 0007</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attDeyvRoxcCK3nav.jpg" alt="2021-02-22 16.02.27.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attoKKu3w40twhMOG.jpg" alt="2021-02-22 16.02.34.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att7yIcr5FhdOK5RL.jpg" alt="2021-02-22 16.02.55.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0008">
+            <h2>LOT 0008</h2>
+            <div class="lot-meta"><span class="lot-name">TOP, HOODIE</span><span class="lot-date">Released: 2018-03-21</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 100% cotton</div><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Cold tumble dry or air dry only. Do not dry under direct sun, to prevent color fade.</div><div class="detail"><span class="label">Notes</span> Follow the manual to prevent item shrinking.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-01 : LOT 0008</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attkadAwm0S3pchwa.jpg" alt="2019-01-14 18.24.02.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attkINVtnKncMBYcd.jpg" alt="2019-01-14 18.24.20.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attNeMGoTa0XiN6A9.jpg" alt="2019-01-14 18.24.51.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-05 : LOT 0008</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attMZ4n6jq5iEEdVH.jpg" alt="2019-04-20 23.40.04.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZRpGJS9CMbDDLE.jpg" alt="2019-04-20 23.40.16.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attUIgaRtcuPXux9v.jpg" alt="2019-04-20 23.41.00.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-08 : LOT 0008</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attMOj8AvqdC20y3Z.jpg" alt="2019-07-29 17.30.38.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att2wTYShbpeCw5zp.jpg" alt="2019-07-29 17.30.46.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attQHHCust2hTDEOt.jpg" alt="2019-07-29 17.31.26.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-11 : LOT 0008</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attEeMIik9Kl8hUIm.jpg" alt="2019-11-09 02.20.25.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attiQUMnntq3CvBfq.jpg" alt="2019-11-09 02.20.36.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attyZuj6CdZKBJeNq.jpg" alt="2019-11-09 02.20.57.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0009">
+            <h2>LOT 0009</h2>
+            <div class="lot-meta"><span class="lot-name">PANTS</span><span class="lot-date">Released: 2018-06-01</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 100% cotton</div><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Cold tumble dry or air dry only. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-06 : LOT 0009</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attUGTn3iSBiN2iWC.jpg" alt="2019-06-11 21.08.42.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attebKSOtPS2eSBx5.jpg" alt="2019-06-11 21.08.54.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attilhiE2dZmAXpH2.jpg" alt="2019-06-11 21.09.28.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0009</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attRw70D4bqZw7WuD.26" alt="2020-01-21 15.47.26" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attPeIf1AL2cJr0ak.31" alt="2020-01-21 15.47.31" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attCSKPS3P6lVqZBz.48" alt="2020-01-21 15.47.48" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0010">
+            <h2>LOT 0010</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0010</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attIs8J8MsXItZdV3.jpg" alt="2020-01-09 18.56.11.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZvyOk6qCc5ufQi.jpg" alt="2020-01-09 18.56.21.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attmlgiJ8kjXAMzBi.jpg" alt="2020-01-09 18.57.32.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0011">
+            <h2>LOT 0011</h2>
+            <div class="lot-meta"><span class="lot-name">HAT</span><span class="lot-date">Released: 2018-08-07</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 100% cotton</div><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-04 : LOT 0011</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attBqz3JpHtVprUEu.jpg" alt="2019-04-04 00.32.24.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att5mAM4FJZcuVPQF.jpg" alt="2019-04-04 00.32.38.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attYYmFvkIsiflGZT.jpg" alt="2019-04-04 00.33.28.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2021-03 : LOT 0011</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att2xFs2BuD5eRPOm.jpg" alt="2021-02-22 15.43.37.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attMBZmuYMpQaWIEw.jpg" alt="2021-02-22 15.43.51.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attSvFuS0ecM5WAul.jpg" alt="2021-02-22 15.44.43.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0012">
+            <h2>LOT 0012</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0012</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attLqjteWUIWdJ8wP.38" alt="2020-01-21 15.48.38" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attoCqSWUKvd4M1Mz.47" alt="2020-01-21 15.48.47" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attTti54XUEpnqjWw.22" alt="2020-01-21 15.49.22" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0013">
+            <h2>LOT 0013</h2>
+            <div class="lot-meta"><span class="lot-name">IDENTIFICATION BRACELET</span><span class="lot-date">Released: 2018-09-15</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 100% recycling paper</div><div class="detail"><span class="label">Components</span> Bracelet (x10)</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2018-12 : LOT 0013</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attQSS7Xt2X0GKjpr.jpg" alt="2019-01-07 22.02.13.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attx9MEOy8VBOQNto.jpg" alt="2019-01-07 22.02.24.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attEsEpx1sZsJTtjm.jpg" alt="2019-01-07 22.03.11.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-04 : LOT 0013</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attsoWe5HmftsYSOD.jpg" alt="2019-04-04 00.30.21.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attJ11UodFZUZER4w.jpg" alt="2019-04-04 00.30.30.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attQ8xmfZZy1Ipkxx.jpg" alt="2019-04-04 00.31.53.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0016">
+            <h2>LOT 0016</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0016</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attfOvBRXuFitGntK.jpg" alt="2019-08-29 00.42.32.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att7dF170M0ehnusD.jpg" alt="2019-08-29 00.42.38.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZQYEAfGC1D25EV.jpg" alt="2019-08-29 00.43.03.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0016</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attv5ed2hGx8LKzBB.09" alt="2020-01-21 15.54.09" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attNG8RkLIHLLnavJ.19" alt="2020-01-21 15.54.19" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attPtWt92piDpvRqI.51" alt="2020-01-21 15.54.51" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0017">
+            <h2>LOT 0017</h2>
+            <div class="lot-meta"><span class="lot-name">JACKET</span><span class="lot-date">Released: 2018-04-28</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> Outer layer: 100% polyester; Liner: 80% polyester, 20% cotton</div><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-04 : LOT 0017</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attgVk8QaEAzKdVTi.jpg" alt="2019-04-04 00.36.32.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attc8Xjlnau5AjNAf.jpg" alt="2019-04-04 00.36.39.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attYCBgSXSu8dz6o4.jpg" alt="2019-04-04 00.37.21.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0018">
+            <h2>LOT 0018</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-10 : LOT 0018</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attCk692vQ8w1qZcM.jpg" alt="2019-09-29 23.41.56.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attWVLmF6KUh1nAxo.jpg" alt="2019-09-29 23.43.46.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attR0jKehHF622t94.jpg" alt="2019-09-29 23.42.43.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0021">
+            <h2>LOT 0021</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0021</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attMOJfAaP4GxYX91.jpg" alt="2019-08-29 00.37.31.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attLnRPjYHIaNKnnO.jpg" alt="2019-08-29 00.37.41.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attdySrQo0WslFfpC.jpg" alt="2019-08-29 00.38.54.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0021</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attT83cFZcaOerD33.18" alt="2020-01-21 15.52.18" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attxWDuzJoPvTGmR4.25" alt="2020-01-21 15.52.25" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att6AY6BKCQTg1kZq.47" alt="2020-01-21 15.52.47" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0022">
+            <h2>LOT 0022</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-07 : LOT 0022</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attkcIGVWpcg8sHYq.jpg" alt="2019-06-25 21.32.20.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attGZaEpIDUGNVaGR.jpg" alt="2019-06-25 21.32.33.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attsbx90PFZIxLCo1.jpg" alt="2019-06-25 21.34.09.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0027">
+            <h2>LOT 0027</h2>
+            <div class="lot-meta"><span class="lot-name">SHOES</span><span class="lot-date">Released: 2018-07-04</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Care</span> Hand wash in cold water with LOT 0029. Air dry only.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-02 : LOT 0027</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attLdfvxMIDOE8CSd.jpg" alt="2019-03-09 20.57.01.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attmFFxQ5jTCtCexT.jpg" alt="2019-03-09 20.57.37.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att2aB1256NXm4C5B.jpg" alt="2019-03-09 20.58.30.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0027</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZW3W149ripE1WP.jpg" alt="2019-08-29 00.51.04.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attImeTUF7hUr4bg6.jpg" alt="2019-08-29 00.50.50.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attoRXHZZwzt7lkbs.jpg" alt="2019-08-29 00.48.35.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2021-03 : LOT 0027</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attOjw3ZXTu06fDMv.jpg" alt="2021-02-22 16.03.19.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att3TeczMFZ53WsvU.jpg" alt="2021-02-22 16.03.31.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attAOLWchv2eyGwhj.jpg" alt="2021-02-22 16.03.45.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0028">
+            <h2>LOT 0028</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0028</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attO8x1U64fdCFMnY.jpg" alt="2020-01-09 18.48.22.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attyl6Mo89U2v2cfT.jpg" alt="2020-01-09 18.48.34.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attMQN9ny0eH21orp.jpg" alt="2020-01-09 18.49.01.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0029">
+            <h2>LOT 0029</h2>
+            <div class="lot-meta"><span class="lot-name">SOAP</span><span class="lot-date">Released: 2018-09-20</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> Bamboo Charcoal Powder, Sodium Hydroxide, Water (Aqua), Glycerin, Butyrospermum Parkii (Shea) Shea Butter, Cocos Nucifera (Coconut) Oil, Olea Europaea (Olive) Fruit Oil, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Paraffinum Liquidum</div><div class="detail"><span class="label">Notes</span> Stop using immediately if you experience irritation and please let us know. Must be used within 1 year.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-12 : LOT 0029</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attPSWknQFFUmKjM7.jpg" alt="2019-12-07 20.17.30.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attDRgaNRgKFtA1n1.jpg" alt="2019-12-07 20.17.40.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZi8Gli14qmfEYZ.jpg" alt="2019-12-07 20.18.14.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0029</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attuyCFXmBdfTEbQ1.59" alt="2020-01-21 15.45.59" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attjwNRJCzI7ltLRU.15" alt="2020-01-21 15.46.15" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/atthgnGABXwGr6nxJ.29" alt="2020-01-21 15.46.29" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0030">
+            <h2>LOT 0030</h2>
+            <div class="lot-meta"><span class="lot-name">UNDERWEAR, BOXER BRIEFS</span><span class="lot-date">Released: 2018-08-08</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 95% cotton, 5% spandex</div><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2018-12 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attbTAwzIG7FUlFQp.jpg" alt="2019-01-07 21.52.20.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attAyp0uDK95TTCMU.jpg" alt="2019-01-07 21.52.28.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att8bsDQs1FHRSIV2.jpg" alt="2019-01-07 21.53.37.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-04 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attNeuRIJE6L9f9gV.jpg" alt="2019-04-04 00.29.07.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attyoGOYlnJ7w40PP.jpg" alt="2019-04-04 00.29.15.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attyR8EQ2xg82GM8E.jpg" alt="2019-04-04 00.29.46.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-05 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attdcfkMtJGsLy3RP.jpg" alt="2019-04-20 23.45.42.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attQDUSZovzpFdqbw.jpg" alt="2019-04-20 23.45.45.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attG3KT1MrGNQVd0l.jpg" alt="2019-04-20 23.46.11.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-06 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att9Fxp6npSWQjpGe.jpg" alt="2019-06-11 21.02.51.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attDT2OLhD3t5edgO.jpg" alt="2019-06-11 21.03.04.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attuJgHnkzfDU1qjM.jpg" alt="2019-06-11 21.04.48.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-01 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attJ5eBtLll3txXjV.jpg" alt="2019-01-14 18.22.33.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attTKcFp9lKlFYUns.jpg" alt="2019-01-14 18.22.40.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attUXesPbVDunrE2c.jpg" alt="2019-01-14 18.23.30.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-03 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attWE8R8i6Qzle5wH.jpg" alt="2019-03-09 21.01.11.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZyuVAr7mRTpotj.jpg" alt="2019-03-09 21.01.19.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attBPQCTITVvgHACy.jpg" alt="2019-03-09 21.01.46.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-07 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attJOzU6wpbDQ26OP.jpg" alt="2019-06-25 21.36.58.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att0NyI5uUpuvjDHu.jpg" alt="2019-06-25 21.37.08.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attYZzRuEChbYJWm4.jpg" alt="2019-06-25 21.37.32.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-08 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attNzW7kCt49M76oa.jpg" alt="2019-07-29 17.27.21.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/atteuQMcJ81hWqj4Q.jpg" alt="2019-07-29 17.27.27.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attfMrEuGAhcUhOoF.jpg" alt="2019-07-29 17.28.01.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attzkXOgvG4yG342c.jpg" alt="2019-08-29 00.31.14.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attnoxgSlMnPGploI.jpg" alt="2019-08-29 00.31.22.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attKEJA2QAV7Ek9z5.jpg" alt="2019-08-29 00.31.46.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-10 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attWb6NiH9uaWREZu.jpg" alt="2019-09-29 23.40.17.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attzjCBDq8qpfxIWN.jpg" alt="2019-09-29 23.40.25.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attusfN8eFuMm3oZx.jpg" alt="2019-09-29 23.40.43.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-11 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/atty1dxQndaa0BgBT.jpg" alt="2019-11-09 02.14.19.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attClMs61HTRrx0Mf.jpg" alt="2019-11-09 02.14.32.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attkTNlcXBLX3Ypmy.jpg" alt="2019-11-09 02.15.05.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-12 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attdaV0oupOk2zMWd.jpg" alt="2019-12-07 20.10.36.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attJFhQl776VV97Dv.jpg" alt="2019-12-07 20.10.44.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attulbeKTBI7DQJs0.jpg" alt="2019-12-07 20.11.08.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attAcQkFz31xi6ctC.jpg" alt="2020-01-09 18.44.57.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att438UmIKQSPLmj9.jpg" alt="2020-01-09 18.45.06.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attTWNKWxANho6lg4.jpg" alt="2020-01-09 18.45.30.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attSSTzarGvKyUTFq.00" alt="2020-01-21 15.36.00" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att5GKmZ9Pv6qq0EM.20" alt="2020-01-21 15.36.20" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attkFnfBWWTOjqWy8.38" alt="2020-01-21 15.36.38" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2021-03 : LOT 0030</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZ2xYy6K26if9Rl.jpg" alt="2021-02-22 16.04.49.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att6dhOJyKvChAcpt.jpg" alt="2021-02-22 16.04.57.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attNjCoft5XBQCcbu.jpg" alt="2021-02-22 16.05.21.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0032">
+            <h2>LOT 0032</h2>
+            <div class="lot-meta"><span class="lot-name">BEANIE</span><span class="lot-date">Released: 2018-10-15</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 100% acrylic</div><div class="detail"><span class="label">Care</span> Cold wash only. Air dry only.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2018-12 : LOT 0032</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attIwqGaEoPqcwNZV.jpg" alt="2019-01-07 22.00.10.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attw4kVgLiiEUf8pT.jpg" alt="2019-01-07 22.00.17.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attZmnNWLw3apIMIP.jpg" alt="2019-01-07 22.01.41.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0032</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attUBDG8q8FZH5yh3.jpg" alt="2020-01-09 18.46.32.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attphnW5XVkreWuXD.jpg" alt="2020-01-09 18.46.40.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attINxAmRMmeI53lX.jpg" alt="2020-01-09 18.47.12.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0034">
+            <h2>LOT 0034</h2>
+            <div class="lot-meta"><span class="lot-name">POSTER</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 100% recycling paper</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-07 : LOT 0034</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attbYF8QvY8FhQgW8.jpg" alt="2019-06-25 21.38.42.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attmcurVGb5HnqrJb.jpg" alt="2019-06-25 21.38.56.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attYrPErtc5vPnb08.jpg" alt="2019-06-25 21.39.37.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0035">
+            <h2>LOT 0035</h2>
+            <div class="lot-meta"><span class="lot-name">LAUNDRY BAG</span><span class="lot-date">Released: 2018-03-08</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Components</span> 80% linen, 20% cotton</div><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label"> : LOT 0035</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attHC93LoNQRqmHwe.jpg" alt="2019-07-29 17.29.43.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attiNrOFaMI0YP4MC.jpg" alt="2019-07-29 17.29.53.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att9WA7URvvma7dDE.jpg" alt="2019-07-29 17.30.08.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0036">
+            <h2>LOT 0036</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0036</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attyYdI0oCBBG8kVB.jpg" alt="2020-01-09 18.40.57.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attY9hQGMZatwE4FI.jpg" alt="2020-01-09 18.41.08.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att3Ufuhxseq2oiFF.jpg" alt="2020-01-09 18.41.36.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0042">
+            <h2>LOT 0042</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0042</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att9PktS3EBSMuRiN.jpg" alt="2019-08-29 00.36.11.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attS0GxuU2QMjQXFd.jpg" alt="2019-08-29 00.36.19.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attPw7NTurjhXQAbb.jpg" alt="2019-08-29 00.36.57.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-11 : LOT 0042</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attGEkJSosf74WTen.jpg" alt="2019-11-09 02.18.50.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attUcYwmWNBTLMZ0P.jpg" alt="2019-11-09 02.18.58.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attFukUIw3WgagoyS.jpg" alt="2019-11-09 02.19.27.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0042</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attlxZqsJVWjmM5cd.jpg" alt="2020-01-09 18.54.35.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attGisV4kMJNExdjr.jpg" alt="2020-01-09 18.54.46.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attzbeEhxtUScFVa4.jpg" alt="2020-01-09 18.55.18.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0047">
+            <h2>LOT 0047</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-10 : LOT 0047</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attwiWlqcUelUht4b.jpg" alt="2019-09-29 23.31.09.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attIS5adTtkHqkiJZ.jpg" alt="2019-09-29 23.31.19.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attFpQskdpVKJvg6e.jpg" alt="2019-09-29 23.32.49.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0048">
+            <h2>LOT 0048</h2>
+            <div class="lot-meta"><span class="lot-name">BRALETTE</span><span class="lot-date">Released: 2018-05-30</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Ingredients</span> 92% nylon, 8% spandex</div><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-03 : LOT 0048</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attqwZ6uhc64ZFBFZ.jpg" alt="2019-03-09 21.04.54.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attgGMOnIz2RS95hv.jpg" alt="2019-03-09 21.05.03.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att9dcZvVNreHwx9D.jpg" alt="2019-03-09 21.05.42.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-06 : LOT 0048</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attSlwoUiRlLHLunp.jpg" alt="2019-06-11 21.05.59.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attmU9Gi0ZJItJamR.jpg" alt="2019-06-11 21.06.08.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attM8mhZCW0Fy35TA.jpg" alt="2019-06-11 21.06.44.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0054">
+            <h2>LOT 0054</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-11 : LOT 0054</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att7JeEIV5uVQYk5Z.jpg" alt="2019-11-09 02.06.23.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attVD97nolvNNhX5M.jpg" alt="2019-11-09 02.06.37.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attC6qmKTUof3u8J6.jpg" alt="2019-11-09 02.09.27.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0058">
+            <h2>LOT 0058</h2>
+            <div class="lot-meta"><span class="lot-name">RAIN COAT</span></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-12 : LOT 0058</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attUA7PSp0ZSgCSXj.jpg" alt="2019-12-07 20.07.50.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/atty8imsQtJLH9Gxy.jpg" alt="2019-12-07 20.08.24.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attGL6EXhLRNRIq6C.jpg" alt="2019-12-07 20.08.59.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0065">
+            <h2>LOT 0065</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2021-03 : LOT 0065</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attLdh9N719f6kd2d.jpg" alt="2021-02-22 15.45.37.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att0R2UT8BzA2603F.jpg" alt="2021-02-22 15.45.42.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attDNUySPS0cGXZ2a.jpg" alt="2021-02-22 15.46.15.jpg" loading="lazy" /><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/atttiZf2toRstjhEn.jpg" alt="2021-02-22 15.58.06.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0067">
+            <h2>LOT 0067</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-10 : LOT 0067</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attmn030osZNJSWd0.jpg" alt="2019-09-29 23.34.35.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att7aYp58MoKvd84b.jpg" alt="2019-09-29 23.34.46.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attshu5PeBBIBJD66.jpg" alt="2019-09-29 23.35.21.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0069">
+            <h2>LOT 0069</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-10 : LOT 0069</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/atth0JAKwHL6tiquD.jpg" alt="2019-09-29 23.22.13.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attCmfwLWy4AnuKzP.jpg" alt="2019-09-29 23.22.21.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attELucxWpTAuwTJv.jpg" alt="2019-09-29 23.23.20.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0069</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attJeShQkPl5y9N84.49" alt="2020-01-21 15.44.49" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attA4aoyFwSLyBRtM.59" alt="2020-01-21 15.44.59" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attP7Lq8YuXZ4hdJq.21" alt="2020-01-21 15.45.21" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0070">
+            <h2>LOT 0070</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0070</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attQSLx8Xaysmtvgh.53" alt="2020-01-21 15.39.53" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attBLFrHzn2mxAS8i.57" alt="2020-01-21 15.39.57" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att6jzFfBwQWUC2OP.22" alt="2020-01-21 15.41.22" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0073">
+            <h2>LOT 0073</h2>
+            <div class="lot-meta"><span class="lot-name">T-SHIRT, LONG SLEEVE</span><span class="lot-date">Released: 2018-09-15</span></div>
+            <div class="lot-details"><div class="detail"><span class="label">Care</span> Wash in cold water separately from lighter shades. Tumble dry low; remove promptly. Do not dry under direct sun, to prevent color fade.</div></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2018-12 : LOT 0073</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attbX9P7p96zlqSux.jpg" alt="2019-01-07 21.55.26.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attm4asH9ryGDvHOf.jpg" alt="2019-01-07 21.56.25.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att3ITeQVVPbUbCuw.jpg" alt="2019-01-07 21.56.42.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-03 : LOT 0073</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attmBkiSfw8ylHv7M.jpg" alt="2019-03-09 20.59.30.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attIZ9u9EroT362jl.jpg" alt="2019-03-09 20.59.45.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attYS1xv5SGrU3LYS.jpg" alt="2019-03-09 21.00.33.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0074">
+            <h2>LOT 0074</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-12 : LOT 0074</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attxDMptrPy4XvHqv.jpg" alt="2019-12-07 20.12.09.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att1FEJJCwD4VIItv.jpg" alt="2019-12-07 20.12.20.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attp7xgkTjzS8uphx.jpg" alt="2019-12-07 20.12.57.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2021-03 : LOT 0074</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attTdyznFE5HTk319.jpg" alt="2021-02-22 15.46.37.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att27yPMdbiYsiaF1.jpg" alt="2021-02-22 15.46.47.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attXdZpMvLYspTPKk.jpg" alt="2021-02-22 15.47.41.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0075">
+            <h2>LOT 0075</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0075</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att5X3HknxSu3NWtd.jpg" alt="2019-08-29 00.33.16.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attik1O4PosxnL82l.jpg" alt="2019-08-29 00.33.24.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attwGqZsxFVNTcpOO.jpg" alt="2019-08-29 00.33.57.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-11 : LOT 0075</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/att1h5qMxsAZ84EYY.jpg" alt="2019-11-09 02.18.05.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attaGqvV7t9c84AJz.jpg" alt="2019-11-09 02.18.15.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attVUaSK9tiWUlnuj.jpg" alt="2019-11-09 02.18.26.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-01 : LOT 0075</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attTp93KmHGNUyp6p.jpg" alt="2020-01-09 18.58.09.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attev1nG7kSn2uzdx.jpg" alt="2020-01-09 18.58.19.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attjSnueNCYYgGVrT.jpg" alt="2020-01-09 18.58.29.jpg" loading="lazy" /></div>
+            </div></div>
+        </article>
+        <article class="lot-card" id="lot-0082">
+            <h2>LOT 0082</h2>
+            <div class="lot-meta"></div>
+            <div class="lot-details"></div>
+            <div class="sightings">
+            <div class="sighting">
+                <div class="sighting-label">2019-09 : LOT 0082</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attyrn6kUb3Dv7UJV.jpg" alt="2019-08-29 00.28.47.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attIh6JGBLHOjHYMg.jpg" alt="2019-08-29 00.28.55.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attiZ8LOEsNnhkzQL.jpg" alt="2019-08-29 00.29.26.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-10 : LOT 0082</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attWZYVcxaAfHtYBs.jpg" alt="2019-09-29 23.28.02.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attJmvyK2mnMUcNbq.jpg" alt="2019-09-29 23.28.14.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attI6te4SioFiFzMJ.jpg" alt="2019-09-29 23.28.50.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-11 : LOT 0082</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attfWQyjOVbwmTVrR.jpg" alt="2019-11-09 02.11.00.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attq7PNh8YMw2obmv.jpg" alt="2019-11-09 02.11.09.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attXTxnhcaEfKS42h.jpg" alt="2019-11-09 02.11.21.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2019-12 : LOT 0082</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attRvSMWxjkpvYfZv.jpg" alt="2019-12-07 20.04.53.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attIw0HuqHT62S2ez.jpg" alt="2019-12-07 20.05.01.jpg" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attlenjoe6BaLpRwy.jpg" alt="2019-12-07 20.05.27.jpg" loading="lazy" /></div>
+            </div>
+            <div class="sighting">
+                <div class="sighting-label">2020-02 : LOT 0082</div>
+                <div class="img-row"><div class="cat-label">BROWN</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attCnRQ76dSpxT1GI.15" alt="2020-01-21 15.37.15" loading="lazy" /></div><div class="img-row"><div class="cat-label">BLACK</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attcMqNoaoT37IHKF.29" alt="2020-01-21 15.37.29" loading="lazy" /></div><div class="img-row"><div class="cat-label">WRAP</div><img src="https://lh00000000-public.s3.amazonaws.com/2026-04-05-lotarchive/attUE9CrmLv3d7Y3y.49" alt="2020-01-21 15.37.49" loading="lazy" /></div>
+            </div></div>
+        </article>
+
+</div>
+
+<footer>
+    Archived from Airtable on 2026-04-05 15:16 &mdash; LOT 2046
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+document.querySelectorAll('.img-row img').forEach(img => {
+    img.addEventListener('click', () => {
+        const lb = document.getElementById('lightbox');
+        document.getElementById('lightbox-img').src = img.src;
+        lb.classList.add('active');
+    });
+});
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+});
+</script>
+
+</body>
+</html>
