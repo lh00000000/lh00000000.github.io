@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #ffeef5;
+    }
+
+    .ecard {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .item {
+      position: absolute;
+      top: var(--top);
+      width: var(--size);
+
+      animation:
+        fly var(--fly-duration) linear infinite var(--delay),
+        spin var(--spin-duration) linear infinite;
+    }
+
+    @keyframes fly {
+      0% {
+        translate: var(--from-x) var(--from-y);
+      }
+
+      50% {
+        translate: 50vw var(--drift);
+      }
+
+      100% {
+        translate: var(--to-x) var(--to-y);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        rotate: calc(var(--spin-direction) * 360deg);
+      }
+    }
+
+    #susan {
+      animation: pulse 10s linear infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ecard" id="ecard">
+    <h1>happy mother's day Susan!</h1>
+    <img src="https://lh00000000-public.s3.amazonaws.com/mothersday2026/lobster.jpg" width="600px" height="400px"/>
+    <img src="https://lh00000000-public.s3.amazonaws.com/mothersday2026/susan.png"
+    width="200px" height="300px"
+    style="position: absolute; top: 200px; left: 300px;"
+    id="susan"
+    
+    />
+
+    <p>you're the best! hope to dine with you soon</p>
+  </div>
+
+  <script>
+    const objects = [
+    {
+        src: "sam.jpg",
+        top: "60%",
+        size: "120px",
+
+        fromX: "110vw",
+        fromY: "40vh",
+        toX: "-10vw",
+        toY: "0",
+        drift: "90px",
+
+        flyDuration: "10s",
+        spinDuration: "0s",
+        delay: "0s",
+        spinDirection: -1,
+      },
+      {
+        src: "crouton.png",
+        top: "20%",
+        size: "120px",
+
+        fromX: "-200px",
+        fromY: "0",
+        toX: "110vw",
+        toY: "0",
+        drift: "-100px",
+
+        flyDuration: "8s",
+        spinDuration: "3s",
+        delay: "0s",
+        spinDirection: 1,
+      },
+      {
+        src: "palette.png",
+        top: "40%",
+        size: "120px",
+
+        fromX: "-10vw",
+        fromY: "30vh",
+        toX: "110vw",
+        toY: "0",
+        drift: "90px",
+
+        flyDuration: "10s",
+        spinDuration: "0s",
+        delay: "0s",
+        spinDirection: -1,
+      },
+      {
+        src: "cake.png",
+        top: "50%",
+        size: "120px",
+
+        fromX: "-110vw",
+        fromY: "30vh",
+        toX: "-10vw",
+        toY: "0",
+        drift: "90px",
+
+        flyDuration: "10s",
+        spinDuration: "0s",
+        delay: "0s",
+        spinDirection: -1,
+      },
+      {
+        src: "crouton.png",
+        top: "70%",
+        size: "120px",
+
+        fromX: "110vw",
+        fromY: "0",
+        toX: "-200px",
+        toY: "0",
+        drift: "100px",
+
+        flyDuration: "8s",
+        spinDuration: "3s",
+        delay: "0s",
+        spinDirection: -1,
+      },
+      {
+        src: "horse.png",
+        top: "20%",
+        size: "120px",
+
+        fromX: "-10vw",
+        fromY: "30vh",
+        toX: "-200px",
+        toY: "0",
+        drift: "200px",
+
+        flyDuration: "3s",
+        spinDuration: "1s",
+        delay: "0s",
+        spinDirection: 1,
+      },
+      {
+        src: "lettuce.png",
+        top: "10%",
+        size: "120px",
+
+        fromX: "-10vw",
+        fromY: "30vh",
+        toX: "110vw",
+        toY: "0",
+        drift: "90px",
+
+        flyDuration: "10s",
+        spinDuration: "1s",
+        delay: "0s",
+        spinDirection: -1,
+      },
+      {
+        src: "lettuce.png",
+        top: "30%",
+        size: "120px",
+
+        fromX: "110vw",
+        fromY: "40vh",
+        toX: "-10vw",
+        toY: "0",
+        drift: "90px",
+
+        flyDuration: "10s",
+        spinDuration: "1s",
+        delay: "0s",
+        spinDirection: -1,
+      },
+      
+      
+    ];
+
+    const container = document.getElementById("ecard");
+
+    for (const obj of objects) {
+      const img = document.createElement("img");
+
+      img.src = "https://lh00000000-public.s3.amazonaws.com/mothersday2026/" + obj.src;
+      img.className = "item";
+
+      img.style.setProperty("--top", obj.top);
+      img.style.setProperty("--size", obj.size);
+      img.style.setProperty("--from-x", obj.fromX);
+      img.style.setProperty("--from-y", obj.fromY);
+      img.style.setProperty("--to-x", obj.toX);
+      img.style.setProperty("--to-y", obj.toY);
+      img.style.setProperty("--drift", obj.drift);
+      img.style.setProperty("--fly-duration", obj.flyDuration);
+      img.style.setProperty("--spin-duration", obj.spinDuration);
+      img.style.setProperty("--delay", obj.delay);
+      img.style.setProperty("--spin-direction", obj.spinDirection);
+
+      container.appendChild(img);
+    }
+  </script>
+  
+</body>
+</html>
