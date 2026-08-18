@@ -24,29 +24,83 @@
         text-align: right;
         margin-right: 80px;
       }
-      .year {
+      .year,
+      .date {
         color: #888;
         opacity: 0.5;
         margin-left: 10px;
+      }
+      .next .date {
+        color: #000;
+        opacity: 1;
       }
       .ensemble {
         color: #444;
         margin-left: 10px;
         font-size: 0.8em;
       }
+      details {
+        margin: 0;
+      }
+      summary {
+        cursor: pointer;
+      }
+      .live-note {
+        display: list-item;
+        list-style: disclosure-closed inside;
+        margin: 0;
+        cursor: default;
+      }
+      .past-search {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        font: inherit;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-bottom: 1px solid #888;
+        background: transparent;
+      }
     </style>
   </head>
   <body>
     <h1>luming hao related music</h1>
     <section>
-      <h2>upcoming appearances</h2>
-      <ul>
-        <li>
-          brooklyn music kitchen (brooklyn, ny). 6/11
-          <a href="https://dice.fm/partner/tickets/event/7dgayb-breaking-sound-nyc-at-brooklyn-music-kitchen-0611-11th-jun-brooklyn-music-kitchen-new-york-city-tickets">tickets</a>
-          <span class="year">2026</span>
-        </li>
-      </ul>
+      <h2>live</h2>
+      <details class="next" open>
+        <summary>next</summary>
+        <ul>
+          <li> 
+            <span class="date">2026-08-21</span> sluice @ the lot radio. 6pm est. <a href="https://www.instagram.com/p/DcHNc5DtQnt/">instagram</a>
+          </li>
+        </ul>
+      </details>
+      <details>
+        <summary>past</summary>
+        <!-- <input class="past-search past-text-search" type="search" placeholder="text search" /> -->
+        <!-- <input class="past-search past-year-search" type="search" placeholder="year search" inputmode="numeric" /> -->
+        <ul>
+          <li>
+            <span class="date">2026-08-02</span> blue cows rooftop show
+          </li>
+          <li>
+            <span class="date">2026-06-11</span> i am playing Breaking Sound at Brooklyn Music Kitchen (brooklyn, ny).
+            <a href="https://photos.app.goo.gl/8A8owLVLmAVmQHk77">photos</a>
+            
+          </li>
+          <li>
+            <span class="date">2026-05-30</span> shawn's birthday party
+          </li>
+          <li>
+            <span class="date">2026-04-18</span> apport used books
+          </li>
+
+        </ul>
+      </details>
+      <p class="live-note">
+        video demos for booking interest available here: <a href="https://photos.app.goo.gl/8A8owLVLmAVmQHk77">https://photos.app.goo.gl/8A8owLVLmAVmQHk77</a>
+      </p>
     </section>
     <section>
       <h2>(*...)</h2>
@@ -144,13 +198,36 @@
       </ul>
     </section>
     <section>
-      <h2>services</h2>
+      <h2>social media</h2>
       <ul>
         <li>
-          <b>transcription</b> - i love transcribing songs into sheet music. if your band has a song and you want someone from the classical or jazz world to get really granular with it on a tight deadline, this could be useful for you.
+          <a href="https://www.instagram.com/luminghaomusic/">instagram</a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@luminghaomusic">tiktok</a>
         </li>
       </ul>
-    
     </section>
+    <script>
+      const pastDetails = document.querySelector(".past-text-search").closest("details");
+      const pastTextSearch = pastDetails.querySelector(".past-text-search");
+      const pastYearSearch = pastDetails.querySelector(".past-year-search");
+      const pastItems = pastDetails.querySelectorAll("li");
+      function filterPast() {
+        const text = pastTextSearch.value.toLowerCase();
+        const year = pastYearSearch.value.toLowerCase();
+        pastItems.forEach((li) => {
+          const matchesText =
+            !text || li.textContent.toLowerCase().includes(text);
+          const dateEl = li.querySelector(".date");
+          const matchesYear =
+            !year ||
+            (dateEl && dateEl.textContent.toLowerCase().includes(year));
+          li.style.display = matchesText && matchesYear ? "" : "none";
+        });
+      }
+      pastTextSearch.addEventListener("input", filterPast);
+      pastYearSearch.addEventListener("input", filterPast);
+    </script>
   </body>
 </html>
