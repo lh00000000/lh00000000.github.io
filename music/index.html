@@ -39,6 +39,39 @@
         margin-left: 10px;
         font-size: 0.8em;
       }
+      .platform {
+        font-size: 0.6em;
+        color: #888;
+        opacity: 0.4;
+        text-decoration: none;
+        text-transform: lowercase;
+        transition: opacity 0.15s;
+      }
+      .platform:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+      .platform.bandcamp {
+        color: #1da0c3;
+      }
+      .platform.spotify {
+        color: #1db954;
+      }
+      .platform.apple-music {
+        color: #fa243c;
+      }
+      .platform.soundcloud {
+        color: #ff5500;
+      }
+      .platform.youtube {
+        color: #ff0000;
+      }
+      .platform.tidal {
+        color: #000;
+      }
+      .platform.nbd {
+        color: #000;
+      }
       details {
         margin: 0;
       }
@@ -71,9 +104,9 @@
       <details class="next" open>
         <summary>next</summary>
         <ul>
-          <li> 
-            <span class="date">2026-08-21</span> sluice @ the lot radio. 6pm est. <a href="https://www.instagram.com/p/DcHNc5DtQnt/">instagram</a>
-          </li>
+          <!-- <li> 
+            <span>nothing (as of 2026-09-28)</span>
+          </li> -->
         </ul>
       </details>
       <details>
@@ -81,6 +114,12 @@
         <!-- <input class="past-search past-text-search" type="search" placeholder="text search" /> -->
         <!-- <input class="past-search past-year-search" type="search" placeholder="year search" inputmode="numeric" /> -->
         <ul>
+          <li> 
+            <span class="date">2026-09-21</span> grandfatherly's. 7pm est. <a href="https://partiful.com/e/YS1fuOSlOaUVBrWxzV41">partiful</a>
+          </li>
+          <li> 
+            <span class="date">2026-08-21</span> sluice @ the lot radio. 6pm est. <a href="https://www.instagram.com/p/DcHNc5DtQnt/">instagram</a>
+          </li>
           <li>
             <span class="date">2026-08-02</span> blue cows rooftop show
           </li>
@@ -99,25 +138,37 @@
         </ul>
       </details>
       <p class="live-note">
-        video demos for booking interest available here: <a href="https://photos.app.goo.gl/8A8owLVLmAVmQHk77">https://photos.app.goo.gl/8A8owLVLmAVmQHk77</a>
+        <a href="https://photos.app.goo.gl/8A8owLVLmAVmQHk77">videos of past performances</a>
       </p>
     </section>
     <section>
-      <h2>(*...)</h2>
+      <h2>luming hao</h2>
       <ul>
         <li>
           <a href="/albumaugust">albumaugust</a>
           <span class="year">2025</span>
+          <a class="platform nbd" href="https://www.nbdmusic.com/release/cmeb1rzca0001k504s1zebtav/lh00000000-albumaugust">nbd</a>
+          <a class="platform bandcamp" href="https://luminghao.bandcamp.com/album/albumaugust">bandcamp</a>
+
         </li>
+      </ul>
+    </section>
+    <section>
+      <h2>(*...)</h2>
+      <ul>
+        
         <li>
-          <a href="/liao">liao</a>
           <span class="year">2020</span>
+          <a href="/liao">liao</a>
+          <a class="platform bandcamp" href="https://asteriskellipsis.bandcamp.com/album/liao">bandcamp</a>
+          <a class="platform spotify" href="https://open.spotify.com/artist/336FerSZeQxlIKkxHLmmOq?si=LxWe4Qw2ScO8EKGmeh1qlg">spotify</a>
+          <a class="platform apple-music" href="https://music.apple.com/us/album/liao/1495274800">apple music</a>
         </li>
         <li>
-          <a href="https://asteriskellipsis.bandcamp.com/album/acceptable"
-            >acceptable</a
-          >
           <span class="year">2011</span>
+          <span
+            >acceptable</span>
+          <a class="platform bandcamp" href="https://asteriskellipsis.bandcamp.com/album/acceptable">bandcamp</a>
         </li>
       </ul>
     </section>
@@ -125,46 +176,47 @@
       <h2>"classical"</h2>
       <ul>
         <li>
+          <span class="year">2014</span>
           <a href="https://luminghao.bandcamp.com/album/pizzazz"
             >Pizzazz</a
           >
-          <span class="year">2014</span>
-          <span class="ensemble">Opera. Mezzo Soprano, Baritone, Percussion, Flute, Harp, Piano, Violin, Viola, Cello, Bass, Horn, Trombone, Tuba</span>
+          <span class="ensemble">opera. mezzo soprano, baritone, percussion, flute, harp, piano, violin, viola, cello, bass, horn, trombone, tuba</span>
         </li>
         <li>
+          <span class="year">2014</span>
           <a href="https://soundcloud.com/stardotdotdot/sets/lake-michigan"
             >lake michigan</a
           >
-          <span class="year">2014</span>
           <span class="ensemble"
             >song cycle setting internet poets. mezzo soprano, harp, piano,
             percussion, cello.</span
           >
         </li>
         <li>
+          <span class="year">2014</span>
           <a href="https://soundcloud.com/stardotdotdot/just-kidding"
             >just kidding</a
           >
-          <span class="year">2014</span>
           <span class="ensemble">brass quintet</span>
         </li>
         <li>
-          <a href="https://soundcloud.com/stardotdotdot/luvme-2013-m">M</a>
+
           <span class="year">2013</span>
+          <a href="https://soundcloud.com/stardotdotdot/luvme-2013-m">M</a>
           <span class="ensemble">piano and violin duet</span>
         </li>
         <li>
+          <span class="year">2013</span>
           <a href="https://soundcloud.com/stardotdotdot/luvme-2013-bunny"
             >bunny</a
           >
-          <span class="year">2013</span>
           <span class="ensemble">piano and mezzo soprano</span>
         </li>
         <li>
+          <span class="year">2013</span>
           <a href="https://soundcloud.com/stardotdotdot/string-quartet-01"
             >string quartet</a
           >
-          <span class="year">2013</span>
           <span class="ensemble"
             >string quartet. kind of a cover of
             <a
@@ -175,10 +227,10 @@
         </li>
 
         <li>
+          <span class="year">2012</span>
           <a href="https://soundcloud.com/stardotdotdot/luvme-2012"
             >(((((((())))))))</a
           >
-          <span class="year">2012</span>
           <span class="ensemble"> orchestra</span>
         </li>
       </ul>
@@ -187,12 +239,12 @@
       <h2>soundtrack/chiptune</h2>
       <ul>
         <li>
+          <span class="year">2012</span>
           <a
             href="https://therottingcartridge.bandcamp.com/album/kale-in-dinoland-soundtrack"
           >
             kale in dinoland ost</a
           >
-          <span class="year">2012</span>
           <span class="ensemble">lsdj</span>
         </li>
       </ul>
@@ -209,13 +261,12 @@
       </ul>
     </section>
     <script>
-      const pastDetails = document.querySelector(".past-text-search").closest("details");
-      const pastTextSearch = pastDetails.querySelector(".past-text-search");
-      const pastYearSearch = pastDetails.querySelector(".past-year-search");
-      const pastItems = pastDetails.querySelectorAll("li");
+      const pastTextSearch = document.querySelector(".past-text-search");
+      const pastYearSearch = document.querySelector(".past-year-search");
+      const pastItems = document.querySelectorAll("details:not(.next) li");
       function filterPast() {
-        const text = pastTextSearch.value.toLowerCase();
-        const year = pastYearSearch.value.toLowerCase();
+        const text = pastTextSearch ? pastTextSearch.value.toLowerCase() : "";
+        const year = pastYearSearch ? pastYearSearch.value.toLowerCase() : "";
         pastItems.forEach((li) => {
           const matchesText =
             !text || li.textContent.toLowerCase().includes(text);
@@ -226,8 +277,8 @@
           li.style.display = matchesText && matchesYear ? "" : "none";
         });
       }
-      pastTextSearch.addEventListener("input", filterPast);
-      pastYearSearch.addEventListener("input", filterPast);
+      pastTextSearch?.addEventListener("input", filterPast);
+      pastYearSearch?.addEventListener("input", filterPast);
     </script>
   </body>
 </html>
